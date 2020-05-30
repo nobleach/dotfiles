@@ -44,6 +44,9 @@ alias us='cd ~/Sites/user-service'
 alias sit='cd ~/Sites'
 alias yti='yarn test:integration'
 alias ytu='yarn test:unit'
+# DO NOT COMMIT this to source control!!!
+source ~/google-k8s.inc
+
 #
 # kubectl exec -it $(kubectl get po -n test | awk '/pdf-service/ {print $1}' | head -n1) -n test /bin/bash
 function kbash() {
