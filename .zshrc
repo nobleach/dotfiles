@@ -44,19 +44,6 @@ alias us='cd ~/Sites/user-service'
 alias sit='cd ~/Sites'
 alias yti='yarn test:integration'
 alias ytu='yarn test:unit'
-alias gprod='gcloud beta container clusters get-credentials tzero-prod-dino --region us-west1 --project tzero-prod-dino && gcloud config set project tzero-prod-dino'
-alias gstage='kubectx gke_tzero-staging-dino_us-west1_tzero-staging-dino'
-alias gtest='gcloud container clusters get-credentials tzero-nonprod --zone us-west1-b --project tzero-nonprod && gcloud config set project tzero-nonprod'
-alias gonboarding='gcloud beta container clusters get-credentials tzero-eng-argo --region us-west1 --project tzero-eng'
-alias kcd='kubectl config set-context $(kubectl config current-context) --namespace '
-alias kgp='kubectl get po'
-alias kdp='kubectl delete pod '
-alias gpb='gcloud compute ssh prod-dino-bastion --project tzero-prod-dino'
-# gcloud beta container clusters get-credentials tzero-prod-dino --region us-west1 --project tzero-prod-dino
-# gcloud config set project tzero-prod-dino
-# kubectx gke_tzero-prod-dino_us-west1_tzero-prod-dino
-# kubens production
-# alias kkillpo="kubectl delete po $(kubectl get po -n test | awk '/user-service/ {print $1}' | tr '\n' ' ') -n test"
 #
 # kubectl exec -it $(kubectl get po -n test | awk '/pdf-service/ {print $1}' | head -n1) -n test /bin/bash
 function kbash() {
