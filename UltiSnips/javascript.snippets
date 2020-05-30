@@ -1,0 +1,296 @@
+snippet clj
+console.log(JSON.stringify($0));
+endsnippet
+
+snippet esd
+/* eslint-disable */
+/* eslint-enable */
+endsnippet
+
+snippet tc
+try {
+} catch(e) {
+}
+endsnippet
+
+snippet texp
+try {
+} catch(e) {
+  expect(e.response.data.code)
+    .toBe('');
+  expect(e.response.data.message)
+    .toBe('');
+}
+endsnippet
+
+snippet imp
+import ${1:name} from '${0:package}';
+endsnippet
+
+snippet impcomp
+import React, { Component } from 'react';
+endsnippet
+
+snippet imr
+import React from 'react';
+endsnippet
+
+snippet imc
+import React from 'react';
+import {} from 'prop-types';
+import { connect } from 'react-redux';
+endsnippet
+
+snippet imn
+import {\n\t$1\n} from \'$0\';
+endsnippet
+
+snippet ra
+export const ${1:ACTION} = register('$1');
+endsnippet
+
+global !p
+def upperCase(word):
+  return word.upper()
+endglobal
+
+snippet rap "Register UPPERCASE Action" b
+export const `!p
+snip.rv = upperCase(t[1])
+` = register('`$1 !p snip.rv = upperCase(t[1])`');
+endsnippet
+
+snippet comp
+export default class ${1:Component} extends Component {
+  render() {
+    return (
+      $0
+    );
+  }
+}
+endsnippet
+
+snippet sfc
+const ${1:Component} = ($2) => {
+  return (
+    ${0:<div />}
+  );
+};
+
+$1.propTypes = {
+};
+
+export default $1;
+endsnippet
+
+snippet pa
+PropTypes.array
+endsnippet
+
+snippet pb
+PropTypes.bool
+endsnippet
+
+snippet pf
+PropTypes.func
+endsnippet
+
+snippet pn
+PropTypes.number
+endsnippet
+
+snippet po
+PropTypes.object
+endsnippet
+
+snippet ps
+PropTypes.string
+endsnippet
+
+snippet edc
+export default connect(mapStateToProps, mapDispatchToProps)($0);
+endsnippet
+
+snippet msp
+function mapStateToProps(state) {
+  return {};
+}
+endsnippet
+
+snippet mdp
+const mapDispatchToProps = {
+};
+endsnippet
+
+snippet ered
+export function reducer(state = {}, action = {}) {
+  switch (action.type) {
+    case $0: {
+      const newState = {};
+
+      return state;
+    }
+
+    default:
+      return state;
+  }
+}
+endsnippet
+
+snippet csel
+export const $0 = createSelector(
+);
+endsnippet
+
+snippet eaf
+export async function $0() {
+}
+endsnippet
+
+snippet ht
+Handlebars.templates.$0
+endsnippet
+
+snippet tht
+template: Handlebars.templates.$0
+endsnippet
+
+snippet ea
+expect.assertions($0);
+endsnippet
+
+snippet expe
+expect($1)
+  .toEqual($0);
+endsnippet
+
+snippet it
+it('${1:should do something}', () => {
+});
+endsnippet
+
+snippet ate
+test('${1:should do something}', async () => {
+});
+endsnippet
+
+snippet des
+describe('${1:New Unit Name type}', () => {
+});
+endsnippet
+
+snippet called
+.to.have.been.called;
+endsnippet
+
+snippet with
+    .to.have.been.calledWith(${0});
+endsnippet
+
+snippet us
+'use strict';
+
+endsnippet
+
+snippet ss
+sinon.stub(${0})
+endsnippet
+
+snippet nbm
+new Backbone.Model(${1})${0:;}
+endsnippet
+
+snippet nbc
+new Backbone.Collection(${1})${0:;}
+endsnippet
+
+snippet nbv
+new Backbone.View(${1})${0:;}
+endsnippet
+
+snippet bbm
+${1} = Backbone.Model.extend({
+    ${0}
+});
+endsnippet
+
+snippet bbmm
+var ${1} = Backbone.Model.extend({
+    defaults: {
+	${0}
+    }
+});
+
+module.exports = $1;
+endsnippet
+
+snippet bbc
+${1} = Backbone.Collection.extend({
+    ${0}
+});
+endsnippet
+
+snippet bbmc
+var ${1} = Backbone.Collection.extend({
+
+});
+
+module.exports = $1;
+endsnippet
+
+snippet mivm
+var ${1} = Marionette.ItemView.extend({
+    template: ${2},
+
+    ui: {
+
+    },
+
+    triggers: {
+
+    }
+});
+
+module.exports = $1;
+endsnippet
+
+snippet mcvm
+var ${1} = Marionette.CollectionView.extend({
+    ${0}
+});
+
+module.exports = $1;
+endsnippet
+
+snippet tprom
+var $1Promise = $.Deferred().resolve($0).promise();
+endsnippet
+
+snippet stop
+e.stopPropagation();
+endsnippet
+
+snippet re "require" b
+var `!p
+def formatVariableName(path):
+	lastPart = path.split('/')[-1]
+	if lastPart == 'underscore':
+		return '_'
+	elif lastPart == 'jquery':
+		return '$'
+	else:
+		return string.replace(lastPart.title(), '-', '');
+snip.rv = formatVariableName(t[1])
+` = require('${1}');$0
+endsnippet
+
+snippet papi
+/* BEGIN PRIVATE API */
+Object.defineProperties(this, {
+    '_${1}': {
+        get: function() { return $1; },
+        set: function(val) { $1 = val; }
+    }
+});
+/* END PRIVATE API */
+endsnippet

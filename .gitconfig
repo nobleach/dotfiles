@@ -1,0 +1,46 @@
+[url "https://"]
+	insteadOf = git://
+[user]
+	nam = =
+	name = Jim Wharton
+	email = jwharton@tzero.com
+[github]
+	user = nobleach
+[core]
+        whitespace = trailing-space,space-before-tab
+        editor = vim
+	excludesfile = /Users/jimwharton/.gitignore_global
+[color]
+        ui = auto
+[diff]
+        compactionHeuristic = true
+[commit]
+      template = ~/.gitmessage
+[merge]
+        stat = true
+        tool = opendiff
+	conflictstyle = diff3
+[alias]
+        aliases = config --get-regexp alias
+        st = status -sb
+        d = diff --word-diff
+        cn = checkout -b
+        co = checkout
+        com = commit -am
+        ignore = update-index --assume-unchanged
+        unignore = update-index --no-assume-unchanged
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --
+        ll = log --stat --abbrev-commit
+        update = submodule foreach git pull
+        alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ => \\2/' | sort
+        cleanup = !git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d
+        uncommit = reset --soft HEAD^
+        prune = fetch --prune
+[difftool "vimdiff"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "vimdiff"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[credential]
+	helper = osxkeychain
