@@ -174,11 +174,11 @@ Plug 'romgrk/searchReplace.vim'
 nnoremap <silent><C-f> :Search<CR>
 
 " Get ultisnips loaded BEFORE coc.nvim
-Plug 'SirVer/ultisnips'
-let g:UltiSnipsSnippetDirectories = ['/home/jim/.config/nvim/UltiSnips']
+" Plug 'SirVer/ultisnips'
+" let g:UltiSnipsSnippetDirectories = ['/home/jim/.config/nvim/UltiSnips']
 Plug 'honza/vim-snippets'
-let g:UltiSnipsExpandTrigger="<c-b>"
-let g:UltiSnipsJumpForwardTrigger="<c-f>"
+" let g:UltiSnipsExpandTrigger="<c-b>"
+" let g:UltiSnipsJumpForwardTrigger="<c-f>"
 "  let g:UltiSnipsJumpBackwardTrigger="<s-t>"
 " let g:UltiSnipsExpandTrigger="<c-j>"
 " let g:UltiSnipsJumpForwardTrigger="<c-j>"
@@ -254,6 +254,18 @@ function! s:show_documentation()
   endif
 endfunction
 " set completeopt-=preview
+
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+" vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+" let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+" let g:coc_snippet_prev = '<c-k>'
 
 " use vim-dispatch
 Plug 'tpope/vim-dispatch'
