@@ -29,12 +29,6 @@ ZSH_THEME="BlackRain"
 # Brew cleanup:
 alias brewski='brew update && brew upgrade --all && brew cleanup; brew doctor'
 
-# Gnome Keyring
-if [ -n "$DESKTOP_SESSION" ];then
-    eval $(gnome-keyring-daemon --start)
-    export SSH_AUTH_SOCK
-fi
-
 # Paths I frequent
 alias cod='cd ~/code'
 alias trix='cd ~/Sites/trix'
