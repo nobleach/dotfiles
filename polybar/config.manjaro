@@ -1,0 +1,32 @@
+;=====================================================
+;     File Includes
+;=====================================================
+
+[section/base]
+include-file = $HOME/.config/polybar/master.conf
+include-file = $HOME/.config/polybar/modules.conf
+
+
+;=====================================================
+;     Openbox Bars
+;=====================================================
+
+[bar/openbox-bar]
+inherit = bar/master
+
+; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
+monitor =
+monitor-fallback =
+
+tray-position = right
+;tray-padding =
+tray-background = #000000
+
+modules-left   = manjaro bspwm
+modules-center =  clock
+modules-right  = coreuse battery pkg network memory temperature
+margin-bottom = 20
+
+wm-restack      = bspwm
+wm-name         = bspwm
+;override-redirect = true
