@@ -164,7 +164,7 @@ if has('nvim')
   tnoremap <C-v><Esc> <Esc>
 endif
 " Set up VimPlug
-call plug#begin('~/.confi/nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 " Set up editor to use .editorconfig
 Plug 'editorconfig/editorconfig-vim'
 Plug 'bogado/file-line'
