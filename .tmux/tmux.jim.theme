@@ -39,4 +39,4 @@ set -g status-left "#[bg=#afd700,fg=#121212]  skylab: #I #[bg=#121212,fg=#afd
 
 # Show a clock at the right hand side
 set -g status-right-length 150
-set -g status-right '#(/bin/bash $HOME/.tmux/plugins/kube-tmux/kube.tmux 250 red cyan) #[bg=#121212,fg=#adadad,bold]#[bg=#adadad,fg=#444444]  #{slack_dms}/#{slack_mentions}/#{slack_messages} #[bg=#adadad,fg=#afd700,bold]#[bg=#afd700,fg=#444444] %a %Y-%m-%d %H:%M  #{battery_icon} #{battery_percentage} '
+set -g status-right '#(/bin/bash $HOME/.tmux/kube.tmux 250 red cyan) #[bg=#121212,fg=#afd700,bold]#[bg=#afd700,fg=#444444] %H:%M '
