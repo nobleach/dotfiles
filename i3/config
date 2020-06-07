@@ -50,6 +50,7 @@ for_window [class="com-wolfram-jlink-Reader"] floating enable
 for_window [class="Gifview"] floating enable
 for_window [instance="spotify"] move to workspace $ws3
 for_window [urgent="latest" class="slack"] focus
+for_window [class="Thunar"] floating enable
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -62,10 +63,12 @@ exec setxkbmap -layout us -option ctrl:nocaps
 exec --no-startup-id picom
 exec --no-startup-id nitrogen --restore; sleep 1;
 exec --no-startup-id sh ~/.config/polybar/run_polybar.sh
+# exec --no-startup-id deadd-notification-center
 exec --no-startup-id blueman-tray
 exec --no-startup-id nm-applet
 exec --no-startup-id flameshot
 exec --no-startup-id volumeicon
+exec --no-startup-id ~/bin/i3-autodisplay
 exec --no-startup-id betterlockscreen -w dim
 
 # Use pactl to adjust volume in PulseAudio.
@@ -79,8 +82,14 @@ bindsym XF86AudioStop exec --no-startup-id cmus-remote -s
 bindsym XF86AudioNext exec --no-startup-id cmus-remote -n
 bindsym XF86AudioPrev exec --no-startup-id cmus-remote -r
 
+# Bind keys for brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+
 # Launch things
 bindsym $mod+e exec thunar
+# show notification center
+bindsym $mod+n exec kill -s USR1 $(pidof deadd-notification-center)
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -94,6 +103,8 @@ bindsym $mod+q kill
 bindsym $mod+d exec rofi -show drun
 # lock screen
 bindsym $mod+shift+x exec betterlockscreen -l dim
+# PulseAudio (pavucontrol)
+bindsym $mod+p exec pavucontrol
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -188,6 +199,16 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# multi-monitor
+workspace 1 output primary
+workspace 2 output primary
+workspace 3 output primary
+workspace 4 output primary
+workspace 5 output eDP1
+workspace 6 output eDP1
+workspace 7 output eDP1
+workspace 8 output eDP1
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
