@@ -33,6 +33,9 @@ client.background       $dark
 # Do not follow the mouse
 focus_follows_mouse no
 
+# Focus windows that require attention
+focus_on_window_activation focus
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -51,6 +54,7 @@ for_window [class="Gifview"] floating enable
 for_window [instance="spotify"] move to workspace $ws3
 for_window [urgent="latest" class="slack"] focus
 for_window [class="Thunar"] floating enable
+for_window [class="pavucontrol"] floating enable
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -60,16 +64,19 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 #exec --no-startup-id nm-applet
 exec setxkbmap -layout us -option ctrl:nocaps
 # exec --no-startup-id compton -b --config ~/.config/compton/compton.conf
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id picom
 exec --no-startup-id nitrogen --restore; sleep 1;
 exec --no-startup-id sh ~/.config/polybar/run_polybar.sh
 # exec --no-startup-id deadd-notification-center
 exec --no-startup-id blueman-tray
 exec --no-startup-id nm-applet
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id flameshot
 exec --no-startup-id volumeicon
+exec --no-startup-id dropbox
 exec --no-startup-id ~/bin/i3-autodisplay
-exec --no-startup-id betterlockscreen -w dim
+exec --no-startup-id betterlockscreen -w blur
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -102,7 +109,7 @@ bindsym $mod+q kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec rofi -show drun
 # lock screen
-bindsym $mod+shift+x exec betterlockscreen -l dim
+bindsym $mod+shift+x exec betterlockscreen -l blur
 # PulseAudio (pavucontrol)
 bindsym $mod+p exec pavucontrol
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -152,7 +159,7 @@ bindsym $mod+w layout tabbed
 # bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+g floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
