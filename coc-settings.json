@@ -1,0 +1,9 @@
+{
+  "typescript.tsserver.maxTsServerMemory": 1000,
+    "languageserver": {
+        "kotlin": {
+            "command": "~/Downloads/kotlin-language-server/server/build/install/server/bin/kotlin-language-server",
+            "filetypes": ["kotlin"]
+        }
+    }
+}
