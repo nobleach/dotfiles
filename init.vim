@@ -174,6 +174,8 @@ Plug 'bogado/file-line'
 Plug 'romgrk/searchReplace.vim'
 nnoremap <silent><C-f> :Search<CR>
 
+Plug 'AndrewRadev/splitjoin.vim'
+
 " Get ultisnips loaded BEFORE coc.nvim
 " Plug 'SirVer/ultisnips'
 " let g:UltiSnipsSnippetDirectories = ['/home/jim/.config/nvim/UltiSnips']

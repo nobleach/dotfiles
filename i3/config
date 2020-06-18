@@ -64,6 +64,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 #exec --no-startup-id nm-applet
 exec setxkbmap -layout us -option ctrl:nocaps
 # exec --no-startup-id compton -b --config ~/.config/compton/compton.conf
+exec --no-startup-id sh ~/bin/setup-dbus.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id picom
 exec --no-startup-id nitrogen --restore; sleep 1;
