@@ -168,7 +168,6 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 " Set up editor to use .editorconfig
 Plug 'editorconfig/editorconfig-vim'
-Plug 'bogado/file-line'
 
 " Search and replace
 Plug 'romgrk/searchReplace.vim'
@@ -179,7 +178,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 " Get ultisnips loaded BEFORE coc.nvim
 " Plug 'SirVer/ultisnips'
 " let g:UltiSnipsSnippetDirectories = ['/home/jim/.config/nvim/UltiSnips']
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 " let g:UltiSnipsExpandTrigger="<c-b>"
 " let g:UltiSnipsJumpForwardTrigger="<c-f>"
 "  let g:UltiSnipsJumpBackwardTrigger="<s-t>"
@@ -288,11 +287,11 @@ let test#neovim#term_position = "botright"
 
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
-Plug 'bfredl/nvim-miniyank'
-map p <Plug>(miniyank-autoput)
-map P <Plug>(miniyank-autoPut)
-map <leader>n <Plug>(miniyank-cycle)
-map <leader>N <Plug>(miniyank-cycleback)
+" Plug 'bfredl/nvim-miniyank'
+" map p <Plug>(miniyank-autoput)
+" map P <Plug>(miniyank-autoPut)
+" map <leader>n <Plug>(miniyank-cycle)
+" map <leader>N <Plug>(miniyank-cycleback)
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 nmap <silent> <leader>m :Denite miniyank<CR>
@@ -349,13 +348,13 @@ nmap <C-k> <Plug>MoveLineUp
 nmap <C-j> <Plug>MoveLineDown
 
 " Codi Live REPL
-Plug 'metakirby5/codi.vim'
+" Plug 'metakirby5/codi.vim'
 
 Plug 'tommcdo/vim-exchange'
 " Plug 'airblade/vim-gitgutter'
 Plug 'jeetsukumaran/vim-indentwise'
 Plug 'heavenshell/vim-jsdoc'
-Plug 'mattn/webapi-vim'
+" Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 
 " Vim Wiki
@@ -378,7 +377,6 @@ let g:racer_cmd = "~/.cargo/bin/racer"
 " nnoremap <leader>je :call JSXExtractPartialPrompt()<CR>
 " Plug 'mvolkmann/vim-js-arrow-function'
 
-Plug 'iandoe/vim-osx-colorpicker'
 Plug 'tpope/vim-fugitive'
 nmap <leader>b :Gblame<CR>
 nnoremap <leader>g :Gstatus<CR>
@@ -388,8 +386,8 @@ nnoremap <leader>3 :Gdiffsplit!<CR>
 " nnoremap gdl :diffget //3<CR>
 
 Plug 'tpope/vim-unimpaired'
-Plug 'maksimr/vim-jsbeautify'
-Plug 'einars/js-beautify'
+" Plug 'maksimr/vim-jsbeautify'
+" Plug 'einars/js-beautify'
 " let g:config_Beautifier = {}
 " let g:config_Beautifier['js'] = {}
 " let g:config_Beautifier['js'].indent_size = '2'
@@ -411,11 +409,10 @@ nnoremap <leader>o :call ToggleOnly()<cr>
 " UUID insert
 nnoremap <leader>u i<C-r>=system('uuidgen')[:-2]<CR><Esc>
 
-Plug 'davidoc/taskpaper.vim'
-Plug 'lervag/vimtex'
+" Plug 'lervag/vimtex'
 " vimtex
-let g:vimtex_view_method = 'zathura'
-let g:vimtex_latexmk_progname = 'nvr'
+" let g:vimtex_view_method = 'zathura'
+" let g:vimtex_latexmk_progname = 'nvr'
 
 " Add plugins to &runtimepath
 call plug#end()
