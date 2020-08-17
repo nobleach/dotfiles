@@ -1,9 +1,28 @@
 {
+  "snippets.priority": 200,
   "typescript.tsserver.maxTsServerMemory": 1000,
-    "languageserver": {
-        "kotlin": {
-            "command": "~/Downloads/kotlin-language-server/server/build/install/server/bin/kotlin-language-server",
-            "filetypes": ["kotlin"]
+  "languageserver": {
+    "crystal": {
+      "command": "scry",
+      "filetypes": ["cr"]
+    },
+    "ccls": {
+      "command": "ccls",
+      "args": ["--log-file=/tmp/ccls.log", "-v=1"],
+      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+      "rootPatterns": [".ccls", "compile_commands.json"],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        },
+        "client": {
+          "snippetSupport": true
         }
+      }
+    },
+    "kotlin": {
+      "command": "~/Downloads/kotlin-language-server/server/build/install/server/bin/kotlin-language-server",
+      "filetypes": ["kotlin"]
     }
+  }
 }

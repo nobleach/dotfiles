@@ -73,7 +73,16 @@ nnoremap <Tab>   >>
 nnoremap <S-Tab> <<
 vnoremap <Tab>   >><Esc>gv
 vnoremap <S-Tab> <<<Esc>gv
-autocmd BufWritePre *.js :%s/\s\+$//e
+
+" autocmd BufWritePre *.js :%s/\s\+$//e
+function! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " Set JSON files as javascript
 autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 autocmd BufNewFile,BufRead *.jsx set filetype=javascript
@@ -185,10 +194,9 @@ Plug 'AndrewRadev/splitjoin.vim'
 " let g:UltiSnipsExpandTrigger="<c-j>"
 " let g:UltiSnipsJumpForwardTrigger="<c-j>"
 " let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 set  runtimepath+=/usr/bin/fzf
-Plug 'yuki-ycino/fzf-preview.vim'
+" Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
 " Plug 'junegunn/fzf.vim'
 " --column: Show column number
 " --line-number: Show line number
@@ -203,8 +211,9 @@ Plug 'yuki-ycino/fzf-preview.vim'
 " command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 " nnoremap <C-p> :Files<CR>
 " nnoremap <leader>f :Find<CR>
-nnoremap <C-p> :FzfPreviewProjectFiles<CR>
-nnoremap <leader>f :FzfPreviewProjectGrep .<CR>
+nnoremap <C-p> :CocCommand fzf-preview.ProjectFiles<CR>
+nnoremap <leader>f :CocCommand fzf-preview.ProjectGrep .<CR>
+nnoremap <leader>z :CocCommand fzf-preview.Buffers<CR>
 
 Plug 'Shougo/denite.nvim'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
@@ -246,6 +255,7 @@ nmap <silent> ]a <Plug>(coc-diagnostic-next)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nnoremap gh :<C-u>pedit %<Bar>wincmd P<Bar>norm! gd<Bar>wincmd p<CR>
 nnoremap <silent> <leader>a  :<C-u>CocList diagnostics<cr>
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
