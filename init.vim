@@ -197,7 +197,6 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 set  runtimepath+=/usr/bin/fzf
 " Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
-" Plug 'junegunn/fzf.vim'
 " --column: Show column number
 " --line-number: Show line number
 " --no-heading: Do not show file headings in results
@@ -211,9 +210,11 @@ set  runtimepath+=/usr/bin/fzf
 " command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 " nnoremap <C-p> :Files<CR>
 " nnoremap <leader>f :Find<CR>
-nnoremap <C-p> :CocCommand fzf-preview.ProjectFiles<CR>
+ " nnoremap <leader>f :FzfPreviewProjectGrep<CR>
+" nnoremap <C-p> :CocCommand fzf-preview.ProjectFiles<CR>
+nnoremap <C-p> :FzfPreviewProjectFiles<CR>
 nnoremap <leader>f :CocCommand fzf-preview.ProjectGrep .<CR>
-nnoremap <leader>z :CocCommand fzf-preview.Buffers<CR>
+" nnoremap <leader>z :CocCommand fzf-preview.Buffers<CR>
 
 Plug 'Shougo/denite.nvim'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
