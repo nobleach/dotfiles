@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+ZSH=/usr/share/oh-my-zsh
 # export FPATH=/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.3/functions
 # autoload -U promptinit; promptinit
 # autoload -U colors; colors
@@ -16,7 +16,7 @@ autoload -Uz compinit
 compinit
 # Load kubectl right-hand prompt
 # source ~/.config/kubectl.zsh
-RPROMPT='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
+# RPROMPT='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
 
 # Load Git status
 autoload -Uz vcs_info
@@ -29,7 +29,7 @@ precmd() {
 # fpath=(~/.zsh $fpath)
 # source ~/.zsh/_git/git-completion.zsh
 
-ZSH_THEME="BlackRain"
+ZSH_THEME="avit"
 
 # Brew cleanup:
 alias brewski='brew update && brew upgrade --all && brew cleanup; brew doctor'

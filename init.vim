@@ -217,7 +217,7 @@ nnoremap <leader>f :CocCommand fzf-preview.ProjectGrep .<CR>
 " nnoremap <leader>z :CocCommand fzf-preview.Buffers<CR>
 
 Plug 'Shougo/denite.nvim'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
