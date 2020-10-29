@@ -18,7 +18,7 @@ set-option -g display-panes-colour brightred
 
 # set active/inactive pane backgrounds
 set -g window-style "fg=colour247,bg=#4a4a3a"
-set -g window-active-style "fg=colour250,bg=black"
+set -g window-active-style "fg=colour250,bg=#282828"
 
 # Center the window list
 # set -g status-justify centre

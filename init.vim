@@ -212,7 +212,7 @@ set  runtimepath+=/usr/bin/fzf
 " nnoremap <leader>f :Find<CR>
  " nnoremap <leader>f :FzfPreviewProjectGrep<CR>
 " nnoremap <C-p> :CocCommand fzf-preview.ProjectFiles<CR>
-nnoremap <C-p> :FzfPreviewProjectFiles<CR>
+nnoremap <C-p> :CocCommand fzf-preview.ProjectFiles<CR>
 nnoremap <leader>f :CocCommand fzf-preview.ProjectGrep .<CR>
 " nnoremap <leader>z :CocCommand fzf-preview.Buffers<CR>
 
