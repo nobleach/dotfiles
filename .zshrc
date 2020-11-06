@@ -69,6 +69,8 @@ function kpf() {
   kubectl -n $env port-forward $(kubectl get po -n $env | awk -v pattern="$service" '{ if ( $1 ~ pattern ) print $1 }' | head -n1) $pf
 }
 
+alias kroll='kubectl rollout restart deployment '
+
 function wl() {
   port=$1
   netstat -Waltn | grep "$port"
