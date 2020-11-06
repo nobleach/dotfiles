@@ -63,6 +63,8 @@ let mapleader="\<Space>"
 nmap <Leader><Leader> V
 vnoremap <leader><leader> <esc>
 inoremap jk <esc>
+nnoremap <CR> :bn<cr>
+nnoremap <BS> :bn<cr>
 " Navigate through tabs without leaving the home row
 nnoremap <C-l> gt
 nnoremap <C-h> gT
