@@ -21,7 +21,7 @@ set wildmenu
 set nobackup
 set noswapfile
 set updatetime=300
-syntax on
+syntax enable
 set expandtab
 set shiftwidth=2
 set softtabstop=2
@@ -29,8 +29,10 @@ set t_Co=256
 let &t_ut=''
 set background=dark
 let g:hybrid_custom_term_colors = 1
+" let g:solarized_termcolors=256
 " colorscheme gruvbox
 colorscheme distinguished
+" colorscheme solarized
 set fillchars=vert:┃
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
@@ -256,6 +258,7 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() :
 nmap <silent> [a <Plug>(coc-diagnostic-prev)
 nmap <silent> ]a <Plug>(coc-diagnostic-next)
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gD :call CocAction('jumpDefinition', 'tabe')<CR>
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nnoremap gh :<C-u>pedit %<Bar>wincmd P<Bar>norm! gd<Bar>wincmd p<CR>
@@ -422,11 +425,13 @@ nnoremap <leader>o :call ToggleOnly()<cr>
 " UUID insert
 nnoremap <leader>u i<C-r>=system('uuidgen')[:-2]<CR><Esc>
 
+Plug 'mvolkmann/vim-js-arrow-function'
+
 " Plug 'lervag/vimtex'
 " vimtex
 " let g:vimtex_view_method = 'zathura'
 " let g:vimtex_latexmk_progname = 'nvr'
-
+Plug 'OmniSharp/omnisharp-vim'
 " Add plugins to &runtimepath
 call plug#end()
 

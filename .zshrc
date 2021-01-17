@@ -1,16 +1,8 @@
 # Path to your oh-my-zsh configuration.
 ZSH=/usr/share/oh-my-zsh
-# export FPATH=/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.3/functions
-# autoload -U promptinit; promptinit
-# autoload -U colors; colors
-# Fix colors
-# export CLICOLOR=1
-# export CLICOLOR_FORCE=1
+. ~/.asdf/plugins/dotnet-core/set-dotnet-home.zsh
 
-# ASDF Version manager
-. $HOME/.asdf/asdf.sh
-# append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
+export MANPAGER='nvim +Man!'
 # initialise completions with ZSH's compinit
 autoload -Uz compinit
 compinit
@@ -36,22 +28,14 @@ alias brewski='brew update && brew upgrade --all && brew cleanup; brew doctor'
 
 # Paths I frequent
 alias cod='cd ~/code'
-alias trix='cd ~/Sites/trix'
-alias dna='cd ~/Sites/dna-admin-panel'
-alias pdf='cd ~/Sites/pdf-service'
-alias tzc='cd ~/Sites/tzero-client'
-alias toc='cd ~/Sites/tzero-onboarding-client'
-alias twa='cd ~/Sites/tzero-onboarding-webapp'
-alias cle='cd ~/Sites/clearing-service'
 alias dpa='docker system prune -a'
 alias dcu='docker-compose up'
 alias dcd='docker-compose down'
-alias us='cd ~/Sites/user-service'
 alias sit='cd ~/Sites'
 alias yti='yarn test:integration'
 alias ytu='yarn test:unit'
-# DO NOT COMMIT this to source control!!!
-source ~/google-k8s.inc
+alias la='exa -a --group-directories-first'
+alias lal='exa -al --group-directories-first'
 
 #
 # kubectl exec -it $(kubectl get po -n test | awk '/pdf-service/ {print $1}' | head -n1) -n test /bin/bash
@@ -78,7 +62,9 @@ function wl() {
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# plugins=(git kubectl kubetail)
+plugins=(
+  git
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,7 +72,7 @@ source $ZSH/oh-my-zsh.sh
 export TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins
 # Customize to your needs...
 GOPATH=$HOME/go
-export PATH=$GOPATH/bin:~/bin:~/.rbenv/bin:~/.rbenv/shims:/usr/local:/usr/local/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$PATH
+export PATH=$GOPATH/bin:~/bin:~/.rbenv/bin:~/.rbenv/shims:/usr/local:/usr/local/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin$PATH
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 LC_ALL=$LANG
 
@@ -141,3 +127,10 @@ source $HOME/.credentials.sh
 
 # Bind fzf keys belongs at end of file
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# ASDF Version manager
+. $HOME/.asdf/asdf.sh
+# Set JAVA_HOME
+. ~/.asdf/plugins/java/set-java-home.zsh
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
