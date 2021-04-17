@@ -33,6 +33,7 @@ let g:hybrid_custom_term_colors = 1
 " colorscheme gruvbox
 colorscheme distinguished
 " colorscheme solarized
+highlight clear SignColumn
 set fillchars=vert:┃
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
@@ -66,7 +67,7 @@ nmap <Leader><Leader> V
 vnoremap <leader><leader> <esc>
 inoremap jk <esc>
 nnoremap <CR> :bn<cr>
-nnoremap <BS> :bn<cr>
+nnoremap <BS> :bp<cr>
 " Navigate through tabs without leaving the home row
 nnoremap <C-l> gt
 nnoremap <C-h> gT
@@ -216,6 +217,7 @@ set  runtimepath+=/usr/bin/fzf
 " nnoremap <leader>f :Find<CR>
  " nnoremap <leader>f :FzfPreviewProjectGrep<CR>
 " nnoremap <C-p> :CocCommand fzf-preview.ProjectFiles<CR>
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 nnoremap <C-p> :CocCommand fzf-preview.ProjectFiles<CR>
 nnoremap <leader>f :CocCommand fzf-preview.ProjectGrep .<CR>
 " nnoremap <leader>z :CocCommand fzf-preview.Buffers<CR>
@@ -318,8 +320,8 @@ let g:airline#extensions#tabline#buf_min_count = 10
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_section_warning = ''
+" let g:airline_theme='solarized'
 let g:airline_theme='powerlineish'
-" let g:airline_theme='gruvbox'
 
 " Plug 'edkolev/tmuxline.vim'
 " let g:tmuxline_preset = {

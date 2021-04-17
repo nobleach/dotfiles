@@ -28,10 +28,12 @@ alias brewski='brew update && brew upgrade --all && brew cleanup; brew doctor'
 
 # Paths I frequent
 alias cod='cd ~/code'
-alias dpa='docker system prune -a'
+alias dpa='docker system prune -a && docker volume prune'
 alias dcu='docker-compose up'
 alias dcd='docker-compose down'
 alias sit='cd ~/Sites'
+alias vpw='cd ~/Sites/videopeel-web'
+alias vpp='cd ~/Sites/videopeel-plugin'
 alias yti='yarn test:integration'
 alias ytu='yarn test:unit'
 alias la='exa -a --group-directories-first'

@@ -17,8 +17,8 @@ set-option -g display-panes-active-colour blue
 set-option -g display-panes-colour brightred
 
 # set active/inactive pane backgrounds
-set -g window-style "fg=colour247,bg=#4a4a3a"
-set -g window-active-style "fg=colour250,bg=#282828"
+# set -g window-style "fg=colour247,bg=#4a4a3a"
+# set -g window-active-style "fg=colour250,bg=#282828"
 
 # Center the window list
 # set -g status-justify centre
@@ -32,7 +32,7 @@ set-option -g window-status-format "#[bg=#121212,fg=#121212]#[bg=#121212,fg=c
 
 # Remove padding at the left hand side
 set -g status-left-length 32
-set -g status-left "#[bg=#afd700,fg=#121212]  skylab: #I #[bg=#121212,fg=#afd700] "
+set -g status-left "#[bg=#afd700,fg=#121212]  spacelab: #I #[bg=#121212,fg=#afd700] "
 
 # Kubernetes context
 # #(/bin/bash $HOME/.tmux/plugins/kube-tmux/kube.tmux 250 red cyan)
