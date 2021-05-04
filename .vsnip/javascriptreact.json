@@ -1,0 +1,134 @@
+{
+  "imr": {
+    "prefix": ["imr"],
+    "body": [
+      "import React from 'react';",
+      "import PropTypes from 'prop-types';"
+    ],
+    "description": "Import React"
+  },
+  "imc": {
+    "prefix": ["imc"],
+    "body": [
+      "import { connect } from 'react-redux';"
+    ],
+    "description": "Import connect"
+  },
+  "Create Reducer": {
+		"scope": "javascript,jsx,html, react",
+    "prefix": "red",
+    "body": "export function ${1:entity}Reducer(state = {}, action = {}) {\n\tswitch (action.type) {\n\t\tcase ${2:ACTION}: {\n\t\t\treturn state;\n\t\t}\n\n\t\tdefault:\n\t\t\treturn state;\n\t}\n}",
+    "description": "Create Reducer"
+  },
+  "create selector": {
+		"scope": "javascript,jsx,html, react",
+    "prefix": "csel",
+    "body": "export const ${1:name} = createSelector(\n);",
+    "description": "create selector"
+  },
+  "get state selector": {
+		"scope": "javascript,jsx,html, react",
+    "prefix": "gs",
+    "body": "const $1 = get${1/(.)(.*)/\\u$1$2/}(state);",
+    "description": "get state selector"
+  },
+  "Describe Simple Selector": {
+		"scope": "javascript,jsx,html, react",
+    "prefix": "dss",
+    "body": "describeSimpleSelector('$1', $1, '$2');",
+    "description": "Describe Simple Selector"
+  },
+  "PropTypes.bool": {
+		"scope": "javascript, jsx, html, react",
+    "prefix": "pb",
+    "body": "PropTypes.bool",
+    "description": "PropTypes.bool"
+  },
+  "PropTypes.func": {
+		"scope": "javascript, jsx, html, react",
+    "prefix": "pf",
+    "body": "PropTypes.func",
+    "description": "PropTypes.func"
+  },
+  "PropTypes.number": {
+		"scope": "javascript, jsx, html, react",
+    "prefix": "pn",
+    "body": "PropTypes.number",
+    "description": "PropTypes.number"
+  },
+  "PropTypes.array": {
+		"scope": "javascript, jsx, html, react",
+    "prefix": "pa",
+    "body": "PropTypes.array",
+    "description": "PropTypes.array"
+  },
+  "Proptypes.string": {
+		"scope": "javascript, jsx, html, react",
+    "prefix": "ps",
+    "body": "PropTypes.string",
+    "description": "Proptypes.string"
+  },
+  "Proptypes.object": {
+		"scope": "javascript, jsx, html, react",
+    "prefix": "po",
+    "body": "PropTypes.object",
+    "description": "Proptypes.object"
+  },
+  "JSX className interpolated": {
+		"scope": "javascript, jsx, html, react",
+    "prefix": "cn",
+    "body": "className={$1}",
+    "description": "JSX className interpolated"
+  },
+  "Style module class": {
+		"scope": "javascript, jsx, html, react",
+    "prefix": "jc",
+    "body": "styles['$1']",
+    "description": "Style module class"
+  },
+  "Style module interpolated": {
+		"scope": "javascript, jsx, html, react",
+    "prefix": "jic",
+    "body": "${styles['$1']}",
+    "description": "Style module interpolated"
+  },
+  "Stateless Functional Component": {
+    "prefix": "sfc",
+    "body": [
+      "const ${1:$TM_FILENAME_BASE} = () => {",
+      "  return (",
+      "    <div />",
+      "  );",
+      "}",
+      "",
+      "$1.propTypes = {};",
+      "",
+      "$export default $1;"
+    ],
+    "description": "Stateless Functional Component"
+  },
+  "Import CSS Modules styles": {
+		"scope": "javascript, jsx, html, react",
+    "prefix": "styl",
+    "body": "import styles from '$1';",
+    "description": "Import CSS Modules styles"
+  },
+  "Map State To Props": {
+    "prefix": "msp",
+    "body": "function mapStateToProps(state) {\n  return {};\n}",
+    "description": "Map State To Props"
+  },
+  "Map Dispatch to Props": {
+    "prefix": "mdp",
+    "body": "const mapDispatchToProps = {};"
+  },
+  "Map Dispatchable Action": {
+    "prefix": "mda",
+    "body": "_$1: $1"
+  },
+  "Export Connected Component": {
+    "prefix": "edc",
+    "body": "export default connect(mapStateToProps, mapDispatchToProps)($1);",
+    "description": "Export Connected Component"
+  }
+}

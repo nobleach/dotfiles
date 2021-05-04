@@ -1,0 +1,87 @@
+{
+  "expect.assertions": {
+    "prefix": "ea",
+    "body": "expect.assertions($1);",
+    "description": "Expect Assertions"
+  },
+  "beforeEach": {
+    "prefix": "be",
+    "body": "beforeEach(() => {\n});",
+    "description": "beforeEach"
+  },
+  "describe lambda": {
+    "prefix": "des",
+    "body": "describe('${1:description}', () => {\n});",
+    "description": "describe lambda"
+  },
+  "it lambda": {
+    "prefix": "it",
+    "body": "it('${1:description}', () => {\n});",
+    "description": "it lambda"
+  },
+  "async test lambda": {
+    "prefix": "ate",
+    "body": "test('${1:description}', async () => {\n});",
+    "description": "async test lambda"
+  },
+  "toEqual": {
+    "prefix": "te",
+    "body": ".toEqual($1);",
+    "description": "toEqual"
+  },
+  "Sinon stub": {
+    "prefix": "ss",
+    "body": "sinon.stub()",
+    "description": "Sinon stub"
+  },
+  "Sinon stub with returns": {
+    "prefix": "ssr",
+    "body": "sinon.stub()\n\t.returns($1);",
+    "description": "Sinon stub with returns"
+  },
+  "Cypress get class^=": {
+    "prefix": "cgc",
+    "body": "cy.get('[class^=$1]')",
+    "description": "Cypress get class^="
+  },
+  "Cypress get data-cy=": {
+    "prefix": "cdg",
+    "body": "cy.get('[data-cy=$1]')",
+    "description": "Cypress get data-cy="
+  },
+  "Cypress should callback": {
+    "prefix": "csnc",
+    "body": ".should($node => {\n\texpect($node)$1\n});",
+    "description": "Cypress should callback"
+  },
+  "FeatureFlag": {
+    "prefix": "ff",
+    "body": "<FeatureFlag\n\tdescription=\"\"\n\tflagConfig=\"\"\n\tsiteTestName=\"\"\n\t${1:skipReport}\n>\n\t<FeatureVariant variant={'$2'}>\n\t</FeatureVariant>\n</FeatureFlag>",
+    "description": "FeatureFlag"
+  },
+  "AboveTheFoldOnlyServerRender": {
+    "prefix": "abv",
+    "body": "<AboveTheFoldOnlyServerRender skip>\n\t$1\n</AboveTheFoldOnlyServerRender>",
+    "description": "AboveTheFoldOnlyServerRender"
+  },
+  "Andrew Style Log": {
+    "prefix": "asl",
+    "body": "console.log(`\n\n\n\n\n$1\n\n\n\n`, $2);",
+    "description": "Andrew Style Log"
+  },
+  "Jim Style Log": {
+    "prefix": "jsl",
+    "body": "console.log('$1', $1);",
+    "description": "Jim Style Log"
+  },
+  "Console Log": {
+    "prefix": "cl",
+    "body": "console.log($1);",
+    "description": "Console Log"
+  },
+  "Try/Catch (no Finally)": {
+    "prefix": "tc",
+    "body": "try {\n} catch (e) {\n}",
+    "description": "Try/Catch (no Finally)"
+  }
+}

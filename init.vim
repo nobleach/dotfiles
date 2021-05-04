@@ -189,43 +189,16 @@ nnoremap <silent><C-f> :Search<CR>
 
 Plug 'AndrewRadev/splitjoin.vim'
 
-" Get ultisnips loaded BEFORE coc.nvim
-" Plug 'SirVer/ultisnips'
-" let g:UltiSnipsSnippetDirectories = ['/home/jim/.config/nvim/UltiSnips']
-" Plug 'honza/vim-snippets'
-" let g:UltiSnipsExpandTrigger="<c-b>"
-" let g:UltiSnipsJumpForwardTrigger="<c-f>"
-"  let g:UltiSnipsJumpBackwardTrigger="<s-t>"
-" let g:UltiSnipsExpandTrigger="<c-j>"
-" let g:UltiSnipsJumpForwardTrigger="<c-j>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-set  runtimepath+=/usr/bin/fzf
-" Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
-" --column: Show column number
-" --line-number: Show line number
-" --no-heading: Do not show file headings in results
-" --fixed-strings: Search term as a literal string
-" --ignore-case: Case insensitive search
-" --no-ignore: Do not respect .gitignore, etc...
-" --hidden: Search hidden files and folders
-" --follow: Follow symlinks
-" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-" --color: Search color options
-" command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
-" nnoremap <C-p> :Files<CR>
-" nnoremap <leader>f :Find<CR>
- " nnoremap <leader>f :FzfPreviewProjectGrep<CR>
-" nnoremap <C-p> :CocCommand fzf-preview.ProjectFiles<CR>
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
-nnoremap <C-p> :CocCommand fzf-preview.ProjectFiles<CR>
-nnoremap <leader>f :CocCommand fzf-preview.ProjectGrep .<CR>
-" nnoremap <leader>z :CocCommand fzf-preview.Buffers<CR>
+" Telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <leader>f <cmd>Telescope live_grep<cr>
 
 Plug 'Shougo/denite.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" don't give |ins-completion-menu| messages.
 set shortmess+=c
 
 " always show signcolumns
@@ -309,10 +282,10 @@ Plug 'tpope/vim-commentary'
 " map p <Plug>(miniyank-autoput)
 " map P <Plug>(miniyank-autoPut)
 " map <leader>n <Plug>(miniyank-cycle)
+" nmap <silent> <leader>m :Denite miniyank<CR>
 " map <leader>N <Plug>(miniyank-cycleback)
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-nmap <silent> <leader>m :Denite miniyank<CR>
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
@@ -320,7 +293,6 @@ let g:airline#extensions#tabline#buf_min_count = 10
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_section_warning = ''
-" let g:airline_theme='solarized'
 let g:airline_theme='powerlineish'
 
 " Plug 'edkolev/tmuxline.vim'
@@ -334,7 +306,7 @@ let g:airline_theme='powerlineish'
 "       \'y'    : '%R %a %Y',
 "       \'z'    : '#(tmux-battery)'}
 Plug 'scrooloose/nerdtree'
-map <C-n> :NERDTreeToggle<CR>
+nmap <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeShowHidden=1
 let g:NERDTreeDirArrows = 1
@@ -357,9 +329,9 @@ let g:indentLine_color_term = 239
 Plug 'matze/vim-move'
 " let g:move_key_modifier = 'C'
 let g:move_map_keys = 0
+vmap <C-h> <Plug>MoveBlockLeft
 vmap <C-j> <Plug>MoveBlockDown
 vmap <C-k> <Plug>MoveBlockUp
-vmap <C-h> <Plug>MoveBlockLeft
 vmap <C-l> <Plug>MoveBlockRight
 
 nmap <C-k> <Plug>MoveLineUp

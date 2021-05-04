@@ -1,0 +1,30 @@
+colorscheme blue-moon
+
+lua require ('general.config')
+lua require('plugins')
+lua require('statusline')
+lua require('lsp')
+lua require('completion')
+lua require('quality')
+lua require ('general.mappings')
+
+imap <expr> <C-b>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-b>'
+smap <expr> <C-b>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-b>'
+
+" a list of groups can be found at `:help nvim_tree_highlight`
+""highlight NvimTreeFolderIcon guibg=blue
+" set tabstop=2       " number of visual spaces per TAB
+" set softtabstop=2   " number of spaces in tab when editing
+" set shiftwidth=2    " number of spaces to use for autoindent
+" set expandtab       " tabs are space
+" set autoindent
+" set copyindent      " copy indent from the previous line
+" set noshowmode "don't show insert/normal when we already see that on status line
+" set shortmess+=c " disable Pattern not found while typing
+
+lua << EOF
+vim.cmd[[ hi IndentBlankLineChar guifg=#46424c gui=nocombine ]]
+vim.cmd[[ hi IndentBlankLineSpaceChar guifg=#00ff00 gui=nocombine ]]
+vim.cmd[[ hi IndentBlankLineSpaceCharBlankLine guifg=#00ffff gui=nocombine ]]
+vim.cmd[[ hi IndentBlankLineContextHighlight guifg=#e98d26 gui=nocombine ]]
+EOF
