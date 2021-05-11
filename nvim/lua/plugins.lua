@@ -64,6 +64,6 @@ return require('packer').startup(function()
     'glepnir/galaxyline.nvim', branch = 'main', config = function() require'statusline' end,
     requires = {'kyazdani42/nvim-web-devicons'}
   }
-  -- You can specify multiple plugins in a single call
-  use {'tjdevries/colorbuddy.vim', {'nvim-treesitter/nvim-treesitter', opt = true}}
+
+  use {'tjdevries/colorbuddy.vim'}
 end)

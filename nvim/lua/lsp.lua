@@ -12,10 +12,10 @@ local on_attach = function(client, bufnr)
       vim.api.nvim_buf_set_option(bufnr, ...)
     end
 
-    -- Mappings.
+    -- Mappings. ***DO NOT CURRENTLY WORK - REFERENCE ONLY***
     local opts = {noremap = true, silent = true}
-    buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
     buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
     buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>',
@@ -77,7 +77,7 @@ capabilities.textDocument.completion.completionItem.resolveSupport =
 
 -- List LSP Servers here
 local servers = {
-    "gopls", "clangd", "pyright", "rust_analyzer", "tsserver"
+    "tsserver"
 }
 for _, lsp in ipairs(servers) do
     require('lspconfig')[lsp].setup {
@@ -96,7 +96,7 @@ nvim_lsp.tsserver.setup {
         ts_utils.setup {
             disable_commands = false,
             debug = false,
-            enable_import_on_completion = false,
+            enable_import_on_completion = true,
             import_on_completion_timeout = 5000,
             -- eslint
             eslint_bin = "eslint",

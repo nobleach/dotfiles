@@ -19,6 +19,11 @@
     "body": "it('${1:description}', () => {\n});",
     "description": "it lambda"
   },
+  "it async lambda": {
+    "prefix": "ita",
+    "body": "it('${1:description}', async () => {\n});",
+    "description": "it async lambda"
+  },
   "async test lambda": {
     "prefix": "ate",
     "body": "test('${1:description}', async () => {\n});",
