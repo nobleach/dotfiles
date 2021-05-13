@@ -39,6 +39,8 @@ vim.api.nvim_set_keymap('n', '<C-p>', '<cmd>Telescope find_files<cr>',
   {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>Telescope live_grep<cr>',
   {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>8', "<cmd>lua require('telescope.builtin').grep_string { search = vim.fn.expand(\"<cword>\") }<CR>",
+  {noremap = true, silent = true})
 
 -- LSP Diagnostics
 vim.api.nvim_set_keymap('n', '<leader>xx', '<cmd>LspTroubleToggle<cr>',

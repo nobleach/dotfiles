@@ -7,6 +7,7 @@ require('statusline')
 require('lsp')
 require('completion')
 require('quality')
+require('general.personal')
 require ('general.mappings')
 
 --imap <expr> <C-b>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-b>'
