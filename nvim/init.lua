@@ -1,6 +1,3 @@
--- Set colorscheme first to allow highlight overrides
-vim.cmd[[colorscheme blue-moon]]
-
 require ('general.config')
 require('plugins')
 require('statusline')
@@ -9,9 +6,6 @@ require('completion')
 require('quality')
 require('general.personal')
 require ('general.mappings')
-
---imap <expr> <C-b>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-b>'
---smap <expr> <C-b>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-b>'
 
 --For Vim-Move
 vim.cmd[[

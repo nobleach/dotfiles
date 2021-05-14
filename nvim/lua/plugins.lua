@@ -22,6 +22,7 @@ return require('packer').startup(function()
   use 'tpope/vim-surround'
   use 'folke/lsp-colors.nvim'
   use 'matze/vim-move'
+  use 'akinsho/nvim-bufferline.lua'
 
   -- Load on an autocommand event
   use {'andymass/vim-matchup', event = 'VimEnter'}

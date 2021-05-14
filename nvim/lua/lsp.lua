@@ -75,9 +75,15 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport =
     {properties = {'documentation', 'detail', 'additionalTextEdits'}}
 
+-- Add capabilities to ccls
+require'lspconfig'.cssls.setup {
+  capabilities = capabilities,
+}
+
 -- List LSP Servers here
 local servers = {
-    "tsserver"
+  "ccls",
+  "tsserver"
 }
 for _, lsp in ipairs(servers) do
     require('lspconfig')[lsp].setup {

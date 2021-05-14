@@ -39,6 +39,31 @@ require'colorizer'.setup({'html', 'css', 'javascript'}, {
     css_fn = true
 })
 
+-- Bufferline
+require'bufferline'.setup{
+  options = {
+    view = "multiwindow",
+    indicator_icon = '▎',
+    modified_icon = '●',
+    left_trunc_marker = '',
+    right_trunc_marker = '',
+    max_name_length = 18,
+    max_prefix_length = 15,
+    tab_size = 18,
+    diagnostics = "nvim_lsp",
+    diagnostics_indicator = function(count, level, diagnostics_dict)
+      return "("..count..")"
+    end,
+    offsets = {{filetype = "NvimTree", text = "File Explorer"}},
+    show_buffer_icons = true, -- disable filetype icons for buffers
+    show_buffer_close_icons = false,
+    show_close_icon = false,
+    show_tab_indicators = true,
+    separator_style = "slant",
+    always_show_bufferline = true
+  }
+}
+
 -- Auto pairs
 require('nvim-autopairs').setup()
 

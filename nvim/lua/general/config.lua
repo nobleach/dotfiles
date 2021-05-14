@@ -2,6 +2,9 @@
 vim.o.termguicolors = true
 vim.cmd 'syntax enable'
 vim.cmd 'filetype plugin indent on'
+-- does not work
+-- vim.g.colorscheme = 'blue-moon'
+vim.cmd[[colorscheme blue-moon]]
 vim.g.mapleader = ' '
 vim.o.clipboard = "unnamedplus"
 vim.o.completeopt = "menuone,noinsert"
