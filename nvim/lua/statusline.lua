@@ -72,6 +72,12 @@ local function file_name(is_active, highlight_group)
   return fileinfo.get_current_file_name(icons.file.modified, icons.file.read_only)
 end
 
+local in_git_repo = function()
+    local vcs = require('galaxyline.provider_vcs')
+    local branch_name = vcs.get_git_branch()
+
+    return branch_name ~= nil
+end
 -- --------------------------------------Left side-----------------------------------------------------------
 local i = 1
 gls.left[i] = {
@@ -184,6 +190,20 @@ gls.right[j] = {
   FirstSeparator = {
     provider = function() return icons.sep.right end,
     highlight = { colors.section_bg, colors.bg },
+  }
+}
+
+j = j + 1
+gls.right[j] = {
+  GitBranch = {
+    provider = function()
+      local vcs = require('galaxyline.provider_vcs')
+      local branch_name = vcs.get_git_branch()
+      if (string.len(branch_name) > 28) then return string.sub(branch_name, 1, 25) .. "..." end
+      return "  " .. branch_name .. " "
+    end,
+    condition = in_git_repo,
+    highlight = { colors.cyan, colors.bg },
   }
 }
 
