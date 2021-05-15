@@ -88,5 +88,42 @@
     "prefix": "tc",
     "body": "try {\n} catch (e) {\n}",
     "description": "Try/Catch (no Finally)"
+  },
+  "Create Action": {
+    "prefix": "ca",
+    "body": "export const $1 = '$1';",
+    "description": "Register Redux Action"
+  },
+  "Render React Component Test": {
+    "prefix": "rrct",
+    "body": "import React from 'react';\nimport { shallow } from 'enzyme';\nimport { $1 } from './$1';\n\ndescribe('$1', () => {\n\tit('should render null when $1 is not supposed to render', () => {\n\t\tconst wrapper = shallow(<$1 ${2:shouldShowComponentVar}={false} />);\n\t\texpect(wrapper.type()).toEqual(null);\n\t});\n\n\tit('description', () => {\n\t\tconst wrapper = shallow(<$1 ${2:shouldShowComponentVar}={true} />);\n\t\texpect(wrapper.find('.className').length).toEqual(1);\n\t});\n});\n",
+    "description": "Render React Component Test"
+  },
+  "Create Reducer": {
+    "prefix": "red",
+    "body": "export function ${1:entity}Reducer(state = {}, action = {}) {\n\tswitch (action.type) {\n\t\tcase ${2:ACTION}: {\n\t\t\treturn state;\n\t\t}\n\n\t\tdefault:\n\t\t\treturn state;\n\t}\n}",
+    "description": "Create Reducer"
+  },
+  "create selector": {
+		"scope": "javascript,jsx,html, react",
+    "prefix": "csel",
+    "body": "export const ${1:name} = createSelector(\n);",
+    "description": "create selector"
+  },
+  "get state selector": {
+    "prefix": "gs",
+    "body": "const $1 = get${1/(.)(.*)/\\u$1$2/}(state);",
+    "description": "get state selector"
+  },
+  "Action Creator": {
+		"scope": "javascript, jsx, html, react",
+    "prefix": "act",
+    "body": "export function ${1:name}() {\n\treturn {\n\t\ttype: ${2:action}\n\t};\n}",
+    "description": "Action Creator"
+  },
+  "Eslint Disable": {
+    "prefix": "esd",
+    "body": "/* eslint-disable */\n/* eslint-enable */",
+    "description": "Eslint Disable"
   }
 }

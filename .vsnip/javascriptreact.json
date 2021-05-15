@@ -29,7 +29,7 @@
   "get state selector": {
 		"scope": "javascript,jsx,html, react",
     "prefix": "gs",
-    "body": "const $1 = get${1/(.)(.*)/\\u$1$2/}(state);",
+    "body": "$1: get${1/(.)(.*)/\\u$1$2/}(state),",
     "description": "get state selector"
   },
   "Describe Simple Selector": {

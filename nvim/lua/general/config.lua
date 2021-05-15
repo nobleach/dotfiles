@@ -2,6 +2,12 @@
 vim.o.termguicolors = true
 vim.cmd 'syntax enable'
 vim.cmd 'filetype plugin indent on'
+vim.cmd[[
+set autoread
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+autocmd FileChangedShellPost *
+  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+]]
 -- does not work
 -- vim.g.colorscheme = 'blue-moon'
 vim.cmd[[colorscheme blue-moon]]
@@ -44,6 +50,7 @@ vim.o.backup = false
 vim.o.undodir = os.getenv("HOME") .. "/.cache/nvim/undodir/"
 vim.o.undofile = true
 vim.o.incsearch = true
+vim.g.user_emmet_leader_key = '<c-e>'
 
 -- hide line numbers in terminal windows
 vim.api.nvim_exec([[
