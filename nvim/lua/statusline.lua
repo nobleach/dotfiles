@@ -26,12 +26,18 @@ local mode_color = function()
   local mode_colors = {
     n = colors.cyan,
     i = colors.green,
+    s = colors.green,
+    S = colors.green,
     c = colors.orange,
     V = colors.magenta,
     [''] = colors.magenta,
     v = colors.magenta,
     R = colors.red,
   }
+
+  -- If mode isn't in map, default to insert
+  if mode_colors[vim.fn.mode()] == nil then return mode_colors[i] end
+
   return mode_colors[vim.fn.mode()]
 end
 
@@ -108,6 +114,8 @@ gls.left[i] = {
       local alias = {
         n       = 'NORMAL ',
         i       = 'INSERT ',
+        s       = 'Select',
+        S       = 'Select',
         c       = 'COMMAND',
         V       = 'VISUAL ',
         ['']  = 'VISUAL ',

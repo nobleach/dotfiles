@@ -2,6 +2,7 @@
 vim.o.termguicolors = true
 vim.cmd 'syntax enable'
 vim.cmd 'filetype plugin indent on'
+-- Re-read buffer if it was modified outside of vim
 vim.cmd[[
 set autoread
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif

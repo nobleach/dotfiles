@@ -23,6 +23,9 @@ return require('packer').startup(function()
   use 'folke/lsp-colors.nvim'
   use 'matze/vim-move'
   use 'akinsho/nvim-bufferline.lua'
+  use 'axelf4/vim-strip-trailing-whitespace'
+  use 'kburdett/vim-nuuid'
+  use 'maxmellon/vim-jsx-pretty'
 
   -- Load on an autocommand event
   use {'andymass/vim-matchup', event = 'VimEnter'}

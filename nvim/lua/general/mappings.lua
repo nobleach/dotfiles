@@ -12,6 +12,14 @@ vim.api.nvim_set_keymap('v', '<leader><leader>', [[<esc>]],
 vim.api.nvim_set_keymap('i', 'jk', [[<esc>]],
   {noremap = true, silent = true})
 
+-- Set relative numbering
+vim.api.nvim_set_keymap('n', '<leader>0', '<cmd>set relativenumber!<cr>',
+  {noremap = true, silent = true})
+
+-- Swap splits
+vim.api.nvim_set_keymap('n', '<leader>]', [[<C-w>r]],
+  {noremap = true, silent = true})
+
 -- Easily navigate splits
 vim.api.nvim_set_keymap('n', '<leader>h', [[<C-w>h]],
   {noremap = true, silent = true})
@@ -26,6 +34,14 @@ vim.api.nvim_set_keymap('n', '<leader>k', [[<C-w>k]],
 vim.api.nvim_set_keymap('n', '<C-h>', [[gT]],
   {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<C-l>', [[gt]],
+  {noremap = true, silent = true})
+
+-- Paste on next/new line
+vim.api.nvim_set_keymap('n', 'gn', '<cmd>pu<cr>==',
+  {noremap = true, silent = true})
+
+-- Run through JSON tool
+vim.api.nvim_set_keymap('n', 'ga', '<cmd>%! python -m json.tool<CR>',
   {noremap = true, silent = true})
 
 -- File Tree
