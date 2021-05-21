@@ -83,7 +83,8 @@ require'lspconfig'.cssls.setup {
 -- List LSP Servers here
 local servers = {
   "ccls",
-  "tsserver"
+  "tsserver",
+  "efm"
 }
 for _, lsp in ipairs(servers) do
     require('lspconfig')[lsp].setup {

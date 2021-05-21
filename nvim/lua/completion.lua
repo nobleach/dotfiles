@@ -33,16 +33,16 @@ require'compe'.setup {
     documentation = true,
 
     source = {
-        path = true;
-        buffer = true;
-        calc = true;
-        vsnip = true;
-        nvim_lsp = true;
-        nvim_lua = true;
-        spell = true;
-        tags = true;
-        snippets_nvim = true;
-        treesitter = true;
+      vsnip = { priority = 1000; };
+      nvim_lsp = { priority = 900; };
+      path = { priority = 600; };
+      treesitter = { priority = 500};
+      sort = { priority = 500; };
+      tags = { priority = 500; };
+      spell = { priority = 500; };
+      buffer = { priority = 500; };
+      calc = { priority = 500; };
+      nvim_lua = { priority = 500; };
     }
 }
 local capabilities = vim.lsp.protocol.make_client_capabilities()

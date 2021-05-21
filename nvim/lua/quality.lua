@@ -28,6 +28,9 @@
      autotag = {enable = true}
  }
 
+-- Nvim-tree
+require'nvim-tree.view'.View.width = 50
+
 -- Colorizer
 require'colorizer'.setup({'html', 'css', 'javascript'}, {
     RGB = true,

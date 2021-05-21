@@ -31,9 +31,12 @@ local mode_color = function()
     c = colors.orange,
     V = colors.magenta,
     [''] = colors.magenta,
+    ['^V'] = colors.magenta,
     v = colors.magenta,
     R = colors.red,
   }
+
+ -- print(vim.fn.mode())
 
   -- If mode isn't in map, default to insert
   if mode_colors[vim.fn.mode()] == nil then return mode_colors[i] end
