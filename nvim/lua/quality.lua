@@ -1,31 +1,42 @@
 -- TreeSitter
  require("nvim-treesitter.configs").setup {
-     ensure_installed = "all",
-     rainbow = {
-         enable = true,
-         extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
-         max_file_lines = 1000 -- Do not enable for files with more than 1000 lines, int
-     },
-     refactor = {
-         highlight_definitions = {enable = true},
-         -- highlight_current_scope = {enable = true},
-         smart_rename = {
-             enable = true,
-             keymaps = {smart_rename = "grr"},
-             navigation = {
-                 enable = true,
-                 keymaps = {
-                     goto_definition = "gnd",
-                     list_definitions = "gnD",
-                     list_definitions_toc = "gO",
-                     goto_next_usage = "<a-*>",
-                     goto_previous_usage = "<a-#>"
-                 }
-             }
-         }
-     },
-     highlight = {enable = {enabled = true, use_languagetree = true}},
-     autotag = {enable = true}
+   ensure_installed = {
+     'c', 'cpp', 'dart', 'go', 'html', 'java', 'javascript', 'python', 'ruby',
+     'rust', 'typescript'
+   },
+   rainbow = {
+       enable = true,
+       extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
+       max_file_lines = 1000 -- Do not enable for files with more than 1000 lines, int
+   },
+   refactor = {
+       highlight_definitions = {enable = true},
+       -- highlight_current_scope = {enable = true},
+       smart_rename = {
+           enable = true,
+           keymaps = {smart_rename = "grr"},
+           navigation = {
+               enable = true,
+               keymaps = {
+                   goto_definition = "gnd",
+                   list_definitions = "gnD",
+                   list_definitions_toc = "gO",
+                   goto_next_usage = "<a-*>",
+                   goto_previous_usage = "<a-#>"
+               }
+           }
+       }
+   },
+   indent = {
+     enable = false
+   },
+   -- Disable the types that do not work
+   -- indent = { enable = true, disable = { 'blade' , 'vue' } },
+   highlight = {
+     enable = true,
+     additional_vim_regex_highlighting = true
+   },
+   autotag = {enable = true}
  }
 
 -- Nvim-tree
@@ -43,7 +54,7 @@ require'colorizer'.setup({'html', 'css', 'javascript'}, {
 })
 
 -- Bufferline
-require'bufferline'.setup{
+--[[ require'bufferline'.setup{
   options = {
     view = "multiwindow",
     indicator_icon = '▎',
@@ -65,7 +76,7 @@ require'bufferline'.setup{
     separator_style = "slant",
     always_show_bufferline = true
   }
-}
+} ]]
 
 -- Auto pairs
 require('nvim-autopairs').setup()

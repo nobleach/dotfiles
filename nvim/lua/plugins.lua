@@ -6,6 +6,9 @@ return require('packer').startup(function()
 
   use 'neovim/nvim-lspconfig'
   use 'kyazdani42/blue-moon'
+  use 'rktjmp/lush.nvim'
+  use 'npxbr/gruvbox.nvim'
+  use 'marko-cerovac/material.nvim'
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/vim-vsnip-integ'
   use 'rafamadriz/friendly-snippets'
@@ -22,10 +25,11 @@ return require('packer').startup(function()
   use 'tpope/vim-surround'
   use 'folke/lsp-colors.nvim'
   use 'matze/vim-move'
-  use 'akinsho/nvim-bufferline.lua'
+  -- use 'akinsho/nvim-bufferline.lua'
   use 'axelf4/vim-strip-trailing-whitespace'
   use 'kburdett/vim-nuuid'
   use 'maxmellon/vim-jsx-pretty'
+  use 'romgrk/searchReplace.vim'
 
   -- Load on an autocommand event
   use {'andymass/vim-matchup', event = 'VimEnter'}

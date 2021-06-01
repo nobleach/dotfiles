@@ -6,12 +6,13 @@ vim.cmd 'filetype plugin indent on'
 vim.cmd[[
 set autoread
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
-autocmd FileChangedShellPost *
-  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 ]]
--- does not work
--- vim.g.colorscheme = 'blue-moon'
+vim.o.background = "dark" -- or "light" for light mode
+-- vim.cmd([[colorscheme gruvbox]])
 vim.cmd[[colorscheme blue-moon]]
+-- vim.cmd[[colorscheme material]]
+
 vim.g.mapleader = ' '
 vim.o.clipboard = "unnamedplus"
 vim.o.completeopt = "menuone,noinsert"

@@ -80,9 +80,13 @@ require'lspconfig'.cssls.setup {
   capabilities = capabilities,
 }
 
+-- Go config for gopls
+require'lspconfig'.gopls.setup{}
+
 -- List LSP Servers here
 local servers = {
   "ccls",
+  "gopls",
   "tsserver",
   "efm"
 }
@@ -96,6 +100,7 @@ end
 local nvim_lsp = require("lspconfig")
 
 nvim_lsp.tsserver.setup {
+    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
     on_attach = function(client, bufnr)
         local ts_utils = require("nvim-lsp-ts-utils")
 
@@ -112,17 +117,17 @@ nvim_lsp.tsserver.setup {
 
 	    -- experimental settings!
             -- eslint diagnostics
-            eslint_enable_diagnostics = false,
+            eslint_enable_diagnostics = true,
             eslint_diagnostics_debounce = 250,
             -- formatting
-            enable_formatting = false,
+            enable_formatting = true,
             formatter = "prettier",
             formatter_args = {"--stdin-filepath", "$FILENAME"},
             format_on_save = false,
             no_save_after_format = false,
             -- parentheses completion
             complete_parens = false,
-            signature_help_in_parens = false,
+            signature_help_in_parens = true,
         }
 
         -- required to enable ESLint code actions and formatting

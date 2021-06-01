@@ -79,3 +79,7 @@ vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>'
   {silent = true, noremap = true})
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>',
   {silent = true, noremap = true})
+
+-- Search and replace
+vim.api.nvim_set_keymap('n', '<C-f>', '<cmd>Search<CR>',
+  {silent = true, noremap = true})
