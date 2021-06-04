@@ -16,7 +16,7 @@
   },
   "it lambda": {
     "prefix": "it",
-    "body": "it('${1:description}', () => {\n});",
+    "body": "it('${1:description}', () => {\n\t$0});",
     "description": "it lambda"
   },
   "it async lambda": {
