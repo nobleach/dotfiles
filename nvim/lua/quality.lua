@@ -1,3 +1,8 @@
+-- Telescope
+
+require('telescope').setup()
+require('telescope').load_extension('dap')
+
 -- TreeSitter
  require("nvim-treesitter.configs").setup {
    ensure_installed = {
@@ -99,6 +104,12 @@ vim.g.indent_blankline_context_patterns = {'class', 'function', 'method', '^if',
 vim.g.indent_blankline_filetype = {'json','lua', 'terraform', 'javascript', 'javascriptreact'}
 -- vim.g.indent_blankline_indent_level = 3
 
+-- Goto Preview
+require('goto-preview').setup {}
+vim.api.nvim_set_keymap('n', 'gpd', '<cmd>lua require("goto-preview").goto_preview_definition()<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', 'gpi', '<cmd>lua require("goto-preview").goto_preview_implementation()<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', 'gP', '<cmd>lua require("goto-preview").close_all_win()<CR>', { noremap = true })
+
 -- Toggle to disable mouse mode and indentlines for easier paste
 ToggleMouse = function()
   if vim.o.mouse == 'a' then
@@ -117,3 +128,25 @@ ToggleMouse = function()
 end
 
 vim.api.nvim_set_keymap('n', '<F10>', '<cmd>lua ToggleMouse()<cr>', { noremap = true })
+
+-- NERDTree
+--[[ vim.cmd[[
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd FileType nerdtree setlocal nolist
+let NERDTreeShowHidden=1
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeWinSize=60
+]]
+
+-- Nvim DAP
+local dap = require('dap')
+dap.adapters.node2 = {
+  type = 'executable',
+  command = 'node',
+  args = {os.getenv('HOME') .. '/bin/vscode-node-debug2/out/src/nodeDebug.js'},
+}
+vim.fn.sign_define('DapBreakpoint', {text='🟥', texthl='', linehl='', numhl=''})
+vim.fn.sign_define('DapStopped', {text='⭐️', texthl='', linehl='', numhl=''})
+require("dapui").setup()

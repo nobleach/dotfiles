@@ -97,7 +97,7 @@
     "body": [
       "const ${1:$TM_FILENAME_BASE} = () => {",
       "  return (",
-      "    <div />",
+      "    <section></section>",
       "  );",
       "}",
       "",
@@ -107,10 +107,37 @@
     ],
     "description": "Stateless Functional Component"
   },
+  "Stateless Functional Connected Component": {
+    "prefix": "sfcc",
+    "body": [
+      "const ${1:$TM_FILENAME_BASE} = () => {",
+      "  return (",
+      "    <section></section>",
+      "  );",
+      "}",
+      "",
+      "$1.propTypes = {};",
+      "",
+      "function mapStateToProps(state) {",
+      "  return {};",
+      "}",
+      "",
+      "const mapDispatchToProps = {};",
+      "",
+      "$export default connect(mapStateToProps, mapDispatchToProps)($1);"
+    ],
+    "description": "Stateless Functional Component"
+  },
   "Import CSS Modules styles": {
 		"scope": "javascript, jsx, html, react",
     "prefix": "styl",
     "body": "import styles from '$1';",
+    "description": "Import CSS Modules styles"
+  },
+  "Import Less Modules styles": {
+		"scope": "javascript, jsx, html, react",
+    "prefix": "ilm",
+    "body": "import styles from './${1:$TM_FILENAME_BASE}.module.less';",
     "description": "Import CSS Modules styles"
   },
   "Map State To Props": {

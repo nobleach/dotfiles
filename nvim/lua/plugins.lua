@@ -30,6 +30,19 @@ return require('packer').startup(function()
   use 'kburdett/vim-nuuid'
   use 'maxmellon/vim-jsx-pretty'
   use 'romgrk/searchReplace.vim'
+  use 'rmagatti/goto-preview'
+
+  -- Nvim DAP
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+
+  -- Let's go back to NerdTree for now
+  --[[ use {
+   'scrooloose/nerdtree',
+        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+   } ]]
+
+  -- Language specific
+  use 'vim-crystal/vim-crystal'
 
   -- Load on an autocommand event
   use {'andymass/vim-matchup', event = 'VimEnter'}
@@ -38,6 +51,7 @@ return require('packer').startup(function()
    'kyazdani42/nvim-tree.lua',
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
    }
+
    use {
      "folke/lsp-trouble.nvim",
      requires = "kyazdani42/nvim-web-devicons",
@@ -53,6 +67,8 @@ return require('packer').startup(function()
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
   }
+
+  use 'nvim-telescope/telescope-dap.nvim'
 
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 

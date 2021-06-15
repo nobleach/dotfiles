@@ -136,3 +136,4 @@ source $HOME/.credentials.sh
 . ~/.asdf/plugins/java/set-java-home.zsh
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
+export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig

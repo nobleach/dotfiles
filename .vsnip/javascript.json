@@ -16,7 +16,7 @@
   },
   "it lambda": {
     "prefix": "it",
-    "body": "it('${1:description}', () => {\n\t$0});",
+    "body": "it('${1:description}', () => {\n});$0",
     "description": "it lambda"
   },
   "it async lambda": {
@@ -103,6 +103,17 @@
     "prefix": "red",
     "body": "export function ${1:entity}Reducer(state = {}, action = {}) {\n\tswitch (action.type) {\n\t\tcase ${2:ACTION}: {\n\t\t\treturn state;\n\t\t}\n\n\t\tdefault:\n\t\t\treturn state;\n\t}\n}",
     "description": "Create Reducer"
+  },
+  "Create newState": {
+    "prefix": "ns",
+    "body": [
+      "const newState = {",
+      "  ...state,$0",
+      "};",
+      "",
+      "return newState;"
+    ],
+    "description": "Create newState"
   },
   "create selector": {
 		"scope": "javascript,jsx,html, react",

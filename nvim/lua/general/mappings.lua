@@ -49,6 +49,8 @@ vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>NvimTreeToggle<cr>',
   {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', 'R', '<cmd>NvimTreeRefresh<cr>',
   {noremap = true, silent = true})
+--[[ vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>NERDTreeToggle<cr>',
+  {noremap = true, silent = true}) ]]
 
 -- Telescope
 vim.api.nvim_set_keymap('n', '<C-p>', '<cmd>Telescope find_files<cr>',
@@ -83,3 +85,37 @@ vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>'
 -- Search and replace
 vim.api.nvim_set_keymap('n', '<C-f>', '<cmd>Search<CR>',
   {silent = true, noremap = true})
+
+-- Nvim DAP
+vim.api.nvim_set_keymap('n', '<leader>da', "<cmd>lua require('debugHelper').attach()<CR>",
+  {silent = true, noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>dh', "<cmd>lua require'dap'.toggle_breakpoint()<CR>",
+  {silent = true, noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>di', "<cmd>lua require'dap.ui.widgets'.hover()<CR>",
+  {silent = true, noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>du', "<cmd>lua require('dapui').toggle()<CR>",
+  {silent = true, noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>dt', "lua require'dap'.step_out()<CR>",
+  {silent = true, noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>do', "lua require'dap'.step_into()<CR>",
+  {silent = true, noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>dr', "lua require'dap'.step_over()<CR>",
+  {silent = true, noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>ds', "lua require'dap'.stop()<CR>",
+  {silent = true, noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>dn', "lua require'dap'.continue()<CR>",
+  {silent = true, noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>dk', "lua require'dap'.up()<CR>",
+  {silent = true, noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>dj', "lua require'dap'.down()<CR>",
+  {silent = true, noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>d_', "lua require'dap'.run_last()<CR>",
+  {silent = true, noremap = true})
+
+-- Telescope
+vim.api.nvim_set_keymap('n', '<leader>df', "<cmd>Telescope dap frames<CR>",
+  {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>dc', "<cmd>Telescope dap commands<CR>",
+  {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>db', "<cmd>Telescope dap list_breakpoints<CR>",
+  {noremap = true, silent = true})
