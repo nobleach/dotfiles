@@ -150,8 +150,8 @@
     "body": "const mapDispatchToProps = {};"
   },
   "Map Dispatchable Action": {
-    "prefix": "mda",
-    "body": "_$1: $1"
+    "prefix": "wad",
+    "body": "_$1: $1,"
   },
   "Export Connected Component": {
     "prefix": "edc",

@@ -12,6 +12,10 @@ vim.api.nvim_set_keymap('v', '<leader><leader>', [[<esc>]],
 vim.api.nvim_set_keymap('i', 'jk', [[<esc>]],
   {noremap = true, silent = true})
 
+-- Close window
+vim.api.nvim_set_keymap('n', 'gq', '<cmd>q<CR>',
+  {noremap = true, silent = true})
+
 -- Set relative numbering
 vim.api.nvim_set_keymap('n', '<leader>0', '<cmd>set relativenumber!<cr>',
   {noremap = true, silent = true})

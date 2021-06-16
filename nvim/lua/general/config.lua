@@ -10,7 +10,9 @@ autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. B
 ]]
 vim.o.background = "dark" -- or "light" for light mode
 -- vim.cmd([[colorscheme gruvbox]])
-vim.cmd[[colorscheme blue-moon]]
+-- vim.cmd[[colorscheme blue-moon]]
+vim.cmd[[autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE]]
+vim.cmd[[colorscheme distinguished]]
 -- vim.cmd[[colorscheme material]]
 
 vim.g.mapleader = ' '
