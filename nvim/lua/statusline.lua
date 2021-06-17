@@ -5,12 +5,13 @@ local gls = gl.section
 local fileinfo = require('galaxyline.provider_fileinfo')
 
 gl.short_line_list = {'NvimTree','vista','dbui','packer', 'startify'}
+local separators = {bLeft = '  ', bRight = ' ', uLeft = ' ', uTop = ' '}
 
 
 local colors = {
   bg = '#22272e',
-  section_bg = '#3D434F',
   fg = '#f8f8f2',
+  section_bg = '#3D434F',
   grey = "#545454",
 
   blue = '#8be9fd',
@@ -46,8 +47,8 @@ end
 
 local icons = {
     sep = {
-        right = "",
-        left = ""
+        right = "",
+        left = ""
     },
     diagnostic = {
         error = " ",
@@ -93,7 +94,7 @@ gls.left[i] = {
   FirstElement = {
     provider = function() 
       vim.api.nvim_command('hi GalaxyFirstElement guifg='..mode_color()..' gui=bold')
-      return icons.sep.right 
+      return icons.sep.right
     end,
     highlight = { mode_color(), colors.bg }
   },
@@ -102,11 +103,13 @@ gls.left[i] = {
 i = i + 1
 gls.left[i] = {
   Logo = {
-    provider = function() 
+    provider = function()
       vim.api.nvim_command('hi GalaxyLogo guibg='..mode_color())
-      return '   ' 
+      return '     '
     end,
-    highlight = { colors.bg, mode_color() }
+    highlight = { colors.bg, mode_color() },
+    --[[ separator = icons.sep.right,
+    separator_highlight = {colors.bg, mode_color() }, ]]
   },
 }
 
@@ -120,8 +123,8 @@ gls.left[i] = {
         s       = 'Select',
         S       = 'Select',
         c       = 'COMMAND',
-        V       = 'VISUAL ',
-        ['']  = 'VISUAL ',
+        V       = 'V-LINE ',
+        ['']    = 'VISUAL ',
         v       = 'VISUAL ',
         R       = 'REPLACE',
       }
