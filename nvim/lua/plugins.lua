@@ -22,6 +22,7 @@ return require('packer').startup(function()
   use 'jose-elias-alvarez/nvim-lsp-ts-utils'
   use 'tpope/vim-repeat'
   use 'mattn/emmet-vim'
+  use 'AndrewRadev/splitjoin.vim'
   use 'tpope/vim-surround'
   use 'folke/lsp-colors.nvim'
   use 'matze/vim-move'
@@ -31,6 +32,7 @@ return require('packer').startup(function()
   use 'maxmellon/vim-jsx-pretty'
   use 'romgrk/searchReplace.vim'
   use 'rmagatti/goto-preview'
+  use 'tveskag/nvim-blame-line'
 
   -- Nvim DAP
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }

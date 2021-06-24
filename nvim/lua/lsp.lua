@@ -105,17 +105,10 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport =
     {properties = {'documentation', 'detail', 'additionalTextEdits'}}
 
--- Add capabilities to ccls
-require'lspconfig'.cssls.setup {
-  capabilities = capabilities,
-}
-
--- Go config for gopls
-require'lspconfig'.gopls.setup{}
-
 -- List LSP Servers here
 local servers = {
   "ccls",
+  "cssls",
   "gopls",
   "tsserver",
   "efm"
@@ -128,6 +121,17 @@ for _, lsp in ipairs(servers) do
 end
 
 local nvim_lsp = require("lspconfig")
+
+-- Add capabilities to ccls
+nvim_lsp.cssls.setup {
+  capabilities = capabilities,
+}
+
+-- Go config for gopls
+nvim_lsp.gopls.setup{
+  cmd = { "gopls" },
+  filetypes = { "go", "gomod" },
+}
 
 nvim_lsp.tsserver.setup {
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },

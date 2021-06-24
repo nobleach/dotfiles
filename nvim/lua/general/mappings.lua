@@ -123,3 +123,7 @@ vim.api.nvim_set_keymap('n', '<leader>dc', "<cmd>Telescope dap commands<CR>",
   {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>db', "<cmd>Telescope dap list_breakpoints<CR>",
   {noremap = true, silent = true})
+
+-- Git Blame
+vim.api.nvim_set_keymap('n', '<leader>b', "<cmd>ToggleBlameLine<CR>",
+  {noremap = true, silent = true})

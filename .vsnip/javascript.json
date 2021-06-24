@@ -94,6 +94,15 @@
     "body": "export const $1 = '$1';",
     "description": "Register Redux Action"
   },
+  "Create LOAD/FAIL/SUCCESS Actions": {
+    "prefix": "lfs",
+    "body": [
+      "export const $1_LOAD = '$1_LOAD';",
+      "export const $1_LOAD_FAILURE = '$1_FAILURE';",
+      "export const $1_LOAD_SUCCESS = '$1_LOAD_SUCCESS';"
+    ],
+    "description": "Register Redux Action"
+  },
   "Render React Component Test": {
     "prefix": "rrct",
     "body": "import React from 'react';\nimport { shallow } from 'enzyme';\nimport { $1 } from './$1';\n\ndescribe('$1', () => {\n\tit('should render null when $1 is not supposed to render', () => {\n\t\tconst wrapper = shallow(<$1 ${2:shouldShowComponentVar}={false} />);\n\t\texpect(wrapper.type()).toEqual(null);\n\t});\n\n\tit('description', () => {\n\t\tconst wrapper = shallow(<$1 ${2:shouldShowComponentVar}={true} />);\n\t\texpect(wrapper.find('.className').length).toEqual(1);\n\t});\n});\n",

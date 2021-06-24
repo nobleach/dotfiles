@@ -1,6 +1,6 @@
 require ('general.config')
 require('plugins')
-require('statusline')
+require('status-line')
 require('lsp')
 require('completion')
 require('quality')
