@@ -25,14 +25,14 @@ set-option -g display-panes-colour brightred
 set -g status-justify left
 
 # Selected window
-set-option -g window-status-current-format "#[bg=#303030,fg=#121212]#[bg=#303030,fg=#ffffff,bold] #I #[bg=#303030,fg=#ffffff]#W #[bg=#121212,fg=#303030]"
+set-option -g window-status-current-format "#[bg=#303030,fg=#121212]#[bg=#303030,fg=#ffffff,bold] #I #[bg=#303030,fg=#ffffff]#W #[bg=#121212,fg=#303030]"
 
 # Inactive window
-set-option -g window-status-format "#[bg=#121212,fg=#121212]#[bg=#121212,fg=colour231] #I #W #[bg=#121212,fg=#121212]"
+set-option -g window-status-format "#[bg=#121212,fg=#121212]#[bg=#121212,fg=colour231] #I #W #[bg=#121212,fg=#121212]"
 
 # Remove padding at the left hand side
 set -g status-left-length 32
-set -g status-left "#[bg=#afd700,fg=#121212]  spacelab: #I #[bg=#121212,fg=#afd700] "
+set -g status-left "#[bg=#8be9fd,fg=#121212]  spacelab: #I #[bg=#121212,fg=#8be9fd] "
 
 # Kubernetes context
 # #(/bin/bash $HOME/.tmux/plugins/kube-tmux/kube.tmux 250 red cyan)
@@ -40,4 +40,4 @@ set -g status-left "#[bg=#afd700,fg=#121212]  spacelab: #I #[bg=#121212,fg=#a
 # Show a clock at the right hand side
 set -g status-right-length 150
 # set -g status-right '#(/bin/bash $HOME/.tmux/kube.tmux 250 red cyan) #[bg=#121212,fg=#afd700,bold]#[bg=#afd700,fg=#444444] %H:%M '
-set -g status-right '#[bg=#121212,fg=#afd700,bold]#[bg=#afd700,fg=#444444] %H:%M '
+set -g status-right '#[bg=#121212,fg=#8be9fd,bold]#[bg=#8be9fd,fg=#444444] %H:%M '

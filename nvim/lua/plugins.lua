@@ -8,7 +8,7 @@ return require('packer').startup(function()
   use 'kyazdani42/blue-moon'
   use 'rktjmp/lush.nvim'
   use 'npxbr/gruvbox.nvim'
-  use 'marko-cerovac/material.nvim'
+  -- use 'marko-cerovac/material.nvim'
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/vim-vsnip-integ'
   use 'rafamadriz/friendly-snippets'
@@ -80,7 +80,7 @@ return require('packer').startup(function()
     requires = {{'hrsh7th/vim-vsnip', opt = true}, {'hrsh7th/vim-vsnip-integ', opt = true}}
   }
 
-  use { 'lukas-reineke/indent-blankline.nvim', branch="lua" }
+  use { 'lukas-reineke/indent-blankline.nvim', branch="master" }
 
   -- Post-install/update hook with neovim command
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }

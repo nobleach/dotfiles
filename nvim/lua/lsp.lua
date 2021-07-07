@@ -131,6 +131,9 @@ nvim_lsp.cssls.setup {
 nvim_lsp.gopls.setup{
   cmd = { "gopls" },
   filetypes = { "go", "gomod" },
+  flags = {
+    debounce_text_changes = 500,
+  },
 }
 
 nvim_lsp.tsserver.setup {
