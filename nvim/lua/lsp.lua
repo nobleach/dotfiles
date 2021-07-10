@@ -114,10 +114,10 @@ local servers = {
   "efm"
 }
 for _, lsp in ipairs(servers) do
-    require('lspconfig')[lsp].setup {
-        on_attach = on_attach,
-        capabilities = capabilities
-    }
+  require('lspconfig')[lsp].setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+  }
 end
 
 local nvim_lsp = require("lspconfig")

@@ -98,7 +98,7 @@
     "prefix": "lfs",
     "body": [
       "export const $1_LOAD = '$1_LOAD';",
-      "export const $1_LOAD_FAILURE = '$1_FAILURE';",
+      "export const $1_LOAD_FAILURE = '$1_LOAD_FAILURE';",
       "export const $1_LOAD_SUCCESS = '$1_LOAD_SUCCESS';"
     ],
     "description": "Register Redux Action"
