@@ -1,0 +1,51 @@
+{
+  "Data Class Constructor": {
+    "prefix": "dclass",
+    "body": [
+      "data class ${1:$TM_FILENAME_BASE} (",
+      ")"
+    ],
+    "description": "Data Class Constructor"
+  },
+  "JPA Entity": {
+    "prefix": "jent",
+    "body": [
+      "import org.hibernate.annotations.GenericGenerator",
+      "import javax.persistence.Column",
+      "import javax.persistence.Entity",
+      "import javax.persistence.GeneratedValue",
+      "import javax.persistence.Id",
+      "import javax.persistence.GenerationType",
+      "import javax.persistence.Table",
+      "import java.time.ZonedDateTime",
+      "import java.util.UUID",
+      "",
+      "@Entity",
+      "@Table(name = \"\")",
+      "data class ${1:$TM_FILENAME_BASE} (",
+      "  @GenericGenerator(name = \"UUIDGenerator\", strategy = \"uuid2\")",
+      "  @GeneratedValue(generator = \"UUIDGenerator\")",
+      "  @Column(name = \"id\", updatable = false, nullable = false)",
+      "  @Id",
+      "  var id: UUID?,",
+      "",
+      "  @Column(name = \"created_ts\")",
+      "  val createdTimestamp: ZonedDateTime? = ZonedDateTime.now(),",
+      "",
+      "  @Column(name = \"modified_ts\")",
+      "  val modifiedTimestamp: ZonedDateTime? = ZonedDateTime.now()",
+      ")"
+    ]
+  },
+  "Quarkus Panache Repository": {
+    "prefix": "qrepo",
+    "body": [
+      "import javax.enterprise.context.ApplicationScoped",
+      "import io.quarkus.hibernate.orm.panache.PanacheRepository",
+      "",
+      "@ApplicationScoped",
+      "class ${1:$TM_FILENAME_BASE} : PanacheRepository<${2:Entity}>{",
+      "}"
+    ]
+  }
+}

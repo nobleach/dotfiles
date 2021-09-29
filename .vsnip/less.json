@@ -1,0 +1,24 @@
+{
+  "Mobile Breakpoint": {
+    "prefix": ["brm"],
+    "body": [
+      "@media @mobile-phone {",
+      "}"
+    ],
+    "description": "Mobile Breakpoint"
+  },
+  "Import Colors": {
+    "prefix": ["imc"],
+    "body": [
+      "@import (reference) '../../colors.less';"
+    ],
+    "description": "Import project colors"
+  },
+  "Import Breakpoints": {
+    "prefix": ["imb"],
+    "body": [
+      "@import (reference) '../../breakpoints.less';"
+    ],
+    "description": "Import project breakpoints"
+  }
+}

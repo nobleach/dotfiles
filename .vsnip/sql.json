@@ -1,0 +1,15 @@
+{
+  "ct": {
+    "prefix": "ct",
+    "body": [
+      "CREATE TABLE ${1:tableName}",
+      "(",
+      "id UUID CONSTRAINT        $1_id_pkey PRIMARY KEY,",
+      "created_ts                TIMESTAMPTZ DEFAULT Now()      NOT NULL,",
+      "modified_ts               TIMESTAMPTZ DEFAULT Now()",
+      ");",
+      "COMMENT ON TABLE $1 IS '';"
+    ],
+    "description": "Create table with TIMESTAMPTZ"
+  }
+}

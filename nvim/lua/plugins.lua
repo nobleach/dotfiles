@@ -14,7 +14,6 @@ return require('packer').startup(function()
   use 'rafamadriz/friendly-snippets'
   use 'ray-x/lsp_signature.nvim'
   use 'onsails/lspkind-nvim'
-  use 'glepnir/lspsaga.nvim'
   use 'norcalli/nvim-colorizer.lua'
 --  use 'steelsojka/pears.nvim'
   use 'b3nj5m1n/kommentary'
@@ -33,6 +32,10 @@ return require('packer').startup(function()
   use 'romgrk/searchReplace.vim'
   use 'rmagatti/goto-preview'
   use 'tveskag/nvim-blame-line'
+  use 'mfussenegger/nvim-jdtls'
+  use 'EdenEast/nightfox.nvim'
+  use 'GustavoKatel/sidebar.nvim'
+  use 'sindrets/diffview.nvim'
 
   -- Nvim DAP
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
@@ -48,11 +51,13 @@ return require('packer').startup(function()
 
   -- Load on an autocommand event
   use {'andymass/vim-matchup', event = 'VimEnter'}
--- Nvim Tree
+  -- Nvim Tree
   use {
    'kyazdani42/nvim-tree.lua',
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
    }
+
+-- use({ 'ms-jpq/chadtree', run = 'python3 -m chadtree deps --nvim' })
 
    use {
      "folke/trouble.nvim",
@@ -91,5 +96,24 @@ return require('packer').startup(function()
     requires = {'kyazdani42/nvim-web-devicons'}
   }
 
+  use {
+    'weilbith/nvim-code-action-menu',
+    cmd = 'CodeActionMenu'
+  }
+  -- use 'weilbith/nvim-code-action-menu'
+
+  use 'kosayoda/nvim-lightbulb'
+
   use {'tjdevries/colorbuddy.vim'}
+
+  -- Clipboard
+  use {
+      "AckslD/nvim-neoclip.lua",
+      config = function()
+        require('neoclip').setup({
+          default_register = '+',
+        })
+      end,
+  }
+
 end)

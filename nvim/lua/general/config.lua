@@ -15,9 +15,13 @@ vim.cmd[[autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE]]
 vim.cmd[[colorscheme distinguished]]
 -- vim.cmd[[colorscheme material]]
 -- vim.cmd[[colorscheme nord]]
+--[[ vim.cmd[[colorscheme nightfox]]
+-- vim.g.nightfox_style = "nordfox" ]]
 
 vim.g.mapleader = ' '
-vim.o.clipboard = "unnamedplus"
+-- vim.o.clipboard = "unnamedplus"
+vim.opt.clipboard = {'unnamed', 'unnamedplus'}
+vim.cmd [[au TextYankPost * silent! lua vim.highlight.on_yank()]]
 vim.o.completeopt = "menuone,noinsert"
 vim.o.expandtab = true
 vim.o.foldmethod = "expr"
@@ -56,6 +60,14 @@ vim.o.undodir = os.getenv("HOME") .. "/.cache/nvim/undodir/"
 vim.o.undofile = true
 vim.o.incsearch = true
 vim.g.user_emmet_leader_key = '<c-e>'
+
+-- Java setup
+vim.cmd[[
+  augroup lsp
+    au!
+    au FileType java lua require('jdtls').start_or_attach({cmd = {'jdtls.sh'}})
+  augroup end
+  ]]
 
 -- hide line numbers in terminal windows
 vim.api.nvim_exec([[

@@ -1,9 +1,11 @@
 require ('general.config')
 require('plugins')
 require('status-line')
+require('sidebar')
 require('lsp')
 require('completion')
 require('quality')
+require('diffview')
 require('general.personal')
 require ('general.mappings')
 

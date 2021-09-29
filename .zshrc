@@ -33,6 +33,7 @@ alias dcu='docker-compose up'
 alias dcd='docker-compose down'
 alias sit='cd ~/Sites'
 alias vpw='cd ~/Sites/videopeel-web'
+alias vpa='cd ~/Sites/videopeel-web-api'
 alias vpp='cd ~/Sites/videopeel-plugin'
 alias yti='yarn test:integration'
 alias ytu='yarn test:unit'
@@ -117,6 +118,8 @@ export PATH="/usr/local/opt/llvm@5/bin:$PATH"
 LDFLAGS="-L/usr/local/opt/llvm@5/lib -Wl,-rpath,/usr/local/opt/llvm@5/lib"
 LIBRARY_PATH=/usr/local/opt/openssl/lib
 export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
+
+export JDTLS_HOME=/usr/bin
 
 # The next line updates PATH for the Google Cloud SDK.
 # if [ -f '/Users/jimwharton/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jimwharton/bin/google-cloud-sdk/path.zsh.inc'; fi

@@ -56,7 +56,29 @@ require('telescope').load_extension('dap')
  }
 
 -- Nvim-tree
-require'nvim-tree.view'.View.width = 50
+-- require'nvim-tree.view'.View.width = 50
+require('nvim-tree').setup {
+  auto_close      = true,
+  disable_netrw   = false,
+  hijack_netrw    = false,
+  auto_close      = true,
+  lsp_diagnostics = true,
+  view = {
+    -- width of the window, can be either a number (columns) or a string in `%`
+    width = 50,
+    -- side of the tree, can be one of 'left' | 'right' | 'top' | 'bottom'
+    side = 'left',
+    -- if true the tree will resize itself after opening a file
+    auto_resize = true,
+    mappings = {
+      -- custom only false will merge the list with the default mappings
+      -- if true, it will only use your list to set the mappings
+      custom_only = false,
+      -- list of mappings to set on the tree manually
+      list = {}
+    }
+  }
+}
 
 -- Colorizer
 require'colorizer'.setup({'html', 'css', 'javascript'}, {
@@ -161,3 +183,6 @@ dap.adapters.node2 = {
 vim.fn.sign_define('DapBreakpoint', {text='🟥', texthl='', linehl='', numhl=''})
 vim.fn.sign_define('DapStopped', {text='⭐️', texthl='', linehl='', numhl=''})
 require("dapui").setup()
+
+-- Lightbulb
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]

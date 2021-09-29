@@ -129,3 +129,7 @@ vim.api.nvim_set_keymap('n', '<leader>rr', "<cmd>lua require'telescope.builtin'.
 -- Git Blame
 vim.api.nvim_set_keymap('n', '<leader>b', "<cmd>ToggleBlameLine<CR>",
   {noremap = true, silent = true})
+
+-- Sidebar
+vim.api.nvim_set_keymap('n', '<leader>sb', "<cmd>SidebarNvimToggle<CR>",
+  {noremap = true, silent = true})

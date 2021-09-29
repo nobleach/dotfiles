@@ -1,9 +1,9 @@
 local on_attach = function(client, bufnr)
     -- LSP Signature
-    require"lsp_signature".on_attach({
+    --[[ require"lsp_signature".on_attach({
       bind = true,
       handler_opts = {border = "single"}
-    })
+    }) ]]
 
     local function buf_set_keymap(...)
       vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -18,8 +18,6 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
     buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>',
-                   opts)
     buf_set_keymap('n', '<space>wa',
                    '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
     buf_set_keymap('n', '<space>wr',
@@ -107,11 +105,18 @@ capabilities.textDocument.completion.completionItem.resolveSupport =
 
 -- List LSP Servers here
 local servers = {
+  "bashls",
   "ccls",
+  "crystalline",
   "cssls",
+  "dockerls",
   "gopls",
+  "kotlin_language_server",
+  "solargraph",
+  "svelte",
+  "terraformls",
   "tsserver",
-  "efm"
+  "yamlls"
 }
 for _, lsp in ipairs(servers) do
   require('lspconfig')[lsp].setup {
@@ -122,7 +127,7 @@ end
 
 local nvim_lsp = require("lspconfig")
 
--- Add capabilities to ccls
+-- Add capabilities to cssls
 nvim_lsp.cssls.setup {
   capabilities = capabilities,
 }

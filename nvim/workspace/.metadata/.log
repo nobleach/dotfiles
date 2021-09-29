@@ -1,0 +1,11 @@
+!SESSION 2021-08-16 07:07:56.105 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.8
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2021-08-16 07:07:57.468
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is started
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2021-08-16 07:07:57.629
+!MESSAGE Main thread is waiting
