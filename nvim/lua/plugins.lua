@@ -9,8 +9,8 @@ return require('packer').startup(function()
   use 'rktjmp/lush.nvim'
   use 'npxbr/gruvbox.nvim'
   -- use 'marko-cerovac/material.nvim'
-  use 'hrsh7th/vim-vsnip'
-  use 'hrsh7th/vim-vsnip-integ'
+  --[[ use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/vim-vsnip-integ' ]]
   use 'rafamadriz/friendly-snippets'
   use 'ray-x/lsp_signature.nvim'
   use 'onsails/lspkind-nvim'
@@ -36,6 +36,7 @@ return require('packer').startup(function()
   use 'EdenEast/nightfox.nvim'
   use 'GustavoKatel/sidebar.nvim'
   use 'sindrets/diffview.nvim'
+  use 'hashivim/vim-terraform'
 
   -- Nvim DAP
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
@@ -80,10 +81,16 @@ return require('packer').startup(function()
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
   -- Plugins can have dependencies on other plugins
-  use {
+  --[[ use {
     'hrsh7th/nvim-compe',
     requires = {{'hrsh7th/vim-vsnip', opt = true}, {'hrsh7th/vim-vsnip-integ', opt = true}}
-  }
+  } ]]
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
+
 
   use { 'lukas-reineke/indent-blankline.nvim', branch="master" }
 

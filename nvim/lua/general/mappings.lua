@@ -68,6 +68,10 @@ vim.api.nvim_set_keymap('n', '<leader>8', "<cmd>lua require('telescope.builtin')
 vim.api.nvim_set_keymap('n', '<leader>xx', '<cmd>LspTroubleToggle<cr>',
   {silent = true, noremap = true})
 
+-- LSP Code Actions
+vim.api.nvim_set_keymap('n', '<leader>xa', '<cmd>CodeActionMenu<cr>',
+{silent = true, noremap = true})
+
 -- NeoGit
 vim.api.nvim_set_keymap('n', '<leader>g', '<cmd>Neogit kind=split<CR>',
   {silent = true, noremap = true})

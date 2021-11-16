@@ -157,5 +157,15 @@
     "prefix": "edc",
     "body": "export default connect(mapStateToProps, mapDispatchToProps)($1);",
     "description": "Export Connected Component"
+  },
+  "div element": {
+    "prefix": "div",
+    "body": "<div className={}>$0</div>",
+    "description": "div element"
+  },
+  "section element": {
+    "prefix": "sec",
+    "body": "<div className={}>$0</div>",
+    "description": "section element"
   }
 }

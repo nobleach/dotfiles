@@ -1,6 +1,5 @@
 # Path to your oh-my-zsh configuration.
 ZSH=/usr/share/oh-my-zsh
-. ~/.asdf/plugins/dotnet-core/set-dotnet-home.zsh
 
 export MANPAGER='nvim +Man!'
 # initialise completions with ZSH's compinit
@@ -75,7 +74,7 @@ source $ZSH/oh-my-zsh.sh
 export TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins
 # Customize to your needs...
 GOPATH=$HOME/go
-export PATH=$GOPATH/bin:~/bin:~/.rbenv/bin:~/.rbenv/shims:/usr/local:/usr/local/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin$PATH
+export PATH=$GOPATH/bin:~/bin:~/.rbenv/bin:~/.rbenv/shims:/usr/local:/usr/local/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$HOME/.asdf/installs/rust/1.55.0/bin:$PATH
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 LC_ALL=$LANG
 
@@ -97,8 +96,6 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 #
-# Rustup src
-export RUST_SRC_PATH=~/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"

@@ -98,10 +98,11 @@ require('vim.lsp.protocol').CompletionItemKind = {
 }
 
 -- Enable Snippet Support in Lsp
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+--[[ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport =
-    {properties = {'documentation', 'detail', 'additionalTextEdits'}}
+    {properties = {'documentation', 'detail', 'additionalTextEdits'}} ]]
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- List LSP Servers here
 local servers = {
@@ -110,8 +111,10 @@ local servers = {
   "crystalline",
   "cssls",
   "dockerls",
+  "emmet_ls",
   "gopls",
   "kotlin_language_server",
+  "rust_analyzer",
   "solargraph",
   "svelte",
   "terraformls",
@@ -139,6 +142,15 @@ nvim_lsp.gopls.setup{
   flags = {
     debounce_text_changes = 500,
   },
+}
+
+-- Emmet config for emmet_ls
+nvim_lsp.emmet_ls.setup{
+  cmd = {'emmet-ls', '--stdio'};
+  filetypes = {'html', 'css', 'javascriptreact', 'less'};
+  root_dir = function(fname)
+    return vim.loop.cwd()
+  end;
 }
 
 nvim_lsp.tsserver.setup {

@@ -56,13 +56,12 @@ require('telescope').load_extension('dap')
  }
 
 -- Nvim-tree
--- require'nvim-tree.view'.View.width = 50
 require('nvim-tree').setup {
   auto_close      = true,
   disable_netrw   = false,
   hijack_netrw    = false,
   auto_close      = true,
-  lsp_diagnostics = true,
+  -- lsp_diagnostics = true,
   view = {
     -- width of the window, can be either a number (columns) or a string in `%`
     width = 50,
@@ -79,6 +78,9 @@ require('nvim-tree').setup {
     }
   }
 }
+
+-- Close tree on file select
+vim.cmd [[let g:nvim_tree_quit_on_open = 1]]
 
 -- Colorizer
 require'colorizer'.setup({'html', 'css', 'javascript'}, {
@@ -186,3 +188,5 @@ require("dapui").setup()
 
 -- Lightbulb
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
+
+-- Emmet
