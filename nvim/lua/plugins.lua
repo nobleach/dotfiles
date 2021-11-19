@@ -37,6 +37,7 @@ return require('packer').startup(function()
   use 'GustavoKatel/sidebar.nvim'
   use 'sindrets/diffview.nvim'
   use 'hashivim/vim-terraform'
+  use 'elixir-editors/vim-elixir'
 
   -- Nvim DAP
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }

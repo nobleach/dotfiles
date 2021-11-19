@@ -111,6 +111,7 @@ local servers = {
   "crystalline",
   "cssls",
   "dockerls",
+  "elixirls",
   "emmet_ls",
   "gopls",
   "kotlin_language_server",
@@ -142,6 +143,10 @@ nvim_lsp.gopls.setup{
   flags = {
     debounce_text_changes = 500,
   },
+}
+
+nvim_lsp.elixirls.setup{
+  cmd = { "/home/jim/bin/elixir-ls/language_server.sh" };
 }
 
 -- Emmet config for emmet_ls
