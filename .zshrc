@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=/usr/share/oh-my-zsh
+ZSH=$HOME/.oh-my-zsh
 
 export MANPAGER='nvim +Man!'
 # initialise completions with ZSH's compinit
@@ -20,7 +20,8 @@ precmd() {
 # fpath=(~/.zsh $fpath)
 # source ~/.zsh/_git/git-completion.zsh
 
-ZSH_THEME="avit"
+# ZSH_THEME="gallois"
+ZSH_THEME="jnrowe"
 
 # Brew cleanup:
 alias brewski='brew update && brew upgrade --all && brew cleanup; brew doctor'
@@ -123,9 +124,6 @@ export JDTLS_HOME=/usr/bin
 
 # The next line enables shell command completion for gcloud.
 # if [ -f '/Users/jimwharton/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jimwharton/bin/google-cloud-sdk/completion.zsh.inc'; fi
-
-# import credentials but don't track these in source control
-source $HOME/.credentials.sh
 
 # Bind fzf keys belongs at end of file
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -30,7 +30,7 @@ require('telescope').load_extension('dap')
        -- highlight_current_scope = {enable = true},
        smart_rename = {
            enable = true,
-           keymaps = {smart_rename = "grr"},
+           keymaps = {smart_rename = "gsr"},
            navigation = {
                enable = true,
                keymaps = {
