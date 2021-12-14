@@ -42,6 +42,11 @@ local on_attach = function(client, bufnr)
 
     -- Set some keybinds conditional on server capabilities
     if client.resolved_capabilities.document_formatting then
+        vim.api.nvim_command [[augroup Format]]
+        vim.api.nvim_command [[autocmd! * <buffer>]]
+        vim.api
+        .nvim_command [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync({},1500)]]
+        vim.api.nvim_command [[augroup END]]
         buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>",
                        opts)
     end
@@ -109,10 +114,12 @@ local servers = {
   "ccls",
   "crystalline",
   "cssls",
+  -- "denols",
   "dockerls",
+  -- "efm",
   "elixirls",
-  "emmet_ls",
   "gopls",
+  "graphql",
   "kotlin_language_server",
   "rust_analyzer",
   "solargraph",
@@ -130,10 +137,56 @@ end
 
 local nvim_lsp = require("lspconfig")
 
+local null_ls = require("null-ls")
+null_ls.config({
+    sources = {
+        null_ls.builtins.diagnostics.eslint_d, -- eslint or eslint_d
+        null_ls.builtins.code_actions.eslint_d, -- eslint or eslint_d
+        null_ls.builtins.formatting.eslint_d, -- prettier, eslint, eslint_d, or prettierd
+    },
+})
+
+nvim_lsp["null-ls"].setup({})
+
 -- Add capabilities to cssls
 nvim_lsp.cssls.setup {
   capabilities = capabilities,
 }
+
+-- Add capabilities to efm
+--[[ local eslint = require "efm/eslint"
+local prettier = require "efm/prettierd" ]]
+
+--[[ nvim_lsp.efm.setup {
+    -- on_attach = on_attach,
+    lintDebounce = 1000000000,
+    init_options = {documentFormatting = true, codeAction = true},
+    rootdir = function()
+        if not require("utils").eslint_config_exists() then return nil end
+        return vim.fn.getcwd()
+    end,
+    filetypes = {
+        "html", "css", "javascriptreact",
+        "scss", "yaml", "javascript", "javascript.jsx", "typescript", "typescript.tsx",
+        "typescriptreact"
+    },
+    settings = {
+        rootMarkers = {".git/"},
+        languages = {
+            javascript = {eslint,prettier},
+            javascriptreact = {prettier, eslint},
+            typescriptreact = {prettier, eslint},
+            ["javascript.jsx"] = {prettier, eslint},
+            typescript = {prettier, eslint},
+            ["typescript.tsx"] = {prettier, eslint},
+            css = {prettier},
+            scss = {prettier},
+            yaml = {prettier},
+            html = {prettier},
+            json = {prettier, eslint}
+        }
+    }
+} ]]
 
 -- Go config for gopls
 nvim_lsp.gopls.setup{
@@ -148,17 +201,9 @@ nvim_lsp.elixirls.setup{
   cmd = { "/home/jim/bin/elixir-ls/language_server.sh" };
 }
 
--- Emmet config for emmet_ls
-nvim_lsp.emmet_ls.setup{
-  cmd = {'emmet-ls', '--stdio'};
-  filetypes = {'html', 'css', 'javascriptreact', 'less'};
-  root_dir = function(fname)
-    return vim.loop.cwd()
-  end;
-}
-
 nvim_lsp.tsserver.setup {
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+    flags = {allow_incremental_sync = true, debounce_text_changes = 500},
     on_attach = function(client, bufnr)
         local ts_utils = require("nvim-lsp-ts-utils")
 
@@ -169,20 +214,20 @@ nvim_lsp.tsserver.setup {
             enable_import_on_completion = true,
             import_on_completion_timeout = 5000,
             -- eslint
-            eslint_bin = "eslint",
+            --[[ eslint_bin = "eslint",
             eslint_args = {"-f", "json", "--stdin", "--stdin-filename", "$FILENAME"},
-            eslint_enable_disable_comments = true,
+            eslint_enable_disable_comments = true, ]]
 
 	    -- experimental settings!
             -- eslint diagnostics
-            eslint_enable_diagnostics = true,
-            eslint_diagnostics_debounce = 250,
+            --[[ eslint_enable_diagnostics = true,
+            eslint_diagnostics_debounce = 250, ]]
             -- formatting
-            enable_formatting = true,
-            formatter = "prettier",
-            formatter_args = {"--stdin-filepath", "$FILENAME"},
-            format_on_save = false,
-            no_save_after_format = false,
+            -- enable_formatting = true,
+            -- formatter = "prettier",
+            -- formatter_args = {"--stdin-filepath", "$FILENAME"},
+            -- format_on_save = false,
+            -- no_save_after_format = false,
             -- parentheses completion
             complete_parens = false,
             signature_help_in_parens = true,
@@ -198,3 +243,22 @@ nvim_lsp.tsserver.setup {
         vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", {silent = true})
     end
 }
+--[[ nvim_lsp.denols.setup {
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  filetypes = {
+    'javascript',
+    'javascriptreact',
+    'javascript.jsx',
+    'typescript',
+    'typescriptreact',
+    'typescript.tsx',
+    'markdown',
+  },
+  init_options = {
+    config = './deno.jsonc',
+    lint = true,
+  },
+} ]]

@@ -1,4 +1,4 @@
-vim.cmd [[packadd packer.nvim]]
+-- vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
   -- Packer can manage itself
@@ -38,6 +38,9 @@ return require('packer').startup(function()
   use 'sindrets/diffview.nvim'
   use 'hashivim/vim-terraform'
   use 'elixir-editors/vim-elixir'
+  use 'mattn/efm-langserver'
+  use 'sbdchd/neoformat'
+  use 'dbeniamine/cheat.sh-vim'
 
   -- Nvim DAP
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
@@ -104,11 +107,7 @@ return require('packer').startup(function()
     requires = {'kyazdani42/nvim-web-devicons'}
   }
 
-  use {
-    'weilbith/nvim-code-action-menu',
-    cmd = 'CodeActionMenu'
-  }
-  -- use 'weilbith/nvim-code-action-menu'
+  use { 'weilbith/nvim-code-action-menu' }
 
   use 'kosayoda/nvim-lightbulb'
 
@@ -116,12 +115,19 @@ return require('packer').startup(function()
 
   -- Clipboard
   use {
-      "AckslD/nvim-neoclip.lua",
+      'AckslD/nvim-neoclip.lua',
+      module = 'neoclip',
+      event = { 'TextYankPost' },
+      setup = function()
+          require('conf.neoclip').setup({
+              default_register = '+',
+          })
+      end,
       config = function()
-        require('neoclip').setup({
-          default_register = '+',
-        })
+          require('conf.neoclip').config()
       end,
   }
+
+  use({ "jose-elias-alvarez/null-ls.nvim", requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"} })
 
 end)

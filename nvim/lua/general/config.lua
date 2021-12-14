@@ -60,6 +60,7 @@ vim.o.undodir = os.getenv("HOME") .. "/.cache/nvim/undodir/"
 vim.o.undofile = true
 vim.o.incsearch = true
 vim.g.user_emmet_leader_key = '<c-e>'
+vim.o.colorcolumn = "72"
 
 -- Java setup
 vim.cmd[[
@@ -73,3 +74,8 @@ vim.cmd[[
 vim.api.nvim_exec([[
    au BufEnter term://* setlocal nonumber
 ]], false)
+
+-- Format code on save
+--vim.api.nvim_exec([[
+--  autocmd BufWritePre *.js Neoformat
+-- ]], false)

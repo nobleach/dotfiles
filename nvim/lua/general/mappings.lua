@@ -12,6 +12,10 @@ vim.api.nvim_set_keymap('v', '<leader><leader>', [[<esc>]],
 vim.api.nvim_set_keymap('i', 'jk', [[<esc>]],
   {noremap = true, silent = true})
 
+-- Fix Y
+vim.api.nvim_set_keymap('n', 'Y', 'yy',
+    {noremap = true, silent = true})
+
 -- Close window
 vim.api.nvim_set_keymap('n', 'gq', '<cmd>q<CR>',
   {noremap = true, silent = true})
@@ -70,7 +74,9 @@ vim.api.nvim_set_keymap('n', '<leader>xx', '<cmd>LspTroubleToggle<cr>',
 
 -- LSP Code Actions
 vim.api.nvim_set_keymap('n', '<leader>xa', '<cmd>CodeActionMenu<cr>',
-{silent = true, noremap = true})
+  {silent = true, noremap = true})
+vim.api.nvim_set_keymap('n', 'xf', '<cmd>lua vim.lsp.buf.formatting()<CR>',
+  {silent = true, noremap = true})
 
 -- NeoGit
 vim.api.nvim_set_keymap('n', '<leader>g', '<cmd>Neogit kind=split<CR>',
@@ -87,9 +93,9 @@ vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>',
   {silent = true, noremap = true})
 vim.api.nvim_set_keymap('n', 'gh', '<cmd>lua vim.lsp.buf.signature_help()<CR>',
   {silent = true, noremap = true})
-vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>',
+vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev { float = {...} }<CR>',
   {silent = true, noremap = true})
-vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>',
+vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next { float = {...} }<CR>',
   {silent = true, noremap = true})
 
 -- Search and replace
