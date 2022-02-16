@@ -15,6 +15,8 @@ split-window -h
 resize-pane -R 55
 select-window -t 1
 new-window
+rename-window k8s
+new-window
 rename-window Playground
 new-window -c ~/.config/nvim
 rename-window Configs

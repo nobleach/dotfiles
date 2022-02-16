@@ -15,7 +15,7 @@ vim.cmd[[autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE]]
 vim.cmd[[colorscheme distinguished]]
 -- vim.cmd[[colorscheme material]]
 -- vim.cmd[[colorscheme nord]]
---[[ vim.cmd[[colorscheme nightfox]]
+-- vim.cmd[[colorscheme nightfox
 -- vim.g.nightfox_style = "nordfox" ]]
 
 vim.g.mapleader = ' '

@@ -73,7 +73,7 @@ call s:ColorDictParser({
 	\ , 'vimCommentString'            : [    245,    233,               '',      '8a8a8a',  '121212',               '']
 	\
 	\ , 'TabLine'                     : [    231,    238,               '',      'ffffff',  '444444',               '']
-	\ , 'TabLineSel'                  : [    255,     '',           'bold',      '444444',  '8be9fd',           'bold']
+	\ , 'TabLineSel'                  : [    255,     '',           'bold',      '444444',  '6E84B1',           'bold']
 	\ , 'TabLineFill'                 : [    240,    238,               '',      '585858',  '444444',               '']
 	\ , 'TabLineNumber'               : [    160,    238,           'bold',      'd70000',  '444444',           'bold']
 	\ , 'TabLineClose'                : [    245,    238,           'bold',      '8a8a8a',  '444444',           'bold']

@@ -69,7 +69,7 @@ vim.api.nvim_set_keymap('n', '<leader>8', "<cmd>lua require('telescope.builtin')
   {noremap = true, silent = true})
 
 -- LSP Diagnostics
-vim.api.nvim_set_keymap('n', '<leader>xx', '<cmd>LspTroubleToggle<cr>',
+vim.api.nvim_set_keymap('n', '<leader>xx', '<cmd>TroubleToggle<cr>',
   {silent = true, noremap = true})
 
 -- LSP Code Actions

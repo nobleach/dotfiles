@@ -135,6 +135,7 @@ vim.g.indent_blankline_use_treesitter = true
 vim.g.indent_blankline_show_first_indent_level = false
 vim.g.indent_blankline_show_trailing_blankline_indent = false
 vim.g.indent_blankline_show_current_context = true
+vim.g.indent_blankline_show_current_context_start = true
 vim.g.indent_blankline_context_patterns = {'class', 'function', 'method', '^if', '^while', '^for', '^object', '^table', 'block', 'arguments'}
 vim.g.indent_blankline_filetype = {'json','lua', 'terraform', 'javascript', 'javascriptreact'}
 -- vim.g.indent_blankline_indent_level = 3
@@ -189,4 +190,5 @@ require("dapui").setup()
 -- Lightbulb
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
 
--- Emmet
+-- LSP Status
+-- require"fidget".setup{}

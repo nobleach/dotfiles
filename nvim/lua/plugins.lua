@@ -8,14 +8,10 @@ return require('packer').startup(function()
   use 'kyazdani42/blue-moon'
   use 'rktjmp/lush.nvim'
   use 'npxbr/gruvbox.nvim'
-  -- use 'marko-cerovac/material.nvim'
-  --[[ use 'hrsh7th/vim-vsnip'
-  use 'hrsh7th/vim-vsnip-integ' ]]
   use 'rafamadriz/friendly-snippets'
   use 'ray-x/lsp_signature.nvim'
   use 'onsails/lspkind-nvim'
   use 'norcalli/nvim-colorizer.lua'
---  use 'steelsojka/pears.nvim'
   use 'b3nj5m1n/kommentary'
   use 'windwp/nvim-autopairs'
   use 'jose-elias-alvarez/nvim-lsp-ts-utils'
@@ -25,7 +21,6 @@ return require('packer').startup(function()
   use 'tpope/vim-surround'
   use 'folke/lsp-colors.nvim'
   use 'matze/vim-move'
-  -- use 'akinsho/nvim-bufferline.lua'
   use 'axelf4/vim-strip-trailing-whitespace'
   use 'kburdett/vim-nuuid'
   use 'maxmellon/vim-jsx-pretty'
@@ -34,22 +29,16 @@ return require('packer').startup(function()
   use 'tveskag/nvim-blame-line'
   use 'mfussenegger/nvim-jdtls'
   use 'EdenEast/nightfox.nvim'
-  use 'GustavoKatel/sidebar.nvim'
   use 'sindrets/diffview.nvim'
   use 'hashivim/vim-terraform'
   use 'elixir-editors/vim-elixir'
-  use 'mattn/efm-langserver'
-  use 'sbdchd/neoformat'
   use 'dbeniamine/cheat.sh-vim'
+  use 'udalov/kotlin-vim'
+  use 'marko-cerovac/material.nvim'
+  -- use 'j-hui/fidget.nvim'
 
   -- Nvim DAP
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-
-  -- Let's go back to NerdTree for now
-  --[[ use {
-   'scrooloose/nerdtree',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
-   } ]]
 
   -- Language specific
   use 'vim-crystal/vim-crystal'
@@ -72,6 +61,14 @@ return require('packer').startup(function()
          -- your configuration comes here
          -- or leave it empty to use the default settings
          -- refer to the configuration section below
+         signs = {
+             -- icons / text used for a diagnostic
+             error = "",
+             warning = "",
+             hint = "",
+             information = "",
+             other = "﫠"
+         },
        }
      end
    }
@@ -94,6 +91,7 @@ return require('packer').startup(function()
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
+  use 'ray-x/cmp-treesitter'
 
 
   use { 'lukas-reineke/indent-blankline.nvim', branch="master" }
@@ -102,9 +100,13 @@ return require('packer').startup(function()
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
   -- Use specific branch, dependency and run lua file after load
-  use {
+  --[[ use {
     'glepnir/galaxyline.nvim', branch = 'main', config = function() require'statusline' end,
     requires = {'kyazdani42/nvim-web-devicons'}
+  } ]]
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
   use { 'weilbith/nvim-code-action-menu' }
@@ -129,5 +131,7 @@ return require('packer').startup(function()
   }
 
   use({ "jose-elias-alvarez/null-ls.nvim", requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"} })
+
+  -- use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
 
 end)

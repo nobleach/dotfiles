@@ -33,6 +33,8 @@ alias dcu='docker-compose up'
 alias dcd='docker-compose down'
 alias sit='cd ~/Sites'
 alias work='cd ~/work'
+alias pdet='cd ~/work/product-details'
+alias pren='cd ~/work/product-renderer'
 alias yti='yarn test:integration'
 alias gfom='git fetch origin master'
 alias gpom='git pull origin master'
@@ -76,7 +78,7 @@ source $ZSH/oh-my-zsh.sh
 export TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins
 # Customize to your needs...
 GOPATH=$HOME/go
-export PATH=$GOPATH/bin:~/bin:~/.rbenv/bin:~/.rbenv/shims:/usr/local:/usr/local/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$HOME/.asdf/installs/rust/1.55.0/bin:$PATH
+export PATH=$GOPATH/bin:~/bin:~/.local/bin:~/.rbenv/bin:~/.rbenv/shims:/usr/local:/usr/local/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$HOME/.asdf/installs/rust/1.55.0/bin:$PATH
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 LC_ALL=$LANG
 
@@ -118,7 +120,7 @@ LDFLAGS="-L/usr/local/opt/llvm@5/lib -Wl,-rpath,/usr/local/opt/llvm@5/lib"
 LIBRARY_PATH=/usr/local/opt/openssl/lib
 export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
 
-export JDTLS_HOME=/usr/bin
+export JDTLS_HOME="$HOME/.local/opt/jdtls-launcher/jdtls"
 
 # The next line updates PATH for the Google Cloud SDK.
 # if [ -f '/Users/jimwharton/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jimwharton/bin/google-cloud-sdk/path.zsh.inc'; fi
