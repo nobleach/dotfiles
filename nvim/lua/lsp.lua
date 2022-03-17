@@ -166,7 +166,7 @@ nvim_lsp.elixirls.setup{
 -- Emmet config for emmet_ls
 nvim_lsp.emmet_ls.setup{
   cmd = {'emmet-ls', '--stdio'};
-  filetypes = {'html', 'css', 'javascriptreact', 'less'};
+  filetypes = {'html', 'css', 'javascriptreact', 'less', 'typescriptreact'};
   root_dir = function(fname)
     return vim.loop.cwd()
   end;

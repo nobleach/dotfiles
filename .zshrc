@@ -78,7 +78,7 @@ source $ZSH/oh-my-zsh.sh
 export TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins
 # Customize to your needs...
 GOPATH=$HOME/go
-export PATH=$GOPATH/bin:~/bin:~/.local/bin:~/.rbenv/bin:~/.rbenv/shims:/usr/local:/usr/local/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$HOME/.asdf/installs/rust/1.55.0/bin:$PATH
+export PATH=$GOPATH/bin:~/bin:~/.local/bin:~/.rbenv/bin:~/.rbenv/shims:/usr/local:/usr/local/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$PATH
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 LC_ALL=$LANG
 

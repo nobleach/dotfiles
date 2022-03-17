@@ -57,8 +57,8 @@ vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>NvimTreeToggle<cr>',
   {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', 'R', '<cmd>NvimTreeRefresh<cr>',
   {noremap = true, silent = true})
---[[ vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>NERDTreeToggle<cr>',
-  {noremap = true, silent = true}) ]]
+vim.api.nvim_set_keymap('n', '<leader>9', '<cmd>NvimTreeFindFile<cr>',
+  {noremap = true, silent = true})
 
 -- Telescope
 vim.api.nvim_set_keymap('n', '<C-p>', '<cmd>Telescope find_files<cr>',
@@ -145,3 +145,18 @@ vim.api.nvim_set_keymap('n', '<leader>b', "<cmd>ToggleBlameLine<CR>",
 -- Sidebar
 vim.api.nvim_set_keymap('n', '<leader>sb', "<cmd>SidebarNvimToggle<CR>",
   {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', '<leader>p', "<cmd>Telescope neoclip plus<CR>",
+  {noremap = true, silent = true})
+
+-- Refactoring
+vim.api.nvim_set_keymap('v', '<Leader>re', [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]],
+  {noremap = true, silent = true, expr = false})
+vim.api.nvim_set_keymap('v', '<Leader>rf', [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]],
+  {noremap = true, silent = true, expr = false})
+vim.api.nvim_set_keymap('v', '<Leader>rv', [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]],
+  {noremap = true, silent = true, expr = false})
+vim.api.nvim_set_keymap('v', '<Leader>ri', [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
+  {noremap = true, silent = true, expr = false})
+vim.api.nvim_set_keymap('n', '<Leader>ri', [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
+  {noremap = true, silent = true, expr = false})

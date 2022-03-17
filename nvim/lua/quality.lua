@@ -58,6 +58,7 @@ require('telescope').load_extension('dap')
 -- Nvim-tree
 require('nvim-tree').setup {
   auto_close      = true,
+  open_on_tab     = false,
   disable_netrw   = false,
   hijack_netrw    = false,
   auto_close      = true,
@@ -75,7 +76,18 @@ require('nvim-tree').setup {
       custom_only = false,
       -- list of mappings to set on the tree manually
       list = {}
-    }
+    },
+    actions = {
+        change_dir = {
+            enable = true,
+            global = true,
+        },
+        open_file = {
+            quit_on_open = false,
+            resize_window = true,
+        }
+    },
+
   }
 }
 
@@ -187,8 +199,7 @@ vim.fn.sign_define('DapBreakpoint', {text='🟥', texthl='', linehl='', numhl=''
 vim.fn.sign_define('DapStopped', {text='⭐️', texthl='', linehl='', numhl=''})
 require("dapui").setup()
 
--- Lightbulb
-vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
-
--- LSP Status
--- require"fidget".setup{}
+-- NeoClip
+require('telescope').load_extension('neoclip')
+require('neoclip').setup()
+require('refactoring').setup({})

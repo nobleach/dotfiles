@@ -28,7 +28,6 @@ return require('packer').startup(function()
   use 'rmagatti/goto-preview'
   use 'tveskag/nvim-blame-line'
   use 'mfussenegger/nvim-jdtls'
-  use 'EdenEast/nightfox.nvim'
   use 'sindrets/diffview.nvim'
   use 'hashivim/vim-terraform'
   use 'elixir-editors/vim-elixir'
@@ -50,8 +49,6 @@ return require('packer').startup(function()
    'kyazdani42/nvim-tree.lua',
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
    }
-
--- use({ 'ms-jpq/chadtree', run = 'python3 -m chadtree deps --nvim' })
 
    use {
      "folke/trouble.nvim",
@@ -99,11 +96,6 @@ return require('packer').startup(function()
   -- Post-install/update hook with neovim command
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
-  -- Use specific branch, dependency and run lua file after load
-  --[[ use {
-    'glepnir/galaxyline.nvim', branch = 'main', config = function() require'statusline' end,
-    requires = {'kyazdani42/nvim-web-devicons'}
-  } ]]
   use {
       'nvim-lualine/lualine.nvim',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -111,27 +103,31 @@ return require('packer').startup(function()
 
   use { 'weilbith/nvim-code-action-menu' }
 
-  use 'kosayoda/nvim-lightbulb'
-
   use {'tjdevries/colorbuddy.vim'}
 
   -- Clipboard
   use {
-      'AckslD/nvim-neoclip.lua',
-      module = 'neoclip',
-      event = { 'TextYankPost' },
-      setup = function()
-          require('conf.neoclip').setup({
+      "AckslD/nvim-neoclip.lua",
+      requires = {
+          {'tami5/sqlite.lua', module = 'sqlite'},
+          {'nvim-telescope/telescope.nvim'},
+      },
+      config = function()
+          require('neoclip').setup({
+              preview = true,
               default_register = '+',
           })
-      end,
-      config = function()
-          require('conf.neoclip').config()
       end,
   }
 
   use({ "jose-elias-alvarez/null-ls.nvim", requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"} })
 
-  -- use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
+  use {
+      "ThePrimeagen/refactoring.nvim",
+      requires = {
+          {"nvim-lua/plenary.nvim"},
+          {"nvim-treesitter/nvim-treesitter"}
+      }
+  }
 
 end)
