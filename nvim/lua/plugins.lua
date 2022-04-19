@@ -34,6 +34,7 @@ return require('packer').startup(function()
   use 'dbeniamine/cheat.sh-vim'
   use 'udalov/kotlin-vim'
   use 'marko-cerovac/material.nvim'
+  use 'github/copilot.vim'
   -- use 'j-hui/fidget.nvim'
 
   -- Nvim DAP
@@ -90,7 +91,6 @@ return require('packer').startup(function()
   use 'hrsh7th/vim-vsnip'
   use 'ray-x/cmp-treesitter'
 
-
   use { 'lukas-reineke/indent-blankline.nvim', branch="master" }
 
   -- Post-install/update hook with neovim command
@@ -129,5 +129,10 @@ return require('packer').startup(function()
           {"nvim-treesitter/nvim-treesitter"}
       }
   }
+
+  use {'nvim-orgmode/orgmode', config = function()
+      require('orgmode').setup{}
+  end
+}
 
 end)

@@ -56,26 +56,59 @@ require('telescope').load_extension('dap')
  }
 
 -- Nvim-tree
-require('nvim-tree').setup {
-  auto_close      = true,
-  open_on_tab     = false,
-  disable_netrw   = false,
-  hijack_netrw    = false,
-  auto_close      = true,
-  -- lsp_diagnostics = true,
-  view = {
-    -- width of the window, can be either a number (columns) or a string in `%`
-    width = 50,
-    -- side of the tree, can be one of 'left' | 'right' | 'top' | 'bottom'
-    side = 'left',
-    -- if true the tree will resize itself after opening a file
-    auto_resize = true,
-    mappings = {
-      -- custom only false will merge the list with the default mappings
-      -- if true, it will only use your list to set the mappings
-      custom_only = false,
-      -- list of mappings to set on the tree manually
-      list = {}
+require("nvim-tree").setup {
+    disable_netrw = true,
+    hijack_netrw = true,
+    open_on_setup = false,
+    ignore_buffer_on_setup = false,
+    ignore_ft_on_setup = {},
+    auto_close = true,
+    auto_reload_on_write = true,
+    open_on_tab = false,
+    hijack_cursor = false,
+    update_cwd = true,
+    hijack_unnamed_buffer_when_opening = false,
+    hijack_directories = {
+        enable = true,
+        auto_open = true,
+    },
+    diagnostics = {
+        enable = true,
+        icons = {
+            hint = "",
+            info = "",
+            warning = "",
+            error = "",
+        },
+    },
+    update_focused_file = {
+        enable = true,
+        update_cwd = true,
+    },
+    filters = {
+        dotfiles = true,
+        custom = {},
+    },
+    git = {
+        enable = true,
+        ignore = true,
+        timeout = 500,
+    },
+    view = {
+        width = 50,
+        hide_root_folder = false,
+        side = "left",
+        auto_resize = true,
+        mappings = { custom_only = false, list = {} },
+        number = false,
+        relativenumber = false,
+        signcolumn = "yes",
+        italic_comments = false,
+        transparency = true,
+    },
+    trash = {
+        cmd = "trash",
+        require_confirm = true,
     },
     actions = {
         change_dir = {
@@ -83,12 +116,18 @@ require('nvim-tree').setup {
             global = true,
         },
         open_file = {
-            quit_on_open = false,
+            quit_on_open = true,
             resize_window = true,
-        }
+            window_picker = {
+                enable = true,
+                chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+                exclude = {
+                    filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+                    buftype = { "nofile", "terminal", "help" },
+                },
+            },
+        },
     },
-
-  }
 }
 
 -- Close tree on file select
@@ -104,31 +143,6 @@ require'colorizer'.setup({'html', 'css', 'javascript'}, {
     css = true,
     css_fn = true
 })
-
--- Bufferline
---[[ require'bufferline'.setup{
-  options = {
-    view = "multiwindow",
-    indicator_icon = '▎',
-    modified_icon = '●',
-    left_trunc_marker = '',
-    right_trunc_marker = '',
-    max_name_length = 18,
-    max_prefix_length = 15,
-    tab_size = 18,
-    diagnostics = "nvim_lsp",
-    diagnostics_indicator = function(count, level, diagnostics_dict)
-      return "("..count..")"
-    end,
-    offsets = {{filetype = "NvimTree", text = "File Explorer"}},
-    show_buffer_icons = true, -- disable filetype icons for buffers
-    show_buffer_close_icons = false,
-    show_close_icon = false,
-    show_tab_indicators = true,
-    separator_style = "slant",
-    always_show_bufferline = true
-  }
-} ]]
 
 -- Auto pairs
 require('nvim-autopairs').setup()
@@ -177,17 +191,6 @@ end
 
 vim.api.nvim_set_keymap('n', '<F10>', '<cmd>lua ToggleMouse()<cr>', { noremap = true })
 
--- NERDTree
---[[ vim.cmd[[
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-autocmd FileType nerdtree setlocal nolist
-let NERDTreeShowHidden=1
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
-let g:NERDTreeWinSize=60
-]]
-
 -- Nvim DAP
 local dap = require('dap')
 dap.adapters.node2 = {
@@ -203,3 +206,23 @@ require("dapui").setup()
 require('telescope').load_extension('neoclip')
 require('neoclip').setup()
 require('refactoring').setup({})
+
+-- OrgMode
+-- Load custom tree-sitter grammar for org filetype
+require('orgmode').setup_ts_grammar()
+
+-- Tree-sitter configuration
+require'nvim-treesitter.configs'.setup {
+  -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
+  highlight = {
+    enable = true,
+    disable = {'org'}, -- Remove this to use TS highlighter for some of the highlights (Experimental)
+    additional_vim_regex_highlighting = {'org'}, -- Required since TS highlighter doesn't support all syntax features (conceal)
+  },
+  ensure_installed = {'org'}, -- Or run :TSUpdate org
+}
+
+require('orgmode').setup({
+  org_agenda_files = {'~/Dropbox/org/*', '~/my-orgs/**/*'},
+  org_default_notes_file = '~/Dropbox/org/refile.org',
+})
