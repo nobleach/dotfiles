@@ -24,9 +24,10 @@ vim.opt.clipboard = {'unnamed', 'unnamedplus'}
 vim.cmd [[au TextYankPost * silent! lua vim.highlight.on_yank()]]
 vim.o.completeopt = "menuone,noinsert"
 vim.o.expandtab = true
-vim.o.foldmethod = "expr"
+vim.o.foldenable = false
+--[[ vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-vim.o.foldlevelstart = 10
+vim.o.foldlevelstart = 10 ]]
 vim.o.showcmd = true
 vim.o.hidden = true
 vim.o.ignorecase = true

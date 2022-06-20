@@ -75,7 +75,7 @@ vim.api.nvim_set_keymap('n', '<leader>xx', '<cmd>TroubleToggle<cr>',
 -- LSP Code Actions
 vim.api.nvim_set_keymap('n', '<leader>xa', '<cmd>CodeActionMenu<cr>',
   {silent = true, noremap = true})
-vim.api.nvim_set_keymap('n', 'xf', '<cmd>lua vim.lsp.buf.formatting()<CR>',
+vim.api.nvim_set_keymap('n', 'xf', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>',
   {silent = true, noremap = true})
 
 -- NeoGit

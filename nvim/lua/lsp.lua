@@ -41,22 +41,21 @@ local on_attach = function(client, bufnr)
                    '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 
     -- Set some keybinds conditional on server capabilities
-    if client.resolved_capabilities.document_formatting then
+    if client.server_capabilities.documentFormattingProvider then
         vim.api.nvim_command [[augroup Format]]
         vim.api.nvim_command [[autocmd! * <buffer>]]
-        vim.api
-        .nvim_command [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync({},1500)]]
+        vim.api.nvim_command [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync({},1500)]]
         vim.api.nvim_command [[augroup END]]
-        buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>",
+        buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>",
                        opts)
     end
-    if client.resolved_capabilities.document_range_formatting then
+    if client.server_capabilities.document_range_formatting then
         buf_set_keymap("v", "<space>f",
                        "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
     end
 
     -- Set autocommands conditional on server_capabilities
-    if client.resolved_capabilities.document_highlight then
+    if client.server_capabilities.document_highlight then
         vim.api.nvim_exec([[
       hi LspReferenceRead cterm=bold ctermbg=red guibg=LightYellow
       hi LspReferenceText cterm=bold ctermbg=red guibg=LightYellow
@@ -182,8 +181,8 @@ nvim_lsp.tsserver.setup {
     on_attach = function(client, bufnr)
         local ts_utils = require("nvim-lsp-ts-utils")
 
-        client.resolved_capabilities.document_formatting = false
-        client.resolved_capabilities.document_range_formatting = false
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.document_range_formatting = false
 
         -- defaults
         ts_utils.setup {

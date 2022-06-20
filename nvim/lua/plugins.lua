@@ -34,7 +34,7 @@ return require('packer').startup(function()
   use 'dbeniamine/cheat.sh-vim'
   use 'udalov/kotlin-vim'
   use 'marko-cerovac/material.nvim'
-  use 'github/copilot.vim'
+  use 'earthly/earthly.vim'
   -- use 'j-hui/fidget.nvim'
 
   -- Nvim DAP
