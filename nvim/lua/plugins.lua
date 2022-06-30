@@ -130,6 +130,11 @@ return require('packer').startup(function()
       }
   }
 
+  use {
+      "SmiteshP/nvim-navic",
+      requires = "neovim/nvim-lspconfig"
+  }
+
   use {'nvim-orgmode/orgmode', config = function()
       require('orgmode').setup{}
   end

@@ -1,3 +1,5 @@
+local navic = require("nvim-navic")
+
 local on_attach = function(client, bufnr)
     -- LSP Signature
     --[[ require"lsp_signature".on_attach({
@@ -180,6 +182,9 @@ nvim_lsp.tsserver.setup {
     flags = {allow_incremental_sync = true, debounce_text_changes = 500},
     on_attach = function(client, bufnr)
         local ts_utils = require("nvim-lsp-ts-utils")
+
+        -- Navic winbar integration
+        navic.attach(client, bufnr)
 
         client.server_capabilities.documentFormattingProvider = false
         client.server_capabilities.document_range_formatting = false
