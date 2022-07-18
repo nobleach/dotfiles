@@ -61,7 +61,7 @@ vim.api.nvim_set_keymap('n', '<leader>9', '<cmd>NvimTreeFindFile<cr>',
   {noremap = true, silent = true})
 
 -- Telescope
-vim.api.nvim_set_keymap('n', '<C-p>', '<cmd>Telescope find_files<cr>',
+vim.api.nvim_set_keymap('n', '<C-p>', '<cmd>Telescope find_files hidden=true<cr>',
   {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>Telescope live_grep<cr>',
   {noremap = true, silent = true})

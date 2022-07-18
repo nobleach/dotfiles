@@ -5,8 +5,7 @@ local lspkind = require('lspkind')
   cmp.setup({
     snippet = {
       expand = function(args)
-        -- For `vsnip` user.
-        vim.fn["vsnip#anonymous"](args.body)
+          require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
       end,
     },
     window = {
@@ -23,7 +22,7 @@ local lspkind = require('lspkind')
       ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
     sources = {
-      { name = 'vsnip' },
+      { name = 'luasnip' },
       { name = 'path'},
       { name = 'nvim_lsp' },
       {
@@ -38,7 +37,7 @@ local lspkind = require('lspkind')
         with_text = true,
         menu = {
           path = "[Path]",
-          vsnip = "[Snip]",
+          luasnip = "[Snip]",
           nvim_lsp = "[LSP]",
           buffer = "[Buf]"
         }

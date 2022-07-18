@@ -2,6 +2,7 @@
 vim.o.termguicolors = true
 vim.cmd 'syntax enable'
 vim.cmd 'filetype plugin indent on'
+vim.cmd 'set relativenumber'
 -- Re-read buffer if it was modified outside of vim
 vim.cmd[[
 set autoread
@@ -70,6 +71,10 @@ vim.cmd[[
     au FileType java lua require('jdtls').start_or_attach({cmd = {'jdtls.sh'}})
   augroup end
   ]]
+
+vim.cmd[[
+    set winbar=%=%m\ %f
+]]
 
 -- hide line numbers in terminal windows
 vim.api.nvim_exec([[
