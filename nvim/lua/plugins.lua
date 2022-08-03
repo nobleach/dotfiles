@@ -131,6 +131,18 @@ return require('packer').startup(function()
       requires = "neovim/nvim-lspconfig"
   }
 
+  use({
+      "glepnir/lspsaga.nvim",
+      branch = "main",
+      config = function()
+          local saga = require("lspsaga")
+
+          saga.init_lsp_saga({
+              -- your configuration
+          })
+      end,
+  })
+
   use {'nvim-orgmode/orgmode', config = function()
       require('orgmode').setup{}
   end

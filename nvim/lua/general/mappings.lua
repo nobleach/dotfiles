@@ -91,8 +91,9 @@ vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR><CR
   {silent = true, noremap = true})
 vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>',
   {silent = true, noremap = true})
-vim.api.nvim_set_keymap('n', 'gh', '<cmd>lua vim.lsp.buf.signature_help()<CR>',
-  {silent = true, noremap = true})
+--[[ vim.api.nvim_set_keymap('n', 'gh', '<cmd>lua vim.lsp.buf.signature_help()<CR>',
+  {silent = true, noremap = true}) ]]
+vim.keymap.set("n", "gh", require("lspsaga.finder").lsp_finder, { silent = true,noremap = true })
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev { float = {...} }<CR>',
   {silent = true, noremap = true})
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next { float = {...} }<CR>',
