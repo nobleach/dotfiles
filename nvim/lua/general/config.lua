@@ -13,7 +13,10 @@ vim.o.background = "dark" -- or "light" for light mode
 -- vim.cmd([[colorscheme gruvbox]])
 -- vim.cmd[[colorscheme blue-moon]]
 vim.cmd[[autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE]]
-vim.cmd[[colorscheme distinguished]]
+vim.cmd[[colorscheme tokyonight]]
+vim.g.tokyonight_italic_comments = true
+vim.g.tokyonight_italic_keywords = true
+-- vim.cmd[[colorscheme distinguished]]
 -- vim.cmd[[colorscheme material]]
 -- vim.cmd[[colorscheme nord]]
 -- vim.cmd[[colorscheme nightfox

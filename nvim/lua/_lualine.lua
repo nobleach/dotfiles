@@ -1,6 +1,6 @@
 require('lualine').setup {
     options = {
-        theme = 'jellybeans',
+        theme = 'tokyonight',
         tabline = {
             lualine_a = {'filename'},
             lualine_b = {'branch'},

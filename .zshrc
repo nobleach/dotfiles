@@ -140,6 +140,10 @@ export JDTLS_HOME="$HOME/.local/opt/jdtls-launcher/jdtls"
 fpath=(${ASDF_DIR}/completions $fpath)
 export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
 
+# Rust
+PATH="$HOME/.asdf/installs/rust/1.63.0/bin:$PATH"
+source "$HOME/.asdf/installs/rust/1.63.0/env"
+
 # bun completions
 [ -s "/Users/jimwharton/.bun/_bun" ] && source "/Users/jimwharton/.bun/_bun"
 
