@@ -133,7 +133,7 @@ export JDTLS_HOME="$HOME/.local/opt/jdtls-launcher/jdtls"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # ASDF Version manager
-. $HOME/.asdf/asdf.sh
+. /opt/asdf-vm/asdf.sh
 # Set JAVA_HOME
 . ~/.asdf/plugins/java/set-java-home.zsh
 # append completions to fpath
@@ -146,3 +146,4 @@ export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
 # Bun
 export BUN_INSTALL="/Users/jimwharton/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+#neofetch
