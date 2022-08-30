@@ -2,6 +2,7 @@
 local actions = require('telescope.actions')
 require('telescope').setup{
   defaults = {
+    file_ignore_patterns = { ".git", "^node_modules" },
     mappings = {
       i = {
         ["<C-n>"] = false,
@@ -194,18 +195,72 @@ dap.adapters.node2 = {
   command = 'node',
   args = {os.getenv('HOME') .. '/bin/vscode-node-debug2/out/src/nodeDebug.js'},
 }
-vim.fn.sign_define('DapBreakpoint', {text='🟥', texthl='', linehl='', numhl=''})
-vim.fn.sign_define('DapStopped', {text='⭐️', texthl='', linehl='', numhl=''})
+dap.adapters.lldb = {
+  type = 'executable',
+  command = 'lldb-vscode', -- adjust as needed, must be absolute path
+  name = 'lldb'
+}
+dap.adapters.codelldb = {
+  type = 'server',
+  port = "${port}",
+  executable = {
+    -- CHANGE THIS to your path!
+    command = '/Users/jimwharton/Downloads/codelldb-x86_64-darwin/extension/adapter/codelldb',
+    args = {"--port", "${port}"},
+
+    -- On windows you may have to uncomment this:
+    -- detached = false,
+  }
+}
+--[[ dap.configurations.cpp = {
+  {
+    name = 'Launch',
+    type = 'lldb',
+    request = 'launch',
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    cwd = '${workspaceFolder}',
+    stopOnEntry = false,
+    args = {},
+
+    -- 💀
+    -- if you change `runInTerminal` to true, you might need to change the yama/ptrace_scope setting:
+    --
+    --    echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+    --
+    -- Otherwise you might get the following error:
+    --
+    --    Error on launch: Failed to attach to the target process
+    --
+    -- But you should be aware of the implications:
+    -- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
+    -- runInTerminal = false,
+  },
+} ]]
+dap.configurations.cpp = {
+  {
+    name = "Launch file",
+    type = "codelldb",
+    request = "launch",
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    cwd = '${workspaceFolder}',
+    stopOnEntry = true,
+  },
+}
+dap.configurations.c = dap.configurations.cpp
+dap.configurations.rust = dap.configurations.cpp
+
+vim.fn.sign_define('DapBreakpoint', {text='', texthl='', linehl='', numhl=''})
+vim.fn.sign_define('DapStopped', {text='', texthl='', linehl='', numhl=''})
 require("dapui").setup()
 
 -- NeoClip
 require('telescope').load_extension('neoclip')
 require('neoclip').setup()
-require('refactoring').setup({})
-
--- OrgMode
--- Load custom tree-sitter grammar for org filetype
-require('orgmode').setup_ts_grammar()
+-- require('refactoring').setup({})
 
 -- Tree-sitter configuration
 require'nvim-treesitter.configs'.setup {
@@ -217,8 +272,3 @@ require'nvim-treesitter.configs'.setup {
   },
   ensure_installed = {'org'}, -- Or run :TSUpdate org
 }
-
-require('orgmode').setup({
-  org_agenda_files = {'~/Dropbox/org/*', '~/my-orgs/**/*'},
-  org_default_notes_file = '~/Dropbox/org/refile.org',
-})

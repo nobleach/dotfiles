@@ -7,6 +7,8 @@ require ('snippets')
 require('_cmp')
 require('quality')
 require('diffview')
+require('saga')
+require('rust-setup')
 require('general.personal')
 require ('general.mappings')
 

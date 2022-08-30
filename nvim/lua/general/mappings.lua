@@ -138,6 +138,8 @@ vim.api.nvim_set_keymap('n', '<leader>db', "<cmd>Telescope dap list_breakpoints<
   {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>rr', "<cmd>lua require'telescope.builtin'.lsp_references{}<CR>",
   {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>xb', "<cmd>Telescope git_branches<CR>",
+{noremap = true, silent = true})
 
 -- Git Blame
 vim.api.nvim_set_keymap('n', '<leader>b', "<cmd>ToggleBlameLine<CR>",
@@ -161,3 +163,9 @@ vim.api.nvim_set_keymap('v', '<Leader>ri', [[ <Esc><Cmd>lua require('refactoring
   {noremap = true, silent = true, expr = false})
 vim.api.nvim_set_keymap('n', '<Leader>ri', [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
   {noremap = true, silent = true, expr = false})
+
+-- Saga
+vim.keymap.set("n", "gl", require("lspsaga.finder").lsp_finder, { silent = true,noremap = true })
+-- vim.keymap.set("n", "<leader>xs", require("lspsaga.signaturehelp").signature_help, { silent = true,noremap = true})
+vim.keymap.set("n", "<leader>xl", '<cmd>LSoutlineToggle<CR>', { silent = true,noremap = true})
+vim.keymap.set("n", "<leader>xr", require("lspsaga.rename").lsp_rename, { silent = true,noremap = true })

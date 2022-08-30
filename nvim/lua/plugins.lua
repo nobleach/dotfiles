@@ -35,6 +35,9 @@ return require('packer').startup(function()
   use 'udalov/kotlin-vim'
   use 'marko-cerovac/material.nvim'
   use 'earthly/earthly.vim'
+  use 'styled-components/vim-styled-components'
+  use 'folke/tokyonight.nvim'
+  use 'simrat39/rust-tools.nvim'
   -- use 'j-hui/fidget.nvim'
 
   -- Nvim DAP
@@ -118,13 +121,18 @@ return require('packer').startup(function()
 
   use({ "jose-elias-alvarez/null-ls.nvim", requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"} })
 
-  use {
+  --[[ use {
       "ThePrimeagen/refactoring.nvim",
       requires = {
           {"nvim-lua/plenary.nvim"},
-          {"nvim-treesitter/nvim-treesitter"}
+          -- {"nvim-treesitter/nvim-treesitter"}
       }
-  }
+  } ]]
+
+  use({
+      "glepnir/lspsaga.nvim",
+      branch = "main",
+  })
 
   use {
       "SmiteshP/nvim-navic",
@@ -142,10 +150,5 @@ return require('packer').startup(function()
           })
       end,
   })
-
-  use {'nvim-orgmode/orgmode', config = function()
-      require('orgmode').setup{}
-  end
-}
 
 end)
