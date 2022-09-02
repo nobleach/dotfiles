@@ -14,7 +14,9 @@ local function autostart_apps()
 	--- Polkit Agent
 	helpers.run.run_once_ps(
 		"polkit-gnome-authentication-agent-1",
-		"/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+        "xfce4-power-manager",
+		"/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
+		"setxkbmap -option ctrl:nocaps"
 	)
 	--- Other stuff
 	helpers.run.run_once_grep("blueman-applet")
