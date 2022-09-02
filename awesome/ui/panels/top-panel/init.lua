@@ -264,8 +264,8 @@ return function(s)
 				{
 					layout = wibox.layout.align.horizontal,
 					expand = "none",
+                    s.clock,
                     tag_list(s),
-					s.clock,
 					{
                         system_tray(),
 						s.battery,

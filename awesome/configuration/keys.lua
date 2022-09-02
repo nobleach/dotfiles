@@ -39,7 +39,7 @@ awful.keyboard.append_global_keybindings({
 	end, { description = "open code editor", group = "app" }),
 
 	--- File manager
-	awful.key({ mod, shift }, "e", function()
+	awful.key({ mod }, "e", function()
 		awful.spawn(apps.default.file_manager)
 	end, { description = "open file manager", group = "app" }),
 

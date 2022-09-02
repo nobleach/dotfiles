@@ -113,7 +113,7 @@ theme.release_event = "#ffffff" .. "10"
 theme.widget_bg = "#1b1d1e"
 
 --- Titlebars
-theme.titlebar_enabled = true
+theme.titlebar_enabled = false
 theme.titlebar_bg = theme.black
 theme.titlebar_fg = theme.white
 
