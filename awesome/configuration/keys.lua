@@ -48,6 +48,11 @@ awful.keyboard.append_global_keybindings({
 		awful.spawn(apps.default.web_browser)
 	end, { description = "open web browser", group = "app" }),
 
+	--- Control Center
+	awful.key({ mod }, "g", function()
+		awesome.emit_signal("central_panel::toggle", awful.screen.focused())
+    end, { description = "open control center", group = "panel" }),
+
 	--- WM
 	--- ~~
 	--- Restart awesome
