@@ -177,11 +177,18 @@ return function(s)
 			end,
 		})
 
-		return wibox.widget({
+		--[[ return wibox.widget({
 			layout = wibox.layout.fixed.horizontal,
 			arrow,
 			widget,
-		})
+		}) ]]
+		return {
+            wibox.widget.systray(),
+            left = dpi(18),
+            top = dpi(10),
+            bottom = dpi(5),
+            widget = wibox.container.margin
+		}
 	end
 
 	--- Notif panel
@@ -257,12 +264,11 @@ return function(s)
 				{
 					layout = wibox.layout.align.horizontal,
 					expand = "none",
+                    tag_list(s),
 					s.clock,
-					tag_list(s),
 					{
-						system_tray(),
+                        system_tray(),
 						s.battery,
-						s.network,
 						notif_panel(),
 						layoutbox(),
 						layout = wibox.layout.fixed.horizontal,
