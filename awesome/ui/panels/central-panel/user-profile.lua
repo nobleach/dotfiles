@@ -92,7 +92,7 @@ local function widget()
 	--- username
 	local profile_name = wibox.widget({
 		widget = wibox.widget.textbox,
-		markup = "Rayhan Kafi Pratama",
+		markup = "Jim Wharton",
 		font = beautiful.font_name .. "Bold 13",
 		valign = "center",
 	})

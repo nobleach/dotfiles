@@ -491,3 +491,4 @@ client.connect_signal("request::default_mousebindings", function()
 		end),
 	})
 end)
+
