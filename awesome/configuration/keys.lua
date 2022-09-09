@@ -9,6 +9,7 @@ local playerctl_daemon = require("signal.playerctl")
 local machi = require("modules.layout-machi")
 local helpers = require("helpers")
 local apps = require("configuration.apps")
+local xrandr = require("configuration.xrandr")
 
 --- Make key easier to call
 --- ~~~~~~~~~~~~~~~~~~~~~~~
@@ -127,6 +128,9 @@ awful.keyboard.append_global_keybindings({
 	awful.key({ mod, ctrl }, "Right", function(c)
 		helpers.client.resize_client(client.focus, "right")
 	end, { description = "resize to the right", group = "client" }),
+	awful.key({ mod }, "x", function(c)
+        xrandr.xrandr()
+    end, { description = "step through XRandR setups", group = "client" }),
 
 	--- Bling
 	--- ~~~~~
