@@ -1,6 +1,6 @@
 local gears = require("gears")
 
-local shape = {}
+shape = {}
 
 -- Create rounded rectangle shape (in one line)
 

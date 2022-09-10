@@ -18,6 +18,8 @@ local capi = { awesome = awesome, mouse = mouse, tag = tag }
 
 local menu = { mt = {} }
 
+local s = awful.screen.focused()
+
 function menu:set_pos(args)
 	args = args or {}
 
@@ -152,12 +154,13 @@ function menu.menu(widgets, width)
 	local widget = awful.popup({
 		x = 32500,
 		type = "menu",
+		screen = s,
 		visible = false,
 		ontop = true,
 		minimum_width = width or dpi(300),
 		maximum_width = width or dpi(300),
 		shape = helpers.ui.rrect(beautiful.border_radius),
-		bg = beautiful.main_menu_bg,
+		bg = beautiful.htb3,
 		widget = wibox.layout.fixed.vertical,
 	})
 	gtable.crush(widget, menu, true)
@@ -223,9 +226,10 @@ function menu.sub_menu_button(args)
 
 	local widget = welevated.state({
 		forced_height = dpi(35),
+		screen = s,
 		margins = dpi(5),
 		halign = "left",
-		normal_bg = beautiful.main_menu_bg,
+		normal_bg = beautiful.transparent,
 		normal_shape = helpers.ui.rrect(beautiful.border_radius / 2),
 		on_hover = function(self)
 			local coords = helpers.ui.get_widget_geometry(self.menu, self)
@@ -275,8 +279,8 @@ function menu.button(args)
 	if args.icon ~= nil then
 		icon = twidget({
 			font = args.icon.font,
-			size = args.icon_size,
-			color = beautiful.random_accent_color(),
+			size = args.icon.size,
+			color = args.icon.color or beautiful.random_accent_color(),
 			text = args.icon.icon,
 		})
 	elseif args.image ~= nil then
@@ -295,7 +299,7 @@ function menu.button(args)
 		forced_height = dpi(35),
 		margins = dpi(5),
 		halign = "left",
-		normal_bg = beautiful.main_menu_bg,
+		normal_bg = beautiful.transparent,
 		normal_shape = helpers.ui.rrect(beautiful.border_radius / 2),
 		on_release = function(self)
 			self.menu:hide(true)
@@ -322,7 +326,7 @@ function menu.separator()
 			forced_height = dpi(2),
 			orientation = "horizontal",
 			thickness = dpi(1),
-			color = beautiful.widget_bg,
+			color = beautiful.htb5,
 		},
 	})
 end

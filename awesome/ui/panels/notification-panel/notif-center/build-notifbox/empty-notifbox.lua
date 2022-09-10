@@ -21,7 +21,7 @@ return wibox.widget({
 		},
 		{
 			widget = wibox.widget.textbox,
-			markup = helpers.ui.colorize_text("No Notifications", beautiful.white),
+			markup = helpers.ui.colorize_text("No Notifications", beautiful.xforeground),
 			font = beautiful.font_name .. "Bold 14",
 			valign = "center",
 			align = "center",

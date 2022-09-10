@@ -9,7 +9,7 @@ local bling = require("modules.bling")
 client.connect_signal("request::manage", function(c)
 	--- Add missing icon to client
 	if not c.icon then
-		local icon = gears.surface(beautiful.theme_assets.awesome_icon(24, beautiful.color8, beautiful.black))
+		local icon = gears.surface(beautiful.theme_assets.awesome_icon(24, beautiful.xcolor8, beautiful.xbackground))
 		c.icon = icon._native
 		icon:finish()
 	end
@@ -66,9 +66,9 @@ bling.widget.tag_preview.enable({
 	honor_workarea = true,
 	honor_padding = true,
 	placement_fn = function(c)
-		awful.placement.top(c, {
+		awful.placement.bottom(c, {
 			margins = {
-				top = dpi(60),
+				bottom = dpi(60),
 			},
 		})
 	end,

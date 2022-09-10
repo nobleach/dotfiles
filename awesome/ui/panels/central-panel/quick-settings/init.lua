@@ -63,7 +63,7 @@ local widget = wibox.widget({
 		widget = wibox.container.background,
 		forced_height = dpi(210),
 		forced_width = dpi(350),
-		bg = beautiful.widget_bg,
+		bg = beautiful.htb5,
 		shape = helpers.ui.rrect(beautiful.border_radius),
 	},
 	margins = dpi(10),

@@ -29,11 +29,11 @@ local function day_name_widget(name)
 end
 
 local function date_widget(date, is_current, is_another_month)
-	local text_color = beautiful.white
+	local text_color = beautiful.xforeground
 	if is_current == true then
-		text_color = beautiful.one_bg3
+		text_color = beautiful.widget_bg
 	elseif is_another_month == true then
-		text_color = helpers.color.darken(beautiful.white, 0.5)
+		text_color = helpers.color.darken(beautiful.xforeground, 0.5)
 	end
 
 	return wibox.widget({
@@ -112,10 +112,10 @@ local function new()
 	ret.month = widgets.button.text.normal({
 		animate_size = false,
 		text = os.date("%B %Y"),
-		size = 16,
+		size = 11,
 		bold = true,
 		text_normal_bg = beautiful.accent,
-		normal_bg = beautiful.one_bg3,
+		normal_bg = beautiful.transparent,
 		on_release = function()
 			ret:set_date_current()
 		end,
@@ -125,8 +125,8 @@ local function new()
 		layout = wibox.layout.align.horizontal,
 		widgets.button.text.normal({
 			font = "Material Icons Round ",
-			text_normal_bg = beautiful.white,
-			normal_bg = beautiful.one_bg3,
+			text_normal_bg = beautiful.xforeground,
+			normal_bg = beautiful.transparent,
 			text = "",
 			on_release = function()
 				ret:decrease_date()
@@ -135,8 +135,8 @@ local function new()
 		ret.month,
 		widgets.button.text.normal({
 			font = "Material Icons Round ",
-			text_normal_bg = beautiful.white,
-			normal_bg = beautiful.one_bg3,
+			text_normal_bg = beautiful.xforeground,
+			normal_bg = beautiful.transparent,
 			text = "",
 			on_release = function()
 				ret:increase_date()

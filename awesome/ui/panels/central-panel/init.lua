@@ -11,11 +11,23 @@ local icons = require("icons")
 --- ~~~~~~~~~~~~~~~~~~~~~
 
 return function(s)
+	-- s.awesomewm = wibox.widget({
+	-- 	{
+	-- 		resize = true,
+	-- 		halign = "center",
+	-- 		valign = "center",
+	-- 		widget = wibox.widget.imagebox,
+	-- 	},
+	-- 	strategy = "exact",
+	-- 	height = dpi(50),
+	-- 	widget = wibox.container.constraint,
+	-- })
+
 	--- Header
 	local function header()
 		local dashboard_text = wibox.widget({
-			markup = helpers.ui.colorize_text("Dashboard -", "#666c79"),
-			font = beautiful.font_name .. "Black 14",
+			markup = helpers.ui.colorize_text("Dashboard - Logic", "#666c79"),
+			font = beautiful.font_name .. "Medium 14",
 			valign = "center",
 			widget = wibox.widget.textbox,
 		})
@@ -34,7 +46,7 @@ return function(s)
 			reset_search_icon()
 
 			local search_text = wibox.widget({
-				--- markup = helpers.ui.colorize_text("Search", beautiful.color8),
+				--- markup = helpers.ui.colorize_text("Search", beautiful.xcolor8),
 				align = "center",
 				valign = "center",
 				font = beautiful.font,
@@ -57,8 +69,8 @@ return function(s)
 				},
 				forced_height = dpi(35),
 				forced_width = dpi(420),
-				shape = gears.shape.rounded_bar,
-				bg = beautiful.wibar_bg,
+				shape = gears.shape.rounded_rect,
+				bg = beautiful.htb5,
 				widget = wibox.container.background(),
 			})
 
@@ -105,23 +117,6 @@ return function(s)
 		return widget
 	end
 
-	s.awesomewm = wibox.widget({
-		{
-        {
-            image = gears.color.recolor_image(icons.awesome_logo, beautiful.accent),
-            resize = true,
-            halign = "center",
-            valign = "center",
-            widget = wibox.widget.imagebox,
-        },
-        strategy = "exact",
-        height = dpi(40),
-        widget = wibox.container.constraint,
-	},
-	margins = dpi(10),
-	widget = wibox.container.margin,
-    })
-
 	--- Widgets
 	s.stats = require("ui.panels.central-panel.stats")
 	s.user_profile = require("ui.panels.central-panel.user-profile")
@@ -140,20 +135,26 @@ return function(s)
 		ontop = true,
 		visible = false,
 		placement = function(w)
-			awful.placement.top(w, {
-				margins = { top = beautiful.wibar_height + dpi(5),bottom =  dpi(5), left = dpi(5), right = dpi(5) },
+			awful.placement.bottom(w, {
+				margins = { top = dpi(5), bottom = beautiful.wibar_height + dpi(5), left = dpi(5), right = dpi(5) },
 			})
 		end,
 		widget = {
 			{
 				{
-					header(),
-					margins = { top = dpi(10), bottom = dpi(10), right = dpi(20), left = dpi(20) },
+					{
+						s.awesomewm,
+						halign = "center",
+						valign = "center",
+						widget = wibox.container.place,
+					},
+					margins = dpi(20),
 					widget = wibox.container.margin,
 				},
 				{
 					{
 						{
+							header(),
 							nil,
 							{
 								{
@@ -165,7 +166,6 @@ return function(s)
 								{
 									s.stats,
 									s.music_player,
-									s.awesomewm,
 									layout = wibox.layout.fixed.vertical,
 								},
 								layout = wibox.layout.align.horizontal,
@@ -176,12 +176,12 @@ return function(s)
 						widget = wibox.container.margin,
 					},
 					shape = helpers.ui.prrect(beautiful.border_radius * 2, true, true, false, false),
-					bg = beautiful.wibar_bg,
+					bg = beautiful.htb3,
 					widget = wibox.container.background,
 				},
 				layout = wibox.layout.align.vertical,
 			},
-			bg = beautiful.widget_bg,
+			bg = beautiful.transparent,
 			shape = helpers.ui.rrect(beautiful.border_radius),
 			widget = wibox.container.background,
 		},
@@ -190,7 +190,8 @@ return function(s)
 	--- Toggle container visibility
 	awesome.connect_signal("central_panel::toggle", function(scr)
 		if scr == s then
-			s.central_panel.visible = not s.central_panel.visible
+			local focused = awful.screen.focused()
+			focused.central_panel.visible = not focused.central_panel.visible
 		end
 	end)
 end
