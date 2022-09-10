@@ -41,7 +41,7 @@ awful.keyboard.append_global_keybindings({
 	--- Function Keys App Launches
 	
 	awful.key({ mod }, "F2", function()
-		awful.spawn(apps.default.firefox)
+		awful.spawn(apps.default.web_browser)
 	end, { description = "open web browser", group = "app" }),
 	
 	awful.key({ mod }, "e", function()

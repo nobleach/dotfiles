@@ -336,4 +336,5 @@ naughty.connect_signal("request::display", function(n)
 end)
 
 require(... .. ".error")
+require(... .. ".battery")
 require(... .. ".playerctl")

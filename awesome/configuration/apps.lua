@@ -16,6 +16,7 @@ return {
 		--- Default code editor
 		code = "code",
 		--- Default web browser
+		web_browser = "google-chrome",
 		firefox = "firefox",
 		--- Default file manager
 		nautilus = "nautilus",

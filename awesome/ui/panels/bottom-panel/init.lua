@@ -18,6 +18,7 @@ require('ui.panels.bottom-panel.vpn')
 return function(s)
 	
 	--- Widgets
+	s.battery = require("ui.panels.bottom-panel.battery")()
 	s.clock = require("ui.panels.bottom-panel.clock")(s)
 	s.network = require("ui.panels.bottom-panel.network")()
 	s.systray = wibox.widget.systray()
@@ -381,6 +382,8 @@ return function(s)
 						separator,
 						notif_panel(),
 						power,
+                        s.battery,
+						layoutbox(),
 						layout = wibox.layout.fixed.horizontal
 					},
 				},
