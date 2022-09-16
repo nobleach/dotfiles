@@ -38,6 +38,7 @@ return require('packer').startup(function()
   use 'styled-components/vim-styled-components'
   use 'folke/tokyonight.nvim'
   use 'simrat39/rust-tools.nvim'
+  use 'briancollins/vim-jst'
   -- use 'j-hui/fidget.nvim'
 
   -- Nvim DAP
@@ -120,6 +121,8 @@ return require('packer').startup(function()
   }
 
   use({ "jose-elias-alvarez/null-ls.nvim", requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"} })
+
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   --[[ use {
       "ThePrimeagen/refactoring.nvim",

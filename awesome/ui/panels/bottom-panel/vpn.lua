@@ -8,7 +8,7 @@ vpn_text = wibox.widget.textbox()
 watch(
     "ip addr show tun0", 2,
     function(widget, stdout, stderr, exitreason, exitcode)
-        widget.markup= "<span foreground='#9fef00'>HTB VPN:</span> "
+        widget.markup= "<span foreground='#9fef00'>VPN:</span> "
     end,
     vpn_text
 )

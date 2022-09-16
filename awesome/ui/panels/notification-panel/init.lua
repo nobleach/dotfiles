@@ -31,7 +31,6 @@ return function(s)
 					spacing = dpi(20),
 					nil,
 					require("ui.panels.notification-panel.notif-center")(s),
-					require("ui.panels.notification-panel.github-activity"),
 					nil,
 				},
 				margins = dpi(20),

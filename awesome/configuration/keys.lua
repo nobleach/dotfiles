@@ -33,7 +33,10 @@ awful.keyboard.append_global_keybindings({
 		awful.spawn.with_shell(apps.default.app_launcher)
 	end, { description = "open app launcher", group = "app" }),
 
-
+	--- Info Center
+	awful.key({ mod }, "i", function()
+        awesome.emit_signal("info_panel::toggle", awful.screen.focused())
+    end, { description = "open control center", group = "panel" }),
 	--- Control Center
 	awful.key({ mod }, "g", function()
 		awesome.emit_signal("central_panel::toggle", awful.screen.focused())

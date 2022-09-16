@@ -138,6 +138,10 @@ end
 
 local nvim_lsp = require("lspconfig")
 
+-- Astro
+nvim_lsp.astro.setup{}
+
+-- Null LS
 require("null-ls").setup({
     sources = {
         require("null-ls").builtins.diagnostics.eslint_d, -- eslint or eslint_d                     _d,

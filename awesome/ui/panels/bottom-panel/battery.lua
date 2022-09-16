@@ -19,7 +19,7 @@ return function()
 
 	local charging_icon = wibox.widget({
 		markup = helpers.ui.colorize_text("", beautiful.xcolor7),
-		font = beautiful.icon_font .. "Round 14",
+		font = beautiful.icon_font .. "Round 10",
 		align = "center",
 		valign = "center",
 		widget = wibox.widget.textbox,
@@ -30,9 +30,9 @@ return function()
 		value = 50,
 		forced_width = dpi(30),
 		border_width = dpi(1),
-		paddings = dpi(2),
-		bar_shape = helpers.ui.rrect(2),
-		shape = helpers.ui.rrect(5),
+		paddings = dpi(3),
+		bar_shape = helpers.ui.rrect(1),
+		shape = helpers.ui.rrect(4),
 		color = beautiful.xcolor7,
 		background_color = beautiful.transparent,
 		border_color = beautiful.xcolor7,
@@ -69,7 +69,7 @@ return function()
 	local battery_percentage_text = wibox.widget({
 		id = "percent_text",
 		text = "50%",
-		font = beautiful.font_name .. "Medium 12",
+		font = beautiful.font_name .. "Medium 11",
 		align = "center",
 		valign = "center",
 		widget = wibox.widget.textbox,
