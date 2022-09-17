@@ -132,11 +132,6 @@ return require('packer').startup(function()
       }
   } ]]
 
-  use({
-      "glepnir/lspsaga.nvim",
-      branch = "main",
-  })
-
   use {
       "SmiteshP/nvim-navic",
       requires = "neovim/nvim-lspconfig"
