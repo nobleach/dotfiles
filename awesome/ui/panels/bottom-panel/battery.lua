@@ -19,7 +19,7 @@ return function()
 
 	local charging_icon = wibox.widget({
 		markup = helpers.ui.colorize_text("", beautiful.xcolor7),
-		font = beautiful.icon_font .. "Round 10",
+		font = beautiful.icon_font .. "Round 11",
 		align = "center",
 		valign = "center",
 		widget = wibox.widget.textbox,
@@ -28,12 +28,13 @@ return function()
 	local battery_bar = wibox.widget({
 		max_value = 100,
 		value = 50,
+		forced_height = 5,
 		forced_width = dpi(30),
 		border_width = dpi(1),
-		paddings = dpi(3),
+		paddings = dpi(4),
 		bar_shape = helpers.ui.rrect(1),
-		shape = helpers.ui.rrect(4),
-		color = beautiful.xcolor7,
+		shape = helpers.ui.rrect(3),
+		color = beautiful.accent,
 		background_color = beautiful.transparent,
 		border_color = beautiful.xcolor7,
 		widget = wibox.widget.progressbar,
@@ -68,8 +69,10 @@ return function()
 
 	local battery_percentage_text = wibox.widget({
 		id = "percent_text",
-		text = "50%",
-		font = beautiful.font_name .. "Medium 11",
+        text_hover_bg = beautiful.accent,
+        text_normal_bg = beautiful.accent,
+		markup = "<span foreground='" .. beautiful.accent .."'>50%</span>",
+		font = beautiful.font_name .. "Medium 10",
 		align = "center",
 		valign = "center",
 		widget = wibox.widget.textbox,
@@ -100,7 +103,7 @@ return function()
 		battery_bar.value = value
 		last_value = value
 
-		battery_percentage_text:set_text(math.floor(value) .. "%")
+		battery_percentage_text:set_markup("<span foreground='" .. beautiful.accent .."'>" .. math.floor(value) .. "%</span>")
 
 		if charging_icon.visible then
 			battery_bar.color = charging_color

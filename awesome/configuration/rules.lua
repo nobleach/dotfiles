@@ -25,6 +25,18 @@ ruled.client.connect_signal("request::rules", function()
 		},
 	})
 
+	-- Chat apps
+	ruled.client.append_rule({
+	    id = "chat_apps",
+	    rule_any = {
+            instance = { "slack" },
+	    },
+        properties = {
+            -- floating = true,
+            tag = "4"
+        }
+	})
+
 	--- Tasklist order
 	ruled.client.append_rule({
 		id = "tasklist_order",

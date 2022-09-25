@@ -79,6 +79,8 @@ theme.htb7 = "#ffaf00"
 theme.htb8 = "#9f00ff"
 --- Aqua
 theme.htb8 = "#bfe473"
+-- Tokyo Faded Blue
+theme.htb9 = "#8DA3B9"
 
 --- ░█▀▀░█▀█░█▀█░▀█▀░█▀▀
 --- ░█▀▀░█░█░█░█░░█░░▀▀█
@@ -122,7 +124,7 @@ function theme.random_accent_color()
 	return accents[i]
 end
 
-theme.accent = theme.htb1
+theme.accent = theme.htb9
 
 --- UI events
 theme.leave_event = transparent

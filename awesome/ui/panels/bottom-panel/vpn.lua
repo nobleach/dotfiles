@@ -1,5 +1,6 @@
 local wibox = require("wibox")
 local awful = require("awful")
+local beautiful = require("beautiful")
 local naughty = require("naughty")
 local watch = require("awful.widget.watch")
 
@@ -8,7 +9,7 @@ vpn_text = wibox.widget.textbox()
 watch(
     "ip addr show tun0", 2,
     function(widget, stdout, stderr, exitreason, exitcode)
-        widget.markup= "<span foreground='#9fef00'>VPN:</span> "
+        widget.markup= "<span foreground='" .. beautiful.accent .."'>VPN:</span> "
     end,
     vpn_text
 )
