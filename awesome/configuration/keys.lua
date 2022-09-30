@@ -9,6 +9,7 @@ local playerctl_daemon = require("signal.playerctl")
 local machi = require("modules.layout-machi")
 local helpers = require("helpers")
 local apps = require("configuration.apps")
+local xrandr = require("configuration.xrandr")
 
 --- Make key easier to call
 --- ~~~~~~~~~~~~~~~~~~~~~~~
@@ -229,7 +230,7 @@ awful.keyboard.append_global_keybindings({
 			lock_screen_show()
 		end, { description = "lock screen", group = "hotkeys" }),
 
-		--- Exit screen
+		--- Et screen
 		awful.key({ mod }, "Escape", function()
 			awesome.emit_signal("module::exit_screen:show")
 		end, { description = "exit screen", group = "hotkeys" }),
@@ -456,6 +457,9 @@ awful.keyboard.append_global_keybindings({
 			end,
 		}),
 	})
+
+--- XrandR
+    awful.key({ mod }, "x", function() xrandr.xrandr() end)
 
 --- Mouse bindings on desktop
 	local main_menu = require("ui.main-menu")

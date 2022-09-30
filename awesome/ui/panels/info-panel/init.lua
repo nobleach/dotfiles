@@ -39,8 +39,8 @@ return function(s)
 		minimum_width = dpi(350),
 		maximum_width = dpi(350),
 		bg = beautiful.transparent,
-		ontop = false,
-		visible = true,
+		ontop = true,
+		visible = false,
 		placement = function(w)
 			awful.placement.bottom_left(w, {
 				margins = { top = beautiful.wibar_height + dpi(5), bottom = beautiful.wibar_height + dpi(5), left = dpi(5), right = dpi(5) },
