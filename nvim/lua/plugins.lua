@@ -21,7 +21,7 @@ return require('packer').startup(function()
   use 'tpope/vim-surround'
   use 'folke/lsp-colors.nvim'
   use 'matze/vim-move'
-  use 'axelf4/vim-strip-trailing-whitespace'
+  -- use 'axelf4/vim-strip-trailing-whitespace'
   use 'kburdett/vim-nuuid'
   use 'maxmellon/vim-jsx-pretty'
   use 'romgrk/searchReplace.vim'
@@ -38,6 +38,7 @@ return require('packer').startup(function()
   use 'styled-components/vim-styled-components'
   use 'folke/tokyonight.nvim'
   use 'simrat39/rust-tools.nvim'
+  use 'jparise/vim-graphql'
   -- use 'j-hui/fidget.nvim'
 
   -- Nvim DAP
@@ -47,7 +48,7 @@ return require('packer').startup(function()
   use 'vim-crystal/vim-crystal'
 
   -- Load on an autocommand event
-  use {'andymass/vim-matchup', event = 'VimEnter'}
+  -- use {'andymass/vim-matchup', event = 'VimEnter'}
   -- Nvim Tree
   use {
    'kyazdani42/nvim-tree.lua',
@@ -129,10 +130,10 @@ return require('packer').startup(function()
       }
   } ]]
 
-  use({
+  --[[ use({
       "glepnir/lspsaga.nvim",
       branch = "main",
-  })
+  }) ]]
 
   use {
       "SmiteshP/nvim-navic",

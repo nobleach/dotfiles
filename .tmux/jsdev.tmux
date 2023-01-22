@@ -1,18 +1,19 @@
-rename-window 'Editor'
-split-window -h
+rename-window 'CMS'
+split-window -h -c ~/Code/cms-drupal
 resize-pane -R 40
-split-window -v
-new-window
-rename-window 'Tests'
-new-window
-rename-window 'Workzone'
+split-window -v -c ~/Code/cms-drupal
+new-window -c ~/Code/cms-editor
+rename-window 'Editor'
+new-window -c ~/Code/cms-visitor-site
+rename-window 'Visitor Site'
+new-window -c ~/Code/cms-integration-service
+rename-window 'GQL'
+new-window -c ~/Code/web-palette-react
+rename-window 'Palette'
 new-window
 rename-window Sandbox
-split-window -h
-resize-pane -R 55
-select-window -t 1
 new-window
-rename-window Devzone
+rename-window Ops
 new-window
 rename-window Playground
 new-window -c ~/.config/nvim

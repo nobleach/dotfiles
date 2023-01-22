@@ -135,19 +135,6 @@
     "body": "${styles['$1']}",
     "description": "Style module interpolated"
   },
-  "Functional Component": {
-    "prefix": "sfc",
-    "body": [
-      "interface ${1:$TM_FILENAME_BASE}Props {}",
-      "",
-      "function $1({}: $1Props) {",
-      "  return (",
-      "    <section></section>",
-      "  );",
-      "}"
-    ],
-    "description": "Stateless Functional Component"
-  },
   "Stateless Functional Connected Component": {
     "prefix": "sfcc",
     "body": [

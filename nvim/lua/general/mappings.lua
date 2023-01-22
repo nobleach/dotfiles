@@ -49,7 +49,7 @@ vim.api.nvim_set_keymap('n', 'gn', '<cmd>pu<cr>==',
   {noremap = true, silent = true})
 
 -- Run through JSON tool
-vim.api.nvim_set_keymap('n', 'ga', '<cmd>%! python -m json.tool<CR>',
+vim.api.nvim_set_keymap('n', 'ga', '<cmd>%! python3 -m json.tool<CR>',
   {noremap = true, silent = true})
 
 -- File Tree
@@ -164,7 +164,7 @@ vim.api.nvim_set_keymap('n', '<Leader>ri', [[ <Esc><Cmd>lua require('refactoring
   {noremap = true, silent = true, expr = false})
 
 -- Saga
-vim.keymap.set("n", "gl", require("lspsaga.finder").lsp_finder, { silent = true,noremap = true })
+-- vim.keymap.set("n", "gl", require("lspsaga.finder").lsp_finder, { silent = true,noremap = true })
 -- vim.keymap.set("n", "<leader>xs", require("lspsaga.signaturehelp").signature_help, { silent = true,noremap = true})
-vim.keymap.set("n", "<leader>xl", '<cmd>LSoutlineToggle<CR>', { silent = true,noremap = true})
-vim.keymap.set("n", "<leader>xr", require("lspsaga.rename").lsp_rename, { silent = true,noremap = true })
+-- vim.keymap.set("n", "<leader>xl", '<cmd>LSoutlineToggle<CR>', { silent = true,noremap = true})
+-- vim.keymap.set("n", "<leader>xr", require("lspsaga.rename").lsp_rename, { silent = true,noremap = true })

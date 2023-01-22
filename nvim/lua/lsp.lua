@@ -107,7 +107,7 @@ require('vim.lsp.protocol').CompletionItemKind = {
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport =
     {properties = {'documentation', 'detail', 'additionalTextEdits'}} ]]
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- List LSP Servers here
 local servers = {
@@ -173,8 +173,11 @@ nvim_lsp.emmet_ls.setup{
   end;
 }
 
+-- PHP LSP
+nvim_lsp.phpactor.setup{}
+
 nvim_lsp.kotlin_language_server.setup({
-    cmd = { "/Users/jimwharton/.local/bin/kotlin-language-server-source/server/build/install/server/bin/kotlin-language-server" }
+    cmd = { "/Users/jim.wharton/.local/bin/kotlin-language-server-source/server/build/install/server/bin/kotlin-language-server" }
 })
 
 require'lspconfig'.sumneko_lua.setup {

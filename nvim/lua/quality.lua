@@ -145,7 +145,19 @@ require'colorizer'.setup({'html', 'css', 'javascript'}, {
 require('nvim-autopairs').setup()
 
 -- Neogit Setup
-require('neogit').setup {}
+require('neogit').setup {
+  console_timeout = 2000,
+  -- Automatically show console if a command takes more than console_timeout milliseconds
+  auto_show_console = true,
+  -- Change the default way of opening the commit popup
+  commit_popup = {
+    kind = "split",
+  },
+  -- Change the default way of opening popups
+  popup = {
+    kind = "split",
+  }
+}
 
 --Map blankline
 -- vim.g.indent_blankline_char = "┊"

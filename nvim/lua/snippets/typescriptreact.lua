@@ -73,8 +73,10 @@ local useState = s(
 local functionComponent = s(
     "fc",
     fmt([[export default function {}() {{
-    return (<div />);
-}};
+    return (
+      <div />
+    );
+}}
     ]],
     {
         f(function(_, snip)
