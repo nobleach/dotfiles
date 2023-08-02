@@ -28,7 +28,7 @@ return require('packer').startup(function()
   use 'rmagatti/goto-preview'
   use 'tveskag/nvim-blame-line'
   use 'mfussenegger/nvim-jdtls'
-  use 'sindrets/diffview.nvim'
+  -- use 'sindrets/diffview.nvim'
   use 'hashivim/vim-terraform'
   use 'elixir-editors/vim-elixir'
   use 'dbeniamine/cheat.sh-vim'
@@ -39,6 +39,8 @@ return require('packer').startup(function()
   use 'folke/tokyonight.nvim'
   use 'simrat39/rust-tools.nvim'
   use 'jparise/vim-graphql'
+  use 'lewis6991/gitsigns.nvim'
+  use 'dnlhc/glance.nvim'
   -- use 'j-hui/fidget.nvim'
 
   -- Nvim DAP
@@ -87,6 +89,7 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-cmdline'
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
   use 'ray-x/cmp-treesitter'
@@ -139,6 +142,19 @@ return require('packer').startup(function()
       "SmiteshP/nvim-navic",
       requires = "neovim/nvim-lspconfig"
   }
+
+  use {
+    "olexsmir/gopher.nvim",
+    requires = { -- dependencies
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+  }
+
+  use({
+    'Wansmer/treesj',
+    requires = { 'nvim-treesitter' },
+  })
 
   --[[ use {'nvim-orgmode/orgmode', config = function()
       require('orgmode').setup{}

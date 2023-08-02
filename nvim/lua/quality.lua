@@ -60,9 +60,6 @@ require('telescope').load_extension('dap')
 require("nvim-tree").setup {
     disable_netrw = true,
     hijack_netrw = true,
-    open_on_setup = false,
-    ignore_buffer_on_setup = false,
-    ignore_ft_on_setup = {},
     auto_reload_on_write = true,
     open_on_tab = false,
     hijack_cursor = false,
@@ -284,3 +281,34 @@ require'nvim-treesitter.configs'.setup {
   },
   ensure_installed = {'org'}, -- Or run :TSUpdate org
 }
+
+-- TreeSitter Split/Join
+local tsj = require('treesj')
+
+local langs = {--[[ configuration for languages ]]}
+
+tsj.setup({
+  -- Use default keymaps
+  -- (<space>m - toggle, <space>j - join, <space>s - split)
+  use_default_keymaps = false,
+
+  -- Node with syntax error will not be formatted
+  check_syntax_error = true,
+
+  -- If line after join will be longer than max value,
+  -- node will not be formatted
+  max_join_length = 120,
+
+  -- hold|start|end:
+  -- hold - cursor follows the node/place on which it was called
+  -- start - cursor jumps to the first symbol of the node being formatted
+  -- end - cursor jumps to the last symbol of the node being formatted
+  cursor_behavior = 'hold',
+
+  -- Notify about possible problems or not
+  notify = true,
+  langs = langs,
+
+  -- Use `dot` for repeat action
+  dot_repeat = true,
+})
