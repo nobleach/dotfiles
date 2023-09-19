@@ -11,6 +11,7 @@ require('_glance')
 -- require('diffview')
 -- require('saga')
 require('rust-setup')
+require('_toggleterm')
 require('general.personal')
 require ('general.mappings')
 

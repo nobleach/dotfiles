@@ -14,7 +14,7 @@ return require('packer').startup(function()
   use 'norcalli/nvim-colorizer.lua'
   use 'b3nj5m1n/kommentary'
   use 'windwp/nvim-autopairs'
-  use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+  -- use 'jose-elias-alvarez/nvim-lsp-ts-utils'
   use 'tpope/vim-repeat'
   use 'mattn/emmet-vim'
   use 'AndrewRadev/splitjoin.vim'
@@ -125,6 +125,10 @@ return require('packer').startup(function()
 
   use({ "jose-elias-alvarez/null-ls.nvim", requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"} })
 
+  use {
+    "pmizio/typescript-tools.nvim",
+    requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+  }
   --[[ use {
       "ThePrimeagen/refactoring.nvim",
       requires = {
@@ -155,6 +159,12 @@ return require('packer').startup(function()
     'Wansmer/treesj',
     requires = { 'nvim-treesitter' },
   })
+
+  -- ToggleTerm
+  use {
+    "akinsho/toggleterm.nvim", 
+    tag = '*'
+  }
 
   --[[ use {'nvim-orgmode/orgmode', config = function()
       require('orgmode').setup{}

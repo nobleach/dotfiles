@@ -25,7 +25,7 @@ local on_attach = function(client, bufnr)
   nnoremap('gd', vim.lsp.buf.definition, bufopts, "Go to definition")
   nnoremap('gi', vim.lsp.buf.implementation, bufopts, "Go to implementation")
   nnoremap('K', vim.lsp.buf.hover, bufopts, "Hover text")
-  nnoremap('<C-k>', vim.lsp.buf.signature_help, bufopts, "Show signature")
+  nnoremap('gh', vim.lsp.buf.signature_help, bufopts, "Show signature")
   nnoremap('<space>wa', vim.lsp.buf.add_workspace_folder, bufopts, "Add workspace folder")
   nnoremap('<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts, "Remove workspace folder")
   nnoremap('<space>wl', function()
@@ -171,11 +171,11 @@ local config = {
 
     -- The jar file is located where jdtls was installed. This will need to be updated
     -- to the location where you installed jdtls
-    '-jar', vim.fn.glob('/opt/homebrew/Cellar/jdtls/1.25.0/libexec/plugins/org.eclipse.equinox.launcher_*.jar'),
+    '-jar', vim.fn.glob('/opt/homebrew/Cellar/jdtls/1.26.0/libexec/plugins/org.eclipse.equinox.launcher_*.jar'),
 
     -- The configuration for jdtls is also placed where jdtls was installed. This will
     -- need to be updated depending on your environment
-    '-configuration', '/opt/homebrew/Cellar/jdtls/1.25.0/libexec/config_mac',
+    '-configuration', '/opt/homebrew/Cellar/jdtls/1.26.0/libexec/config_mac',
 
     -- Use the workspace_folder defined above to store data for this project
     '-data', workspace_folder,
