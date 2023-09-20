@@ -138,14 +138,6 @@ end
 
 local nvim_lsp = require("lspconfig")
 
-require("null-ls").setup({
-    sources = {
-        require("null-ls").builtins.diagnostics.eslint_d, -- eslint or eslint_d                     _d,
-        require("null-ls").builtins.code_actions.eslint_d, -- eslint or eslint_d                    ,
-        require("null-ls").builtins.formatting.eslint_d, -- prettier, eslint, eslint_d, or prettierd
-    },
-})
-
 -- Add capabilities to cssls
 nvim_lsp.cssls.setup {
   capabilities = capabilities,
@@ -239,4 +231,27 @@ require("typescript-tools").setup {
     -- mirror of VSCode's `typescript.suggest.completeFunctionCalls`
     complete_function_calls = false,
   },
+}
+
+require("conform").setup({
+      format_on_save = {
+        -- These options will be passed to conform.format()
+        timeout_ms = 500,
+        lsp_fallback = true,
+      },
+    formatters_by_ft = {
+        lua = { "stylua" },
+        -- Conform will run multiple formatters sequentially
+        python = { "isort", "black" },
+        -- Use a sub-list to run only the first available formatter
+        javascript = { { "biome", "prettierd", "prettier" } },
+    },
+  })
+
+require('lint').linters_by_ft = {
+  markdown = {'vale',},
+  javascript = {'biome', 'eslint_d',},
+  javascriptreact = {'biome', 'eslint_d',},
+  typescript = {'biome', 'eslint_d',},
+  typescriptreact = {'biome', 'eslint_d'},
 }

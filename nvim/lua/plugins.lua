@@ -41,6 +41,8 @@ return require('packer').startup(function()
   use 'jparise/vim-graphql'
   use 'lewis6991/gitsigns.nvim'
   use 'dnlhc/glance.nvim'
+  use 'stevearc/conform.nvim'
+  use 'mfussenegger/nvim-lint'
   -- use 'j-hui/fidget.nvim'
 
   -- Nvim DAP
@@ -123,19 +125,10 @@ return require('packer').startup(function()
       end,
   }
 
-  use({ "jose-elias-alvarez/null-ls.nvim", requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"} })
-
   use {
     "pmizio/typescript-tools.nvim",
     requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
   }
-  --[[ use {
-      "ThePrimeagen/refactoring.nvim",
-      requires = {
-          {"nvim-lua/plenary.nvim"},
-          -- {"nvim-treesitter/nvim-treesitter"}
-      }
-  } ]]
 
   --[[ use({
       "glepnir/lspsaga.nvim",
