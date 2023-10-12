@@ -30,7 +30,6 @@ return {
 				"astro",
 				"bashls",
 				"biome",
-				"ccls",
 				-- "crystalline",
 				"cssls",
 				"dockerls",

@@ -43,6 +43,7 @@ return {
 			})
 			-- load the colorscheme here
 			vim.cmd([[colorscheme tokyonight]])
+			vim.cmd([[highlight Normal ctermbg=NONE guibg=NONE]])
 		end,
 	},
 }
