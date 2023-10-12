@@ -1,19 +1,22 @@
-require ('general.config')
-require('plugins')
+--[[ require ('general.config')
+require('plugins') ]]
 -- require('status-line')
-require('_lualine')
+--[[ require('_lualine')
 require('lsp')
 require ('snippets')
 require('_cmp')
 require('quality')
 require('_gitsigns')
-require('_glance')
+require('_glance') ]]
 -- require('diffview')
 -- require('saga')
-require('rust-setup')
+--[[ require('rust-setup')
 require('_toggleterm')
 require('general.personal')
-require ('general.mappings')
+require ('general.mappings') ]]
+
+require("jim.core")
+require("jim.lazy")
 
 --For Vim-Move
 vim.cmd[[

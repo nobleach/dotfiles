@@ -57,22 +57,6 @@ keymap.set('n', 'gn', '<cmd>pu<cr>==',
 keymap.set('n', 'ga', '<cmd>%! python3 -m json.tool<CR>',
   {noremap = true, silent = true})
 
--- File Tree
-keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<cr>',
-  {noremap = true, silent = true})
-keymap.set('n', 'R', '<cmd>NvimTreeRefresh<cr>',
-  {noremap = true, silent = true})
-keymap.set('n', '<leader>9', '<cmd>NvimTreeFindFile<cr>',
-  {noremap = true, silent = true})
-
--- Telescope
-keymap.set('n', '<C-p>', '<cmd>Telescope find_files hidden=true<cr>',
-  {noremap = true, silent = true})
-keymap.set('n', '<leader>f', '<cmd>Telescope live_grep<cr>',
-  {noremap = true, silent = true})
-keymap.set('n', '<leader>8', "<cmd>lua require('telescope.builtin').grep_string { search = vim.fn.expand(\"<cword>\") }<CR>",
-  {noremap = true, silent = true})
-
 -- LSP Diagnostics
 keymap.set('n', '<leader>xx', '<cmd>TroubleToggle<cr>',
   {silent = true, noremap = true})
@@ -87,28 +71,12 @@ keymap.set('n', 'xf', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>',
 keymap.set('n', '<leader>g', '<cmd>Neogit kind=split<CR>',
   {silent = true, noremap = true})
 
--- LSP
-keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>',
-  {silent = true, noremap = true})
-keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>',
-  {silent = true, noremap = true})
-keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR><CR>',
-  {silent = true, noremap = true})
-keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>',
-  {silent = true, noremap = true})
-keymap.set('n', 'gh', '<cmd>lua vim.lsp.buf.signature_help()<CR>',
-  {silent = true, noremap = true})
-keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev())<CR>',
-  {silent = true, noremap = true})
-keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next())<CR>',
-  {silent = true, noremap = true})
-
 -- Search and replace
 keymap.set('n', '<C-f>', '<cmd>Search<CR>',
   {silent = true, noremap = true})
 
 -- Nvim DAP
-keymap.set('n', '<leader>da', "<cmd>lua require('debugHelper').attach()<CR>",
+--[[ keymap.set('n', '<leader>da', "<cmd>lua require('debugHelper').attach()<CR>",
   {silent = true, noremap = true})
 keymap.set('n', '<leader>dh', "<cmd>lua require'dap'.toggle_breakpoint()<CR>",
   {silent = true, noremap = true})
@@ -143,7 +111,7 @@ keymap.set('n', '<leader>db', "<cmd>Telescope dap list_breakpoints<CR>",
 keymap.set('n', '<leader>rr', "<cmd>lua require'telescope.builtin'.lsp_references{}<CR>",
   {noremap = true, silent = true})
 keymap.set('n', '<leader>xb', "<cmd>Telescope git_branches<CR>",
-{noremap = true, silent = true})
+{noremap = true, silent = true}) ]]
 
 -- Git Blame
 keymap.set('n', '<leader>b', "<cmd>ToggleBlameLine<CR>",
