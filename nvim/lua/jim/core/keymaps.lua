@@ -58,22 +58,14 @@ keymap.set('n', 'ga', '<cmd>%! python3 -m json.tool<CR>',
   {noremap = true, silent = true})
 
 -- LSP Diagnostics
-keymap.set('n', '<leader>xx', '<cmd>TroubleToggle<cr>',
-  {silent = true, noremap = true})
+--[[ keymap.set('n', '<leader>xx', '<cmd>TroubleToggle<cr>',
+  {silent = true, noremap = true}) ]]
 
 -- LSP Code Actions
-keymap.set('n', '<leader>xa', '<cmd>CodeActionMenu<cr>',
+--[[ keymap.set('n', '<leader>xa', '<cmd>CodeActionMenu<cr>',
   {silent = true, noremap = true})
 keymap.set('n', 'xf', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>',
-  {silent = true, noremap = true})
-
--- NeoGit
-keymap.set('n', '<leader>g', '<cmd>Neogit kind=split<CR>',
-  {silent = true, noremap = true})
-
--- Search and replace
-keymap.set('n', '<C-f>', '<cmd>Search<CR>',
-  {silent = true, noremap = true})
+  {silent = true, noremap = true}) ]]
 
 -- Nvim DAP
 --[[ keymap.set('n', '<leader>da', "<cmd>lua require('debugHelper').attach()<CR>",
@@ -112,17 +104,6 @@ keymap.set('n', '<leader>rr', "<cmd>lua require'telescope.builtin'.lsp_reference
   {noremap = true, silent = true})
 keymap.set('n', '<leader>xb', "<cmd>Telescope git_branches<CR>",
 {noremap = true, silent = true}) ]]
-
--- Git Blame
-keymap.set('n', '<leader>b', "<cmd>ToggleBlameLine<CR>",
-  {noremap = true, silent = true})
-
--- Sidebar
-keymap.set('n', '<leader>sb', "<cmd>SidebarNvimToggle<CR>",
-  {noremap = true, silent = true})
-
-keymap.set('n', '<leader>p', "<cmd>Telescope neoclip plus<CR>",
-  {noremap = true, silent = true})
 
 -- Refactoring
 keymap.set('v', '<Leader>re', [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]],
