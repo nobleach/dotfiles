@@ -86,8 +86,3 @@ vim.cmd[[
 vim.api.nvim_exec([[
    au BufEnter term://* setlocal nonumber
 ]], false)
-
--- Format code on save
---vim.api.nvim_exec([[
---  autocmd BufWritePre *.js Neoformat
--- ]], false)

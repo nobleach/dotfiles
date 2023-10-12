@@ -35,9 +35,9 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '<space>e',
                    '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
                    opts)
-    buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>',
+    buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>',
                    opts)
-    buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>',
+    buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>',
                    opts)
     buf_set_keymap('n', '<space>q',
                    '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
@@ -111,7 +111,9 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 
 -- List LSP Servers here
 local servers = {
+  "astro",
   "bashls",
+  "biome",
   "ccls",
   "crystalline",
   "cssls",
@@ -244,7 +246,10 @@ require("conform").setup({
         -- Conform will run multiple formatters sequentially
         python = { "isort", "black" },
         -- Use a sub-list to run only the first available formatter
-        javascript = { { "biome", "prettierd", "prettier" } },
+        javascript = { "biome", "prettierd", "prettier" },
+        typescript = { "biome", "prettierd", "prettier" },
+        typescriptreact = { "biome", "prettierd", "prettier" },
+        astro = { "biome", "prettierd", "prettier" },
     },
   })
 

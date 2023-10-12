@@ -93,9 +93,9 @@ vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>',
   {silent = true, noremap = true})
 vim.api.nvim_set_keymap('n', 'gh', '<cmd>lua vim.lsp.buf.signature_help()<CR>',
   {silent = true, noremap = true})
-vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev { float = {...} }<CR>',
+vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev())<CR>',
   {silent = true, noremap = true})
-vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next { float = {...} }<CR>',
+vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next())<CR>',
   {silent = true, noremap = true})
 
 -- Search and replace
