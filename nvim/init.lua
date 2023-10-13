@@ -17,7 +17,6 @@ require ('general.mappings') ]]
 
 require("jim.core")
 require("jim.lazy")
-require("jim.custom")
 
 vim.cmd([[set completeopt=menuone,noselect]])
 

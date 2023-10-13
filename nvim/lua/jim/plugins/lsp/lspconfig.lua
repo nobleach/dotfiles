@@ -57,7 +57,7 @@ return {
 
 			opts.desc = "Restart LSP"
 			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
-			ops.desc = "Send to quickfix"
+			opts.desc = "Send to quickfix"
 			keymap.set("n", "<leader>q", ":lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
 		end
 
