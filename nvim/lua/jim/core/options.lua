@@ -12,17 +12,16 @@ autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. B
 vim.o.background = "dark" -- or "light" for light mode
 -- vim.cmd([[colorscheme gruvbox]])
 -- vim.cmd[[colorscheme blue-moon]]
-vim.cmd[[autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE]]
-vim.cmd[[colorscheme tokyonight]]
-vim.g.tokyonight_italic_comments = true
-vim.g.tokyonight_italic_keywords = true
+--vim.cmd[[autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE]]
+--vim.cmd[[colorscheme tokyonight]]
+--vim.g.tokyonight_italic_comments = true
+--vim.g.tokyonight_italic_keywords = true
 -- vim.cmd[[colorscheme distinguished]]
 -- vim.cmd[[colorscheme material]]
 -- vim.cmd[[colorscheme nord]]
 -- vim.cmd[[colorscheme nightfox
 -- vim.g.nightfox_style = "nordfox" ]]
 
-vim.g.mapleader = ' '
 -- vim.o.clipboard = "unnamedplus"
 vim.opt.clipboard = {'unnamed', 'unnamedplus'}
 vim.cmd [[au TextYankPost * silent! lua vim.highlight.on_yank()]]
@@ -42,12 +41,12 @@ vim.o.splitright = true
 vim.o.title = true
 vim.o.titlestring = "%<%F%=%l/%L - nvim"
 vim.o.shortmess = vim.o.shortmess .. "c"
-vim.o.tabstop = 4
-vim.bo.tabstop = 4
-vim.o.shiftwidth = 4
-vim.bo.shiftwidth = 4
-vim.o.softtabstop = 4
-vim.bo.softtabstop = 4
+vim.o.tabstop = 2
+vim.bo.tabstop = 2
+vim.o.shiftwidth = 2
+vim.bo.shiftwidth = 2
+vim.o.softtabstop = 2
+vim.bo.softtabstop = 2
 vim.o.showtabline = 2
 vim.o.smartindent = true
 vim.o.autoindent = true
@@ -66,6 +65,9 @@ vim.o.undofile = true
 vim.o.incsearch = true
 vim.g.user_emmet_leader_key = '<c-e>'
 vim.o.colorcolumn = "72"
+-- Status column
+--[[ vim.opt.numberwidth = 3
+vim.opt.statuscolumn = "%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum < 10 ? v:lnum . '  ' : v:lnum) : ''}%=%s" ]]
 
 -- Java setup
 vim.cmd[[
@@ -84,7 +86,3 @@ vim.api.nvim_exec([[
    au BufEnter term://* setlocal nonumber
 ]], false)
 
--- Format code on save
---vim.api.nvim_exec([[
---  autocmd BufWritePre *.js Neoformat
--- ]], false)
