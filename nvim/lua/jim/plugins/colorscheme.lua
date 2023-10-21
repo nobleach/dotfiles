@@ -1,11 +1,11 @@
 return {
 	-- {
-	--   "bluz71/vim-nightfly-guicolors",
-	--   priority = 1000, -- make sure to load this before all the other start plugins
-	--   config = function()
-	--     -- load the colorscheme here
-	--     vim.cmd([[colorscheme nightfly]])
-	--   end,
+	-- 	"bluz71/vim-nightfly-guicolors",
+	-- 	priority = 1000, -- make sure to load this before all the other start plugins
+	-- 	config = function()
+	-- 		-- load the colorscheme here
+	-- 		vim.cmd([[colorscheme nightfly]])
+	-- 	end,
 	-- },
 	{
 		"folke/tokyonight.nvim",
@@ -46,4 +46,46 @@ return {
 			vim.cmd([[highlight Normal ctermbg=NONE guibg=NONE]])
 		end,
 	},
+	-- "neanias/everforest-nvim",
+	-- priority = 1000, -- make sure to load this before all the other start plugins
+	-- config = function()
+	-- 	local everforest = require("everforest")
+	--
+	-- 	everforest.setup()
+	-- end,
+	-- {
+	-- 	"savq/melange-nvim",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd([[colorscheme melange]])
+	-- 	end,
+	-- },
+	-- {
+	-- 	"lvim-tech/lvim-colorscheme",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		local lvim_colorscheme = require("lvim-colorscheme")
+	--
+	-- 		lvim_colorscheme.setup({
+	-- 			style = "dark",
+	-- 		})
+	-- 	end,
+	-- },
+	-- {
+	-- 	"olivercederborg/poimandres.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("poimandres").setup({
+	-- 			-- leave this setup function empty for default config
+	-- 			-- or refer to the configuration section
+	-- 			-- for configuration options
+	-- 		})
+	-- 	end,
+	--
+	-- 	-- optionally set the colorscheme within lazy config
+	-- 	init = function()
+	-- 		vim.cmd("colorscheme poimandres")
+	-- 	end,
+	-- },
 }
