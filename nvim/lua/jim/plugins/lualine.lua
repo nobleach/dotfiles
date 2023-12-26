@@ -8,7 +8,7 @@ return {
 		-- configure lualine with modified theme
 		lualine.setup({
 			options = {
-				theme = "tokyonight",
+				theme = "everforest",
 				tabline = {
 					lualine_a = { "filename" },
 					lualine_b = { "branch" },

@@ -149,8 +149,8 @@ local config = {
 			configuration = {
 				runtimes = {
 					{
-						name = "JavaSE-20",
-						path = home .. "/.asdf/installs/java/temurin-20.0.1+9",
+						name = "JavaSE-21",
+						path = home .. "/.asdf/installs/java/temurin-21.0.1+12.0.LTS",
 					},
 					{
 						name = "JavaSE-17",
@@ -185,12 +185,12 @@ local config = {
 		-- The jar file is located where jdtls was installed. This will need to be updated
 		-- to the location where you installed jdtls
 		"-jar",
-		vim.fn.glob("/opt/homebrew/Cellar/jdtls/1.28.0/libexec/plugins/org.eclipse.equinox.launcher_*.jar"),
+		vim.fn.glob("/opt/homebrew/Cellar/jdtls/1.30.0/libexec/plugins/org.eclipse.equinox.launcher_*.jar"),
 
 		-- The configuration for jdtls is also placed where jdtls was installed. This will
 		-- need to be updated depending on your environment
 		"-configuration",
-		"/opt/homebrew/Cellar/jdtls/1.28.0/libexec/config_mac",
+		"/opt/homebrew/Cellar/jdtls/1.30.0/libexec/config_mac",
 
 		-- Use the workspace_folder defined above to store data for this project
 		"-data",

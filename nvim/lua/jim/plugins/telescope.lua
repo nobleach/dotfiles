@@ -32,5 +32,23 @@ return {
 		keymap.set("n", "<C-p>", "<cmd>Telescope find_files hidden=true<cr>", { noremap = true, silent = true })
 		keymap.set("n", "<leader>f", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
 		keymap.set("n", "<leader>8", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+		keymap.set(
+			"n",
+			"<leader>tgb",
+			"<cmd>lua require('telescope.builtin').git_branches()<cr>",
+			{ desc = "List all GIT branches" }
+		)
+		keymap.set(
+			"n",
+			"<leader>tgc",
+			"<cmd>lua require('telescope.builtin').git_commits()<cr>",
+			{ desc = "List all GIT commits" }
+		)
+		keymap.set(
+			"n",
+			"<leader>tgo",
+			"<cmd>lua require('telescope.builtin').git_bcommits()<cr>",
+			{ desc = "List all GIT commits" }
+		)
 	end,
 }

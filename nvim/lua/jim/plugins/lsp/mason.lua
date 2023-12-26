@@ -35,11 +35,14 @@ return {
 				"dockerls",
 				"elixirls",
 				"emmet_ls",
+				"gleam",
 				"gopls",
 				"graphql",
 				"html",
 				"kotlin_language_server",
 				"lua_ls",
+				-- "nimls",
+				"ocamllsp",
 				"prismals",
 				"pyright",
 				"rust_analyzer",
@@ -56,6 +59,7 @@ return {
 
 		mason_tool_installer.setup({
 			ensure_installed = {
+				"ocamlformat",
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
 				"isort", -- python formatter
