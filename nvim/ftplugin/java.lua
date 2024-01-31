@@ -1,7 +1,7 @@
 local home = os.getenv("HOME")
 local jdtls = require("jdtls")
 
-local jdtls_version = "1.30.1"
+local jdtls_version = "1.31.0"
 
 local root_markers = { "gradlew", "mvnw", ".git" }
 local root_dir = require("jdtls.setup").find_root(root_markers)

@@ -167,11 +167,19 @@ return {
 			},
 		})
 
+		-- Scala/Metals
+		-- lspconfig["metals"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
+
 		-- lspconfig["tsserver"].setup({
 		-- 	capabilities = capabilities,
 		-- 	on_attach = on_attach,
 		-- })
 		tools.setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
 			settings = {
 				-- spawn additional tsserver instance to calculate diagnostics on it
 				separate_diagnostic_server = true,
