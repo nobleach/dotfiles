@@ -1,6 +1,8 @@
 return {
 	"fedepujol/move.nvim",
 	config = function()
+		require("move").setup({})
+
 		local keymap = vim.keymap
 
 		local opts = { noremap = true, silent = true }

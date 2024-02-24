@@ -3,6 +3,6 @@ return {
 	config = function()
 		local keymap = vim.keymap -- for conciseness
 
-		keymap.set("n", "<leader>b", "<cmd>ToggleBlameLine<CR>", { noremap = true, silent = true })
+		keymap.set("n", "<leader>bl", "<cmd>ToggleBlameLine<CR>", { noremap = true, silent = true })
 	end,
 }

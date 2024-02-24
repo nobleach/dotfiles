@@ -2,7 +2,7 @@
 vim.o.termguicolors = true
 vim.cmd("syntax enable")
 vim.cmd("filetype plugin indent on")
-vim.cmd("set relativenumber")
+-- vim.cmd("set relativenumber")
 -- Re-read buffer if it was modified outside of vim
 vim.cmd([[
 set autoread

@@ -8,7 +8,7 @@ return {
 		-- configure lualine with modified theme
 		lualine.setup({
 			options = {
-				theme = "everforest",
+				theme = "gruvbox-material",
 				tabline = {
 					lualine_a = { "filename" },
 					lualine_b = { "branch" },
