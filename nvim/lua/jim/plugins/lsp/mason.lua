@@ -35,6 +35,7 @@ return {
 				"dockerls",
 				"elixirls",
 				"emmet_ls",
+				"eslint",
 				"fsautocomplete",
 				"gleam",
 				"gopls",

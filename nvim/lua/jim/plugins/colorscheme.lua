@@ -1,4 +1,5 @@
 return {
+	-- vim.cmd([[colorscheme lucius]]),
 	-- {
 	-- 	"bluz71/vim-nightfly-guicolors",
 	-- 	priority = 1000, -- make sure to load this before all the other start plugins
@@ -53,18 +54,18 @@ return {
 	-- 		vim.cmd([[colorscheme everforest]])
 	-- 	end,
 	-- },
-	{
-		"sainnhe/gruvbox-material",
-		priority = 1000, -- make sure to load this before all the other start plugins
-		config = function()
-			vim.cmd([[let g:gruvbox_material_background = 'soft']])
-			vim.cmd([[let g:gruvbox_material_better_performance = 1]])
-			vim.cmd([[let g:gruvbox_material_enable_bold = 1]])
-			vim.cmd([[let g:gruvbox_material_enable_italic = 1]])
-			vim.cmd([[]])
-			vim.cmd([[colorscheme gruvbox-material]])
-		end,
-	},
+	-- {
+	-- 	"sainnhe/gruvbox-material",
+	-- 	priority = 1000, -- make sure to load this before all the other start plugins
+	-- 	config = function()
+	-- 		vim.cmd([[let g:gruvbox_material_background = 'soft']])
+	-- 		vim.cmd([[let g:gruvbox_material_better_performance = 1]])
+	-- 		vim.cmd([[let g:gruvbox_material_enable_bold = 1]])
+	-- 		vim.cmd([[let g:gruvbox_material_enable_italic = 1]])
+	-- 		vim.cmd([[]])
+	-- 		vim.cmd([[colorscheme gruvbox-material]])
+	-- 	end,
+	-- },
 	-- {
 	-- 	"savq/melange-nvim",
 	-- 	priority = 1000,
@@ -83,21 +84,22 @@ return {
 	-- 		})
 	-- 	end,
 	-- },
-	-- {
-	-- 	"olivercederborg/poimandres.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("poimandres").setup({
-	-- 			-- leave this setup function empty for default config
-	-- 			-- or refer to the configuration section
-	-- 			-- for configuration options
-	-- 		})
-	-- 	end,
-	--
-	-- 	-- optionally set the colorscheme within lazy config
-	-- 	init = function()
-	-- 		vim.cmd("colorscheme poimandres")
-	-- 	end,
-	-- },
+	{
+		"olivercederborg/poimandres.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("poimandres").setup({
+				dim_nc_background = true,
+				disable_italics = false,
+			})
+		end,
+
+		-- optionally set the colorscheme within lazy config
+		init = function()
+			vim.cmd("colorscheme poimandres")
+			vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#3c3836" })
+			vim.api.nvim_set_hl(0, "NormalFloat", { fg = "#665c54", bg = "#282828" })
+		end,
+	},
 }
