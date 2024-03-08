@@ -87,6 +87,16 @@ return {
 			on_attach = on_attach,
 		})
 
+		lspconfig["eslint"].setup({
+			capabilities = capabilities,
+			on_attach = function(client, bufnr)
+				vim.api.nvim_create_autocmd("BufWritePre", {
+					buffer = bufnr,
+					command = "EslintFixAll",
+				})
+			end,
+		})
+
 		lspconfig["gleam"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,

@@ -84,22 +84,51 @@ return {
 	-- 		})
 	-- 	end,
 	-- },
+	-- {
+	-- 	"olivercederborg/poimandres.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("poimandres").setup({
+	-- 			dim_nc_background = true,
+	-- 			disable_italics = false,
+	-- 		})
+	-- 	end,
+	--
+	-- 	-- optionally set the colorscheme within lazy config
+	-- 	init = function()
+	-- 		vim.cmd("colorscheme poimandres")
+	-- 		vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#3c3836" })
+	-- 		vim.api.nvim_set_hl(0, "NormalFloat", { fg = "#665c54", bg = "#282828" })
+	-- 	end,
+	-- },
+	-- {
+	-- 	"kyazdani42/blue-moon",
+	-- 	config = function()
+	-- 		vim.opt.termguicolors = true
+	-- 		vim.cmd("colorscheme blue-moon")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"lourenci/github-colors",
+	-- 	config = function()
+	-- 		vim.opt.termguicolors = true
+	-- 		vim.cmd("colorscheme github-colors")
+	-- 	end,
+	-- },
 	{
-		"olivercederborg/poimandres.nvim",
-		lazy = false,
-		priority = 1000,
+		"rose-pine/neovim",
+		name = "rose-pine",
 		config = function()
-			require("poimandres").setup({
-				dim_nc_background = true,
-				disable_italics = false,
+			require("rose-pine").setup({
+				dark_variant = "moon", -- main, moon, or dawn
+				dim_inactive_windows = false,
+				extend_background_behind_borders = true,
 			})
-		end,
-
-		-- optionally set the colorscheme within lazy config
-		init = function()
-			vim.cmd("colorscheme poimandres")
-			vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#3c3836" })
-			vim.api.nvim_set_hl(0, "NormalFloat", { fg = "#665c54", bg = "#282828" })
+			vim.opt.termguicolors = true
+			vim.cmd("colorscheme rose-pine")
+			vim.cmd("hi CursorLine guibg=#394549")
+			vim.cmd("hi TabLineSel guibg=#394549")
 		end,
 	},
 }
