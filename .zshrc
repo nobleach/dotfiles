@@ -1,152 +1,183 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+# set command line mode to vi
+set -o vi
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
-export MANPAGER='nvim +Man!'
-# initialise completions with ZSH's compinit
-autoload -Uz compinit
-compinit
-# Load kubectl right-hand prompt
-# source ~/.config/kubectl.zsh
-# RPROMPT='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 
-# Load Git status
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git svn
-precmd() {
-    vcs_info
-}
-# Load Git completion
-# autoload -U ~/.zsh/compinit && ~/.zsh/compinit
-# fpath=(~/.zsh $fpath)
-# source ~/.zsh/_git/git-completion.zsh
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
 
-# ZSH_THEME="gallois"
-ZSH_THEME="jnrowe"
+alias s3stg-cfg="tcli idb show cmsnonprod/aws_s3_configs/stg/us-east-1.aws"
+alias dcu="docker-compose up"
+alias dcd="docker-compose down"
+alias nppods="tcli runon cmsnonprod kubectl -n cmsnonprod get po"
+alias ppods="tcli runon cms kubectl -n cms get po"
+alias k="kubectl"
+alias kga="kubectl get all"
+alias kgp="kubectl get pods"
+alias kgs="kubectl get svc"
+alias kgc="kubectl get configmap"
+alias kdp="kubectl delete pod"
+alias kaf="kubectl apply -f"
 
-# Brew cleanup:
-alias brewski='brew update && brew upgrade --all && brew cleanup; brew doctor'
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# Paths I frequent
-alias cod='cd ~/code'
-alias dpa='docker system prune -a && docker volume prune'
-alias dcu='docker-compose up'
-alias dcd='docker-compose down'
-alias sit='cd ~/Sites'
-alias work='cd ~/work'
-alias pdet='cd ~/work/product-details'
-alias pren='cd ~/work/product-renderer'
-alias clib='cd ~/work/component-library'
-alias yti='yarn test:integration'
-alias gfom='git fetch origin master'
-alias gpom='git pull origin master'
-alias glo='git log --oneline'
-alias ytu='yarn test:unit'
-alias la='exa -a --group-directories-first'
-alias lal='exa -al --group-directories-first'
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-#
-# kubectl exec -it $(kubectl get po -n test | awk '/pdf-service/ {print $1}' | head -n1) -n test /bin/bash
-function kbash() {
-  service=$1
-  env=$2
-  kubectl exec -it $(kubectl get po -n $env | awk -v pattern="$service" '{ if ( $1 ~ pattern ) print $1 }' | head -n1) /bin/sh -n $env
-}
-#
-# kubectl -n test port-forward auth-service-547684765c-vp9sr 8888:8080
-function kpf() {
-  service=$1
-  env=$2
-  pf=$3
-  kubectl -n $env port-forward $(kubectl get po -n $env | awk -v pattern="$service" '{ if ( $1 ~ pattern ) print $1 }' | head -n1) $pf
-}
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
-alias kroll='kubectl rollout restart deployment '
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
-function wl() {
-  port=$1
-  netstat -Waltn | grep "$port"
-}
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(
-  git
-)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git asdf)
 
 source $ZSH/oh-my-zsh.sh
 
+function findandkill(){
+ lsof -t -i tcp:$1 | xargs kill
+} 
+
+alias killport=findandkill
+
 # User configuration
-export TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins
-# Customize to your needs...
-GOPATH=$HOME/go
-export PATH=$GOPATH/bin:~/bin:~/.local/bin:~/.rbenv/bin:~/.rbenv/shims:/usr/local:/usr/local/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$PATH
-export PATH="$HOME/Library/Haskell/bin:$PATH"
-LC_ALL=$LANG
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
+  export EDITOR='vim'
 else
   export EDITOR='nvim'
 fi
 
-# export NVM_DIR="${HOME}/.nvm"
-# source /usr/local/opt/nvm/nvm.sh
-
-alias preview="fzf --preview 'bat --color \"always\" {}'"
-# add support for ctrl+o to open selected file in VS Code
-# export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
-export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
 #
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+# trigger-oidc-curl, triggerctl, tcli, kubectl bin PATH
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-fancy-ctrl-z () {
-  if [[ $#BUFFER -eq 0 ]]; then
-    fg
-    zle redisplay
-  else
-    zle push-input
-    zle clear-screen
-  fi
-}
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
+alias ezsh="$EDITOR ~/.zshrc"
+alias szsh="source ~/.zshrc"
+alias cod="cd ~/Code"
 
-export PATH="/usr/local/opt/llvm@5/bin:$PATH"
-LDFLAGS="-L/usr/local/opt/llvm@5/lib -Wl,-rpath,/usr/local/opt/llvm@5/lib"
-LIBRARY_PATH=/usr/local/opt/openssl/lib
-export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
+# for Ruby
+GEM_HOME=$HOME/gems
+export PATH=$PATH:$HOME/gems/bin:$HOME/workstation/trigger/trigger-oidc-curl/bin:$HOME/workstation/trigger/tcli/bin:$HOME/workstation/trigger/triggerctl/bin:$HOME/workstation/trigger/kubectl/bin
 
-export JDTLS_HOME="$HOME/.local/opt/jdtls-launcher/jdtls"
+# tcli bash-completion, Please uncomment this section (the 3 lines below) if your default shell is bash
+#if [ -f $HOME/workstation/trigger/tcli/etc/tcli-completion.bash  ]; then
+#  . $HOME/workstation/trigger/tcli/etc/tcli-completion.bash
+#fi
+#
+listening() {
+    if [ $# -eq 0 ]; then
+        sudo lsof -iTCP -sTCP:LISTEN -n -P
+    elif [ $# -eq 1 ]; then
+        sudo lsof -iTCP -sTCP:LISTEN -n -P | grep -i --color $1
+    else
+        echo "Usage: listening [pattern]"
+    fi
+  }
 
-# The next line updates PATH for the Google Cloud SDK.
-# if [ -f '/Users/jimwharton/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jimwharton/bin/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-# if [ -f '/Users/jimwharton/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jimwharton/bin/google-cloud-sdk/completion.zsh.inc'; fi
-
-# Bind fzf keys belongs at end of file
+# tcli source trigger aliases
+if [ -f $HOME/.tcli/trigger_aliases  ]; then
+  . $HOME/.tcli/trigger_aliases
+fi
+#
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# ASDF Version manager
-. $HOME/.asdf/asdf.sh
-# Set JAVA_HOME
-. ~/.asdf/plugins/java/set-java-home.zsh
-# append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
-export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Rust
-PATH="$HOME/.asdf/installs/rust/1.63.0/bin:$PATH"
-source "$HOME/.asdf/installs/rust/1.63.0/env"
 
 # bun completions
-[ -s "/Users/jimwharton/.bun/_bun" ] && source "/Users/jimwharton/.bun/_bun"
+[ -s "/opt/homebrew/share/zsh/site-functions/_bun" ] && source "/opt/homebrew/share/zsh/site-functions/_bun"
 
-# Bun
-export BUN_INSTALL="/Users/jimwharton/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# bun completions
+[ -s "/Users/jim.wharton/.bun/_bun" ] && source "/Users/jim.wharton/.bun/_bun"
+source "/Users/jim.wharton/.asdf/installs/rust/1.70.0/env"
+
+# opam configuration
+[[ ! -r /Users/jim.wharton/.opam/opam-init/init.zsh ]] || source /Users/jim.wharton/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+# Add dotnetcore
+export PATH="$PATH:/Users/jim.wharton/.dotnet/tools"
+
+# Set JAVA_HOME
+. ~/.asdf/plugins/java/set-java-home.zsh
+
+# ensure that docker builds for the right architecture
+# export DOCKER_BUILDKIT=1
+# export DOCKER_DEFAULT_PLATFORM=linux/amd64
+
+# Add trivy
+export PATH=$PATH:~/.trivy
+
+[ -f $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh ] && source $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh
