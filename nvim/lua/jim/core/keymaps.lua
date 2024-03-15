@@ -19,6 +19,7 @@ keymap.set("n", "Y", "yy", opts)
 
 -- Close window
 keymap.set("n", "gq", "<cmd>q<CR>", opts)
+keymap.set("n", "<C-c>", "<cmd>q<CR>", opts)
 
 -- Set relative numbering
 keymap.set("n", "<leader>0", "<cmd>set relativenumber!<cr>", opts)

@@ -129,6 +129,7 @@ return {
 			vim.cmd("colorscheme rose-pine")
 			vim.cmd("hi CursorLine guibg=#394549")
 			vim.cmd("hi TabLineSel guibg=#394549")
+			vim.cmd("hi Visual guifg=White guibg=#BFA8E3 gui=none")
 		end,
 	},
 }
