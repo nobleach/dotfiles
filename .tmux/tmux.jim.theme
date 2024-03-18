@@ -20,19 +20,19 @@ set-option -g display-panes-colour brightred
 # set -g window-style "fg=colour247,bg=#4a4a3a"
 # set -g window-active-style "fg=colour250,bg=#282828"
 
-# Center the window list
+# Left justify the window list
 # set -g status-justify centre
 set -g status-justify left
 
 # Selected window
-set-option -g window-status-current-format "#[bg=#303030,fg=#121212]#[bg=#303030,fg=#ffffff,bold] #I #[bg=#303030,fg=#ffffff]#W #[bg=#121212,fg=#303030]"
+set-option -g window-status-current-format "#[bg=#6E84B1,fg=#121212]#[bg=#6E84B1,fg=#ffffff,bold] #I #[bg=#6E84B1,fg=#ffffff]#W #[bg=#303030,fg=#6E84B1]"
 
 # Inactive window
 set-option -g window-status-format "#[bg=#121212,fg=#121212]#[bg=#121212,fg=colour231] #I #W #[bg=#121212,fg=#121212]"
 
 # Remove padding at the left hand side
 set -g status-left-length 32
-set -g status-left "#[bg=#6E84B1,fg=#121212]  macOS: #I #[bg=#121212,fg=#6E84B1] "
+set -g status-left "#[bg=#6E84B1,fg=#121212]  macOS: #I #[bg=#121212,fg=#6E84B1] "
 
 # Kubernetes context
 # #(/bin/bash $HOME/.tmux/plugins/kube-tmux/kube.tmux 250 red cyan)

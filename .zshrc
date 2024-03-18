@@ -1,10 +1,13 @@
 # set command line mode to vi
 set -o vi
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:/opt/homebrew/bin:$HOME/.asdf/bin:$HOME/.docker/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+# Add brew installed asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -150,7 +153,8 @@ if [ -f $HOME/.tcli/trigger_aliases  ]; then
   . $HOME/.tcli/trigger_aliases
 fi
 #
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -162,7 +166,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # bun completions
 [ -s "/Users/jim.wharton/.bun/_bun" ] && source "/Users/jim.wharton/.bun/_bun"
-source "/Users/jim.wharton/.asdf/installs/rust/1.70.0/env"
+# source "/Users/jim.wharton/.asdf/installs/rust/1.70.0/env"
 
 # opam configuration
 [[ ! -r /Users/jim.wharton/.opam/opam-init/init.zsh ]] || source /Users/jim.wharton/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
@@ -171,7 +175,7 @@ source "/Users/jim.wharton/.asdf/installs/rust/1.70.0/env"
 export PATH="$PATH:/Users/jim.wharton/.dotnet/tools"
 
 # Set JAVA_HOME
-. ~/.asdf/plugins/java/set-java-home.zsh
+# . ~/.asdf/plugins/java/set-java-home.zsh
 
 # ensure that docker builds for the right architecture
 # export DOCKER_BUILDKIT=1
@@ -181,3 +185,12 @@ export PATH="$PATH:/Users/jim.wharton/.dotnet/tools"
 export PATH=$PATH:~/.trivy
 
 [ -f $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh ] && source $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+#for Go
+# export GO_PATH=~/go
+# export PATH=$PATH:/$GO_PATH/bin
+alias air='$(go env GOPATH)/bin/air'

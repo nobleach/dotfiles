@@ -36,19 +36,19 @@ return {
 				"elixirls",
 				"emmet_ls",
 				"eslint",
-				"fsautocomplete",
+				-- "fsautocomplete",
 				"gleam",
 				"gopls",
 				"graphql",
 				"html",
 				"kotlin_language_server",
 				"lua_ls",
-				"nimls",
-				"ocamllsp",
+				-- "nimls",
+				-- "ocamllsp",
 				"prismals",
 				"pyright",
 				"rust_analyzer",
-				"solargraph",
+			--	"solargraph",
 				"svelte",
 				"terraformls",
 				"tsserver",
@@ -61,7 +61,7 @@ return {
 
 		mason_tool_installer.setup({
 			ensure_installed = {
-				"ocamlformat",
+				-- "ocamlformat",
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
 				"isort", -- python formatter
