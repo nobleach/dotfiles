@@ -37,7 +37,6 @@ return {
 				"emmet_ls",
 				"eslint",
 				-- "fsautocomplete",
-				"gleam",
 				"gopls",
 				"graphql",
 				"html",

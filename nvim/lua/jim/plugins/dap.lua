@@ -1,6 +1,6 @@
 return {
 	"mfussenegger/nvim-dap",
-	dependencies = { "rcarriga/nvim-dap-ui", "nvim-telescope/telescope-dap.nvim" },
+	dependencies = { "rcarriga/nvim-dap-ui", "nvim-neotest/nvim-nio", "nvim-telescope/telescope-dap.nvim" },
 	opts = {},
 	event = "VeryLazy",
 	config = function()

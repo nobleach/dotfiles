@@ -27,6 +27,12 @@ alias kgs="kubectl get svc"
 alias kgc="kubectl get configmap"
 alias kdp="kubectl delete pod"
 alias kaf="kubectl apply -f"
+alias di="docker images"
+alias dstopall='docker stop $(docker ps -a -q)'
+function dclean() {
+    docker rm -v $(docker ps --all --quiet --filter "status=exited")
+    docker rmi $(docker images --filter "dangling=true" --quiet)
+  }
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -156,11 +162,6 @@ fi
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
 # bun completions
 [ -s "/opt/homebrew/share/zsh/site-functions/_bun" ] && source "/opt/homebrew/share/zsh/site-functions/_bun"
 
@@ -172,7 +173,7 @@ export NVM_DIR="$HOME/.nvm"
 [[ ! -r /Users/jim.wharton/.opam/opam-init/init.zsh ]] || source /Users/jim.wharton/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 # Add dotnetcore
-export PATH="$PATH:/Users/jim.wharton/.dotnet/tools"
+# export PATH="$PATH:/Users/jim.wharton/.dotnet/tools"
 
 # Set JAVA_HOME
 # . ~/.asdf/plugins/java/set-java-home.zsh

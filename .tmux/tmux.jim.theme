@@ -25,7 +25,7 @@ set-option -g display-panes-colour brightred
 set -g status-justify left
 
 # Selected window
-set-option -g window-status-current-format "#[bg=#6E84B1,fg=#121212]#[bg=#6E84B1,fg=#ffffff,bold] #I #[bg=#6E84B1,fg=#ffffff]#W #[bg=#303030,fg=#6E84B1]"
+set-option -g window-status-current-format "#[bg=#6E84B1,fg=#121212]#[bg=#6E84B1,fg=#121212,bold] #I #[bg=#6E84B1,fg=#121212]#W #[bg=#121212,fg=#6E84B1]"
 
 # Inactive window
 set-option -g window-status-format "#[bg=#121212,fg=#121212]#[bg=#121212,fg=colour231] #I #W #[bg=#121212,fg=#121212]"
