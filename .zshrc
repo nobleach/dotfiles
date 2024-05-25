@@ -34,6 +34,10 @@ function dclean() {
     docker rmi $(docker images --filter "dangling=true" --quiet)
   }
 
+function kube_sh() {
+  POD=$(kubectl get pods | fzf | awk ‘{print $1}’)
+  kubectl exec -it $POD /bin/sh
+}
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
