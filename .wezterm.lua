@@ -6,8 +6,9 @@ local config = wezterm.config_builder()
 local dimmer = { brightness = 0.1 }
 
 -- fonts
-config.font = wezterm.font("JetBrains Mono")
+config.font = wezterm.font("CaskaydiaCove Nerd Font Mono")
 config.font_size = 18.0
+config.line_height = 1.1
 
 config.window_padding = {
   left = 2,
@@ -17,11 +18,11 @@ config.window_padding = {
 }
 
 -- For example, changing the color scheme:
-config.color_scheme = "AdventureTime"
+config.color_scheme = "rose-pine"
 config.background = {
 	{
 		source = {
-			File = "/Users/jim/Pictures/rainy-road.png",
+			File = "/Users/jim.wharton/Pictures/sunrise-above-water.jpg",
 		},
 		hsb = dimmer,
 	},
