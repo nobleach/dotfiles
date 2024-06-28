@@ -9,12 +9,12 @@ return {
 
 		gitsigns.setup({
 			signs = {
-				add = { hl = "GitSignsAdd", text = "┃" },
-				change = { hl = "GitSignsChange", text = "┃" },
-				delete = { hl = "GitSignsDelete", text = "▁" },
-				topdelete = { hl = "GitSignsDelete", text = "▔" },
-				changedelete = { hl = "GitSignsChangeDelete", text = "┃" },
-				untracked = { hl = "GitSignsUntracked", text = "┃" },
+				add = { text = "┃" },
+				change = { text = "┃" },
+				delete = { text = "_" },
+				topdelete = { text = "‾" },
+				changedelete = { text = "~" },
+				untracked = { text = "┆" },
 			},
 			on_attach = function()
 				local gs = package.loaded.gitsigns

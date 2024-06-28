@@ -7,6 +7,7 @@ local dimmer = { brightness = 0.1 }
 
 -- fonts
 config.font = wezterm.font("CaskaydiaCove Nerd Font Mono")
+-- config.font = wezterm.font("JetBrains Mono")
 config.font_size = 18.0
 config.line_height = 1.1
 

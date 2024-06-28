@@ -199,3 +199,11 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # export GO_PATH=~/go
 # export PATH=$PATH:/$GO_PATH/bin
 alias air='$(go env GOPATH)/bin/air'
+
+# pnpm
+export PNPM_HOME="/Users/jim.wharton/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
