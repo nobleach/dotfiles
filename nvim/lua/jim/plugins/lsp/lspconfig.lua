@@ -70,21 +70,31 @@ return {
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		-- (not in youtube nvim video)
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
+		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+
+		vim.lsp.handlers["textDocument/signatureHelp"] =
+			vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+		vim.diagnostic.config({
+			float = {
+				border = "rounded",
+			},
+		})
 		-- configure html server
 		lspconfig["html"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
 
-    lspconfig["biome"].setup({
+		lspconfig["biome"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-    })
+		})
 
 		-- configure css server
 		lspconfig["cssls"].setup({
