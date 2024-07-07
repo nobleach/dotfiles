@@ -33,28 +33,28 @@ return {
 			"n",
 			"<leader>tr",
 			"<cmd>lua require('neotest').run.run({ vitestCommand = 'vitest' })<cr>",
-			{ desc = "Run Watch" }
+			{ desc = "Run Closest" }
 		)
 
 		vim.api.nvim_set_keymap(
 			"n",
 			"<leader>tol",
 			"<cmd>lua require('neotest').output.open({ enter = true })<cr>",
-			{ desc = "Run Watch" }
+			{ desc = "Open Test Output" }
 		)
 
 		vim.api.nvim_set_keymap(
 			"n",
 			"<leader>top",
 			"<cmd>lua require('neotest').output_panel.toggle()<cr>",
-			{ desc = "Run Watch" }
+			{ desc = "Toggle Test Panel" }
 		)
 		
 		vim.api.nvim_set_keymap(
 			"n",
 			"<leader>tos",
 			"<cmd>lua require('neotest').summary.toggle()<cr>",
-			{ desc = "Run Watch" }
+			{ desc = "Toggle Test Summary" }
 		)
 	end,
 }

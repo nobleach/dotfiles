@@ -6,8 +6,9 @@ local config = wezterm.config_builder()
 local dimmer = { brightness = 0.1 }
 
 -- fonts
-config.font = wezterm.font("CaskaydiaCove Nerd Font Mono")
+-- config.font = wezterm.font("CaskaydiaCove Nerd Font Mono")
 -- config.font = wezterm.font("JetBrains Mono")
+config.font = wezterm.font("FiraMono Nerd Font Mono")
 config.font_size = 18.0
 config.line_height = 1.1
 
@@ -35,6 +36,24 @@ config.background = {
     height = "100%",
     opacity = 0.8
 	},
+}
+
+-- Keys config
+local act = wezterm.action
+config.keys = {
+{
+    key = 'UpArrow',
+    mods = 'OPT',
+    action = act.SendKey {
+      key = 'UpArrow',
+      mods = 'ALT',
+    },
+  },
+  {
+    key = 'DownArrow',
+    mods = 'OPT',
+    action = act.SendKey { key = 'DownArrow', mods = 'ALT' },
+  },
 }
 
 -- don't show that tabbar!!
