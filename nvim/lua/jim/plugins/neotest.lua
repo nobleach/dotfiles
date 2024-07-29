@@ -56,5 +56,12 @@ return {
 			"<cmd>lua require('neotest').summary.toggle()<cr>",
 			{ desc = "Toggle Test Summary" }
 		)
+
+    vim.api.nvim_set_keymap(
+      "n",
+      "<leader>twr",
+      "<cmd>lua require('neotest').run.run({ vitestCommand = 'vitest --watch' })<cr>",
+      {desc = "Run Watch"}
+    )
 	end,
 }

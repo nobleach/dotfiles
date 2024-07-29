@@ -11,7 +11,7 @@ return {
 				name = "biome",
 			})[1]
 			if has_biome_lsp then
-				return {}
+				return { "biome" }
 			end
 			local has_prettier = vim.fs.find({
 				-- https://prettier.io/docs/en/configuration.html
@@ -25,7 +25,7 @@ return {
 				".prettierrc.toml",
 				"prettier.config.js",
 				"prettier.config.cjs",
-			}, { upward = true })[1]
+			}, { upward = false })[1] -- currently the config HAS to exist in the same directory if we search upward for monorepos, we'll be in trouble
 			if has_prettier then
 				return { "prettier" }
 			end
@@ -49,11 +49,11 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 			},
-			-- format_on_save = {
-			--   lsp_fallback = true,
-			--   async = false,
-			--   timeout_ms = 1000,
-			-- },
+			format_on_save = {
+				lsp_fallback = true,
+				async = false,
+				timeout_ms = 1000,
+			},
 		})
 
 		vim.keymap.set({ "n", "v" }, "<leader>xf", function()

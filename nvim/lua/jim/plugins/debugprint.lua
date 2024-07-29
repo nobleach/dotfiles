@@ -1,26 +1,27 @@
 return {
 	"andrewferrier/debugprint.nvim",
-	opts = {},
-
-	-- Dependency only needed for NeoVim 0.8
-	dependencies = {
-		"nvim-treesitter/nvim-treesitter",
+	opts = {
+		keymaps = {
+			normal = {
+				plain_below = "g?p",
+				plain_above = "g?P",
+				variable_below = "<leader>cl",
+				variable_above = "g?V",
+				variable_below_alwaysprompt = nil,
+				variable_above_alwaysprompt = nil,
+				textobj_below = "g?o",
+				textobj_above = "g?O",
+				toggle_comment_debug_prints = nil,
+				delete_debug_prints = nil,
+			},
+			visual = {
+				variable_below = "g?v",
+				variable_above = "g?V",
+			},
+		},
+		commands = {
+			toggle_comment_debug_prints = "ToggleCommentDebugPrints",
+			delete_debug_prints = "DeleteDebugPrints",
+		},
 	},
-	config = function()
-		-- local opts = {
-		-- 	create_keymaps = false,
-		-- 	create_commands = false,
-		-- }
-
-		require("debugprint").setup()
-
-		vim.keymap.set("n", "<Leader>cl", function()
-			-- Note: setting `expr=true` and returning the value are essential
-			return require("debugprint").debugprint({ variable = true })
-		end, {
-			expr = true,
-		})
-
-		vim.keymap.set("n", "<Leader>cd", "<cmd>:DeleteDebugPrints<CR>")
-	end,
 }
