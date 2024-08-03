@@ -1,48 +1,48 @@
 # default inactive statusbar colors
-set-option -g status-bg "#121212"  # Background
-set-option -g status-fg "#f8f8f2"  # Foreground
-set-option -g status-attr default
+# set-option -g status-bg "#121212"  # Background
+# set-option -g status-fg "#f8f8f2"  # Foreground
+# set-option -g status-attr default
 
 # pane border
-set-option -g pane-border-fg "#303030"
-set-option -g pane-active-border-fg "#afd700"
+# set-option -g pane-border-fg "#303030"
+# set-option -g pane-active-border-fg "#afd700"
 
 # message text
-set-option -g message-bg "#ff5555"  # Red
-set-option -g message-fg "#282a36"  # Background
-set-option -g message-attr bright
+# set-option -g message-bg "#ff5555"  # Red
+# set-option -g message-fg "#282a36"  # Background
+# set-option -g message-attr bright
 
 # pane number display
-set-option -g display-panes-active-colour blue
-set-option -g display-panes-colour brightred
+# set-option -g display-panes-active-colour blue
+# set-option -g display-panes-colour brightred
 
 # set active/inactive pane backgrounds
 # set -g window-style "fg=colour247,bg=#4a4a3a"
 # set -g window-active-style "fg=colour250,bg=#282828"
 # Pane border
-set -g pane-border-bg default
-set -g pane-border-fg colour238
+# set -g pane-border-bg default
+# set -g pane-border-fg colour238
 
 # Active pane border
-set -g pane-active-border-bg default
-set -g pane-active-border-fg blue
+# set -g pane-active-border-bg default
+# set -g pane-active-border-fg blue
 
 # Left justify the window list
 # set -g status-justify centre
-set -g status-justify left
+# set -g status-justify left
 
 # Selected window
-set-option -g window-status-current-format "#[bg=#6E84B1,fg=#121212]#[bg=#6E84B1,fg=#121212,bold] #I #[bg=#6E84B1,fg=#121212]#W #[bg=#121212,fg=#6E84B1]"
+# set-option -g window-status-current-format "#[bg=#6E84B1,fg=#121212]#[bg=#6E84B1,fg=#121212,bold] #I #[bg=#6E84B1,fg=#121212]#W #[bg=#121212,fg=#6E84B1]"
 
 # Inactive window
-set-option -g window-status-format "#[bg=#121212,fg=#121212]#[bg=#121212,fg=colour231] #I #W #[bg=#121212,fg=#121212]"
+# set-option -g window-status-format "#[bg=#121212,fg=#121212]#[bg=#121212,fg=colour231] #I #W #[bg=#121212,fg=#121212]"
 
 # Remove padding at the left hand side
-set -g status-left-length 32
-set -g status-left "#[bg=#6E84B1,fg=#121212]  macOS: #I #[bg=#121212,fg=#6E84B1] "
+# set -g status-left-length 32
+# set -g status-left "#[bg=#6E84B1,fg=#121212]  macOS: #I #[bg=#121212,fg=#6E84B1] "
 
 # Show a clock at the right hand side
-set -g status-right-length 150
+# set -g status-right-length 150
 # set -g status-right '#(/bin/bash $HOME/.tmux/kube.tmux 250 red cyan) #[bg=#121212,fg=#afd700,bold]#[bg=#afd700,fg=#444444] %H:%M '
-set -g status-right '#[bg=#121212,fg=#6E84B1,bold]#[bg=#6E84B1,fg=#444444] %H:%M '
+# set -g status-right '#[bg=#121212,fg=#6E84B1,bold]#[bg=#6E84B1,fg=#444444] %H:%M '
 

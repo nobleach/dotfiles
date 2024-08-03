@@ -10,13 +10,13 @@ return {
 			-- Automatically show console if a command takes more than console_timeout milliseconds
 			auto_show_console = true,
 			-- Change the default way of opening the commit popup
-			commit_popup = {
-				kind = "split",
-			},
+			-- commit_popup = {
+			-- 	kind = "split",
+			-- },
 			-- Change the default way of opening popups
-			popup = {
-				kind = "split",
-			},
+			-- popup = {
+			-- 	kind = "split",
+			-- },
 		})
 
 		-- set keymaps
