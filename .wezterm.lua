@@ -19,7 +19,8 @@ config.window_padding = {
 }
 
 -- For example, changing the color scheme:
-config.color_scheme = "rose-pine"
+config.color_scheme = "Catppuccin Mocha" -- or Macchiato, Frappe, Latte
+-- config.color_scheme = "rose-pine"
 config.background = {
 	{
 		source = {

@@ -8,7 +8,7 @@ return {
 		-- configure lualine with modified theme
 		lualine.setup({
 			options = {
-				theme = "rose-pine",
+				theme = "catppuccin",
 				tabline = {
 					lualine_a = { "filename" },
 					lualine_b = { "branch" },

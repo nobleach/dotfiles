@@ -116,20 +116,47 @@ return {
 	-- 		vim.cmd("colorscheme github-colors")
 	-- 	end,
 	-- },
+	-- {
+	-- 	"rose-pine/neovim",
+	-- 	name = "rose-pine",
+	-- 	config = function()
+	-- 		require("rose-pine").setup({
+	-- 			dark_variant = "moon", -- main, moon, or dawn
+	-- 			dim_inactive_windows = false,
+	-- 			extend_background_behind_borders = true,
+	-- 		})
+	-- 		vim.opt.termguicolors = true
+	-- 		vim.cmd("colorscheme rose-pine")
+	-- 		vim.cmd("hi CursorLine guibg=#394549")
+	-- 		vim.cmd("hi TabLineSel guibg=#394549")
+	-- 		vim.cmd("hi Visual guifg=Black guibg=#F6C177 gui=none")
+	-- 	end,
+	-- },
 	{
-		"rose-pine/neovim",
-		name = "rose-pine",
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
 		config = function()
-			require("rose-pine").setup({
-				dark_variant = "moon", -- main, moon, or dawn
-				dim_inactive_windows = false,
-				extend_background_behind_borders = true,
+			require("catppuccin").setup({
+				flavour = "auto", -- latte, frappe, macchiato, mocha
+				transparent_background = true,
+				dim_inactive = {
+					enabled = true, -- dims the background color of inactive window
+					shade = "dark",
+					percentage = 0.15, -- percentage of the shade to apply to the inactive window
+				},
+				default_integrations = true,
+				integrations = {
+					cmp = true,
+					gitsigns = true,
+					nvimtree = true,
+					treesitter = true,
+					notify = false,
+					-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+				},
 			})
-			vim.opt.termguicolors = true
-			vim.cmd("colorscheme rose-pine")
-			vim.cmd("hi CursorLine guibg=#394549")
-			vim.cmd("hi TabLineSel guibg=#394549")
-			vim.cmd("hi Visual guifg=Black guibg=#F6C177 gui=none")
+
+			vim.cmd.colorscheme("catppuccin")
 		end,
 	},
 }
