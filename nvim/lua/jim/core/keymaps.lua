@@ -36,6 +36,9 @@ keymap.set("n", "<leader>k", [[<C-w>k]], opts)
 -- Easily navigate tabs
 keymap.set("n", "<C-h>", [[gT]], opts)
 keymap.set("n", "<C-l>", [[gt]], opts)
+keymap.set("n", "te", ":tabedit<Return>")
+keymap.set("n", "<tab>", ":tabnext<Return>", opts)
+keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
 
 -- Paste on next/new line
 keymap.set("n", "gn", "<cmd>pu<cr>==", opts)
@@ -48,44 +51,6 @@ keymap.set("n", "ga", "<cmd>%! python3 -m json.tool<CR>", opts)
   {silent = true, noremap = true}) ]]
 
 keymap.set("n", "xf", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opts)
-
--- Nvim DAP
---[[ keymap.set('n', '<leader>da', "<cmd>lua require('debugHelper').attach()<CR>",
-  {silent = true, noremap = true})
-keymap.set('n', '<leader>dh', "<cmd>lua require'dap'.toggle_breakpoint()<CR>",
-  {silent = true, noremap = true})
-keymap.set('n', '<leader>di', "<cmd>lua require'dap.ui.widgets'.hover()<CR>",
-  {silent = true, noremap = true})
-keymap.set('n', '<leader>du', "<cmd>lua require('dapui').toggle()<CR>",
-  {silent = true, noremap = true})
-keymap.set('n', '<leader>dt', "lua require'dap'.step_out()<CR>",
-  {silent = true, noremap = true})
-keymap.set('n', '<leader>do', "lua require'dap'.step_into()<CR>",
-  {silent = true, noremap = true})
-keymap.set('n', '<leader>dr', "lua require'dap'.step_over()<CR>",
-  {silent = true, noremap = true})
-keymap.set('n', '<leader>ds', "lua require'dap'.stop()<CR>",
-  {silent = true, noremap = true})
-keymap.set('n', '<leader>dn', "lua require'dap'.continue()<CR>",
-  {silent = true, noremap = true})
-keymap.set('n', '<leader>dk', "lua require'dap'.up()<CR>",
-  {silent = true, noremap = true})
-keymap.set('n', '<leader>dj', "lua require'dap'.down()<CR>",
-  {silent = true, noremap = true})
-keymap.set('n', '<leader>d_', "lua require'dap'.run_last()<CR>",
-  {silent = true, noremap = true})
-
--- Telescope
-keymap.set('n', '<leader>df', "<cmd>Telescope dap frames<CR>",
-  {noremap = true, silent = true})
-keymap.set('n', '<leader>dc', "<cmd>Telescope dap commands<CR>",
-  {noremap = true, silent = true})
-keymap.set('n', '<leader>db', "<cmd>Telescope dap list_breakpoints<CR>",
-  {noremap = true, silent = true})
-keymap.set('n', '<leader>rr', "<cmd>lua require'telescope.builtin'.lsp_references{}<CR>",
-  {noremap = true, silent = true})
-keymap.set('n', '<leader>xb', "<cmd>Telescope git_branches<CR>",
-{noremap = true, silent = true}) ]]
 
 -- Refactoring
 keymap.set(

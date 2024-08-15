@@ -6,8 +6,9 @@ local config = wezterm.config_builder()
 local dimmer = { brightness = 0.1 }
 
 -- fonts
-config.font = wezterm.font("FiraMono Nerd Font Mono")
+-- config.font = wezterm.font("FiraMono Nerd Font Mono")
 -- config.font = wezterm.font("Monaspace Argon")
+config.font = wezterm.font("Hack Nerd Font Mono")
 config.font_size = 18.0
 config.line_height = 1.1
 

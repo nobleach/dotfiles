@@ -5,6 +5,10 @@ return {
 	config = function()
 		local ibl = require("ibl")
 
-		ibl.setup({})
+		ibl.setup({
+			indent = {
+				char = { "│" },
+			},
+		})
 	end,
 }

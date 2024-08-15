@@ -1,4 +1,21 @@
 return {
+	-- {
+	-- 	"Love-Pengy/lillilac.nvim",
+	-- 	priority = 1000, -- make sure to load this before all the other start plugins
+	-- 	config = function()
+	-- 		-- load the colorscheme here
+	-- 		vim.cmd([[colorscheme lillilac]])
+	-- 	end,
+	-- },
+	{
+		"gbprod/nord.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("nord").setup({})
+			vim.cmd.colorscheme("nord")
+		end,
+	},
 	-- vim.cmd([[colorscheme lucius]]),
 	-- {
 	-- 	"bluz71/vim-nightfly-guicolors",
@@ -132,31 +149,31 @@ return {
 	-- 		vim.cmd("hi Visual guifg=Black guibg=#F6C177 gui=none")
 	-- 	end,
 	-- },
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		config = function()
-			require("catppuccin").setup({
-				flavour = "auto", -- latte, frappe, macchiato, mocha
-				transparent_background = true,
-				dim_inactive = {
-					enabled = true, -- dims the background color of inactive window
-					shade = "dark",
-					percentage = 0.15, -- percentage of the shade to apply to the inactive window
-				},
-				default_integrations = true,
-				integrations = {
-					cmp = true,
-					gitsigns = true,
-					nvimtree = true,
-					treesitter = true,
-					notify = false,
-					-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-				},
-			})
-
-			vim.cmd.colorscheme("catppuccin")
-		end,
-	},
+	-- {
+	-- 	"catppuccin/nvim",
+	-- 	name = "catppuccin",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("catppuccin").setup({
+	-- 			flavour = "auto", -- latte, frappe, macchiato, mocha
+	-- 			transparent_background = true,
+	-- 			dim_inactive = {
+	-- 				enabled = true, -- dims the background color of inactive window
+	-- 				shade = "dark",
+	-- 				percentage = 0.15, -- percentage of the shade to apply to the inactive window
+	-- 			},
+	-- 			default_integrations = true,
+	-- 			integrations = {
+	-- 				cmp = true,
+	-- 				gitsigns = true,
+	-- 				nvimtree = true,
+	-- 				treesitter = true,
+	-- 				notify = false,
+	-- 				-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+	-- 			},
+	-- 		})
+	--
+	-- 		vim.cmd.colorscheme("catppuccin")
+	-- 	end,
+	-- },
 }
