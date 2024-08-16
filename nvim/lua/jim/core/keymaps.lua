@@ -50,7 +50,8 @@ keymap.set("n", "ga", "<cmd>%! python3 -m json.tool<CR>", opts)
 --[[ keymap.set('n', '<leader>xx', '<cmd>TroubleToggle<cr>',
   {silent = true, noremap = true}) ]]
 
-keymap.set("n", "xf", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opts)
+keymap.set("n", "<Leader>xf", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opts)
+keymap.set("n", ";f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opts)
 
 -- Refactoring
 keymap.set(

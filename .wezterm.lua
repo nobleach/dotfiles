@@ -13,10 +13,10 @@ config.font_size = 18.0
 config.line_height = 1.1
 
 config.window_padding = {
-  left = 2,
-  right = 2,
-  top = 2,
-  bottom = 0,
+	left = 2,
+	right = 2,
+	top = 2,
+	bottom = 0,
 }
 
 -- For example, changing the color scheme:
@@ -30,31 +30,31 @@ config.background = {
 		hsb = dimmer,
 	},
 	{
-    source = {
-      Color = '#2A263E'
-    },
-    width = "100%",
-    height = "100%",
-    opacity = 0.8
+		source = {
+			Color = "#2A263E",
+		},
+		width = "100%",
+		height = "100%",
+		opacity = 0.8,
 	},
 }
 
 -- Keys config
 local act = wezterm.action
 config.keys = {
-{
-    key = 'UpArrow',
-    mods = 'OPT',
-    action = act.SendKey {
-      key = 'UpArrow',
-      mods = 'ALT',
-    },
-  },
-  {
-    key = 'DownArrow',
-    mods = 'OPT',
-    action = act.SendKey { key = 'DownArrow', mods = 'ALT' },
-  },
+	{
+		key = "UpArrow",
+		mods = "OPT",
+		action = act.SendKey({
+			key = "UpArrow",
+			mods = "ALT",
+		}),
+	},
+	{
+		key = "DownArrow",
+		mods = "OPT",
+		action = act.SendKey({ key = "DownArrow", mods = "ALT" }),
+	},
 }
 
 -- don't show that tabbar!!
