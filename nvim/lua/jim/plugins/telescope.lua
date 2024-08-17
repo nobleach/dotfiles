@@ -46,7 +46,7 @@ return {
 		)
 		keymap.set(
 			"n",
-			";b",
+			",b",
 			"<cmd>lua require('telescope.builtin').git_branches()<cr>",
 			{ desc = "List all GIT branches" }
 		)

@@ -23,6 +23,6 @@ return {
 		local keymap = vim.keymap -- for conciseness
 
 		keymap.set("n", "<leader>gg", "<cmd>Neogit kind=split<CR>", { silent = true, noremap = true })
-		keymap.set("n", ";;", "<cmd>Neogit kind=split<CR>", { silent = true, noremap = true })
+		keymap.set("n", ",g", "<cmd>Neogit kind=split<CR>", { silent = true, noremap = true })
 	end,
 }
