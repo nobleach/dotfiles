@@ -12,14 +12,14 @@ return {
 		local neotest = require("neotest")
 		neotest.setup({
 			adapters = {
-				-- require("neotest-jest")({
-				-- 	jestCommand = "npm test --",
-				-- 	jestConfigFile = "custom.jest.config.ts",
-				-- 	env = { CI = true },
-				-- 	cwd = function(path)
-				-- 		return vim.fn.getcwd()
-				-- 	end,
-				-- }),
+				require("neotest-jest")({
+					jestCommand = "npm test",
+					-- jestConfigFile = "custom.jest.config.ts",
+					-- env = { CI = true },
+					cwd = function()
+						return vim.fn.getcwd()
+					end,
+				}),
 				require("neotest-vitest")({
 					-- Filter directories when searching for test files. Useful in large projects (see Filter directories notes).
 					filter_dir = function(name, rel_path, root)
@@ -49,7 +49,7 @@ return {
 			"<cmd>lua require('neotest').output_panel.toggle()<cr>",
 			{ desc = "Toggle Test Panel" }
 		)
-		
+
 		vim.api.nvim_set_keymap(
 			"n",
 			"<leader>tos",
@@ -57,11 +57,11 @@ return {
 			{ desc = "Toggle Test Summary" }
 		)
 
-    vim.api.nvim_set_keymap(
-      "n",
-      "<leader>twr",
-      "<cmd>lua require('neotest').run.run({ vitestCommand = 'vitest --watch' })<cr>",
-      {desc = "Run Watch"}
-    )
+		vim.api.nvim_set_keymap(
+			"n",
+			"<leader>twr",
+			"<cmd>lua require('neotest').run.run({ vitestCommand = 'vitest --watch' })<cr>",
+			{ desc = "Run Watch" }
+		)
 	end,
 }
