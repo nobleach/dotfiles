@@ -165,9 +165,9 @@ return {
 		lspconfig["kotlin_language_server"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			cmd = {
-				"/Users/jim.wharton/.local/bin/kotlin-language-server-source/server/build/install/server/bin/kotlin-language-server",
-			},
+			-- cmd = {
+			-- 	"/Users/jim.wharton/.local/bin/kotlin-language-server-source/server/build/install/server/bin/kotlin-language-server",
+			-- },
 		})
 
 		lspconfig["phpactor"].setup({})
