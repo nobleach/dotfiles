@@ -183,9 +183,6 @@ eval "$(fzf --zsh)"
 # opam configuration
 [[ ! -r /Users/jim.wharton/.opam/opam-init/init.zsh ]] || source /Users/jim.wharton/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
-# Add dotnetcore
-# export PATH="$PATH:/Users/jim.wharton/.dotnet/tools"
-
 # Set JAVA_HOME
 # . ~/.asdf/plugins/java/set-java-home.zsh
 
@@ -219,6 +216,11 @@ esac
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+
+# dotnet from asdf
+. ~/.asdf/plugins/dotnet/set-dotnet-env.zsh
+# Add dotnetcore
+# export PATH="$PATH:/Users/jim.wharton/.dotnet/tools"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
