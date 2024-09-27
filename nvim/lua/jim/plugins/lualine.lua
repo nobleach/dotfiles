@@ -8,7 +8,7 @@ return {
 		-- configure lualine with modified theme
 		lualine.setup({
 			options = {
-				theme = "nord",
+				theme = "poimandres",
 				tabline = {
 					lualine_a = { "filename" },
 					lualine_b = { "branch" },

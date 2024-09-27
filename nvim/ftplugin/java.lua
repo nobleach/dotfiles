@@ -1,7 +1,7 @@
 local home = os.getenv("HOME")
 local jdtls = require("jdtls")
 
-local jdtls_version = "1.31.0"
+local jdtls_version = "1.39.0"
 
 local root_markers = { "gradlew", "mvnw", ".git" }
 local root_dir = require("jdtls.setup").find_root(root_markers)
@@ -69,11 +69,11 @@ local config = {
 	on_attach = on_attach,
 	-- The command that starts the language server
 	-- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
-	cmd = {
-
-		-- 💀
-		"jdtls", -- or '/path/to/java11_or_newer/bin/java'
-	},
+	-- cmd = {
+	--
+	-- 	-- 💀
+	-- 	"jdtls", -- or '/path/to/java11_or_newer/bin/java'
+	-- },
 
 	-- 💀
 
@@ -152,7 +152,7 @@ local config = {
 				runtimes = {
 					{
 						name = "JavaSE-21",
-						path = home .. "/.asdf/installs/java/temurin-21.0.1+12.0.LTS",
+						path = home .. "/.asdf/installs/java/temurin-21.0.4+7.0.LTS",
 					},
 					{
 						name = "JavaSE-17",

@@ -77,13 +77,13 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
-		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
 
 		vim.lsp.handlers["textDocument/signatureHelp"] =
-			vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+			vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
 		vim.diagnostic.config({
 			float = {
-				border = "rounded",
+				border = "single",
 			},
 		})
 		-- configure html server

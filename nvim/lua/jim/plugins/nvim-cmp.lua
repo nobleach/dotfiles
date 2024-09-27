@@ -7,12 +7,33 @@ return {
 		"L3MON4D3/LuaSnip", -- snippet engine
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 		"rafamadriz/friendly-snippets", -- useful snippets
+		"mlaursen/vim-react-snippets",
 		"onsails/lspkind.nvim", -- vs-code like pictograms
 	},
 	config = function()
 		local cmp = require("cmp")
 
 		local luasnip = require("luasnip")
+
+		-- React snippets
+		require("vim-react-snippets").lazy_load()
+
+		-- Set LuaSnip keymaps
+		vim.keymap.set({ "i" }, "<C-K>", function()
+			luasnip.expand()
+		end, { silent = true })
+		vim.keymap.set({ "i", "s" }, "<C-L>", function()
+			luasnip.jump(1)
+		end, { silent = true })
+		vim.keymap.set({ "i", "s" }, "<C-J>", function()
+			luasnip.jump(-1)
+		end, { silent = true })
+
+		vim.keymap.set({ "i", "s" }, "<C-E>", function()
+			if luasnip.choice_active() then
+				luasnip.change_choice(1)
+			end
+		end, { silent = true })
 
 		local lspkind = require("lspkind")
 
@@ -45,15 +66,15 @@ return {
 			}),
 			-- sources for autocompletion
 			sources = cmp.config.sources({
-				{ name = "luasnip" }, -- snippets
 				{ name = "nvim_lsp" },
+				{ name = "luasnip" }, -- snippets
+				{ name = "path" }, -- file system paths
 				{
 					name = "buffer",
 					get_bufnrs = function()
 						return vim.api.nvim_list_bufs()
 					end,
 				},
-				{ name = "path" }, -- file system paths
 			}),
 			-- configure lspkind for vs-code like pictograms in completion menu
 			formatting = {
@@ -62,8 +83,8 @@ return {
 					ellipsis_char = "...",
 					menu = {
 						path = "[Path]",
-						luasnip = "[Snip]",
 						nvim_lsp = "[LSP]",
+						luasnip = "[Snip]",
 						buffer = "[Buf]",
 					},
 				}),
@@ -80,11 +101,11 @@ return {
 		})
 
 		cmp.setup.filetype("sql", {
-      sources = {
-        { name = "vim-dadbod-completion" },
-        { name = "buffer" },
-      },
-    })
+			sources = {
+				{ name = "vim-dadbod-completion" },
+				{ name = "buffer" },
+			},
+		})
 
 		-- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 		cmp.setup.cmdline("/", {

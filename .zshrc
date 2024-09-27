@@ -204,6 +204,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # export PATH=$PATH:/$GO_PATH/bin
 alias air='$(go env GOPATH)/bin/air'
 
+# for Postgres local psql
+export PATH=/opt/homebrew/Cellar/postgresql@16/16.4/bin:$PATH
+
 # pnpm
 export PNPM_HOME="/Users/jim.wharton/Library/pnpm"
 case ":$PATH:" in
@@ -218,7 +221,7 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # dotnet from asdf
-. ~/.asdf/plugins/dotnet/set-dotnet-env.zsh
+# . ~/.asdf/plugins/dotnet/set-dotnet-env.zsh
 # Add dotnetcore
 # export PATH="$PATH:/Users/jim.wharton/.dotnet/tools"
 

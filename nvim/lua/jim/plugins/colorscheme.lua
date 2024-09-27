@@ -7,15 +7,15 @@ return {
 	-- 		vim.cmd([[colorscheme lillilac]])
 	-- 	end,
 	-- },
-	{
-		"gbprod/nord.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("nord").setup({})
-			vim.cmd.colorscheme("nord")
-		end,
-	},
+	-- {
+	-- 	"gbprod/nord.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("nord").setup({})
+	-- 		vim.cmd.colorscheme("nord")
+	-- 	end,
+	-- },
 	-- vim.cmd([[colorscheme lucius]]),
 	-- {
 	-- 	"bluz71/vim-nightfly-guicolors",
@@ -101,24 +101,26 @@ return {
 	-- 		})
 	-- 	end,
 	-- },
-	-- {
-	-- 	"olivercederborg/poimandres.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("poimandres").setup({
-	-- 			dim_nc_background = true,
-	-- 			disable_italics = false,
-	-- 		})
-	-- 	end,
-	--
-	-- 	-- optionally set the colorscheme within lazy config
-	-- 	init = function()
-	-- 		vim.cmd("colorscheme poimandres")
-	-- 		vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#3c3836" })
-	-- 		vim.api.nvim_set_hl(0, "NormalFloat", { fg = "#665c54", bg = "#282828" })
-	-- 	end,
-	-- },
+	{
+		"olivercederborg/poimandres.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("poimandres").setup({
+				dim_nc_background = true,
+				disable_italics = false,
+			})
+		end,
+
+		-- optionally set the colorscheme within lazy config
+		init = function()
+			vim.cmd("colorscheme poimandres")
+			vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#a6998f" })
+			vim.api.nvim_set_hl(0, "NormalFloat", { fg = "#a6998f", bg = "#282828" })
+			vim.api.nvim_set_hl(0, "Comment", { fg = "#a6998f", italic = true })
+			vim.api.nvim_set_hl(0, "Winbar", { bg = "#303340" })
+		end,
+	},
 	-- {
 	-- 	"kyazdani42/blue-moon",
 	-- 	config = function()

@@ -10,6 +10,9 @@ return {
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
 
+		-- set custom colors
+		-- vim.api.nvim_set_hl(0, "TelescopeResultsNormal", { bg = "#00ff00" })
+
 		telescope.setup({
 			defaults = {
 				path_display = { "truncate " },
@@ -18,11 +21,13 @@ return {
 					"package%-lock.json",
 					".git/.*",
 					"target/.*",
+					"build/.*",
+					"dist/.*",
 				},
 				mappings = {
 					i = {
-						["<C-n>"] = false,
-						["<C-p>"] = false,
+						["<C-n>"] = actions.move_selection_next,
+						["<C-p>"] = actions.move_selection_previous,
 						["<C-j>"] = actions.move_selection_next,
 						["<C-k>"] = actions.move_selection_previous,
 					},

@@ -42,59 +42,35 @@ local l = require("luasnip.extras").lambda
 local rep = require("luasnip.extras").rep
 local fmt = require("luasnip.extras.fmt").fmt
 
-local events = require "luasnip.util.events"
+local events = require("luasnip.util.events")
 local snippets, autosnippets = {}, {}
 
 -- Helpers --
 
 local function firstToUpper(str)
-    return (str:gsub("^%l", string.upper))
+	return (str:gsub("^%l", string.upper))
 end
 
 local function splitToParts(str, char)
-    return vim.split(str, char, true)
+	return vim.split(str, char, true)
 end
 
 -- End Helpers --
 
 -- Snippets --
 local useState = s(
-    "us",
-    fmt("const [{}, {}] = useState({});",
-    {
-        i(1),
-        f(function(getter)
-            return "set" .. firstToUpper(getter[1][1])
-        end, { 1 }),
-        i(0, "null")
-    }))
-
-    --Broken nonsense
-local functionComponent = s(
-    "fc",
-    fmt([[export default function {}() {{
-    return (
-      <div />
-    );
-}}
-    ]],
-    {
-        f(function(_, snip)
-            local parts = splitToParts(snip.env.TM_FILENAME_BASE  or "", "-")
-            local partsTable = { }
-            for _,v in ipairs(parts) do
-                partsTable[#partsTable+1] = firstToUpper(tostring(v))
-            end
-            return table.concat(partsTable, "")
-        end, {})
-    })
+	"us",
+	fmt("const [{}, {}] = useState({});", {
+		i(1),
+		f(function(getter)
+			return "set" .. firstToUpper(getter[1][1])
+		end, { 1 }),
+		i(0, "null"),
+	})
 )
 
 -- End Snippets --
 
 table.insert(snippets, useState)
-table.insert(snippets, functionComponent)
 
 return snippets, autosnippets
-
-
