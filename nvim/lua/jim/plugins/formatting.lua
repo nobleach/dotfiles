@@ -64,7 +64,7 @@ return {
 			})
 		end, { desc = "Format file or range (in visual mode)" })
 
-		vim.keymap.set({ "n", "v" }, ",f", function()
+		vim.keymap.set({ "n", "v" }, "\\f", function()
 			conform.format({
 				lsp_fallback = true,
 				async = false,

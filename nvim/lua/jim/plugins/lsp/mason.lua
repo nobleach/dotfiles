@@ -48,6 +48,7 @@ return {
 				"pyright",
 				"rust_analyzer",
 				--	"solargraph",
+				"sqlls",
 				"svelte",
 				"terraformls",
 				-- "tsserver",

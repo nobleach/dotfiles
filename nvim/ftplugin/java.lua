@@ -35,10 +35,10 @@ local on_attach = function(client, bufnr)
 	end, bufopts, "List workspace folders")
 	nnoremap("<space>D", vim.lsp.buf.type_definition, bufopts, "Go to type definition")
 	nnoremap("<space>rn", vim.lsp.buf.rename, bufopts, "Rename")
-	nnoremap("<space>ca", vim.lsp.buf.code_action, bufopts, "Code actions")
+	nnoremap(",a", vim.lsp.buf.code_action, bufopts, "Code actions")
 	vim.keymap.set(
 		"v",
-		"<space>ca",
+		",a",
 		"<ESC><CMD>lua vim.lsp.buf.range_code_action()<CR>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "Code actions" }
 	)
