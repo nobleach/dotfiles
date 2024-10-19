@@ -47,7 +47,7 @@ vim.o.backup = false
 vim.o.undodir = os.getenv("HOME") .. "/.cache/nvim/undodir/"
 vim.o.undofile = true
 vim.o.incsearch = true
-vim.g.user_emmet_leader_key = "<c-e>"
+-- vim.g.user_emmet_leader_key = "<c-e>"
 vim.o.colorcolumn = "72"
 
 -- Java setup

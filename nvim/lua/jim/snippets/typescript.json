@@ -279,5 +279,14 @@
 	"try/catch": {
 		"prefix": "tc",
 		"body": ["try {", "} catch {", "}"]
+	},
+	"NestJS Testing Module": {
+		"prefix": "ntm",
+		"body": [
+			"const module: TestingModule = await Test.createTestingModule({",
+			"\tproviders: []",
+			"}).compile();"
+		],
+		"description": "NestJS Testing Module"
 	}
 }

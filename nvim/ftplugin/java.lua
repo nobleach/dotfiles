@@ -152,7 +152,7 @@ local config = {
 				runtimes = {
 					{
 						name = "JavaSE-21",
-						path = home .. "/.asdf/installs/java/temurin-21.0.4+7.0.LTS",
+						path = home .. "/.local/share/mise/installs/java/temurin-21",
 					},
 					{
 						name = "JavaSE-17",

@@ -98,6 +98,12 @@ return {
 		})
 
 		-- configure css server
+		lspconfig["crystalline"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- configure css server
 		lspconfig["cssls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
@@ -148,11 +154,11 @@ return {
 		})
 
 		-- configure emmet language server
-		lspconfig["emmet_ls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-		})
+		-- lspconfig["emmet_ls"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+		-- })
 
 		-- configure python server
 		lspconfig["pyright"].setup({
@@ -245,6 +251,12 @@ return {
 		})
 		-- configure Rust Analyzer
 		lspconfig["rust_analyzer"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- configure python server
+		lspconfig["sqlls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})

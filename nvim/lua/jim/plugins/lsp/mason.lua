@@ -34,7 +34,7 @@ return {
 				"cssls",
 				"dockerls",
 				"elixirls",
-				"emmet_ls",
+				"emmet_language_server",
 				"eslint",
 				-- "fsautocomplete",
 				"gopls",

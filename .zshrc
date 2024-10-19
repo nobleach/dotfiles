@@ -8,13 +8,10 @@ fi
 # set command line mode to vi
 set -o vi
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:/opt/homebrew/bin:$HOME/.asdf/bin:$HOME/.docker/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:/opt/homebrew/bin:$HOME/.docker/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-# Add brew installed asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -22,6 +19,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
+alias fourwords="sort -R /usr/share/dict/words | head -n 4| sed 's/.\*/&/;$!s/$// ' |tr '\n' '-' |sed 's/-$/\n/'"
 alias s3stg-cfg="tcli idb show cmsnonprod/aws_s3_configs/stg/us-east-1.aws"
 alias dcu="docker-compose up"
 alias dcd="docker-compose down"
@@ -105,7 +103,7 @@ function kube_sh() {
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git asdf)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -178,13 +176,9 @@ eval "$(fzf --zsh)"
 
 # bun completions
 [ -s "/Users/jim.wharton/.bun/_bun" ] && source "/Users/jim.wharton/.bun/_bun"
-# source "/Users/jim.wharton/.asdf/installs/rust/1.70.0/env"
 
 # opam configuration
 [[ ! -r /Users/jim.wharton/.opam/opam-init/init.zsh ]] || source /Users/jim.wharton/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
-# Set JAVA_HOME
-# . ~/.asdf/plugins/java/set-java-home.zsh
 
 # ensure that docker builds for the right architecture
 # export DOCKER_BUILDKIT=1
@@ -220,11 +214,9 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
-# dotnet from asdf
-# . ~/.asdf/plugins/dotnet/set-dotnet-env.zsh
-# Add dotnetcore
-# export PATH="$PATH:/Users/jim.wharton/.dotnet/tools"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 alias ls="eza --icons=always"
+
+# mise tool version manager
+eval "$(/Users/jim.wharton/.local/bin/mise activate zsh)"

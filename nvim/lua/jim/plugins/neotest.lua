@@ -38,7 +38,21 @@ return {
 
 		vim.api.nvim_set_keymap(
 			"n",
+			"\\t",
+			"<cmd>lua require('neotest').run.run({ vitestCommand = 'vitest' })<cr>",
+			{ desc = "Run Closest" }
+		)
+
+		vim.api.nvim_set_keymap(
+			"n",
 			"<leader>tol",
+			"<cmd>lua require('neotest').output.open({ enter = true })<cr>",
+			{ desc = "Open Test Output" }
+		)
+
+		vim.api.nvim_set_keymap(
+			"n",
+			",to",
 			"<cmd>lua require('neotest').output.open({ enter = true })<cr>",
 			{ desc = "Open Test Output" }
 		)
@@ -52,7 +66,21 @@ return {
 
 		vim.api.nvim_set_keymap(
 			"n",
+			",tp",
+			"<cmd>lua require('neotest').output_panel.toggle()<cr>",
+			{ desc = "Toggle Test Panel" }
+		)
+
+		vim.api.nvim_set_keymap(
+			"n",
 			"<leader>tos",
+			"<cmd>lua require('neotest').summary.toggle()<cr>",
+			{ desc = "Toggle Test Summary" }
+		)
+
+		vim.api.nvim_set_keymap(
+			"n",
+			",ts",
 			"<cmd>lua require('neotest').summary.toggle()<cr>",
 			{ desc = "Toggle Test Summary" }
 		)
