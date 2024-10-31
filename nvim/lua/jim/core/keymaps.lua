@@ -84,6 +84,18 @@ keymap.set(
 	[[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
 	{ noremap = true, silent = true, expr = false }
 )
+keymap.set(
+	"v",
+	"<Leader>64e",
+	[[ c<c-r>=system('base64',          @")<cr><esc> ]],
+	{ noremap = true, silent = true, expr = false }
+)
+keymap.set(
+	"v",
+	"<Leader>64d",
+	[[ c<c-r>=system('base64 --decode', @")<cr><esc> ]],
+	{ noremap = true, silent = true, expr = false }
+)
 
 -- Saga
 -- vim.keymap.set("n", "gl", require("lspsaga.finder").lsp_finder, { silent = true,noremap = true })
