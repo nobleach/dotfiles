@@ -288,5 +288,15 @@
 			"}).compile();"
 		],
 		"description": "NestJS Testing Module"
+	},
+	"NestJS Provider": {
+		"prefix": "npro",
+		"body": [
+			"import { Injectable, Logger } from '@nestjs/common';",
+			"",
+			"@Injectable()",
+			"export class $1 {}"
+		],
+		"description": "NestJS Injectable Provider"
 	}
 }

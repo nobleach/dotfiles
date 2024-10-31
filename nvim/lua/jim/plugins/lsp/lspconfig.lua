@@ -97,7 +97,7 @@ return {
 			on_attach = on_attach,
 		})
 
-		-- configure css server
+		-- configure crystal server
 		lspconfig["crystalline"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
@@ -154,11 +154,11 @@ return {
 		})
 
 		-- configure emmet language server
-		-- lspconfig["emmet_ls"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-		-- })
+		lspconfig["emmet_language_server"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+		})
 
 		-- configure python server
 		lspconfig["pyright"].setup({

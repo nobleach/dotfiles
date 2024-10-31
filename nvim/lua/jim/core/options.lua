@@ -50,14 +50,6 @@ vim.o.incsearch = true
 -- vim.g.user_emmet_leader_key = "<c-e>"
 vim.o.colorcolumn = "72"
 
--- Java setup
-vim.cmd([[
-  augroup lsp
-    au!
-    au FileType java lua require('jdtls').start_or_attach({cmd = {'jdtls.sh'}})
-  augroup end
-  ]])
-
 vim.cmd([[
     set winbar=%=%m\ %f
 ]])
