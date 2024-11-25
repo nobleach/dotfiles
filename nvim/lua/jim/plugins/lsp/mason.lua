@@ -33,7 +33,7 @@ return {
 				-- "crystalline",
 				"cssls",
 				"dockerls",
-				"elixirls",
+				-- "elixirls",
 				"emmet_language_server",
 				"eslint",
 				-- "fsautocomplete",

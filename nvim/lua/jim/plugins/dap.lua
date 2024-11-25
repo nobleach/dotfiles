@@ -65,6 +65,7 @@ return {
 		)
 		keymap.set("n", "<leader>di", "<cmd>lua require'dap.ui.widgets'.hover()<CR>", { silent = true, noremap = true })
 		keymap.set("n", "<leader>du", "<cmd>lua require('dapui').toggle()<CR>", { silent = true, noremap = true })
+		keymap.set("n", ",b", "<cmd>lua require('dapui').toggle()<CR>", { silent = true, noremap = true })
 		keymap.set("n", "<leader>dt", "lua require'dap'.step_out()<CR>", { silent = true, noremap = true })
 		keymap.set("n", "<leader>do", "lua require'dap'.step_into()<CR>", { silent = true, noremap = true })
 		keymap.set("n", "<leader>dr", "lua require'dap'.step_over()<CR>", { silent = true, noremap = true })

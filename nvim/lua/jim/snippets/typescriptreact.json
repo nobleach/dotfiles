@@ -146,6 +146,19 @@
 		"body": "${styles['$1']}",
 		"description": "Style module interpolated"
 	},
+	"Exported Default Functional Component": {
+		"prefix": "edfc",
+		"body": [
+			"export interface ${1:$TM_FILENAME_BASE}Props {}",
+			"",
+			"export default function ${1:$TM_FILENAME_BASE}() {",
+			"  return (",
+			"    <></>",
+			"  );",
+			"}"
+		],
+		"description": "Exported Defualt Functional Component"
+	},
 	"Stateless Functional Connected Component": {
 		"prefix": "sfcc",
 		"body": [

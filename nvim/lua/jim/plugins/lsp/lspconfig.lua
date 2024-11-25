@@ -11,6 +11,7 @@ return {
 		-- import lspconfig plugin
 		local lspconfig = require("lspconfig")
 		local tools = require("typescript-tools")
+		-- require("spring_boot").init_lsp_commands()
 
 		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -158,6 +159,12 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+		})
+
+		lspconfig["jdtls"].setup({
+			-- init_options = {
+			-- 	bundles = require("spring_boot").java_extensions(),
+			-- },
 		})
 
 		-- configure python server
