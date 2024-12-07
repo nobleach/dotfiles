@@ -179,6 +179,7 @@ eval "$(fzf --zsh)"
 
 # opam configuration
 [[ ! -r /Users/jim.wharton/.opam/opam-init/init.zsh ]] || source /Users/jim.wharton/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+eval $(opam env)
 
 # ensure that docker builds for the right architecture
 # export DOCKER_BUILDKIT=1
@@ -220,3 +221,6 @@ alias ls="eza --icons=always"
 
 # mise tool version manager
 eval "$(/Users/jim.wharton/.local/bin/mise activate zsh)"
+
+# moonbit
+export PATH="$HOME/.moon/bin:$PATH"
