@@ -22,7 +22,8 @@ config.window_padding = {
 
 -- For example, changing the color scheme:
 -- config.color_scheme = "Catppuccin Mocha" -- or Macchiato, Frappe, Latte
-config.color_scheme = 'Poimandres'
+-- config.color_scheme = 'Poimandres'
+config.color_scheme = 'nord'
 -- config.color_scheme = "rose-pine"
 config.background = {
 	{
@@ -33,7 +34,7 @@ config.background = {
 	},
 	{
 		source = {
-			Color = "#2A263E",
+			Color = "#242833",
 		},
 		width = "100%",
 		height = "100%",

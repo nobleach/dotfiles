@@ -16,14 +16,17 @@ return {
 	-- 		vim.cmd.colorscheme("nord")
 	-- 	end,
 	-- },
-	-- {
-	-- 	"AlexvZyl/nordic.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("nordic").load()
-	-- 	end,
-	-- },
+	{
+		"AlexvZyl/nordic.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("nordic").load()
+			vim.api.nvim_set_hl(0, "Comment", { fg = "#4C5669", italic = true })
+			vim.api.nvim_set_hl(0, "Visual", { bg = "#62573F" })
+			vim.api.nvim_set_hl(0, "Winbar", { bg = "#303340" })
+		end,
+	},
 	-- vim.cmd([[colorscheme lucius]]),
 	-- {
 	-- 	"bluz71/vim-nightfly-guicolors",
@@ -109,26 +112,26 @@ return {
 	-- 		})
 	-- 	end,
 	-- },
-	{
-		"olivercederborg/poimandres.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("poimandres").setup({
-				dim_nc_background = true,
-				disable_italics = false,
-			})
-		end,
-
-		-- optionally set the colorscheme within lazy config
-		init = function()
-			vim.cmd("colorscheme poimandres")
-			vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#a6998f" })
-			vim.api.nvim_set_hl(0, "NormalFloat", { fg = "#a6998f", bg = "#282828" })
-			vim.api.nvim_set_hl(0, "Comment", { fg = "#a6998f", italic = true })
-			vim.api.nvim_set_hl(0, "Winbar", { bg = "#303340" })
-		end,
-	},
+	-- {
+	-- 	"olivercederborg/poimandres.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("poimandres").setup({
+	-- 			dim_nc_background = true,
+	-- 			disable_italics = false,
+	-- 		})
+	-- 	end,
+	--
+	-- 	-- optionally set the colorscheme within lazy config
+	-- 	init = function()
+	-- 		vim.cmd("colorscheme poimandres")
+	-- 		vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#a6998f" })
+	-- 		vim.api.nvim_set_hl(0, "NormalFloat", { fg = "#a6998f", bg = "#282828" })
+	-- 		vim.api.nvim_set_hl(0, "Comment", { fg = "#a6998f", italic = true })
+	-- 		vim.api.nvim_set_hl(0, "Winbar", { bg = "#303340" })
+	-- 	end,
+	-- },
 	-- {
 	-- 	"kyazdani42/blue-moon",
 	-- 	config = function()
