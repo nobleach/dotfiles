@@ -99,10 +99,10 @@ eval "$(fzf --zsh)"
 [ -s "/opt/homebrew/share/zsh/site-functions/_bun" ] && source "/opt/homebrew/share/zsh/site-functions/_bun"
 
 # bun completions
-[ -s "/Users/jim.wharton/.bun/_bun" ] && source "/Users/jim.wharton/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # opam configuration
-[[ ! -r /Users/jim.wharton/.opam/opam-init/init.zsh ]] || source /Users/jim.wharton/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 eval $(opam env)
 
 # ensure that docker builds for the right architecture
@@ -127,7 +127,7 @@ alias air='$(go env GOPATH)/bin/air'
 export PATH=/opt/homebrew/Cellar/postgresql@16/16.4/bin:$PATH
 
 # pnpm
-export PNPM_HOME="/Users/jim.wharton/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -144,7 +144,7 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 alias ls="eza --icons=always"
 
 # mise tool version manager
-eval "$(/Users/jim.wharton/.local/bin/mise activate zsh)"
+eval "$($HOME/.local/bin/mise activate zsh)"
 
 # moonbit
 export PATH="$HOME/.moon/bin:$PATH"
