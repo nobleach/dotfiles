@@ -7,6 +7,8 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		"nvim-neotest/neotest-jest",
 		"marilari88/neotest-vitest",
+		"jfpedroza/neotest-elixir",
+		"rcasia/neotest-java",
 	},
 	config = function()
 		local neotest = require("neotest")
@@ -26,6 +28,8 @@ return {
 						return name ~= "node_modules"
 					end,
 				}),
+				require("neotest-elixir"),
+				require("neotest-java"),
 			},
 		})
 
