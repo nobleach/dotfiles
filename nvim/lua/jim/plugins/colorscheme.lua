@@ -28,6 +28,77 @@ return {
 			vim.api.nvim_set_hl(0, "TabLineSel", { bg = "#62573F" })
 		end,
 	},
+	-- {
+	-- 	"okaihe/okai",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("okai").setup({})
+	-- 		vim.cmd([[colorscheme okai]])
+	-- 	end,
+	-- },
+	-- {
+	-- 	"fenetikm/falcon",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		-- require("falcon").load()
+	-- 		-- vim.api.nvim_set_hl(0, "Comment", { fg = "#4C5669", italic = true })
+	-- 		-- vim.api.nvim_set_hl(0, "Visual", { bg = "#62573F" })
+	-- 		-- vim.api.nvim_set_hl(0, "Winbar", { bg = "#303340" })
+	-- 		-- vim.api.nvim_set_hl(0, "TabLineSel", { bg = "#62573F" })
+	-- 		vim.cmd.colorscheme("falcon")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"kvrohit/rasmus.nvim",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd([[colorscheme rasmus]])
+	-- 	end,
+	-- },
+	-- {
+	-- 	"alligator/accent.vim",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd([[colorscheme accent]])
+	-- 	end,
+	-- },
+	-- {
+	-- 	"vague2k/vague.nvim",
+	-- 	config = function()
+	-- 		require("vague").setup({
+	-- 			-- optional configuration here
+	-- 		})
+	-- 	end,
+	-- },
+	-- {
+	-- 	"zortax/three-firewatch",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd("colorscheme three-firewatch")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"antonio-hickey/citrus-mist",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd("colorscheme citrus-mist")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"Biscuit-Theme/nvim",
+	-- 	as = "biscuit",
+	-- 	config = function()
+	-- 		vim.cmd("colorscheme biscuit")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"jalzn/altbox.nvim",
+	-- 	config = function()
+	-- 		require("altbox").setup()
+	-- 	end,
+	-- },
 	-- vim.cmd([[colorscheme lucius]]),
 	-- {
 	-- 	"bluz71/vim-nightfly-guicolors",
