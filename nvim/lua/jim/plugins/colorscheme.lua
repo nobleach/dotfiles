@@ -1,5 +1,21 @@
 return {
 	-- {
+	-- 	"svrana/neosolarized.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("neosolarized").setup({
+	-- 			comment_italics = true,
+	-- 			background_set = false,
+	-- 		})
+	-- 		vim.cmd.colorscheme("neosolarized")
+	-- 	end,
+	-- 	dependencies = {
+	-- 		"tjdevries/colorbuddy.nvim",
+	-- 	},
+	-- },
+	-- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	-- {
 	-- 	"Love-Pengy/lillilac.nvim",
 	-- 	priority = 1000, -- make sure to load this before all the other start plugins
 	-- 	config = function()
@@ -28,6 +44,80 @@ return {
 			vim.api.nvim_set_hl(0, "TabLineSel", { bg = "#62573F" })
 		end,
 	},
+	-- {
+	-- 	"diegoulloao/neofusion.nvim",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.o.background = "dark"
+	-- 		vim.cmd([[ colorscheme neofusion ]])
+	-- 	end,
+	-- 	opts = {},
+	-- },
+	-- {
+	-- 	"0xstepit/flow.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	opts = {},
+	-- 	config = function()
+	-- 		require("flow").setup({
+	-- 			dark_theme = true, -- Set the theme with dark background.
+	-- 			high_contrast = false, -- Make the dark background darker or the light background lighter.
+	-- 			transparent = false, -- Set transparent background.
+	-- 			fluo_color = "pink", -- Color used as fluo. Available values are pink, yellow, orange, or green.
+	-- 			mode = "base", -- Mode of the colors. Available values are: dark, bright, desaturate, or base.
+	-- 			aggressive_spell = false, -- Use colors for spell check.
+	-- 		})
+	--
+	-- 		vim.cmd("colorscheme flow")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"nyngwang/nvimgelion",
+	-- 	config = function()
+	-- 		-- do whatever you want for further customization~
+	-- 		vim.cmd([[colorscheme nvimgelion]])
+	-- 	end,
+	-- },
+	-- {
+	-- 	"luisiacc/gruvbox-baby",
+	-- 	priority = 1000, -- make sure to load this before all the other start plugins
+	-- 	config = function()
+	-- 		-- load the colorscheme here
+	-- 		vim.cmd([[colorscheme gruvbox-baby]])
+	-- 	end,
+	-- },
+	-- {
+	-- 	"lmburns/kimbox",
+	-- 	config = function()
+	-- 		require("kimbox").setup({
+	-- 			-- options
+	-- 		})
+	-- 		require("kimbox").load()
+	-- 		-- or
+	-- 		vim.cmd("colorscheme kimbox")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"ramojus/mellifluous.nvim",
+	-- 	-- version = "v0.*", -- uncomment for stable config (some features might be missed if/when v1 comes out)
+	-- 	config = function()
+	-- 		require("mellifluous").setup({}) -- optional, see configuration section.
+	-- 		vim.cmd("colorscheme mellifluous")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"Mofiqul/adwaita.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- },
+	-- {
+	-- 	"lalitmee/cobalt2.nvim",
+	-- 	event = { "ColorSchemePre" }, -- if you want to lazy load
+	-- 	dependencies = { "tjdevries/colorbuddy.nvim", tag = "v1.0.0" },
+	-- 	init = function()
+	-- 		require("colorbuddy").colorscheme("cobalt2")
+	-- 	end,
+	-- },
 	-- {
 	-- 	"okaihe/okai",
 	-- 	lazy = false,
