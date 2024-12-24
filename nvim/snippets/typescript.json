@@ -1,0 +1,302 @@
+{
+	"imr": {
+		"prefix": ["imr"],
+		"body": [
+			"import React from 'react';",
+			"import PropTypes from 'prop-types';"
+		],
+		"description": "Import React"
+	},
+	"imc": {
+		"prefix": ["imc"],
+		"body": ["import { connect } from 'react-redux';"],
+		"description": "Import connect"
+	},
+	"export FC": {
+		"prefix": "efc",
+		"body": ["export function $1({}) {\n}"],
+		"description": "export functional component"
+	},
+	"Create Atom": {
+		"prefix": "cat",
+		"body": "export const $1 = atom(null);",
+		"description": "Create Jotai atom"
+	},
+	"Create Action": {
+		"prefix": "ca",
+		"body": "export const $1 = '$1';",
+		"description": "Register Redux Action"
+	},
+	"Create LOAD/FAIL/SUCCESS Actions": {
+		"prefix": "lfs",
+		"body": [
+			"export const $1_LOAD = '$1_LOAD';",
+			"export const $1_LOAD_FAILURE = '$1_LOAD_FAILURE';",
+			"export const $1_LOAD_SUCCESS = '$1_LOAD_SUCCESS';"
+		],
+		"description": "Register Redux Action"
+	},
+	"Action Creator": {
+		"scope": "javascript, jsx, html, react",
+		"prefix": "act",
+		"body": "export function ${1:name}() {\n\treturn {\n\t\ttype: ${2:action}\n\t};\n}",
+		"description": "Action Creator"
+	},
+	"Create newState": {
+		"prefix": "ns",
+		"body": [
+			"const newState = {",
+			"  ...state,$0",
+			"};",
+			"",
+			"return newState;"
+		],
+		"description": "Create newState"
+	},
+	"Eslint Disable": {
+		"prefix": "esd",
+		"body": "/* eslint-disable */\n/* eslint-enable */",
+		"description": "Eslint Disable"
+	},
+	"Typescript Ignore": {
+		"prefix": "tsi",
+		"body": "// @ts-ignore - $1",
+		"description": "Eslint Disable"
+	},
+	"Create Reducer": {
+		"scope": "javascript,jsx,html, react",
+		"prefix": "red",
+		"body": "export function ${1:entity}Reducer(state = {}, action = {}) {\n\tswitch (action.type) {\n\t\tcase ${2:ACTION}: {\n\t\t\treturn state;\n\t\t}\n\n\t\tdefault:\n\t\t\treturn state;\n\t}\n}",
+		"description": "Create Reducer"
+	},
+	"create selector": {
+		"scope": "javascript,jsx,html, react",
+		"prefix": "csel",
+		"body": "export const ${1:name} = createSelector(\n);",
+		"description": "create selector"
+	},
+	"get state selector": {
+		"scope": "javascript,jsx,html, react",
+		"prefix": "gs",
+		"body": "$1: get${1/(.)(.*)/\\u$1$2/}(state),",
+		"description": "get state selector"
+	},
+	"Describe Simple Selector": {
+		"scope": "javascript,jsx,html, react",
+		"prefix": "dss",
+		"body": "describeSimpleSelector('$1', $1, '$2');",
+		"description": "Describe Simple Selector"
+	},
+	"PropTypes.bool": {
+		"scope": "javascript, jsx, html, react",
+		"prefix": "pb",
+		"body": "PropTypes.bool",
+		"description": "PropTypes.bool"
+	},
+	"PropTypes.func": {
+		"scope": "javascript, jsx, html, react",
+		"prefix": "pf",
+		"body": "PropTypes.func",
+		"description": "PropTypes.func"
+	},
+	"PropTypes.number": {
+		"scope": "javascript, jsx, html, react",
+		"prefix": "pn",
+		"body": "PropTypes.number",
+		"description": "PropTypes.number"
+	},
+	"PropTypes.array": {
+		"scope": "javascript, jsx, html, react",
+		"prefix": "pa",
+		"body": "PropTypes.array",
+		"description": "PropTypes.array"
+	},
+	"Proptypes.string": {
+		"scope": "javascript, jsx, html, react",
+		"prefix": "ps",
+		"body": "PropTypes.string",
+		"description": "Proptypes.string"
+	},
+	"Proptypes.object": {
+		"scope": "javascript, jsx, html, react",
+		"prefix": "po",
+		"body": "PropTypes.object",
+		"description": "Proptypes.object"
+	},
+	"JSX className interpolated": {
+		"scope": "javascript, jsx, html, react",
+		"prefix": "cn",
+		"body": "className={$1}",
+		"description": "JSX className interpolated"
+	},
+	"Style module class": {
+		"scope": "javascript, jsx, html, react",
+		"prefix": "jc",
+		"body": "styles['$1']",
+		"description": "Style module class"
+	},
+	"Style module interpolated": {
+		"scope": "javascript, jsx, html, react",
+		"prefix": "jic",
+		"body": "${styles['$1']}",
+		"description": "Style module interpolated"
+	},
+	"Functional Component": {
+		"prefix": "sfc",
+		"body": [
+			"interface ${1:$TM_FILENAME_BASE}Props {}",
+			"",
+			"function $1({}: $1Props) {",
+			"  return (",
+			"    <section></section>",
+			"  );",
+			"}"
+		],
+		"description": "Stateless Functional Component"
+	},
+	"Stateless Functional Connected Component": {
+		"prefix": "sfcc",
+		"body": [
+			"const ${1:$TM_FILENAME_BASE} = () => {",
+			"  return (",
+			"    <section></section>",
+			"  );",
+			"}",
+			"",
+			"$1.propTypes = {};",
+			"",
+			"function mapStateToProps(state) {",
+			"  return {};",
+			"}",
+			"",
+			"const mapDispatchToProps = {};",
+			"",
+			"$export default connect(mapStateToProps, mapDispatchToProps)($1);"
+		],
+		"description": "Stateless Functional Component"
+	},
+	"Import CSS Modules styles": {
+		"scope": "javascript, jsx, html, react",
+		"prefix": "styl",
+		"body": "import styles from '$1';",
+		"description": "Import CSS Modules styles"
+	},
+	"Import Less Modules styles": {
+		"scope": "javascript, jsx, html, react",
+		"prefix": "ilm",
+		"body": "import styles from './${1:$TM_FILENAME_BASE}.module.less';",
+		"description": "Import CSS Modules styles"
+	},
+	"Map State To Props": {
+		"prefix": "msp",
+		"body": "function mapStateToProps(state) {\n  return {};\n}",
+		"description": "Map State To Props"
+	},
+	"Map Dispatch to Props": {
+		"prefix": "mdp",
+		"body": "const mapDispatchToProps = {};"
+	},
+	"Map Dispatchable Action": {
+		"prefix": "wad",
+		"body": "_$1: $1,"
+	},
+	"Export Connected Component": {
+		"prefix": "edc",
+		"body": "export default connect(mapStateToProps, mapDispatchToProps)($1);",
+		"description": "Export Connected Component"
+	},
+	"describe lambda": {
+		"prefix": "des",
+		"body": "describe('${1:description}', () => {\n});",
+		"description": "describe lambda"
+	},
+	"it lambda": {
+		"prefix": "it",
+		"body": "it('${1:description}', () => {\n});$0",
+		"description": "it lambda"
+	},
+	"it async lambda": {
+		"prefix": "ita",
+		"body": "it('${1:description}', async () => {\n});",
+		"description": "it async lambda"
+	},
+	"div element": {
+		"prefix": "div",
+		"body": "<div className={}>$0</div>",
+		"description": "div element"
+	},
+	"section element": {
+		"prefix": "sec",
+		"body": "<section className={}>$0</section>",
+		"description": "section element"
+	},
+	"console.log": {
+		"prefix": "cl",
+		"body": "console.log('$1');",
+		"description": "Console Log"
+	},
+	"Andrew Style Log": {
+		"prefix": "asl",
+		"body": "console.log(`\n\n\n\n\n$1\n\n\n\n`, $2);",
+		"description": "Andrew Style Log"
+	},
+	"Jim Style Log": {
+		"prefix": "jsl",
+		"body": "console.log('$1', $1);",
+		"description": "Jim Style Log"
+	},
+	"Styled DIV": {
+		"prefix": "sdiv",
+		"body": "export const $1 = styled.div`$0`;",
+		"description": "styled DIV"
+	},
+	"Styled SECTION": {
+		"prefix": "ssec",
+		"body": "export const $1 = styled.section`$0`;",
+		"description": "styled SECTION"
+	},
+	"Styled BUTTON": {
+		"prefix": "sbut",
+		"body": "export const $1 = styled.button`$0`;",
+		"description": "styled BUTTON"
+	},
+	"Import SiteTest": {
+		"prefix": "isit",
+		"body": "import SiteTest from '@components/site-test/site-test';",
+		"description": "Import SiteTest Component"
+	},
+	"SiteTest": {
+		"prefix": "stest",
+		"body": [
+			"<SiteTest characteristic=\"$1\">",
+			"\t<SiteTest.Segment value=\"CONTROL\" default>",
+			"\t</SiteTest.Segment>",
+			"\t<SiteTest.Segment value={segmentB}>",
+			"\t</SiteTest.Segment>",
+			"</SiteTest>"
+		]
+	},
+	"try/catch": {
+		"prefix": "tc",
+		"body": ["try {", "} catch {", "}"]
+	},
+	"NestJS Testing Module": {
+		"prefix": "ntm",
+		"body": [
+			"const module: TestingModule = await Test.createTestingModule({",
+			"\tproviders: []",
+			"}).compile();"
+		],
+		"description": "NestJS Testing Module"
+	},
+	"NestJS Provider": {
+		"prefix": "npro",
+		"body": [
+			"import { Injectable, Logger } from '@nestjs/common';",
+			"",
+			"@Injectable()",
+			"export class $1 {}"
+		],
+		"description": "NestJS Injectable Provider"
+	}
+}
