@@ -63,6 +63,7 @@ return {
 			"<cmd>lua require'dap'.toggle_breakpoint()<CR>",
 			{ silent = true, noremap = true }
 		)
+		keymap.set("n", "\\s", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { silent = true, noremap = true })
 		keymap.set("n", "<leader>di", "<cmd>lua require'dap.ui.widgets'.hover()<CR>", { silent = true, noremap = true })
 		keymap.set("n", "<leader>du", "<cmd>lua require('dapui').toggle()<CR>", { silent = true, noremap = true })
 		keymap.set("n", ",b", "<cmd>lua require('dapui').toggle()<CR>", { silent = true, noremap = true })
