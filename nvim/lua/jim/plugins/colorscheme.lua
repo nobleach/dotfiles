@@ -41,7 +41,7 @@ return {
 			vim.api.nvim_set_hl(0, "Comment", { fg = "#4C5669", italic = true })
 			vim.api.nvim_set_hl(0, "Visual", { bg = "#62573F" })
 			vim.api.nvim_set_hl(0, "Winbar", { bg = "#303340" })
-			vim.api.nvim_set_hl(0, "TabLineSel", { bg = "#62573F" })
+			vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#000000", bg = "#94BFCE" })
 		end,
 	},
 	-- {
