@@ -32,11 +32,12 @@ return {
 		sources = {
 			-- Disable cmdline completions
 			cmdline = {},
-			default = { "lsp", "path", "snippets", "buffer", "dadbod" },
+			default = { "ecolog", "lsp", "path", "snippets", "buffer", "dadbod" },
 
 			-- Add custom providers
 			providers = {
 				dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+				ecolog = { name = "ecolog", module = "ecolog.integrations.cmp.blink_cmp" },
 			},
 		},
 

@@ -9,11 +9,13 @@ return {
 		"marilari88/neotest-vitest",
 		"jfpedroza/neotest-elixir",
 		"rcasia/neotest-java",
+		{ "fredrikaverpil/neotest-golang", version = "*" },
 	},
 	config = function()
 		local neotest = require("neotest")
 		neotest.setup({
 			adapters = {
+				require("neotest-golang"),
 				require("neotest-jest")({
 					jestCommand = "npm test",
 					-- jestConfigFile = "custom.jest.config.ts",

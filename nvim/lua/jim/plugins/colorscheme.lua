@@ -42,6 +42,7 @@ return {
 			vim.api.nvim_set_hl(0, "Visual", { bg = "#62573F" })
 			vim.api.nvim_set_hl(0, "Winbar", { bg = "#303340" })
 			vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#000000", bg = "#94BFCE" })
+			-- vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#000000", bg = "#D79784" })
 		end,
 	},
 	-- {
