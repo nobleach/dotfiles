@@ -16,6 +16,8 @@ return {
 				xml = { "xmllint", "--format", "-" },
 				html = { "xmllint", "--format", "--html", "-" },
 			},
+			winbar = true,
+			default_winbar_panes = { "body", "headers", "headers_body" },
 			-- default icons
 			icons = {
 				inlay = {
