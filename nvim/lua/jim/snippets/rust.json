@@ -1,7 +1,0 @@
-{
-  "Test Mod Setup": {
-    "prefix": ["tsetup"],
-    "body": ["#[cfg(test)]", "mod tests {", "use super::*;", "}"],
-    "description": "Import mod from file and setup test harness"
-  }
-}

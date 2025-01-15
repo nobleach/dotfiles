@@ -1,6 +1,14 @@
 return {
 	"saghen/blink.cmp",
-	dependencies = { "L3MON4D3/LuaSnip", version = "v2.*" },
+	dependencies = {
+		"L3MON4D3/LuaSnip",
+		version = "v2.*",
+		config = function()
+			require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/snippets/" })
+			require("luasnip.loaders.from_vscode").lazy_load()
+			require("luasnip.loaders.from_vscode").lazy_load({ paths = { vim.fn.stdpath("config") .. "/snippets" } })
+		end,
+	},
 
 	-- use a release tag to download pre-built binaries
 	version = "*",
@@ -12,6 +20,8 @@ return {
 	---@module 'blink.cmp'
 	---@type blink.cmp.Config
 	opts = {
+		-- Use LuaSnip as the snippet engine
+		snippets = { preset = "luasnip" },
 		-- 'default' for mappings similar to built-in completion
 		-- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
 		-- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
@@ -32,7 +42,7 @@ return {
 		sources = {
 			-- Disable cmdline completions
 			cmdline = {},
-			default = { "ecolog", "lsp", "path", "snippets", "buffer", "dadbod" },
+			default = { "snippets", "lsp", "path", "ecolog", "dadbod", "buffer" },
 
 			-- Add custom providers
 			providers = {
@@ -62,12 +72,11 @@ return {
 			documentation = {
 				auto_show = true,
 				auto_show_delay_ms = 100,
+				treesitter_highlighting = true,
 			},
-			list = {
-				selection = function(ctx)
-					return ctx.mode == "cmdline" and "auto_insert" or "preselect"
-				end,
-			},
+			-- list = {
+			-- 	selection = "auto_insert",
+			-- },
 		},
 
 		signature = { enabled = true },
