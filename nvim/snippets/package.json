@@ -15,6 +15,10 @@
 				"path": "./snippets/global.json"
 			},
 			{
+				"language": "d2",
+				"path": "./d2.json"
+			},
+			{
 				"language": "go",
 				"path": "./go.json"
 			},

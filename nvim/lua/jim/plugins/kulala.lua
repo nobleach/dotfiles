@@ -19,8 +19,9 @@ return {
 			-- default icons
 			icons = {
 				inlay = {
-					loading = "⏳",
-					done = "✅ ",
+					loading = "",
+					done = "",
+					error = "",
 				},
 				lualine = "🐼",
 			},
