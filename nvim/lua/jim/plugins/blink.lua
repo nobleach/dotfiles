@@ -42,7 +42,7 @@ return {
 		sources = {
 			-- Disable cmdline completions
 			cmdline = {},
-			default = { "snippets", "lsp", "path", "ecolog", "dadbod", "buffer" },
+			default = { "snippets", "lsp", "path", "ecolog", "dadbod", "buffer", "codecompanion" },
 
 			-- Add custom providers
 			providers = {

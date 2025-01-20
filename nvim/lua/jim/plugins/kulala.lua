@@ -34,7 +34,9 @@ return {
 
 		-- Set keymaps
 		local keymap = vim.keymap
-		keymap.set("n", "\\rr", "<cmd>lua require('kulala').run()<CR>", { noremap = true })
+		keymap.set("n", "\\re", "<cmd>lua require('kulala').run()<CR>", { noremap = true })
 		keymap.set("n", "\\rv", "<cmd>lua require('kulala').toggle_view()<CR>", { noremap = true })
+		keymap.set("n", "\\rp", "<cmd>lua require('kulala').set_selected_env('prod')<CR>", { noremap = true })
+		keymap.set("n", "\\rq", "<cmd>lua require('kulala').set_selected_env('qa')<CR>", { noremap = true })
 	end,
 }
