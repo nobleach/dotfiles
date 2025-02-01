@@ -44,7 +44,7 @@ return {
 				"kotlin_language_server",
 				"lua_ls",
 				-- "nimls",
-				"ocamllsp",
+				-- "ocamllsp",
 				"prismals",
 				"pyright",
 				"rust_analyzer",

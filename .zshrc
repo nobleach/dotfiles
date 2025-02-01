@@ -91,9 +91,6 @@ listening() {
 if [ -f $HOME/.tcli/trigger_aliases  ]; then
   . $HOME/.tcli/trigger_aliases
 fi
-#
-# Set up fzf key bindings and fuzzy completion
-eval "$(fzf --zsh)"
 
 # bun completions
 [ -s "/opt/homebrew/share/zsh/site-functions/_bun" ] && source "/opt/homebrew/share/zsh/site-functions/_bun"
@@ -143,3 +140,6 @@ eval "$($HOME/.local/bin/mise activate zsh)"
 
 # moonbit
 export PATH="$HOME/.moon/bin:$PATH"
+#
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
