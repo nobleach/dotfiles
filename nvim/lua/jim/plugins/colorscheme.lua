@@ -1,75 +1,36 @@
 return {
 	-- {
-	-- 	"svrana/neosolarized.nvim",
-	-- 	lazy = false,
+	-- 	"ellisonleao/gruvbox.nvim",
 	-- 	priority = 1000,
 	-- 	config = function()
-	-- 		require("neosolarized").setup({
-	-- 			comment_italics = true,
-	-- 			background_set = false,
-	-- 		})
-	-- 		vim.cmd.colorscheme("neosolarized")
-	-- 	end,
-	-- 	dependencies = {
-	-- 		"tjdevries/colorbuddy.nvim",
-	-- 	},
-	-- },
-	-- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-	-- {
-	-- 	"Love-Pengy/lillilac.nvim",
-	-- 	priority = 1000, -- make sure to load this before all the other start plugins
-	-- 	config = function()
-	-- 		-- load the colorscheme here
-	-- 		vim.cmd([[colorscheme lillilac]])
-	-- 	end,
-	-- },
-	-- {
-	-- 	"gbprod/nord.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("nord").setup({})
-	-- 		vim.cmd.colorscheme("nord")
-	-- 	end,
-	-- },
-	{
-		"AlexvZyl/nordic.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("nordic").load()
-			vim.api.nvim_set_hl(0, "Comment", { fg = "#4C5669", italic = true })
-			vim.api.nvim_set_hl(0, "Visual", { bg = "#62573F" })
-			vim.api.nvim_set_hl(0, "Winbar", { bg = "#303340" })
-			vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#000000", bg = "#94BFCE" })
-			-- vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#000000", bg = "#D79784" })
-		end,
-	},
-	-- {
-	-- 	"diegoulloao/neofusion.nvim",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		vim.o.background = "dark"
-	-- 		vim.cmd([[ colorscheme neofusion ]])
-	-- 	end,
-	-- 	opts = {},
-	-- },
-	-- {
-	-- 	"0xstepit/flow.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	opts = {},
-	-- 	config = function()
-	-- 		require("flow").setup({
-	-- 			dark_theme = true, -- Set the theme with dark background.
-	-- 			high_contrast = false, -- Make the dark background darker or the light background lighter.
-	-- 			transparent = false, -- Set transparent background.
-	-- 			fluo_color = "pink", -- Color used as fluo. Available values are pink, yellow, orange, or green.
-	-- 			mode = "base", -- Mode of the colors. Available values are: dark, bright, desaturate, or base.
-	-- 			aggressive_spell = false, -- Use colors for spell check.
+	-- 		require("gruvbox").setup({
+	-- 			undercurl = true,
+	-- 			underline = true,
+	-- 			bold = true,
+	-- 			italic = {
+	-- 				strings = true,
+	-- 				emphasis = true,
+	-- 				comments = true,
+	-- 				operators = false,
+	-- 				folds = true,
+	-- 			},
+	-- 			strikethrough = true,
 	-- 		})
 	--
-	-- 		vim.cmd("colorscheme flow")
+	-- 		vim.cmd("colorscheme gruvbox")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"AlexvZyl/nordic.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("nordic").load()
+	-- 		vim.api.nvim_set_hl(0, "Comment", { fg = "#4C5669", italic = true })
+	-- 		vim.api.nvim_set_hl(0, "Visual", { bg = "#62573F" })
+	-- 		vim.api.nvim_set_hl(0, "Winbar", { bg = "#303340" })
+	-- 		vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#000000", bg = "#94BFCE" })
+	-- 		-- vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#000000", bg = "#D79784" })
 	-- 	end,
 	-- },
 	-- {
@@ -88,17 +49,6 @@ return {
 	-- 	end,
 	-- },
 	-- {
-	-- 	"lmburns/kimbox",
-	-- 	config = function()
-	-- 		require("kimbox").setup({
-	-- 			-- options
-	-- 		})
-	-- 		require("kimbox").load()
-	-- 		-- or
-	-- 		vim.cmd("colorscheme kimbox")
-	-- 	end,
-	-- },
-	-- {
 	-- 	"ramojus/mellifluous.nvim",
 	-- 	-- version = "v0.*", -- uncomment for stable config (some features might be missed if/when v1 comes out)
 	-- 	config = function()
@@ -106,63 +56,24 @@ return {
 	-- 		vim.cmd("colorscheme mellifluous")
 	-- 	end,
 	-- },
-	-- {
-	-- 	"Mofiqul/adwaita.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- },
-	-- {
-	-- 	"lalitmee/cobalt2.nvim",
-	-- 	event = { "ColorSchemePre" }, -- if you want to lazy load
-	-- 	dependencies = { "tjdevries/colorbuddy.nvim", tag = "v1.0.0" },
-	-- 	init = function()
-	-- 		require("colorbuddy").colorscheme("cobalt2")
-	-- 	end,
-	-- },
-	-- {
-	-- 	"okaihe/okai",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("okai").setup({})
-	-- 		vim.cmd([[colorscheme okai]])
-	-- 	end,
-	-- },
-	-- {
-	-- 	"fenetikm/falcon",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		-- require("falcon").load()
-	-- 		-- vim.api.nvim_set_hl(0, "Comment", { fg = "#4C5669", italic = true })
-	-- 		-- vim.api.nvim_set_hl(0, "Visual", { bg = "#62573F" })
-	-- 		-- vim.api.nvim_set_hl(0, "Winbar", { bg = "#303340" })
-	-- 		-- vim.api.nvim_set_hl(0, "TabLineSel", { bg = "#62573F" })
-	-- 		vim.cmd.colorscheme("falcon")
-	-- 	end,
-	-- },
-	-- {
-	-- 	"kvrohit/rasmus.nvim",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		vim.cmd([[colorscheme rasmus]])
-	-- 	end,
-	-- },
-	-- {
-	-- 	"alligator/accent.vim",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		vim.cmd([[colorscheme accent]])
-	-- 	end,
-	-- },
-	-- {
-	-- 	"vague2k/vague.nvim",
-	-- 	config = function()
-	-- 		require("vague").setup({
-	-- 			-- optional configuration here
-	-- 		})
-	-- 	end,
-	-- },
+	{
+		"fenetikm/falcon",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd.colorscheme("falcon")
+			vim.api.nvim_set_hl(0, "Visual", { bg = "#3f3a59" })
+			vim.api.nvim_set_hl(0, "CursorLine", { bg = "#4f4f59" })
+			vim.api.nvim_set_hl(0, "DiagnosticError", { fg = "#b24d36" })
+			vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = "#b24d36" })
+			vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { fg = "#b24d36" })
+			vim.api.nvim_set_hl(0, "DiagnosticWarn", { fg = "#ff761a" })
+			vim.api.nvim_set_hl(0, "DiagnosticSignWarn", { fg = "#ff761a" })
+			vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarning", { fg = "#ff761a" })
+			vim.api.nvim_set_hl(0, "Winbar", { bg = "#303340" })
+			vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#000000", bg = "#FFC552" })
+		end,
+	},
 	-- {
 	-- 	"zortax/three-firewatch",
 	-- 	priority = 1000,
@@ -175,28 +86,6 @@ return {
 	-- 	priority = 1000,
 	-- 	config = function()
 	-- 		vim.cmd("colorscheme citrus-mist")
-	-- 	end,
-	-- },
-	-- {
-	-- 	"Biscuit-Theme/nvim",
-	-- 	as = "biscuit",
-	-- 	config = function()
-	-- 		vim.cmd("colorscheme biscuit")
-	-- 	end,
-	-- },
-	-- {
-	-- 	"jalzn/altbox.nvim",
-	-- 	config = function()
-	-- 		require("altbox").setup()
-	-- 	end,
-	-- },
-	-- vim.cmd([[colorscheme lucius]]),
-	-- {
-	-- 	"bluz71/vim-nightfly-guicolors",
-	-- 	priority = 1000, -- make sure to load this before all the other start plugins
-	-- 	config = function()
-	-- 		-- load the colorscheme here
-	-- 		vim.cmd([[colorscheme nightfly]])
 	-- 	end,
 	-- },
 	-- {
@@ -258,24 +147,6 @@ return {
 	-- 	end,
 	-- },
 	-- {
-	-- 	"savq/melange-nvim",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		vim.cmd([[colorscheme melange]])
-	-- 	end,
-	-- },
-	-- {
-	-- 	"lvim-tech/lvim-colorscheme",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		local lvim_colorscheme = require("lvim-colorscheme")
-	--
-	-- 		lvim_colorscheme.setup({
-	-- 			style = "dark",
-	-- 		})
-	-- 	end,
-	-- },
-	-- {
 	-- 	"olivercederborg/poimandres.nvim",
 	-- 	lazy = false,
 	-- 	priority = 1000,
@@ -303,13 +174,6 @@ return {
 	-- 	end,
 	-- },
 	-- {
-	-- 	"lourenci/github-colors",
-	-- 	config = function()
-	-- 		vim.opt.termguicolors = true
-	-- 		vim.cmd("colorscheme github-colors")
-	-- 	end,
-	-- },
-	-- {
 	-- 	"rose-pine/neovim",
 	-- 	name = "rose-pine",
 	-- 	config = function()
@@ -323,33 +187,6 @@ return {
 	-- 		vim.cmd("hi CursorLine guibg=#394549")
 	-- 		vim.cmd("hi TabLineSel guibg=#394549")
 	-- 		vim.cmd("hi Visual guifg=Black guibg=#F6C177 gui=none")
-	-- 	end,
-	-- },
-	-- {
-	-- 	"catppuccin/nvim",
-	-- 	name = "catppuccin",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("catppuccin").setup({
-	-- 			flavour = "auto", -- latte, frappe, macchiato, mocha
-	-- 			transparent_background = true,
-	-- 			dim_inactive = {
-	-- 				enabled = true, -- dims the background color of inactive window
-	-- 				shade = "dark",
-	-- 				percentage = 0.15, -- percentage of the shade to apply to the inactive window
-	-- 			},
-	-- 			default_integrations = true,
-	-- 			integrations = {
-	-- 				cmp = true,
-	-- 				gitsigns = true,
-	-- 				nvimtree = true,
-	-- 				treesitter = true,
-	-- 				notify = false,
-	-- 				-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-	-- 			},
-	-- 		})
-	--
-	-- 		vim.cmd.colorscheme("catppuccin")
 	-- 	end,
 	-- },
 }

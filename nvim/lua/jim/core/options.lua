@@ -8,7 +8,7 @@ set autoread
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
 autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 ]])
-vim.cmd([[autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE]])
+-- vim.cmd([[autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE]])
 
 vim.opt.clipboard = { "unnamed", "unnamedplus" }
 vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank()]])
