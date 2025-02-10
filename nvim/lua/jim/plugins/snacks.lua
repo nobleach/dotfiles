@@ -3,11 +3,37 @@ return {
 	---@type snacks.Config
 	opts = {
 		indent = {},
-		input = {
-			-- your input configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
+		input = { enabled = true },
+		picker = { enabled = true },
+	},
+	keys = {
+		{
+			",f",
+			function()
+				Snacks.picker.grep()
+			end,
+			desc = "Grep",
 		},
-		picker = {},
+		{
+			",p",
+			function()
+				Snacks.picker.files()
+			end,
+			desc = "Find Files",
+		},
+		{
+			",s",
+			function()
+				Snacks.picker.lsp_symbols()
+			end,
+			desc = "LSP Symbols",
+		},
+		{
+			",D",
+			function()
+				Snacks.picker.diagnostics_buffer()
+			end,
+			desc = "Buffer Diagnostics",
+		},
 	},
 }

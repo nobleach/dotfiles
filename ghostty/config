@@ -4,7 +4,10 @@ font-size = 18.0
 adjust-cell-height = 10%
 
 window-colorspace = "display-p3"
+
 theme = Batman
+
+# yellow - #ffc552
 background = #282B34
 #palette = 1=#ffc552
 #palette = 2=#ffc552
