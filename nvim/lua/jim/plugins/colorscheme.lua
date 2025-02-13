@@ -62,8 +62,10 @@ return {
 		priority = 1000,
 		config = function()
 			vim.cmd.colorscheme("falcon")
-			vim.api.nvim_set_hl(0, "Visual", { bg = "#3f3a59" })
+			vim.api.nvim_set_hl(0, "Visual", { bg = "#4f4f59" })
 			vim.api.nvim_set_hl(0, "CursorLine", { bg = "#4f4f59" })
+			-- vim.api.nvim_set_hl(0, "Search", { bg = "#635196" })
+			-- vim.api.nvim_set_hl(0, "CurSearch", { bg = "#bfdaff" })
 			vim.api.nvim_set_hl(0, "DiagnosticError", { fg = "#b24d36" })
 			vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = "#b24d36" })
 			vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { fg = "#ff3600" })
@@ -78,6 +80,7 @@ return {
 			vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { fg = "#99a4bc" })
 			vim.api.nvim_set_hl(0, "Winbar", { bg = "#303340" })
 			vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#000000", bg = "#FFC552" })
+			vim.api.nvim_set_hl(0, "SnacksPickerDir", { fg = "#FFC552" })
 		end,
 	},
 	-- {

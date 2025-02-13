@@ -4,7 +4,18 @@ return {
 	opts = {
 		indent = {},
 		input = { enabled = true },
-		picker = { enabled = true },
+		---@type snacks.picker.Config
+		picker = {
+			enabled = true,
+			ui_select = true,
+			win = {
+				input = {
+					keys = {
+						["<C-t>"] = { "tab", mode = { "n", "i" } },
+					},
+				},
+			},
+		},
 	},
 	keys = {
 		{
@@ -34,6 +45,34 @@ return {
 				Snacks.picker.diagnostics_buffer()
 			end,
 			desc = "Buffer Diagnostics",
+		},
+		{
+			",j",
+			function()
+				Snacks.picker.jumps()
+			end,
+			desc = "Jumps",
+		},
+		{
+			"<leader>sk",
+			function()
+				Snacks.picker.keymaps()
+			end,
+			desc = "Keymaps",
+		},
+		{
+			"<leader>sl",
+			function()
+				Snacks.picker.loclist()
+			end,
+			desc = "Location List",
+		},
+		{
+			"<leader>sm",
+			function()
+				Snacks.picker.marks()
+			end,
+			desc = "Marks",
 		},
 	},
 }

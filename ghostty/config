@@ -5,7 +5,7 @@ adjust-cell-height = 10%
 
 window-colorspace = "display-p3"
 
-theme = Batman
+#theme = Batman
 
 # yellow - #ffc552
 background = #282B34
