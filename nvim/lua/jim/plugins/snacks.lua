@@ -3,7 +3,7 @@ return {
 	---@type snacks.Config
 	opts = {
 		indent = {},
-		input = { enabled = true },
+		input = {},
 		---@type snacks.picker.Config
 		picker = {
 			enabled = true,
