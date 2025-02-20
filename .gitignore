@@ -1,2 +1,5 @@
 .vim
-.tmux/plugins
+tmux/plugins
+.DS_Store
+lazy-lock.json
+nvim/lazy-lock.json
