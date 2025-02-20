@@ -12,6 +12,7 @@ return {
 				input = {
 					keys = {
 						["<C-t>"] = { "tab", mode = { "n", "i" } },
+						["<C-q>"] = { "qflist", mode = { "n", "i" } },
 					},
 				},
 			},

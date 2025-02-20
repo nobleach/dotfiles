@@ -39,9 +39,10 @@ return {
 		},
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
+		cmdline = {
+			sources = { "path", "cmdline" },
+		},
 		sources = {
-			-- Disable cmdline completions
-			cmdline = {},
 			default = { "snippets", "lsp", "path", "ecolog", "dadbod", "buffer", "codecompanion" },
 
 			-- Add custom providers
@@ -63,6 +64,41 @@ return {
 			},
 			menu = {
 				draw = {
+					components = {
+						-- customize the drawing of kind icons
+						kind_icon = {
+							text = function(ctx)
+								-- default kind icon
+								local icon = ctx.kind_icon
+								-- if LSP source, check for color derived from documentation
+								if ctx.item.source_name == "LSP" then
+									local color_item = require("nvim-highlight-colors").format(
+										ctx.item.documentation,
+										{ kind = ctx.kind }
+									)
+									if color_item and color_item.abbr then
+										icon = color_item.abbr
+									end
+								end
+								return icon .. ctx.icon_gap
+							end,
+							highlight = function(ctx)
+								-- default highlight group
+								local highlight = "BlinkCmpKind" .. ctx.kind
+								-- if LSP source, check for color derived from documentation
+								if ctx.item.source_name == "LSP" then
+									local color_item = require("nvim-highlight-colors").format(
+										ctx.item.documentation,
+										{ kind = ctx.kind }
+									)
+									if color_item and color_item.abbr_hl_group then
+										highlight = color_item.abbr_hl_group
+									end
+								end
+								return highlight
+							end,
+						},
+					},
 					columns = {
 						{ "label", "label_description", gap = 1 },
 						{ "kind_icon", "kind", gap = 1 },
@@ -74,9 +110,9 @@ return {
 				auto_show_delay_ms = 100,
 				treesitter_highlighting = true,
 			},
-			-- list = {
-			-- 	selection = "auto_insert",
-			-- },
+			list = {
+				selection = { preselect = false, auto_insert = true },
+			},
 		},
 
 		signature = { enabled = true },
