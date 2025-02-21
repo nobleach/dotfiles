@@ -15,8 +15,8 @@ export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:/opt/homebrew/bin:$HOME/.d
 
 alias fourwords="sort -R /usr/share/dict/words | head -n 4| sed 's/.\*/&/;$!s/$// ' |tr '\n' '-' |sed 's/-$/\n/'"
 alias s3stg-cfg="tcli idb show cmsnonprod/aws_s3_configs/stg/us-east-1.aws"
-alias dcu="docker-compose up"
-alias dcd="docker-compose down"
+alias dcu="docker compose up"
+alias dcd="docker compose down"
 alias nppods="tcli runon cmsnonprod kubectl -n cmsnonprod get po"
 alias ppods="tcli runon cms kubectl -n cms get po"
 alias k="kubectl"
