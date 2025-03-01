@@ -26,7 +26,7 @@ setw -g window-status-style "fg=#b4b4b9,bg=black,none"
 setw -g window-status-activity-style "fg=magenta,bg=#36363a,none"
 setw -g window-status-separator ""
 setw -g window-status-format "#[fg=#white,bg=#57575e] #I #[fg=#787882,bg=#020221] #W "
-setw -g window-status-current-format "#[fg=#020221,bg=yellow]#[fg=#020221,bg=yellow] #I #[fg=#020221,bg=yellow]#[fg=yellow,bg=#020221] #{?window_zoomed_flag,#[fg=#c8d0e3] 󰍋 (,}#W#{?window_zoomed_flag,#[fg=#c8d0e3]),} "
+setw -g window-status-current-format "#[fg=#020221,bg=#4C89C5]#[fg=#020221,bg=#4C89C5] #I #[fg=#020221,bg=#4C89C5]#[fg=#4C89C5,bg=#020221] #{?window_zoomed_flag,#[fg=#c8d0e3] 󰍋 (,}#W#{?window_zoomed_flag,#[fg=#c8d0e3]),} "
 
 set -g status-left-style "none"
 set -g status-right-style "none"
@@ -34,3 +34,4 @@ set -g status-left-length "100"
 set -g status-right-length "100"
 set -g status-left "#[fg=white] #S #[fg=#57575e]│ "
 set -g status-right "#[fg=white]%m/%d/%Y %H:%M "
+

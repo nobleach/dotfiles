@@ -27,6 +27,13 @@ return {
 			desc = "Grep",
 		},
 		{
+			",8",
+			function()
+				Snacks.picker.grep_word()
+			end,
+			desc = "Grep",
+		},
+		{
 			",p",
 			function()
 				Snacks.picker.files()
