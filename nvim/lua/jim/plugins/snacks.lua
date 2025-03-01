@@ -1,8 +1,16 @@
 return {
 	"folke/snacks.nvim",
+	priority = 1000,
 	---@type snacks.Config
 	opts = {
-		indent = {},
+		indent = {
+			priority = 1,
+			enabled = true, -- enable indent guides
+			char = "│",
+			only_scope = false, -- only show indent guides of the scope
+			only_current = false, -- only show indent guides in the current window
+			hl = "SnacksIndent",
+		},
 		input = {},
 		---@type snacks.picker.Config
 		picker = {
@@ -83,4 +91,7 @@ return {
 			desc = "Marks",
 		},
 	},
+	init = function()
+		require("snacks")
+	end,
 }
