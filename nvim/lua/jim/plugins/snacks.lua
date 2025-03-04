@@ -28,28 +28,28 @@ return {
 	},
 	keys = {
 		{
-			",f",
+			"<leader>f",
 			function()
 				Snacks.picker.grep()
 			end,
 			desc = "Grep",
 		},
 		{
-			",8",
+			"<leader>8",
 			function()
 				Snacks.picker.grep_word()
 			end,
 			desc = "Grep",
 		},
 		{
-			",p",
+			"<C-p>",
 			function()
 				Snacks.picker.files()
 			end,
 			desc = "Find Files",
 		},
 		{
-			",s",
+			",sy",
 			function()
 				Snacks.picker.lsp_symbols()
 			end,
@@ -70,7 +70,7 @@ return {
 			desc = "Jumps",
 		},
 		{
-			"<leader>sk",
+			"<leader>2",
 			function()
 				Snacks.picker.keymaps()
 			end,

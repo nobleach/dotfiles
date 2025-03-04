@@ -40,9 +40,9 @@ return {
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness
 
-		keymap.set("n", "<C-p>", "<cmd>Telescope find_files hidden=true<cr>", { noremap = true, silent = true })
-		keymap.set("n", "<leader>f", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
-		keymap.set("n", "<leader>8", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+		keymap.set("n", ",p", "<cmd>Telescope find_files hidden=true<cr>", { noremap = true, silent = true })
+		keymap.set("n", ",f", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
+		keymap.set("n", ",8", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
 		keymap.set(
 			"n",
 			"<leader>tgb",

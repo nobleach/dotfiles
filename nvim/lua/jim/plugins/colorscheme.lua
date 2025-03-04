@@ -88,6 +88,18 @@ return {
 		priority = 1000,
 		config = function()
 			vim.cmd("colorscheme three-firewatch")
+			vim.api.nvim_set_hl(0, "DiagnosticError", { fg = "#D95360" })
+			vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = "#D95360" })
+			vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { fg = "#D95360" })
+			vim.api.nvim_set_hl(0, "DiagnosticWarn", { fg = "#D55118" })
+			vim.api.nvim_set_hl(0, "DiagnosticSignWarn", { fg = "#D55118" })
+			vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarning", { fg = "#D55118" })
+			vim.api.nvim_set_hl(0, "DiagnosticInfo", { fg = "#DFB563" })
+			vim.api.nvim_set_hl(0, "DiagnosticSignInfo", { fg = "#DFB563" })
+			vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", { fg = "#DFB563" })
+			vim.api.nvim_set_hl(0, "DiagnosticHint", { fg = "#44A8B6" })
+			vim.api.nvim_set_hl(0, "DiagnosticSignHint", { fg = "#44A8B6" })
+			vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { fg = "#44A8B6" })
 		end,
 	},
 	-- {
