@@ -11,7 +11,7 @@ return {
 				name = "biome",
 			})[1]
 			if has_biome_lsp then
-				return { "biome" }
+				return { "biome", "biome-organize-imports" }
 			end
 			local has_prettier = vim.fs.find({
 				-- https://prettier.io/docs/en/configuration.html
@@ -41,7 +41,7 @@ return {
 				json = { "biome" },
 				jsonc = { "biome" },
 				svelte = { "prettier" },
-				css = { "prettier" },
+				css = { "biome" },
 				html = { "prettier" },
 				yaml = { "prettier" },
 				markdown = { "prettier" },
