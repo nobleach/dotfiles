@@ -11,6 +11,11 @@ return {
 			only_current = false, -- only show indent guides in the current window
 			hl = "SnacksIndent",
 		},
+		explorer = {
+			-- your explorer configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
 		input = {},
 		---@type snacks.picker.Config
 		picker = {
@@ -27,6 +32,13 @@ return {
 		},
 	},
 	keys = {
+		{
+			"<c-e>",
+			function()
+				Snacks.explorer.open()
+			end,
+			desc = "File Explorer",
+		},
 		{
 			"<leader>f",
 			function()

@@ -1,3 +1,6 @@
+# set command line mode to vi
+set -o vi
+
 # source antidote
 source "$HOME/.antidote/antidote.zsh"
 
@@ -5,8 +8,6 @@ source "$HOME/.antidote/antidote.zsh"
 antidote load
 
 autoload -Uz promptinit && promptinit && prompt pure
-# set command line mode to vi
-set -o vi
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:/opt/homebrew/bin:$HOME/.docker/bin:$PATH
 
