@@ -12,15 +12,24 @@ return {
 			hl = "SnacksIndent",
 		},
 		explorer = {
-			-- your explorer configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
+			enabled = true,
 		},
 		input = {},
 		---@type snacks.picker.Config
 		picker = {
 			enabled = true,
 			ui_select = true,
+			sources = {
+				explorer = {
+					win = {
+						list = {
+							keys = {
+								["<C-t>"] = { "tab", mode = { "n", "i" } },
+							},
+						},
+					},
+				},
+			},
 			win = {
 				input = {
 					keys = {
