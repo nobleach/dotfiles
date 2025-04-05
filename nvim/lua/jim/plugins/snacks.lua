@@ -65,7 +65,7 @@ return {
 		{
 			"<C-p>",
 			function()
-				Snacks.picker.files()
+				Snacks.picker.git_files()
 			end,
 			desc = "Find Files",
 		},

@@ -28,6 +28,8 @@ alias kgc="kubectl get configmap"
 alias kdp="kubectl delete pod"
 alias kaf="kubectl apply -f"
 alias di="docker images"
+alias lfp="tcli logs -f wwhsop/file-processor/prod/us-east-1.aws --container=app"
+alias lpp="tcli logs -f wwhsop/prime/prod/us-east-1.aws --container=app"
 alias dstopall='docker stop $(docker ps -a -q)'
 function dclean() {
     docker rm -v $(docker ps --all --quiet --filter "status=exited")
