@@ -63,6 +63,8 @@ return {
 				},
 			},
 			menu = {
+				border = "rounded",
+				winblend = 50,
 				draw = {
 					components = {
 						-- customize the drawing of kind icons
@@ -109,9 +111,13 @@ return {
 				auto_show = true,
 				auto_show_delay_ms = 100,
 				treesitter_highlighting = true,
+				window = {
+					border = "rounded",
+					winblend = 50,
+				},
 			},
 			list = {
-				selection = { preselect = false, auto_insert = true },
+				selection = { preselect = true, auto_insert = true },
 			},
 		},
 
