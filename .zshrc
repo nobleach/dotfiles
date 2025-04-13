@@ -1,5 +1,8 @@
 # set command line mode to vi
-set -o vi
+# set -o vi
+
+# Initial $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:/opt/homebrew/bin:$HOME/.docker/bin:$PATH
 
 # Ignore duplicate entries in history
 setopt HIST_IGNORE_ALL_DUPS
@@ -7,15 +10,18 @@ setopt HIST_IGNORE_ALL_DUPS
 # source antidote
 source "$HOME/.antidote/antidote.zsh"
 
+# Vim mode will clobber CTRL+R
+# we need to change when it's initialized
+ZVM_INIT_MODE=sourcing
+
 # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
 antidote load
 
-autoload -Uz promptinit && promptinit && prompt pure
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:/opt/homebrew/bin:$HOME/.docker/bin:$PATH
+# Set up fzf key bindings and fuzzy completion
+# eval "$(fzf --zsh)"
+source $(brew --prefix)/Cellar/fzf/$(fzf --version | cut -d ' ' -f 1)/shell/key-bindings.zsh
 
-# Path to your oh-my-zsh installation.
-# export ZSH="$HOME/.oh-my-zsh"
+autoload -Uz promptinit && promptinit && prompt pure
 
 alias fourwords="sort -R /usr/share/dict/words | head -n 4| sed 's/.\*/&/;$!s/$// ' |tr '\n' '-' |sed 's/-$/\n/'"
 alias s3stg-cfg="tcli idb show cmsnonprod/aws_s3_configs/stg/us-east-1.aws"
@@ -142,7 +148,3 @@ export PATH="$HOME/.moon/bin:$PATH"
 # opam configuration
 [[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 eval $(opam env)
-#
-# Set up fzf key bindings and fuzzy completion
-source /opt/homebrew/Cellar/fzf/0.61.1/shell/key-bindings.zsh
-eval "$(fzf --zsh)"
