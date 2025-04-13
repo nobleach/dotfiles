@@ -72,7 +72,7 @@ return {
 			},
 			menu = {
 				border = "rounded",
-				winblend = 70,
+				winblend = 0,
 				draw = {
 					components = {
 						-- customize the drawing of kind icons
