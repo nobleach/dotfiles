@@ -1,6 +1,7 @@
 return {
 	"saghen/blink.cmp",
 	dependencies = {
+		"Kaiser-Yang/blink-cmp-avante",
 		"L3MON4D3/LuaSnip",
 		version = "v2.*",
 		config = function()
@@ -43,12 +44,19 @@ return {
 			sources = { "path", "cmdline" },
 		},
 		sources = {
-			default = { "snippets", "lsp", "path", "ecolog", "dadbod", "buffer", "codecompanion" },
+			default = { "snippets", "lsp", "path", "avante", "ecolog", "dadbod", "buffer", "codecompanion" },
 
 			-- Add custom providers
 			providers = {
 				dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
 				ecolog = { name = "ecolog", module = "ecolog.integrations.cmp.blink_cmp" },
+				avante = {
+					module = "blink-cmp-avante",
+					name = "Avante",
+					opts = {
+						-- options for blink-cmp-avante
+					},
+				},
 			},
 		},
 
