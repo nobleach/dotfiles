@@ -64,7 +64,9 @@ return {
 			end, opts) -- jump to next diagnostic in buffer
 
 			opts.desc = "Show documentation for what is under cursor"
-			keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+			keymap.set("n", "K", function()
+				vim.lsp.buf.hover({ border = "single", max_height = 25, max_width = 120 })
+			end, opts) -- show documentation for what is under cursor
 
 			opts.desc = "Restart LSP"
 			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
