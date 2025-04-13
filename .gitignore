@@ -3,3 +3,6 @@ tmux/plugins
 .DS_Store
 lazy-lock.json
 nvim/lazy-lock.json
+
+.employer.zsh
+employer.zsh

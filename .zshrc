@@ -1,6 +1,9 @@
 # set command line mode to vi
 set -o vi
 
+# Ignore duplicate entries in history
+setopt HIST_IGNORE_ALL_DUPS
+
 # source antidote
 source "$HOME/.antidote/antidote.zsh"
 
@@ -28,8 +31,6 @@ alias kgc="kubectl get configmap"
 alias kdp="kubectl delete pod"
 alias kaf="kubectl apply -f"
 alias di="docker images"
-alias lfp="tcli logs -f wwhsop/file-processor/prod/us-east-1.aws --container=app"
-alias lpp="tcli logs -f wwhsop/prime/prod/us-east-1.aws --container=app"
 alias dstopall='docker stop $(docker ps -a -q)'
 function dclean() {
     docker rm -v $(docker ps --all --quiet --filter "status=exited")
@@ -40,14 +41,13 @@ function kube_sh() {
   POD=$(kubectl get pods | fzf | awk ‘{print $1}’)
   kubectl exec -it $POD /bin/sh
 }
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-# plugins=(git)
 
-# source $ZSH/oh-my-zsh.sh
+# Often I want aliases or env variables that are specific to my employer
+# I never want these committed to my public repository
+# And if I happen to leave my employer, I don't want them junking up my dotfiles
+if [[ -f "$HOME/.employer.zsh" ]]; then
+  source  "$HOME/.employer.zsh"
+fi
 
 function findandkill(){
  lsof -t -i tcp:$1 | xargs kill
@@ -101,10 +101,6 @@ fi
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
-# opam configuration
-[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-eval $(opam env)
-
 # ensure that docker builds for the right architecture
 # export DOCKER_BUILDKIT=1
 # export DOCKER_DEFAULT_PLATFORM=linux/amd64
@@ -134,8 +130,7 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# replace ls with eza
 alias ls="eza --icons=always"
 
 # mise tool version manager
@@ -143,6 +138,11 @@ eval "$($HOME/.local/bin/mise activate zsh)"
 
 # moonbit
 export PATH="$HOME/.moon/bin:$PATH"
+
+# opam configuration
+[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+eval $(opam env)
 #
 # Set up fzf key bindings and fuzzy completion
+source /opt/homebrew/Cellar/fzf/0.61.1/shell/key-bindings.zsh
 eval "$(fzf --zsh)"
