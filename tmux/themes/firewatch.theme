@@ -8,7 +8,7 @@ set -g message-command-style "fg=#99a4bc,bg=#020221"
 
 # panes
 set -g pane-border-style "fg=#57575e"
-set -g pane-active-border-style "fg=#57575e"
+set -g pane-active-border-style "fg=#4C89C5"
 
 # put a line above the status
 # set -g pane-border-status bottom
@@ -32,6 +32,6 @@ set -g status-left-style "none"
 set -g status-right-style "none"
 set -g status-left-length "100"
 set -g status-right-length "100"
-set -g status-left "#[fg=white] #S #[fg=#57575e]│ "
+set -g status-left "#[fg=white] #P #[fg=#57575e]│ "
 set -g status-right "#[fg=white]%m/%d/%Y %H:%M "
 
