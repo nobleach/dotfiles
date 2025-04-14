@@ -45,6 +45,7 @@ return {
 				"lua_ls",
 				-- "nimls",
 				-- "ocamllsp",
+				-- "omnisharp",
 				"prismals",
 				"pyright",
 				"rust_analyzer",
