@@ -6,6 +6,7 @@ export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:/opt/homebrew/bin:$HOME/.d
 
 # Ignore duplicate entries in history
 setopt HIST_IGNORE_ALL_DUPS
+setopt inc_append_history
 
 # source antidote
 source "$HOME/.antidote/antidote.zsh"

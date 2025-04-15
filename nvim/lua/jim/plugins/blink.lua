@@ -121,11 +121,11 @@ return {
 				treesitter_highlighting = true,
 				window = {
 					border = "rounded",
-					winblend = 50,
+					winblend = 0,
 				},
 			},
 			list = {
-				selection = { preselect = true, auto_insert = true },
+				selection = { preselect = false, auto_insert = true },
 			},
 		},
 
