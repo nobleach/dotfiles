@@ -280,8 +280,14 @@ return {
 			on_attach = on_attach,
 		})
 
-		-- configure python server
+		-- configure sqls server
 		lspconfig["sqlls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- configure stylelint server
+		lspconfig["stylelint_lsp"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})

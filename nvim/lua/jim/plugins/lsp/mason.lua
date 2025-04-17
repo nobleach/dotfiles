@@ -51,6 +51,7 @@ return {
 				"rust_analyzer",
 				--	"solargraph",
 				"sqlls",
+				"stylelint_lsp",
 				"svelte",
 				"terraformls",
 				-- "tsserver",
