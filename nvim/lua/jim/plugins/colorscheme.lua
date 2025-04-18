@@ -83,40 +83,56 @@ return {
 	-- 		vim.api.nvim_set_hl(0, "SnacksPickerDir", { fg = "#FFC552" })
 	-- 	end,
 	-- },
-	{
-		"zortax/three-firewatch",
-		priority = 1000,
-		config = function()
-			vim.cmd("colorscheme three-firewatch")
-			vim.api.nvim_set_hl(0, "DiagnosticError", { fg = "#D95360" })
-			vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = "#D95360" })
-			vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { fg = "#D95360" })
-			vim.api.nvim_set_hl(0, "DiagnosticWarn", { fg = "#D55118" })
-			vim.api.nvim_set_hl(0, "DiagnosticSignWarn", { fg = "#D55118" })
-			vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarning", { fg = "#D55118" })
-			vim.api.nvim_set_hl(0, "DiagnosticInfo", { fg = "#DFB563" })
-			vim.api.nvim_set_hl(0, "DiagnosticSignInfo", { fg = "#DFB563" })
-			vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", { fg = "#DFB563" })
-			vim.api.nvim_set_hl(0, "DiagnosticHint", { fg = "#44A8B6" })
-			vim.api.nvim_set_hl(0, "DiagnosticSignHint", { fg = "#44A8B6" })
-			vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { fg = "#44A8B6" })
-		end,
-	},
 	-- {
-	-- 	"svrana/neosolarized.nvim",
-	-- 	lazy = false,
+	-- 	"zortax/three-firewatch",
 	-- 	priority = 1000,
 	-- 	config = function()
-	-- 		require("neosolarized").setup({
-	-- 			comment_italics = true,
-	-- 			background_set = true,
-	-- 		})
-	-- 		vim.cmd.colorscheme("neosolarized")
-	-- 		vim.cmd("hi NonText guifg=bg")
+	-- 		vim.cmd("colorscheme three-firewatch")
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticError", { fg = "#D95360" })
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = "#D95360" })
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { fg = "#D95360" })
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticWarn", { fg = "#D55118" })
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticSignWarn", { fg = "#D55118" })
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarning", { fg = "#D55118" })
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticInfo", { fg = "#DFB563" })
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticSignInfo", { fg = "#DFB563" })
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", { fg = "#DFB563" })
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticHint", { fg = "#44A8B6" })
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticSignHint", { fg = "#44A8B6" })
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { fg = "#44A8B6" })
+	-- 		vim.api.nvim_set_hl(0, "Comment", { fg = "#4C5669", italic = true })
 	-- 	end,
-	-- 	dependencies = {
-	-- 		"tjdevries/colorbuddy.nvim",
+	-- },
+	{
+		"svrana/neosolarized.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("neosolarized").setup({
+				comment_italics = true,
+				background_set = true,
+			})
+			vim.cmd.colorscheme("neosolarized")
+			vim.cmd("hi NonText guifg=bg")
+		end,
+		dependencies = {
+			"tjdevries/colorbuddy.nvim",
+		},
+	},
+	-- {
+	-- 	"maxmx03/solarized.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	---@type solarized.config
+	-- 	opts = {
+	-- 		variant = "autumn", -- "spring" | "summer" | "autumn" | "winter" (default)
 	-- 	},
+	-- 	config = function(_, opts)
+	-- 		vim.o.termguicolors = true
+	-- 		vim.o.background = "dark"
+	-- 		require("solarized").setup(opts)
+	-- 		vim.cmd.colorscheme("solarized")
+	-- 	end,
 	-- },
 	-- {
 	-- 	"antonio-hickey/citrus-mist",
