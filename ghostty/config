@@ -1,11 +1,12 @@
 auto-update = check
-font-family = "BitstromWera Nerd Font Mono"
+font-family = "PT Mono"
 font-size = 18.0
 adjust-cell-height = 10%
 
 window-colorspace = "display-p3"
 
 #theme = Firewatch
+#theme = Solarized Dark - Patched
 
 # yellow - #ffc552
 #background = #282B34

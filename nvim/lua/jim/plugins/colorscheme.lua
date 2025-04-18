@@ -103,6 +103,22 @@ return {
 		end,
 	},
 	-- {
+	-- 	"svrana/neosolarized.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("neosolarized").setup({
+	-- 			comment_italics = true,
+	-- 			background_set = true,
+	-- 		})
+	-- 		vim.cmd.colorscheme("neosolarized")
+	-- 		vim.cmd("hi NonText guifg=bg")
+	-- 	end,
+	-- 	dependencies = {
+	-- 		"tjdevries/colorbuddy.nvim",
+	-- 	},
+	-- },
+	-- {
 	-- 	"antonio-hickey/citrus-mist",
 	-- 	priority = 1000,
 	-- 	config = function()
