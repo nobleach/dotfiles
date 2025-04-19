@@ -8,8 +8,8 @@ return {
 	-- 			underline = true,
 	-- 			bold = true,
 	-- 			italic = {
-	-- 				strings = true,
 	-- 				emphasis = true,
+	-- 				strings = true,
 	-- 				comments = true,
 	-- 				operators = false,
 	-- 				folds = true,
@@ -38,14 +38,6 @@ return {
 	-- 	config = function()
 	-- 		-- do whatever you want for further customization~
 	-- 		vim.cmd([[colorscheme nvimgelion]])
-	-- 	end,
-	-- },
-	-- {
-	-- 	"luisiacc/gruvbox-baby",
-	-- 	priority = 1000, -- make sure to load this before all the other start plugins
-	-- 	config = function()
-	-- 		-- load the colorscheme here
-	-- 		vim.cmd([[colorscheme gruvbox-baby]])
 	-- 	end,
 	-- },
 	-- {
@@ -108,6 +100,12 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
+			vim.api.nvim_set_hl(0, "DiagnosticError", { fg = "#B84745" })
+			vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = "#B84745" })
+			vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { fg = "#B84745" })
+			vim.api.nvim_set_hl(0, "SnacksPickerDir", { fg = "#4C5669" })
+			vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { fg = "#4C5669" })
+
 			require("neosolarized").setup({
 				comment_italics = true,
 				background_set = true,
@@ -125,7 +123,7 @@ return {
 	-- 	priority = 1000,
 	-- 	---@type solarized.config
 	-- 	opts = {
-	-- 		variant = "autumn", -- "spring" | "summer" | "autumn" | "winter" (default)
+	-- 		variant = "summer", -- "spring" | "summer" | "autumn" | "winter" (default)
 	-- 	},
 	-- 	config = function(_, opts)
 	-- 		vim.o.termguicolors = true
