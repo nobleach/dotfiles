@@ -20,6 +20,15 @@ return {
 	-- 		vim.cmd("colorscheme gruvbox")
 	-- 	end,
 	-- },
+
+	-- {
+	-- 	"marko-cerovac/material.nvim",
+	-- 	config = function()
+	-- 		vim.cmd("colorscheme material")
+	-- 		vim.g.material_style = "oceanic"
+	-- 	end,
+	-- },
+
 	-- {
 	-- 	"AlexvZyl/nordic.nvim",
 	-- 	lazy = false,
@@ -31,6 +40,39 @@ return {
 	-- 		vim.api.nvim_set_hl(0, "Winbar", { bg = "#303340" })
 	-- 		vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#000000", bg = "#94BFCE" })
 	-- 		-- vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#000000", bg = "#D79784" })
+	-- 	end,
+	-- },
+	-- Pretty and readable but fairly Cattpuccinish
+	-- {
+	-- 	"fynnfluegge/monet.nvim",
+	-- 	name = "monet",
+	-- 	config = function()
+	-- 		vim.cmd.colorscheme("monet")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"everviolet/nvim",
+	-- 	name = "evergarden",
+	-- 	priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
+	-- 	opts = {
+	-- 		theme = {
+	-- 			variant = "spring", -- 'winter'|'fall'|'spring'|'summer'
+	-- 			accent = "green",
+	-- 		},
+	-- 		editor = {
+	-- 			transparent_background = false,
+	-- 			sign = { color = "none" },
+	-- 			float = {
+	-- 				color = "mantle",
+	-- 				invert_border = false,
+	-- 			},
+	-- 			completion = {
+	-- 				color = "surface0",
+	-- 			},
+	-- 		},
+	-- 	},
+	-- 	config = function()
+	-- 		vim.cmd.colorscheme("evergarden")
 	-- 	end,
 	-- },
 	-- {
@@ -100,23 +142,25 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.api.nvim_set_hl(0, "DiagnosticError", { fg = "#B84745" })
-			vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = "#B84745" })
-			vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { fg = "#B84745" })
-			vim.api.nvim_set_hl(0, "SnacksPickerDir", { fg = "#4C5669" })
-			vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { fg = "#4C5669" })
-
 			require("neosolarized").setup({
 				comment_italics = true,
 				background_set = true,
 			})
 			vim.cmd.colorscheme("neosolarized")
 			vim.cmd("hi NonText guifg=bg")
+			vim.api.nvim_set_hl(0, "DiagnosticError", { fg = "#B84745" })
+			vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = "#B84745" })
+			vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { fg = "#B84745" })
+			vim.api.nvim_set_hl(0, "SnacksPickerDir", { fg = "#4C5669" })
+			vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { fg = "#4C5669" })
+			vim.api.nvim_set_hl(0, "Winbar", { bg = "#002B35" })
 		end,
 		dependencies = {
 			"tjdevries/colorbuddy.nvim",
 		},
 	},
+
+	-- Real Solarized theme
 	-- {
 	-- 	"maxmx03/solarized.nvim",
 	-- 	lazy = false,
