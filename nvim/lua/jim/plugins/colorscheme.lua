@@ -21,13 +21,16 @@ return {
 	-- 	end,
 	-- },
 
-	-- {
-	-- 	"marko-cerovac/material.nvim",
-	-- 	config = function()
-	-- 		vim.cmd("colorscheme material")
-	-- 		vim.g.material_style = "oceanic"
-	-- 	end,
-	-- },
+	{
+		"marko-cerovac/material.nvim",
+		config = function()
+			vim.cmd("colorscheme material")
+			vim.g.material_style = "oceanic"
+			vim.cmd("hi NonText guifg=bg")
+			vim.api.nvim_set_hl(0, "TabLineEdge", { fg = "#2E3440" })
+			vim.api.nvim_set_hl(0, "TabLineSelEdge", { fg = "#2E3440", bg = "#10AF98" })
+		end,
+	},
 
 	-- {
 	-- 	"AlexvZyl/nordic.nvim",
@@ -137,28 +140,30 @@ return {
 	-- 		vim.api.nvim_set_hl(0, "Comment", { fg = "#4C5669", italic = true })
 	-- 	end,
 	-- },
-	{
-		"svrana/neosolarized.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("neosolarized").setup({
-				comment_italics = true,
-				background_set = true,
-			})
-			vim.cmd.colorscheme("neosolarized")
-			vim.cmd("hi NonText guifg=bg")
-			vim.api.nvim_set_hl(0, "DiagnosticError", { fg = "#B84745" })
-			vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = "#B84745" })
-			vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { fg = "#B84745" })
-			vim.api.nvim_set_hl(0, "SnacksPickerDir", { fg = "#4C5669" })
-			vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { fg = "#4C5669" })
-			vim.api.nvim_set_hl(0, "Winbar", { bg = "#002B35" })
-		end,
-		dependencies = {
-			"tjdevries/colorbuddy.nvim",
-		},
-	},
+
+	-- Best working Solarized theme
+	-- {
+	-- 	"svrana/neosolarized.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("neosolarized").setup({
+	-- 			comment_italics = true,
+	-- 			background_set = true,
+	-- 		})
+	-- 		vim.cmd.colorscheme("neosolarized")
+	-- 		vim.cmd("hi NonText guifg=bg")
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticError", { fg = "#B84745" })
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = "#B84745" })
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { fg = "#B84745" })
+	-- 		vim.api.nvim_set_hl(0, "SnacksPickerDir", { fg = "#4C5669" })
+	-- 		vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { fg = "#4C5669" })
+	-- 		vim.api.nvim_set_hl(0, "Winbar", { bg = "#002B35" })
+	-- 	end,
+	-- 	dependencies = {
+	-- 		"tjdevries/colorbuddy.nvim",
+	-- 	},
+	-- },
 
 	-- Real Solarized theme
 	-- {
