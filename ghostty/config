@@ -9,7 +9,7 @@ window-colorspace = "display-p3"
 #theme = Firewatch
 #theme = Solarized Dark - Patched
 #theme = GruvboxDark
-theme = MaterialOcean
+theme = MaterialDesignColors
 
 # yellow - #ffc552
 #background = #282B34
