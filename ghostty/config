@@ -1,4 +1,5 @@
 auto-update = check
+
 font-family = "Cousine"
 #font-family = "Maple Mono NF"
 font-size = 18.0
@@ -9,25 +10,4 @@ window-colorspace = "display-p3"
 #theme = Firewatch
 #theme = Solarized Dark - Patched
 #theme = GruvboxDark
-theme = MaterialDesignColors
-
-# yellow - #ffc552
-#background = #282B34
-#palette = 1=#ffc552
-#palette = 2=#ffc552
-# bright green file color
-#palette = 3=#ffc552
-# Folder color
-#palette = 4=#ffb07b
-# red cursor symbol
-#palette = 5=#ffc552
-#palette = 6=#ffd392
-# lighter stack trace fg
-#palette = 8=#dfdfe5
-#palette = 9=#ffc552
-#palette = 10=#ff0000
-#palette = 11=#ff0000
-#palette = 15=#ffd392
-#cursor-color = #ffc552
-#foreground = #bfdaff
-
+theme = MaterialDarker
