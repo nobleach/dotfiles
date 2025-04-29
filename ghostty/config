@@ -7,7 +7,7 @@ adjust-cell-height = 10%
 
 window-colorspace = "display-p3"
 
-#theme = Firewatch
+theme = tokyonight-storm
 #theme = Solarized Dark - Patched
-#theme = GruvboxDark
-theme = MaterialDarker
+#theme = MaterialDarker
+#background = #25353B
