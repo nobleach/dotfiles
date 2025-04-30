@@ -24,6 +24,9 @@ source $(brew --prefix)/Cellar/fzf/$(fzf --version | cut -d ' ' -f 1)/shell/key-
 
 autoload -Uz promptinit && promptinit && prompt pure
 
+alias cnvim="cd ~/.config/nvim && nvim"
+alias ctmux="cd ~/.config/tmux && nvim"
+alias cghostty="cd ~/.config/ghostty && nvim"
 alias fourwords="sort -R /usr/share/dict/words | head -n 4| sed 's/.\*/&/;$!s/$// ' |tr '\n' '-' |sed 's/-$/\n/'"
 alias s3stg-cfg="tcli idb show cmsnonprod/aws_s3_configs/stg/us-east-1.aws"
 alias dcu="docker compose up"
