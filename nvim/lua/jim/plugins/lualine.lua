@@ -8,7 +8,7 @@ return {
 		-- configure lualine with modified theme
 		lualine.setup({
 			options = {
-				theme = "material",
+				theme = "solarized",
 				tabline = {
 					lualine_a = { "filename" },
 					lualine_b = { "branch" },
