@@ -1,6 +1,6 @@
 auto-update = check
-font-family = "PT Mono"
-font-size = 18.0
+font-family = "Inconsolata Nerd Font"
+font-size = 20.0
 adjust-cell-height = 10%
 
 window-colorspace = "display-p3"

@@ -95,35 +95,35 @@ return {
 	-- 		vim.api.nvim_set_hl(0, "Comment", { fg = "#4C5669", italic = true })
 	-- 	end,
 	-- },
-	{
-		"svrana/neosolarized.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			vim.api.nvim_set_hl(0, "DiagnosticError", { fg = "#B84745" })
-			vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = "#B84745" })
-			vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { fg = "#B84745" })
-			vim.api.nvim_set_hl(0, "SnacksPickerDir", { fg = "#4C5669" })
-			vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { fg = "#4C5669" })
-
-			require("neosolarized").setup({
-				comment_italics = true,
-				background_set = true,
-			})
-			vim.cmd.colorscheme("neosolarized")
-			vim.cmd("hi NonText guifg=bg")
-		end,
-		dependencies = {
-			"tjdevries/colorbuddy.nvim",
-		},
-	},
+	-- {
+	-- 	"svrana/neosolarized.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticError", { fg = "#B84745" })
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = "#B84745" })
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { fg = "#B84745" })
+	-- 		vim.api.nvim_set_hl(0, "SnacksPickerDir", { fg = "#4C5669" })
+	-- 		vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { fg = "#4C5669" })
+	--
+	-- 		require("neosolarized").setup({
+	-- 			comment_italics = true,
+	-- 			background_set = true,
+	-- 		})
+	-- 		vim.cmd.colorscheme("neosolarized")
+	-- 		vim.cmd("hi NonText guifg=bg")
+	-- 	end,
+	-- 	dependencies = {
+	-- 		"tjdevries/colorbuddy.nvim",
+	-- 	},
+	-- },
 	-- {
 	-- 	"maxmx03/solarized.nvim",
 	-- 	lazy = false,
 	-- 	priority = 1000,
 	-- 	---@type solarized.config
 	-- 	opts = {
-	-- 		variant = "summer", -- "spring" | "summer" | "autumn" | "winter" (default)
+	-- 		variant = "spring", -- "spring" | "summer" | "autumn" | "winter" (default)
 	-- 	},
 	-- 	config = function(_, opts)
 	-- 		vim.o.termguicolors = true
@@ -132,6 +132,18 @@ return {
 	-- 		vim.cmd.colorscheme("solarized")
 	-- 	end,
 	-- },
+	{
+		"ishan9299/nvim-solarized-lua",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.o.termguicolors = true
+			vim.o.background = "dark"
+			vim.cmd.colorscheme("solarized-flat")
+			vim.g.solarized_italics = 1
+			vim.g.solarized_visibility = "normal"
+		end,
+	},
 	-- {
 	-- 	"antonio-hickey/citrus-mist",
 	-- 	priority = 1000,
