@@ -20,6 +20,20 @@ return {
 	-- 		vim.cmd("colorscheme gruvbox")
 	-- 	end,
 	-- },
+
+	-- {
+	-- 	"marko-cerovac/material.nvim",
+	-- 	config = function()
+	-- 		vim.cmd("colorscheme material")
+	-- 		vim.g.material_style = "oceanic"
+	-- 		vim.cmd("hi NonText guifg=bg")
+	-- 		vim.api.nvim_set_hl(0, "TabLineEdge", { fg = "#2E3440" })
+	-- 		vim.api.nvim_set_hl(0, "TabLineSelEdge", { fg = "#2E3440", bg = "#10AF98" })
+	-- 		vim.api.nvim_set_hl(0, "SnacksPickerDir", { fg = "#4C5669" })
+	-- 		vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { fg = "#4C5669" })
+	-- 	end,
+	-- },
+
 	-- {
 	-- 	"AlexvZyl/nordic.nvim",
 	-- 	lazy = false,
@@ -31,6 +45,39 @@ return {
 	-- 		vim.api.nvim_set_hl(0, "Winbar", { bg = "#303340" })
 	-- 		vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#000000", bg = "#94BFCE" })
 	-- 		-- vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#000000", bg = "#D79784" })
+	-- 	end,
+	-- },
+	-- Pretty and readable but fairly Cattpuccinish
+	-- {
+	-- 	"fynnfluegge/monet.nvim",
+	-- 	name = "monet",
+	-- 	config = function()
+	-- 		vim.cmd.colorscheme("monet")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"everviolet/nvim",
+	-- 	name = "evergarden",
+	-- 	priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
+	-- 	opts = {
+	-- 		theme = {
+	-- 			variant = "spring", -- 'winter'|'fall'|'spring'|'summer'
+	-- 			accent = "green",
+	-- 		},
+	-- 		editor = {
+	-- 			transparent_background = false,
+	-- 			sign = { color = "none" },
+	-- 			float = {
+	-- 				color = "mantle",
+	-- 				invert_border = false,
+	-- 			},
+	-- 			completion = {
+	-- 				color = "surface0",
+	-- 			},
+	-- 		},
+	-- 	},
+	-- 	config = function()
+	-- 		vim.cmd.colorscheme("evergarden")
 	-- 	end,
 	-- },
 	-- {
@@ -95,6 +142,8 @@ return {
 	-- 		vim.api.nvim_set_hl(0, "Comment", { fg = "#4C5669", italic = true })
 	-- 	end,
 	-- },
+
+	-- Best working Solarized theme
 	-- {
 	-- 	"svrana/neosolarized.nvim",
 	-- 	lazy = false,
@@ -112,11 +161,19 @@ return {
 	-- 		})
 	-- 		vim.cmd.colorscheme("neosolarized")
 	-- 		vim.cmd("hi NonText guifg=bg")
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticError", { fg = "#B84745" })
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = "#B84745" })
+	-- 		vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { fg = "#B84745" })
+	-- 		vim.api.nvim_set_hl(0, "SnacksPickerDir", { fg = "#4C5669" })
+	-- 		vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { fg = "#4C5669" })
+	-- 		vim.api.nvim_set_hl(0, "Winbar", { bg = "#002B35" })
 	-- 	end,
 	-- 	dependencies = {
 	-- 		"tjdevries/colorbuddy.nvim",
 	-- 	},
 	-- },
+
+	-- Real Solarized theme
 	-- {
 	-- 	"maxmx03/solarized.nvim",
 	-- 	lazy = false,
@@ -155,39 +212,8 @@ return {
 	-- 	"folke/tokyonight.nvim",
 	-- 	priority = 1000, -- make sure to load this before all the other start plugins
 	-- 	config = function()
-	-- 		local bg = "#011628"
-	-- 		local bg_dark = "#011423"
-	-- 		local bg_highlight = "#143652"
-	-- 		local bg_search = "#0A64AC"
-	-- 		local bg_visual = "#275378"
-	-- 		local fg = "#CBE0F0"
-	-- 		local fg_dark = "#B4D0E9"
-	-- 		local fg_gutter = "#627E97"
-	-- 		local border = "#547998"
-	--
-	-- 		require("tokyonight").setup({
-	-- 			style = "night",
-	-- 			on_colors = function(colors)
-	-- 				colors.bg = bg
-	-- 				colors.bg_dark = bg_dark
-	-- 				colors.bg_float = bg_dark
-	-- 				colors.bg_highlight = bg_highlight
-	-- 				colors.bg_popup = bg_dark
-	-- 				colors.bg_search = bg_search
-	-- 				colors.bg_statusline = bg_dark
-	-- 				colors.bg_sidebar = bg_dark
-	-- 				colors.bg_visual = bg_visual
-	-- 				colors.border = border
-	-- 				colors.fg = fg
-	-- 				colors.fg_dark = fg_dark
-	-- 				colors.fg_float = fg
-	-- 				colors.fg_gutter = fg_gutter
-	-- 				colors.fg_sidebar = fg_dark
-	-- 			end,
-	-- 		})
 	-- 		-- load the colorscheme here
-	-- 		vim.cmd([[colorscheme tokyonight]])
-	-- 		vim.cmd([[highlight Normal ctermbg=NONE guibg=NONE]])
+	-- 		vim.cmd([[colorscheme tokyonight-storm]])
 	-- 	end,
 	-- },
 	-- {
