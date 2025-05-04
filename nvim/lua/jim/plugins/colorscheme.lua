@@ -197,6 +197,8 @@ return {
 			vim.o.termguicolors = true
 			vim.o.background = "dark"
 			vim.cmd.colorscheme("solarized-flat")
+			vim.api.nvim_set_hl(0, "CmpDocumentation", { bg = "#001D26" })
+			vim.api.nvim_set_hl(0, "SnacksPicker", { bg = "none", nocombine = true })
 			vim.g.solarized_italics = 1
 			vim.g.solarized_visibility = "normal"
 		end,
