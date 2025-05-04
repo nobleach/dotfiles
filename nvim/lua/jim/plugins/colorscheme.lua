@@ -197,8 +197,13 @@ return {
 			vim.o.termguicolors = true
 			vim.o.background = "dark"
 			vim.cmd.colorscheme("solarized-flat")
-			vim.api.nvim_set_hl(0, "CmpDocumentation", { bg = "#001D26" })
+			vim.api.nvim_set_hl(0, "CmpDocumentation", { bg = "#002B35", nocombine = true })
+			vim.api.nvim_set_hl(0, "CmpItemKindReference", { bg = "#002B35", nocombine = true })
+			vim.api.nvim_set_hl(0, "LspReferenceRead", { bg = "#002B35", nocombine = true })
+			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#002B35", nocombine = true })
 			vim.api.nvim_set_hl(0, "SnacksPicker", { bg = "none", nocombine = true })
+			vim.api.nvim_set_hl(0, "NeogitDiffAddHighlight", { fg = "#ffffff", bg = "#719e07" })
+			vim.api.nvim_set_hl(0, "NeogitDiffDeleteHighlight", { fg = "#ffffff", bg = "#dc322f" })
 			vim.g.solarized_italics = 1
 			vim.g.solarized_visibility = "normal"
 		end,
