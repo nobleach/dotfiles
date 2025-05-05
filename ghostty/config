@@ -1,5 +1,6 @@
 auto-update = check
 font-family = "Inconsolata Nerd Font"
+font-family-italic = "Inconsolata Nerd Font"
 font-size = 20.0
 adjust-cell-height = 10%
 
