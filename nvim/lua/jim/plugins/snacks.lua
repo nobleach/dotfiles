@@ -70,6 +70,13 @@ return {
 			desc = "Find Files",
 		},
 		{
+			"<leader>gb",
+			function()
+				Snacks.picker.git_branches()
+			end,
+			desc = "LSP Symbols",
+		},
+		{
 			",sy",
 			function()
 				Snacks.picker.lsp_symbols()
@@ -108,6 +115,13 @@ return {
 			"<leader>sm",
 			function()
 				Snacks.picker.marks()
+			end,
+			desc = "Marks",
+		},
+		{
+			",bl",
+			function()
+				Snacks.git.blame_line(opts)
 			end,
 			desc = "Marks",
 		},
