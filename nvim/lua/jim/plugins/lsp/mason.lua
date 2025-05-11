@@ -44,7 +44,7 @@ return {
 				"kotlin_language_server",
 				"lua_ls",
 				-- "nimls",
-				-- "ocamllsp",
+				"ocamllsp",
 				-- "omnisharp",
 				"prismals",
 				"pyright",
@@ -64,7 +64,7 @@ return {
 
 		mason_tool_installer.setup({
 			ensure_installed = {
-				-- "ocamlformat",
+				"ocamlformat",
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
 				"isort", -- python formatter

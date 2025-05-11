@@ -190,14 +190,14 @@ return {
 	-- 		vim.cmd("colorscheme citrus-mist")
 	-- 	end,
 	-- },
-	{
-		"folke/tokyonight.nvim",
-		priority = 1000, -- make sure to load this before all the other start plugins
-		config = function()
-			-- load the colorscheme here
-			vim.cmd([[colorscheme tokyonight-storm]])
-		end,
-	},
+	-- {
+	-- 	"folke/tokyonight.nvim",
+	-- 	priority = 1000, -- make sure to load this before all the other start plugins
+	-- 	config = function()
+	-- 		-- load the colorscheme here
+	-- 		vim.cmd([[colorscheme tokyonight-storm]])
+	-- 	end,
+	-- },
 	-- {
 	-- 	"sainnhe/everforest",
 	-- 	priority = 1000, -- make sure to load this before all the other start plugins
@@ -244,20 +244,37 @@ return {
 	-- 		vim.cmd("colorscheme blue-moon")
 	-- 	end,
 	-- },
+	{
+		"kvrohit/substrata.nvim",
+	},
+	{ "savq/melange-nvim" },
+	{ "tanvirtin/monokai.nvim" },
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		config = function()
+			require("rose-pine").setup({
+				dark_variant = "moon", -- main, moon, or dawn
+				dim_inactive_windows = false,
+				extend_background_behind_borders = true,
+			})
+			vim.opt.termguicolors = true
+			-- vim.cmd("colorscheme rose-pine")
+			vim.cmd("hi CursorLine guibg=#394549")
+			vim.cmd("hi TabLineSel guibg=#394549")
+			vim.cmd("hi Visual guifg=Black guibg=#F6C177 gui=none")
+		end,
+	},
 	-- {
-	-- 	"rose-pine/neovim",
-	-- 	name = "rose-pine",
+	-- 	"sainnhe/sonokai",
+	-- 	lazy = false,
+	-- 	priority = 1000,
 	-- 	config = function()
-	-- 		require("rose-pine").setup({
-	-- 			dark_variant = "moon", -- main, moon, or dawn
-	-- 			dim_inactive_windows = false,
-	-- 			extend_background_behind_borders = true,
-	-- 		})
-	-- 		vim.opt.termguicolors = true
-	-- 		vim.cmd("colorscheme rose-pine")
-	-- 		vim.cmd("hi CursorLine guibg=#394549")
-	-- 		vim.cmd("hi TabLineSel guibg=#394549")
-	-- 		vim.cmd("hi Visual guifg=Black guibg=#F6C177 gui=none")
+	-- 		-- Optionally configure and load the colorscheme
+	-- 		-- directly inside the plugin declaration.
+	-- 		vim.g.sonokai_enable_italic = true
+	-- 		vim.g.sonokai_style = "espresso"
+	-- 		vim.cmd.colorscheme("sonokai")
 	-- 	end,
 	-- },
 }

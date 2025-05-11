@@ -7,7 +7,8 @@ adjust-cell-height = 10%
 
 window-colorspace = "display-p3"
 
-theme = tokyonight-storm
+theme = "rose-pine-moon"
+#theme = tokyonight-storm
 #theme = Solarized Dark - Patched
 #theme = MaterialDarker
 #background = #25353B
