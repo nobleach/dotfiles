@@ -158,9 +158,9 @@ call s:ColorDictParser({
 	\
 	\ , 'cssImportant'                : [    166,     '',           'bold',      'd75f00',        '',           'bold']
 	\
-	\ , 'DiffAdd'                     : [    112,     22,               '',      '87d700',  '005f00',               '']
-	\ , 'DiffChange'                  : [    220,     94,               '',      'ffd700',  '875f00',               '']
-	\ , 'DiffDelete'                  : [    160,     '',               '',      'd70000',        '',               '']
+	\ , 'DiffAdd'                     : [    112,     22,               '',      '4d3b4d',  'a7da1e',               '']
+	\ , 'DiffChange'                  : [    220,     94,               '',      'ffd700',  'f7b83d',               '']
+	\ , 'DiffDelete'                  : [    160,     '',               '',      'd70000',        'e61f44',               '']
 	\ , 'DiffText'                    : [    220,     94,   'reverse,bold',      'ffd700',  '875f00',   'reverse,bold']
 	\
 	\ , 'diffLine'                    : [     68,     '',           'bold',      '5f87d7',        '',           'bold']

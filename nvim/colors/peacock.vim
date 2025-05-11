@@ -43,7 +43,7 @@ hi IncSearch      guifg=#ede0ce guibg=#bcd42a gui=NONE
 hi Search         guifg=NONE guibg=NONE gui=underline
 hi Directory      guifg=#26a6a6 guibg=NONE gui=NONE
 hi Folded         guifg=#e6d4bb guibg=#10100f gui=NONE
-hi Normal         guifg=#bcd42a guibg=#2b2a27 gui=NONE
+hi Normal         guifg=#e6d4bb guibg=#2b2a27 gui=NONE
 hi Boolean        guifg=#bcd42a guibg=NONE gui=NONE
 hi Character      guifg=#bcd42a guibg=NONE gui=NONE
 hi Comment        guifg=#7a7267 guibg=NONE gui=italic
