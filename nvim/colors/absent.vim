@@ -77,6 +77,13 @@ hi Type           guifg=NONE guibg=NONE gui=NONE
 hi Underlined     guifg=NONE guibg=NONE gui=underline
 
 "########################################
+"# Snacks                               #
+"########################################
+
+hi SnacksPicker   guibg=NONE
+hi SnacksPickerBorder guibg=NONE
+
+"########################################
 "# Language Overrides                   #
 "########################################
 
