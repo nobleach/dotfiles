@@ -57,9 +57,9 @@ hi DiffText       guifg=#53514b guibg=#f7b83d gui=bold
 hi ErrorMsg       guifg=#53514b guibg=#e61f44 gui=NONE
 hi WarningMsg     guifg=#53514b guibg=#f7b83d gui=NONE
 hi Float          guifg=#bcd42a guibg=NONE gui=NONE
-hi Function       guifg=#26a6a6 guibg=NONE gui=italic
+hi Function       guifg=#26a6a6 guibg=NONE gui=bold
 hi Identifier     guifg=#ede0ce guibg=NONE gui=NONE
-hi Keyword        guifg=#26a6a6 guibg=NONE gui=bold
+hi Keyword        guifg=#26a6a6 guibg=NONE gui=italic
 hi Label          guifg=#bcd42a guibg=NONE gui=NONE
 hi NonText        guifg=#af8040 guibg=#262522 gui=NONE
 hi Number         guifg=#bcd42a guibg=NONE gui=NONE

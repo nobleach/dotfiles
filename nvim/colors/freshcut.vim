@@ -46,7 +46,7 @@ hi Folded         guifg=#efefe1 guibg=#161616 gui=NONE
 hi Normal         guifg=#aee239 guibg=#2f3030 gui=NONE
 hi Boolean        guifg=#aee239 guibg=NONE gui=NONE
 hi Character      guifg=#e9ee00 guibg=NONE gui=NONE
-hi Comment        guifg=#737b84 guibg=NONE gui=NONE
+hi Comment        guifg=#737b84 guibg=NONE gui=italic
 hi Conditional    guifg=#c8d7e8 guibg=NONE gui=NONE
 hi Constant       guifg=NONE guibg=NONE gui=NONE
 hi Define         guifg=#4ecdc4 guibg=NONE gui=NONE
@@ -57,9 +57,9 @@ hi DiffText       guifg=#555757 guibg=#f7b83d gui=bold
 hi ErrorMsg       guifg=#555757 guibg=#e61f44 gui=NONE
 hi WarningMsg     guifg=#555757 guibg=#f7b83d gui=NONE
 hi Float          guifg=#8fbe00 guibg=NONE gui=NONE
-hi Function       guifg=#4ecdc4 guibg=NONE gui=NONE
+hi Function       guifg=#4ecdc4 guibg=NONE gui=bold
 hi Identifier     guifg=#f8f8f2 guibg=NONE gui=NONE
-hi Keyword        guifg=#4ecdc4 guibg=NONE gui=NONE
+hi Keyword        guifg=#4ecdc4 guibg=NONE gui=italic
 hi Label          guifg=#e9ee00 guibg=NONE gui=NONE
 hi NonText        guifg=#b1b16d guibg=#2a2b2b gui=NONE
 hi Number         guifg=#8fbe00 guibg=NONE gui=NONE
