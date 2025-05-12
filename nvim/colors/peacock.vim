@@ -29,7 +29,7 @@ let g:colors_name = "peacock"
 hi Cursor         guifg=#2b2a27 guibg=#f8f8f0 gui=NONE
 hi Visual         guifg=#ffffff guibg=#ff5d38 gui=NONE
 hi CursorLine     guifg=NONE guibg=#33322e gui=NONE
-hi CursorLineNr   guifg=#26a6a6 guibg=#181816 gui=NONE
+hi CursorLineNr   guifg=#bcd42a guibg=#181816 gui=NONE
 hi CursorColumn   guifg=NONE guibg=#181816 gui=NONE
 hi SignColumn     guifg=NONE guibg=#181816 gui=NONE
 hi ColorColumn    guifg=NONE guibg=#10100f gui=NONE
@@ -56,7 +56,7 @@ hi DiffDelete     guifg=#10100f guibg=#e61f44 gui=NONE
 hi DiffChange     guifg=#10100f guibg=#f7b83d gui=NONE
 hi DiffText       guifg=#53514b guibg=#f7b83d gui=bold
 hi ErrorMsg       guifg=#ede0ce guibg=#e61f44 gui=NONE
-hi WarningMsg     guifg=#53514b guibg=#f7b83d gui=NONE
+hi WarningMsg     guifg=#10100f guibg=#f7b83d gui=NONE
 hi Float          guifg=#bcd42a guibg=NONE gui=NONE
 hi Function       guifg=#26a6a6 guibg=NONE gui=bold
 hi Identifier     guifg=#ede0ce guibg=NONE gui=NONE
