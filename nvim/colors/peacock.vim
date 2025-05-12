@@ -29,8 +29,9 @@ let g:colors_name = "peacock"
 hi Cursor         guifg=#2b2a27 guibg=#f8f8f0 gui=NONE
 hi Visual         guifg=#ffffff guibg=#ff5d38 gui=NONE
 hi CursorLine     guifg=NONE guibg=#33322e gui=NONE
-hi CursorLineNr   guifg=#7b7870 guibg=#181816 gui=NONE
+hi CursorLineNr   guifg=#26a6a6 guibg=#181816 gui=NONE
 hi CursorColumn   guifg=NONE guibg=#181816 gui=NONE
+hi SignColumn     guifg=NONE guibg=#181816 gui=NONE
 hi ColorColumn    guifg=NONE guibg=#10100f gui=NONE
 hi LineNr         guifg=#46443f guibg=#1e1d1b gui=NONE
 hi VertSplit      guifg=#46443f guibg=#46443f gui=NONE
@@ -39,7 +40,7 @@ hi StatusLine     guifg=#ede0ce guibg=#1e1d1b gui=bold
 hi StatusLineNC   guifg=#ede0ce guibg=#1e1d1b gui=NONE
 hi Pmenu          guifg=#ede0ce guibg=#1e1d1b gui=NONE
 hi PmenuSel       guifg=NONE guibg=#26a6a6 gui=NONE
-hi IncSearch      guifg=#ede0ce guibg=#bcd42a gui=NONE
+hi IncSearch      guifg=#10100f guibg=#bcd42a gui=NONE
 hi Search         guifg=NONE guibg=NONE gui=underline
 hi Directory      guifg=#26a6a6 guibg=NONE gui=NONE
 hi Folded         guifg=#e6d4bb guibg=#10100f gui=NONE
@@ -50,11 +51,11 @@ hi Comment        guifg=#7a7267 guibg=NONE gui=italic
 hi Conditional    guifg=#26a6a6 guibg=NONE gui=NONE
 hi Constant       guifg=NONE guibg=NONE gui=NONE
 hi Define         guifg=#26a6a6 guibg=NONE gui=NONE
-hi DiffAdd        guifg=#53514b guibg=#a7da1e gui=bold
-hi DiffDelete     guifg=#53514b guibg=#e61f44 gui=NONE
-hi DiffChange     guifg=#53514b guibg=#f7b83d gui=NONE
+hi DiffAdd        guifg=#10100f guibg=#a7da1e gui=bold
+hi DiffDelete     guifg=#10100f guibg=#e61f44 gui=NONE
+hi DiffChange     guifg=#10100f guibg=#f7b83d gui=NONE
 hi DiffText       guifg=#53514b guibg=#f7b83d gui=bold
-hi ErrorMsg       guifg=#53514b guibg=#e61f44 gui=NONE
+hi ErrorMsg       guifg=#ede0ce guibg=#e61f44 gui=NONE
 hi WarningMsg     guifg=#53514b guibg=#f7b83d gui=NONE
 hi Float          guifg=#bcd42a guibg=NONE gui=NONE
 hi Function       guifg=#26a6a6 guibg=NONE gui=bold
@@ -75,6 +76,9 @@ hi Title          guifg=#26a6a6 guibg=NONE gui=bold
 hi Todo           guifg=#a0988e guibg=NONE gui=inverse,bold
 hi Type           guifg=NONE guibg=NONE gui=NONE
 hi Underlined     guifg=NONE guibg=NONE gui=underline
+hi TabLine        guifg=#ede0ce guibg=NONE gui=NONE
+hi TabLineSel     guifg=#10100f guibg=#26a6a6 gui=NONE
+hi TabLineFill    guifg=#2B2A26 guibg=NONE gui=NONE
 
 "########################################
 "# Language Overrides                   #
