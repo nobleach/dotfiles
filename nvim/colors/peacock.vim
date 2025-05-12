@@ -29,9 +29,9 @@ let g:colors_name = "peacock"
 hi Cursor         guifg=#2b2a27 guibg=#f8f8f0 gui=NONE
 hi Visual         guifg=#ffffff guibg=#ff5d38 gui=NONE
 hi CursorLine     guifg=NONE guibg=#33322e gui=NONE
-hi CursorLineNr   guifg=#bcd42a guibg=#181816 gui=NONE
+hi CursorLineNr   guifg=#bcd42a guibg=NONE gui=NONE
 hi CursorColumn   guifg=NONE guibg=#181816 gui=NONE
-hi SignColumn     guifg=NONE guibg=#181816 gui=NONE
+hi SignColumn     guifg=NONE guibg=#1D1D1A gui=NONE
 hi ColorColumn    guifg=NONE guibg=#10100f gui=NONE
 hi LineNr         guifg=#46443f guibg=#1e1d1b gui=NONE
 hi VertSplit      guifg=#46443f guibg=#46443f gui=NONE
@@ -51,8 +51,8 @@ hi Comment        guifg=#7a7267 guibg=NONE gui=italic
 hi Conditional    guifg=#26a6a6 guibg=NONE gui=NONE
 hi Constant       guifg=NONE guibg=NONE gui=NONE
 hi Define         guifg=#26a6a6 guibg=NONE gui=NONE
-hi DiffAdd        guifg=#10100f guibg=#a7da1e gui=bold
-hi DiffDelete     guifg=#10100f guibg=#e61f44 gui=NONE
+hi DiffAdd        guifg=#10100f guibg=#bcd42a gui=bold
+hi DiffDelete     guifg=#ede0ce guibg=#ff5d38 gui=NONE
 hi DiffChange     guifg=#10100f guibg=#f7b83d gui=NONE
 hi DiffText       guifg=#53514b guibg=#f7b83d gui=bold
 hi ErrorMsg       guifg=#ede0ce guibg=#e61f44 gui=NONE
