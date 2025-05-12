@@ -57,7 +57,7 @@ hi DiffChange     guifg=#10100f guibg=#f7b83d gui=NONE
 hi DiffText       guifg=#53514b guibg=#f7b83d gui=bold
 hi ErrorMsg       guifg=#ede0ce guibg=#e61f44 gui=NONE
 hi WarningMsg     guifg=#10100f guibg=#f7b83d gui=NONE
-hi Float          guifg=#bcd42a guibg=NONE gui=NONE
+hi Float          guifg=#bcd42a guibg=#2b2a27 gui=NONE
 hi Function       guifg=#26a6a6 guibg=NONE gui=bold
 hi Identifier     guifg=#ede0ce guibg=NONE gui=NONE
 hi Keyword        guifg=#26a6a6 guibg=NONE gui=italic
@@ -79,6 +79,13 @@ hi Underlined     guifg=NONE guibg=NONE gui=underline
 hi TabLine        guifg=#ede0ce guibg=NONE gui=NONE
 hi TabLineSel     guifg=#10100f guibg=#26a6a6 gui=NONE
 hi TabLineFill    guifg=#2B2A26 guibg=NONE gui=NONE
+
+"########################################
+"# Snacks                               #
+"########################################
+
+hi SnacksPicker   guibg=NONE
+hi SnacksPickerBorder guifg=#26a6a6 guibg=NONE
 
 "########################################
 "# Language Overrides                   #

@@ -125,6 +125,13 @@ return {
 			end,
 			desc = "Marks",
 		},
+		{
+			"<leader>C",
+			function()
+				Snacks.picker.colorschemes()
+			end,
+			desc = "Colorschemes",
+		},
 	},
 	init = function()
 		require("snacks")
