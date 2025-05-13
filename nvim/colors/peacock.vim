@@ -90,8 +90,8 @@ hi TabLineFill    guifg=#2B2A27 guibg=NONE gui=NONE
 hi SnacksPicker       guibg=NONE
 hi SnacksPickerBorder guifg=#26a6a6 guibg=NONE
 hi SnacksBackDrop     guibg=#2b2a27
-"hi SnacksIndent       guifg=NONE guibg=NONE
-"hi SnacksIndentBlank  guifg=NONE guibg=NONE
+hi SnacksIndent       guifg=#53514b guibg=NONE
+hi SnacksIndentBlank  guifg=#a0988e guibg=NONE
 
 "########################################
 "# Language Overrides                   #
