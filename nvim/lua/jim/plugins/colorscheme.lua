@@ -244,27 +244,27 @@ return {
 	-- 		vim.cmd("colorscheme blue-moon")
 	-- 	end,
 	-- },
-	{
-		"kvrohit/substrata.nvim",
-	},
-	{ "savq/melange-nvim" },
-	{ "tanvirtin/monokai.nvim" },
-	{
-		"rose-pine/neovim",
-		name = "rose-pine",
-		config = function()
-			require("rose-pine").setup({
-				dark_variant = "moon", -- main, moon, or dawn
-				dim_inactive_windows = false,
-				extend_background_behind_borders = true,
-			})
-			vim.opt.termguicolors = true
-			-- vim.cmd("colorscheme rose-pine")
-			vim.cmd("hi CursorLine guibg=#394549")
-			vim.cmd("hi TabLineSel guibg=#394549")
-			vim.cmd("hi Visual guifg=Black guibg=#F6C177 gui=none")
-		end,
-	},
+	-- {
+	-- 	"kvrohit/substrata.nvim",
+	-- },
+	-- { "savq/melange-nvim" },
+	-- { "tanvirtin/monokai.nvim" },
+	-- {
+	-- 	"rose-pine/neovim",
+	-- 	name = "rose-pine",
+	-- 	config = function()
+	-- 		require("rose-pine").setup({
+	-- 			dark_variant = "moon", -- main, moon, or dawn
+	-- 			dim_inactive_windows = false,
+	-- 			extend_background_behind_borders = true,
+	-- 		})
+	-- 		vim.opt.termguicolors = true
+	-- 		-- vim.cmd("colorscheme rose-pine")
+	-- 		vim.cmd("hi CursorLine guibg=#394549")
+	-- 		vim.cmd("hi TabLineSel guibg=#394549")
+	-- 		vim.cmd("hi Visual guifg=Black guibg=#F6C177 gui=none")
+	-- 	end,
+	-- },
 	-- {
 	-- 	"sainnhe/sonokai",
 	-- 	lazy = false,

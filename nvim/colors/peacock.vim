@@ -33,7 +33,7 @@ hi CursorLineNr   guifg=#bcd42a guibg=NONE gui=NONE
 hi CursorColumn   guifg=NONE guibg=#181816 gui=NONE
 hi SignColumn     guifg=NONE guibg=#1D1D1A gui=NONE
 hi ColorColumn    guifg=NONE guibg=#10100f gui=NONE
-hi LineNr         guifg=#46443f guibg=#1e1d1b gui=NONE
+hi LineNr         guifg=#7a7267 guibg=#1e1d1b gui=NONE
 hi VertSplit      guifg=#46443f guibg=#46443f gui=NONE
 hi MatchParen     guifg=#ff5d38 guibg=NONE gui=underline
 hi StatusLine     guifg=#ede0ce guibg=#1e1d1b gui=bold
@@ -41,7 +41,8 @@ hi StatusLineNC   guifg=#ede0ce guibg=#1e1d1b gui=NONE
 hi Pmenu          guifg=#ede0ce guibg=#1e1d1b gui=NONE
 hi PmenuSel       guifg=NONE guibg=#26a6a6 gui=NONE
 hi IncSearch      guifg=#10100f guibg=#bcd42a gui=NONE
-hi Search         guifg=NONE guibg=NONE gui=underline
+hi CurSearch      guifg=#10100f guibg=#26a6a6 gui=NONE
+hi Search         guifg=#10100f guibg=#26a6a6 gui=NONE
 hi Directory      guifg=#26a6a6 guibg=NONE gui=NONE
 hi Folded         guifg=#e6d4bb guibg=#10100f gui=NONE
 hi Normal         guifg=#e6d4bb guibg=#2b2a27 gui=NONE
@@ -58,11 +59,13 @@ hi DiffText       guifg=#53514b guibg=#f7b83d gui=bold
 hi ErrorMsg       guifg=#ede0ce guibg=#e61f44 gui=NONE
 hi WarningMsg     guifg=#10100f guibg=#f7b83d gui=NONE
 hi Float          guifg=#bcd42a guibg=#2b2a27 gui=NONE
+hi NormalFloat    guifg=#ede0ce guibg=#2b2a27 gui=NONE
+hi FloatBorder    guifg=#26a6a6 guibg=#2b2a27 gui=NONE
 hi Function       guifg=#26a6a6 guibg=NONE gui=bold
 hi Identifier     guifg=#ede0ce guibg=NONE gui=NONE
 hi Keyword        guifg=#26a6a6 guibg=NONE gui=italic
 hi Label          guifg=#bcd42a guibg=NONE gui=NONE
-hi NonText        guifg=#af8040 guibg=#262522 gui=NONE
+hi NonText        guifg=#2B2A26 guibg=#262522 gui=NONE
 hi Number         guifg=#bcd42a guibg=NONE gui=NONE
 hi Operator       guifg=#ede0ce guibg=NONE gui=NONE
 hi PreProc        guifg=#a0988e guibg=NONE gui=NONE
@@ -78,15 +81,17 @@ hi Type           guifg=NONE guibg=NONE gui=NONE
 hi Underlined     guifg=NONE guibg=NONE gui=underline
 hi TabLine        guifg=#ede0ce guibg=NONE gui=NONE
 hi TabLineSel     guifg=#10100f guibg=#26a6a6 gui=NONE
-hi TabLineFill    guifg=#2B2A26 guibg=NONE gui=NONE
+hi TabLineFill    guifg=#2B2A27 guibg=NONE gui=NONE
 
 "########################################
 "# Snacks                               #
 "########################################
 
-hi SnacksPicker   guibg=NONE
+hi SnacksPicker       guibg=NONE
 hi SnacksPickerBorder guifg=#26a6a6 guibg=NONE
-hi SnacksBackDrop guibg=NONE
+hi SnacksBackDrop     guibg=#2b2a27
+"hi SnacksIndent       guifg=NONE guibg=NONE
+"hi SnacksIndentBlank  guifg=NONE guibg=NONE
 
 "########################################
 "# Language Overrides                   #
