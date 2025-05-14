@@ -87,11 +87,13 @@ hi TabLineFill    guifg=#2B2A27 guibg=NONE gui=NONE
 "# Snacks                               #
 "########################################
 
-hi SnacksPicker       guibg=NONE
-hi SnacksPickerBorder guifg=#26a6a6 guibg=NONE
-hi SnacksBackDrop     guibg=#2b2a27
-hi SnacksIndent       guifg=#53514b guibg=NONE
-hi SnacksIndentBlank  guifg=#a0988e guibg=NONE
+hi SnacksPicker              guibg=NONE
+hi SnacksPickerBorder        guifg=#26a6a6 guibg=NONE
+hi SnacksBackDrop            guibg=#2b2a27
+hi SnacksIndent              guifg=#53514b guibg=NONE
+hi SnacksIndentBlank         guifg=#a0988e guibg=NONE
+hi SnacksPickerDir           guifg=#a0988e guibg=NONE
+hi SnacksPickerPathHidden    guifg=#a0988e guibg=NONE
 
 "########################################
 "# Language Overrides                   #
@@ -103,7 +105,5 @@ hi xmlTag            guifg=#26a6a6 guibg=NONE gui=NONE
 hi xmlTagName        guifg=#26a6a6 guibg=NONE gui=NONE
 hi xmlEndTag         guifg=#26a6a6 guibg=NONE gui=NONE
 
-"########################################
-"# Light Theme Overrides                #
-"########################################
-
+hi NeogitDiffAddHighlight guifg=#10100f guibg=#bcd42a gui=bold
+hi NeogitDiffDeleteHighlight guifg=#10100f guibg=#ff5d38 gui=bold
