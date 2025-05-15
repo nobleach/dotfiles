@@ -63,7 +63,7 @@ hi NormalFloat    guifg=#ede0ce guibg=#2b2a27 gui=NONE
 hi FloatBorder    guifg=#26a6a6 guibg=#2b2a27 gui=NONE
 hi Function       guifg=#26a6a6 guibg=NONE gui=bold
 hi Identifier     guifg=#ede0ce guibg=NONE gui=NONE
-hi Keyword        guifg=#26a6a6 guibg=NONE gui=italic
+hi Keyword        guifg=#26a6a6 guibg=NONE gui=NONE
 hi Label          guifg=#bcd42a guibg=NONE gui=NONE
 hi NonText        guifg=#2B2A26 guibg=#262522 gui=NONE
 hi Number         guifg=#bcd42a guibg=NONE gui=NONE
