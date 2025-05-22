@@ -84,6 +84,18 @@ hi TabLineSel     guifg=#10100f guibg=#26a6a6 gui=NONE
 hi TabLineFill    guifg=#2B2A27 guibg=NONE gui=NONE
 
 "########################################
+" # Diagnostics
+"########################################
+hi DiagnosticSignError guifg=#e61f44 guibg=NONE gui=NONE
+hi DiagnosticVirtualTextError guifg=#ede0ce guibg=#e61f44 gui=NONE
+hi DiagnosticSignWarn guifg=#f7b83d guibg=NONE gui=NONE
+hi DiagnosticVirtualTextWarn guifg=#ede0ce guibg=#f7b83d gui=NONE
+hi DiagnosticSignInfo guifg=#26a6a6 guibg=NONE gui=NONE
+hi DiagnosticVirtualTextInfo guifg=#ede0ce guibg=#26a6a6 gui=NONE
+hi DiagnosticSignHint guifg=#bcd42a guibg=NONE gui=NONE
+hi DiagnosticVirtualTextHint guifg=#bcd42a guibg=NONE gui=NONE
+
+"########################################
 "# Snacks                               #
 "########################################
 
@@ -94,6 +106,7 @@ hi SnacksIndent              guifg=#53514b guibg=NONE
 hi SnacksIndentBlank         guifg=#a0988e guibg=NONE
 hi SnacksPickerDir           guifg=#a0988e guibg=NONE
 hi SnacksPickerPathHidden    guifg=#a0988e guibg=NONE
+hi LazyProgressDone guifg=#bcd42a guibg=NONE
 
 "########################################
 "# Language Overrides                   #

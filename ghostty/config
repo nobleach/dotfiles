@@ -7,6 +7,7 @@ adjust-cell-height = 10%
 
 window-colorspace = "display-p3"
 
+#theme = "Monokai Classic"
 theme = "peacock"
 #theme = tokyonight-storm
 #theme = Solarized Dark - Patched
