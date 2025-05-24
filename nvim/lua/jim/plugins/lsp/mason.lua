@@ -1,7 +1,9 @@
 return {
-	"williamboman/mason.nvim",
+	"mason-org/mason-lspconfig.nvim",
+	opts = {},
 	dependencies = {
-		"williamboman/mason-lspconfig.nvim",
+		{ "mason-org/mason.nvim", opts = {} },
+		"neovim/nvim-lspconfig",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
 	config = function()
@@ -30,7 +32,7 @@ return {
 				"astro",
 				"bashls",
 				"biome",
-				"crystalline",
+				-- "crystalline",
 				"cssls",
 				"dockerls",
 				-- "elixirls",
@@ -44,19 +46,20 @@ return {
 				"kotlin_language_server",
 				"lua_ls",
 				-- "nimls",
-				"ocamllsp",
+				-- "ocamllsp",
 				-- "omnisharp",
-				"prismals",
-				"pyright",
+				-- "prismals",
+				-- "pyright",
 				"rust_analyzer",
 				--	"solargraph",
 				"sqlls",
 				"stylelint_lsp",
-				"svelte",
+				-- "svelte",
 				"terraformls",
 				-- "tsserver",
+				"vtsls",
 				"yamlls",
-				"zls",
+				-- "zls",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -64,12 +67,12 @@ return {
 
 		mason_tool_installer.setup({
 			ensure_installed = {
-				"ocamlformat",
+				-- "ocamlformat",
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
 				"isort", -- python formatter
-				"black", -- python formatter
-				"pylint", -- python linter
+				-- "black", -- python formatter
+				-- "pylint", -- python linter
 				-- "eslint_d", -- js linter
 			},
 		})

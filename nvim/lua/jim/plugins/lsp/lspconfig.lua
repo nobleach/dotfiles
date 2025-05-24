@@ -4,95 +4,82 @@ return {
 	dependencies = {
 		"pmizio/typescript-tools.nvim",
 		"nvim-lua/plenary.nvim",
-		"saghen/blink.cmp",
-		-- "hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 	},
 	config = function()
-		-- import lspconfig plugin
-		local lspconfig = require("lspconfig")
-		local tools = require("typescript-tools")
-		-- require("spring_boot").init_lsp_commands()
+		vim.api.nvim_create_autocmd("LspAttach", {
+			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+			callback = function(ev)
+				local opts = { buffer = ev.buf, silent = true }
+				local keymap = vim.keymap
 
-		-- import cmp-nvim-lsp plugin
-		-- local cmp_nvim_lsp = require("cmp_nvim_lsp")
+				-- set keybinds
+				opts.desc = "Show LSP references"
+				keymap.set("n", "gR", function()
+					Snacks.picker.lsp_references()
+				end, opts) -- show definition, references
+				keymap.set("n", ",u", function()
+					Snacks.picker.lsp_references()
+				end, opts) -- show definition, references
 
-		local keymap = vim.keymap
+				opts.desc = "Go to declaration"
+				keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
 
-		local opts = { noremap = true, silent = true }
-		local on_attach = function(client, bufnr)
-			opts.buffer = bufnr
+				opts.desc = "Show LSP definitions"
+				keymap.set("n", "gd", function()
+					Snacks.picker.lsp_definitions()
+				end, opts) -- show lsp definitions
 
-			-- set keybinds
-			opts.desc = "Show LSP references"
-			keymap.set("n", "gR", function()
-				Snacks.picker.lsp_references()
-			end, opts) -- show definition, references
-			keymap.set("n", ",u", function()
-				Snacks.picker.lsp_references()
-			end, opts) -- show definition, references
+				opts.desc = "Show LSP implementations"
+				keymap.set("n", "gi", function()
+					Snacks.picker.lsp_implementations()
+				end, opts) -- show lsp implementations
 
-			opts.desc = "Go to declaration"
-			keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
+				opts.desc = "Show LSP type definitions"
+				keymap.set("n", "gt", function()
+					Snacks.picker.lsp_type_definitions()
+				end, opts) -- show lsp type definitions
 
-			opts.desc = "Show LSP definitions"
-			keymap.set("n", "gd", function()
-				Snacks.picker.lsp_definitions()
-			end, opts) -- show lsp definitions
+				opts.desc = "See available code actions"
+				keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
+				-- keymap.set({ "n", "v" }, ",a", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 
-			opts.desc = "Show LSP implementations"
-			keymap.set("n", "gi", function()
-				Snacks.picker.lsp_implementations()
-			end, opts) -- show lsp implementations
+				opts.desc = "Smart rename"
+				keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 
-			opts.desc = "Show LSP type definitions"
-			keymap.set("n", "gt", function()
-				Snacks.picker.lsp_type_definitions()
-			end, opts) -- show lsp type definitions
+				opts.desc = "TODO Comments"
+				keymap.set("n", "<leader>T", function()
+					Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } })
+				end, opts) -- smart rename
 
-			opts.desc = "See available code actions"
-			keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
-			-- keymap.set({ "n", "v" }, ",a", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
+				opts.desc = "Show buffer diagnostics"
+				keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
 
-			opts.desc = "Smart rename"
-			keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
+				opts.desc = "Show line diagnostics"
+				keymap.set("n", "<leader>E", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
-			opts.desc = "TODO Comments"
-			keymap.set("n", "<leader>T", function()
-				Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } })
-			end, opts) -- smart rename
+				opts.desc = "Go to previous diagnostic"
+				keymap.set("n", "[d", function()
+					vim.diagnostic.jump({ count = -1, float = true })
+				end, opts) -- jump to previous diagnostic in buffer
 
-			opts.desc = "Show buffer diagnostics"
-			keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
+				opts.desc = "Go to next diagnostic"
+				keymap.set("n", "]d", function()
+					vim.diagnostic.jump({ count = 1, float = true })
+				end, opts) -- jump to next diagnostic in buffer
 
-			opts.desc = "Show line diagnostics"
-			keymap.set("n", "<leader>E", vim.diagnostic.open_float, opts) -- show diagnostics for line
+				opts.desc = "Show documentation for what is under cursor"
+				keymap.set("n", "K", function()
+					vim.lsp.buf.hover({ border = "single", max_height = 25, max_width = 120 })
+				end, opts) -- show documentation for what is under cursor
 
-			opts.desc = "Go to previous diagnostic"
-			keymap.set("n", "[d", function()
-				vim.diagnostic.jump({ count = -1, float = true })
-			end, opts) -- jump to previous diagnostic in buffer
+				opts.desc = "Restart LSP"
+				keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 
-			opts.desc = "Go to next diagnostic"
-			keymap.set("n", "]d", function()
-				vim.diagnostic.jump({ count = 1, float = true })
-			end, opts) -- jump to next diagnostic in buffer
-
-			opts.desc = "Show documentation for what is under cursor"
-			keymap.set("n", "K", function()
-				vim.lsp.buf.hover({ border = "single", max_height = 25, max_width = 120 })
-			end, opts) -- show documentation for what is under cursor
-
-			opts.desc = "Restart LSP"
-			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
-
-			opts.desc = "Send to quickfix"
-			keymap.set("n", "<leader>q", ":lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
-		end
-
-		-- used to enable autocompletion (assign to every lsp server config)
-		-- local capabilities = cmp_nvim_lsp.default_capabilities()
-		local capabilities = require("blink.cmp").get_lsp_capabilities()
+				opts.desc = "Send to quickfix"
+				keymap.set("n", "<leader>q", ":lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
+			end,
+		})
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
@@ -111,214 +98,10 @@ return {
 			},
 		})
 
-		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
-
-		vim.lsp.handlers["textDocument/signatureHelp"] =
-			vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
 		vim.diagnostic.config({
 			float = {
 				border = "single",
 			},
 		})
-		-- configure html server
-		lspconfig["html"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		lspconfig["biome"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure crystal server
-		lspconfig["crystalline"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure css server
-		lspconfig["cssls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- lspconfig["eslint"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = function(client, bufnr)
-		-- 		vim.api.nvim_create_autocmd("BufWritePre", {
-		-- 			buffer = bufnr,
-		-- 			command = "EslintFixAll",
-		-- 		})
-		-- 	end,
-		-- })
-
-		lspconfig["csharp_ls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		lspconfig["gleam"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure tailwindcss server
-		lspconfig["gopls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			cmd = { "gopls" },
-			flags = {
-				filetypes = { "go", "gomod" },
-				debounce_text_changes = 500,
-			},
-		})
-
-		-- configure prisma orm server
-		lspconfig["prismals"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure graphql language server
-		lspconfig["graphql"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-		})
-
-		-- configure emmet language server
-		lspconfig["emmet_language_server"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-		})
-
-		lspconfig["jdtls"].setup({
-			-- init_options = {
-			-- 	bundles = require("spring_boot").java_extensions(),
-			-- },
-		})
-
-		-- configure python server
-		lspconfig["pyright"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure python server
-		-- lspconfig["nimls"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
-		-- lspconfig.nimls.setup({})
-
-		lspconfig["kotlin_language_server"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			-- cmd = {
-			-- 	"/Users/jim.wharton/.local/bin/kotlin-language-server-source/server/build/install/server/bin/kotlin-language-server",
-			-- },
-		})
-
-		lspconfig["phpactor"].setup({})
-
-		-- configure lua server (with special settings)
-		lspconfig["lua_ls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			settings = { -- custom settings for lua
-				Lua = {
-					-- make the language server recognize "vim" global
-					diagnostics = {
-						globals = { "vim" },
-					},
-					workspace = {
-						-- make language server aware of runtime files
-						library = {
-							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-							[vim.fn.stdpath("config") .. "/lua"] = true,
-						},
-					},
-				},
-			},
-		})
-
-		-- Scala/Metals
-		-- lspconfig["metals"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
-
-		-- lspconfig["tsserver"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
-		tools.setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			settings = {
-				-- spawn additional tsserver instance to calculate diagnostics on it
-				separate_diagnostic_server = true,
-				-- "change"|"insert_leave" determine when the client asks the server about diagnostic
-				publish_diagnostic_on = "insert_leave",
-				-- array of strings("fix_all"|"add_missing_imports"|"remove_unused"|
-				-- "remove_unused_imports"|"organize_imports") -- or string "all"
-				-- to include all supported code actions
-				-- specify commands exposed as code_actions
-				expose_as_code_action = {},
-				-- string|nil - specify a custom path to `tsserver.js` file, if this is nil or file under path
-				-- not exists then standard path resolution strategy is applied
-				tsserver_path = nil,
-				-- specify a list of plugins to load by tsserver, e.g., for support `styled-components`
-				-- (see 💅 `styled-components` support section)
-				tsserver_plugins = {},
-				-- this value is passed to: https://nodejs.org/api/cli.html#--max-old-space-sizesize-in-megabytes
-				-- memory limit in megabytes or "auto"(basically no limit)
-				tsserver_max_memory = "auto",
-				-- described below
-				tsserver_format_options = {},
-				tsserver_file_preferences = {},
-				-- mirror of VSCode's `typescript.suggest.completeFunctionCalls`
-				complete_function_calls = false,
-			},
-		})
-		--
-		-- configure OCaml-lsp
-		lspconfig["ocamllsp"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-		-- configure Rust Analyzer
-		lspconfig["rust_analyzer"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure sqls server
-		lspconfig["sqlls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure stylelint server
-		lspconfig["stylelint_lsp"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure Zig server
-		lspconfig["zls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- vim.lsp.config("kotlin-ls", {
-		-- 	cmd = { "kotlin-lsp.sh", "--stdio" },
-		-- 	single_file_support = true,
-		-- 	filetypes = { "kotlin" },
-		-- 	root_markers = { "build.gradle", "build.gradle.kts", "pom.xml" },
-		-- })
-		-- vim.lsp.enable("kotlin-ls")
 	end,
 }
