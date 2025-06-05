@@ -89,11 +89,11 @@ hi TabLineFill    guifg=#2B2A27 guibg=NONE gui=NONE
 hi DiagnosticSignError guifg=#e61f44 guibg=NONE gui=NONE
 hi DiagnosticVirtualTextError guifg=#ede0ce guibg=#e61f44 gui=NONE
 hi DiagnosticSignWarn guifg=#f7b83d guibg=NONE gui=NONE
-hi DiagnosticVirtualTextWarn guifg=#ede0ce guibg=#f7b83d gui=NONE
+hi DiagnosticVirtualTextWarn guifg=#2B2A26 guibg=#f7b83d gui=NONE
 hi DiagnosticSignInfo guifg=#26a6a6 guibg=NONE gui=NONE
-hi DiagnosticVirtualTextInfo guifg=#ede0ce guibg=#26a6a6 gui=NONE
+hi DiagnosticVirtualTextInfo guifg=#2B2A26 guibg=#26a6a6 gui=NONE
 hi DiagnosticSignHint guifg=#bcd42a guibg=NONE gui=NONE
-hi DiagnosticVirtualTextHint guifg=#bcd42a guibg=NONE gui=NONE
+hi DiagnosticVirtualTextHint guifg=#2B2A26 guibg=#bcd42a gui=NONE
 
 "########################################
 "# Snacks                               #

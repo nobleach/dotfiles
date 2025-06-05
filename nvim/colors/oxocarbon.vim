@@ -55,9 +55,9 @@ hi link PmenuExtra      Pmenu
 hi link PmenuExtraSel   PmenuSel
 hi PmenuSbar       guifg=#d0d0d0 guibg=#262626
 hi PmenuThumb      guifg=#3ddbd9 guibg=#393939
-hi link TabLine         StatusLineNC
-hi link TabLineSel      StatusLine
-hi link TabLineFill     TabLine
+hi TabLine        guifg=#ede0ce guibg=NONE gui=NONE
+hi TabLineSel     guifg=#161616 guibg=#3ddbd9 gui=NONE
+hi TabLineFill    guifg=#2B2A27 guibg=NONE gui=NONE
 hi CursorColumn    guibg=#262626
 hi CursorLine      guibg=#262626
 hi ColorColumn     guibg=#262626

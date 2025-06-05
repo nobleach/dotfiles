@@ -168,6 +168,13 @@ call s:ColorDictParser({
 	\ , 'diffNewFile'                 : [    242,     '',               '',      '6c6c6c',        '',               '']
 \ })
 
+"########################################
+"# Snacks                               #
+"########################################
+
+hi SnacksIndent              guifg=#53514b guibg=NONE
+hi SnacksIndentBlank         guifg=#a0988e guibg=NONE
+
 hi link htmlTag            xmlTag
 hi link htmlTagName        xmlTagName
 hi link htmlEndTag         xmlEndTag

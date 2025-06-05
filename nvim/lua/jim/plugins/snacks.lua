@@ -126,7 +126,7 @@ return {
 			desc = "Marks",
 		},
 		{
-			"<leader>C",
+			",c",
 			function()
 				Snacks.picker.colorschemes()
 			end,
