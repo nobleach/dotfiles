@@ -38,7 +38,7 @@
 "	   |--------------------------------|-------|-------|-----------------| || |---------|----------|-----------------|
 call s:ColorDictParser({
 	\   'Normal'                      : [    231,     16,               '',      'ffffff',  '282828',               '']
-	\ , 'Visual'                      : [    240,    253,               '',      '585858',  'dadada',               '']
+	\ , 'Visual'                      : [    240,    253,               '',      '',        '434328',               '']
 	\
 	\ , 'Cursor'                      : [     '',     '',               '',      'ffffff',  'dd4010',               '']
 	\ , 'lCursor'                     : [     '',     '',               '',      'ffffff',  '89b6e2',               '']
@@ -167,6 +167,20 @@ call s:ColorDictParser({
 	\ , 'diffFile'                    : [    242,     '',               '',      '6c6c6c',        '',               '']
 	\ , 'diffNewFile'                 : [    242,     '',               '',      '6c6c6c',        '',               '']
 \ })
+
+"########################################
+"# Popups                               #
+"########################################
+
+hi NormalFloat guifg=#afaf5f guibg=NONE gui=NONE cterm=NONE
+hi Pmenu guifg=#afaf5f guibg=NONE gui=NONE cterm=NONE
+
+"########################################
+"# Diagnostics                          #
+"########################################
+
+hi DiagnosticInfo  guifg=#afaf5f
+hi DiagnosticWarning  guifg=#d7875f
 
 "########################################
 "# Snacks                               #
