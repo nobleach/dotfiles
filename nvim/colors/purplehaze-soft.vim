@@ -68,9 +68,18 @@ hi Comment guifg=#59555c gui=italic
 hi SpecialComment guifg=#59555c gui=italic guibg=NONE
 hi CursorLine guibg=#454545
 hi TabLineFill gui=NONE guibg=#454545
-hi TabLine guifg=#747474 guibg=#454545 gui=NONE
+hi TabLineSel     guifg=#10100f guibg=#918192 gui=NONE
+hi TabLine guifg=#747474 guibg=#272935 gui=NONE
 hi StatusLine gui=bold guibg=#454545 guifg=#dadada
 hi StatusLineNC gui=NONE guibg=#272935 guifg=#dadada
 hi Search guibg=#59555c guifg=#dadada
 hi VertSplit gui=NONE guifg=#454545 guibg=NONE
 hi Visual gui=NONE guibg=#454545
+
+"########################################
+"# Diagnostics                          #
+"########################################
+
+hi DiagnosticInfo  guifg=#b2bcee
+hi DiagnosticWarning  guifg=#E7C340
+hi DiagnosticError  guifg=#F49930
