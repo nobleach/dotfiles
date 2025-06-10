@@ -463,6 +463,11 @@ call s:h("cInclude",                    { "fg": s:pink })
 call s:h("cDefine",                     { "fg": s:pink })
 call s:h("cSpecial",                    { "fg": s:purple })
 
+" Diagnostics
+call s:h("DiagnosticError",            { "fg": s:red, "bg": s:lightblack3, "format": "undercurl" })
+call s:h("DiagnosticWarn",             { "fg": s:orange, "bg": s:lightblack3, "format": "undercurl" })
+call s:h("DiagnosticInfo",             { "fg": s:aqua, "bg": s:lightblack3, "format": "undercurl" })
+
 " Markdown
 call s:h("markdownCode",       { "fg": s:purple, "format": "italic" } )
 call s:h("markdownListMarker", { "fg": s:purple                     } )

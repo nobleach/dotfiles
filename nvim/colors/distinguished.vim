@@ -188,6 +188,8 @@ hi DiagnosticWarning  guifg=#d7875f
 
 hi SnacksIndent              guifg=#53514b guibg=NONE
 hi SnacksIndentBlank         guifg=#a0988e guibg=NONE
+hi SnacksPickerDir           guifg=#a0988e guibg=NONE
+hi SnacksPickerPathHidden    guifg=#a0988e guibg=NONE
 
 hi link htmlTag            xmlTag
 hi link htmlTagName        xmlTagName

@@ -75,6 +75,17 @@ hi Title          guifg=#267fb5 guibg=NONE gui=bold
 hi Todo           guifg=#4e6888 guibg=NONE gui=inverse,bold
 hi Type           guifg=NONE guibg=NONE gui=NONE
 hi Underlined     guifg=NONE guibg=NONE gui=underline
+hi TabLineFill gui=NONE guibg=#272935
+hi TabLineSel     guifg=#10100f guibg=#267fb5 gui=NONE
+hi TabLine guifg=#747474 guibg=#272935 gui=NONE
+
+"########################################
+"# Diagnostics                          #
+"########################################
+
+hi DiagnosticInfo  guifg=#aec2e0
+hi DiagnosticWarning  guifg=#f7b83d
+hi DiagnosticError  guifg=#e61f44
 
 "########################################
 "# Snacks                               #

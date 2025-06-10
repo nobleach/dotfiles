@@ -51,6 +51,10 @@ vim.o.incsearch = true
 vim.o.colorcolumn = "72"
 vim.opt.spell = true
 vim.opt.spelllang = { "en_us" }
+vim.opt.guicursor = {
+	"n-v:block-Cursor/lCursor",
+	"i-c-ci-ve:block-TermCursor",
+}
 
 vim.cmd([[
     set winbar=%=%m\ %f

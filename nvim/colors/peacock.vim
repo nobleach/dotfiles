@@ -26,7 +26,7 @@ let g:colors_name = "peacock"
 "# Base Colors.                         #
 "########################################
 
-hi Cursor         guifg=#2b2a27 guibg=#f8f8f0 gui=NONE
+hi Cursor         guifg=#2b2a27 guibg=#f7b83d gui=NONE
 hi Visual         guifg=#ffffff guibg=#ff5d38 gui=NONE
 hi CursorLine     guifg=NONE guibg=#33322e gui=NONE
 hi CursorLineNr   guifg=#bcd42a guibg=NONE gui=NONE
