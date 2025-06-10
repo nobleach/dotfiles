@@ -203,3 +203,5 @@ hi link diffAdded          DiffAdd
 hi link diffChanged        DiffChange
 hi link diffRemoved        DiffDelete
 
+hi NvimTreeFolderIcon guifg=#afaf5f
+
