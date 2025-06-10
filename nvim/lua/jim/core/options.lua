@@ -53,7 +53,7 @@ vim.opt.spell = true
 vim.opt.spelllang = { "en_us" }
 vim.opt.guicursor = {
 	"n-v:block-Cursor/lCursor",
-	"i-c-ci-ve:block-TermCursor",
+	"i-c-ci-ve:ver25-TermCursor",
 }
 
 vim.cmd([[

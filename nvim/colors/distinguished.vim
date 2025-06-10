@@ -40,7 +40,7 @@ call s:ColorDictParser({
 	\   'Normal'                      : [    231,     16,               '',      'ffffff',  '282828',               '']
 	\ , 'Visual'                      : [    240,    253,               '',      '',        '434328',               '']
 	\
-	\ , 'Cursor'                      : [     '',     '',               '',      'ffffff',  'dd4010',               '']
+	\ , 'Cursor'                      : [     '',     '',               '',      'ffffff',  'd7d787',               '']
 	\ , 'lCursor'                     : [     '',     '',               '',      'ffffff',  '89b6e2',               '']
 	\
 	\ , 'CursorLine'                  : [     '',    236,               '',            '',  '3a3a3a',               '']
