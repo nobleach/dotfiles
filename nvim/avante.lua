@@ -44,9 +44,9 @@ return {
 			-- Make sure to set this up properly if you have lazy=true
 			"MeanderingProgrammer/render-markdown.nvim",
 			opts = {
-				file_types = { "markdown", "Avante" },
+				file_types = { "markdown", "Avante", "codecompanion" },
 			},
-			ft = { "markdown", "Avante" },
+			ft = { "markdown", "Avante", "codecompanion" },
 		},
 	},
 }

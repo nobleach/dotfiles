@@ -1,6 +1,8 @@
 return {
 	"mason-org/mason-lspconfig.nvim",
-	opts = {},
+	opts = {
+		ensure_installed = { "js-debug-adapter" }, -- ensure js-debug-adapter is installed
+	},
 	dependencies = {
 		{ "mason-org/mason.nvim", opts = {} },
 		"neovim/nvim-lspconfig",

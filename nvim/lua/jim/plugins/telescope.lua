@@ -51,12 +51,6 @@ return {
 		)
 		keymap.set(
 			"n",
-			",b",
-			"<cmd>lua require('telescope.builtin').git_branches()<cr>",
-			{ desc = "List all GIT branches" }
-		)
-		keymap.set(
-			"n",
 			"<leader>tgc",
 			"<cmd>lua require('telescope.builtin').git_commits()<cr>",
 			{ desc = "List all GIT commits" }
