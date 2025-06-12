@@ -129,16 +129,21 @@ return {
 			"<cmd>lua require'dap'.toggle_breakpoint()<CR>",
 			{ silent = true, noremap = true }
 		)
-		keymap.set("n", "\\s", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { silent = true, noremap = true })
-		keymap.set("n", "<leader>dh", "<cmd>lua require'dap.ui.widgets'.hover()<CR>", { silent = true, noremap = true })
-		keymap.set("n", "<leader>du", "<cmd>lua require('dapui').toggle()<CR>", { silent = true, noremap = true })
 		keymap.set("n", ",b", "<cmd>lua require('dapui').toggle()<CR>", { silent = true, noremap = true })
-		keymap.set("n", "<leader>do", "lua require'dap'.step_out()<CR>", { silent = true, noremap = true })
+		keymap.set(
+			"n",
+			"<leader>db",
+			"<cmd>lua require'dap'.toggle_breakpoint()<CR>",
+			{ silent = true, noremap = true }
+		)
+		keymap.set("n", "<leader>dh", "<cmd>lua require'dap.ui.widgets'.hover()<CR>", { silent = true, noremap = true })
+		keymap.set("n", "<leader>dc", "lua require'dap'.continue()<CR>", { silent = true, noremap = true })
+		keymap.set("n", "<leader>du", "<cmd>lua require('dapui').toggle()<CR>", { silent = true, noremap = true })
 		keymap.set("n", "<leader>di", "lua require'dap'.step_into()<CR>", { silent = true, noremap = true })
-		keymap.set("n", "<leader>dv", "lua require'dap'.step_over()<CR>", { silent = true, noremap = true })
+		keymap.set("n", "<leader>do", "lua require'dap'.step_out()<CR>", { silent = true, noremap = true })
+		keymap.set("n", "<leader>dn", "lua require'dap'.step_over()<CR>", { silent = true, noremap = true })
 
 		keymap.set("n", "<leader>ds", "lua require'dap'.stop()<CR>", { silent = true, noremap = true })
-		keymap.set("n", "<leader>dn", "lua require'dap'.continue()<CR>", { silent = true, noremap = true })
 		keymap.set("n", "<leader>dk", "lua require'dap'.up()<CR>", { silent = true, noremap = true })
 		keymap.set("n", "<leader>dj", "lua require'dap'.down()<CR>", { silent = true, noremap = true })
 		keymap.set("n", "<leader>d_", "lua require'dap'.run_last()<CR>", { silent = true, noremap = true })
