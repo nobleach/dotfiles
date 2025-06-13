@@ -12,6 +12,7 @@ return {
 		local dapui = require("dapui")
 		local js_filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" }
 		local current_file = vim.fn.expand("%:t")
+		local home = os.getenv("HOME")
 
 		local vscode = require("dap.ext.vscode")
 		local json = require("plenary.json")
@@ -26,7 +27,7 @@ return {
 			executable = {
 				command = "node",
 				args = {
-					"/Users/jim.wharton/.local/share/nvim/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
+					home .. "/.local/share/nvim/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
 					"43229",
 				},
 			},
@@ -122,7 +123,6 @@ return {
 		-- keymaps
 		local keymap = vim.keymap
 
-		-- keymap.set("n", "<leader>da", "<cmd>lua require('debugHelper').attach()<CR>", { silent = true, noremap = true })
 		keymap.set(
 			"n",
 			"<leader>dh",
