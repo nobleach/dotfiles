@@ -70,6 +70,9 @@ hi SpecialKey     guifg=#c4babb guibg=#0a9f9b gui=NONE
 hi Statement      guifg=#80b2b0 guibg=NONE gui=NONE
 hi StorageClass   guifg=#f5f3eb guibg=NONE gui=NONE
 hi String         guifg=#a58163 guibg=NONE gui=NONE
+hi TabLine        guifg=#f5f3eb guibg=NONE gui=NONE
+hi TabLineSel     guifg=#221c1d guibg=#0a9f9b gui=NONE
+hi TabLineFill    guifg=#2B2A27 guibg=NONE gui=NONE
 hi Tag            guifg=#0a9f9b guibg=NONE gui=NONE
 hi Title          guifg=#0a9f9b guibg=NONE gui=bold
 hi Todo           guifg=#887174 guibg=NONE gui=inverse,bold
