@@ -74,12 +74,20 @@ local config = {
 				-- The runtime name parameters need to match specific Java execution environments.  See https://github.com/tamago324/nlsp-settings.nvim/blob/2a52e793d4f293c0e1d61ee5794e3ff62bfbbb5d/schemas/_generated/jdtls.json#L317-L334
 				runtimes = {
 					{
+						name = "JavaSE-11",
+						path = home .. "/.local/share/mise/installs/java/temurin-11",
+					},
+					{
+						name = "JavaSE-17",
+						path = home .. "/.local/share/mise/installs/java/temurin-17",
+					},
+					{
 						name = "JavaSE-21",
 						path = home .. "/.local/share/mise/installs/java/temurin-21",
 					},
 					{
-						name = "JavaSE-23",
-						path = home .. "/.local/share/mise/installs/java/temurin-23.0.1+11",
+						name = "JavaSE-24",
+						path = home .. "/.local/share/mise/installs/java/temurin-24",
 					},
 				},
 			},

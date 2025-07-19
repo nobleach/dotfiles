@@ -1,0 +1,44 @@
+# status
+set -g status "on"
+set -g status-style "bg=#282828"
+
+# messages
+set -g message-style "fg=#b4b4b9,bg=#282828"
+set -g message-command-style "fg=#99a4bc,bg=#282828"
+
+# panes
+set -g pane-border-style "fg=#504945"
+set -g pane-active-border-style "fg=#b8bb26"
+
+# put a line above the status
+# set -g pane-border-status bottom
+# set -g pane-border-format '─'
+
+# selection
+set -g mode-style "fg=#dfdfe5,bg=#b8bb26"
+
+# active / inactive pane bg
+# set -g window-style "bg=#151521"
+# set -g window-active-style "bg=#282828"
+
+# status bar overall colors
+set -g status-bg "#282828" 
+
+# window status indicators (with the number in it)
+setw -g window-status-style "fg=#b4b4b9,bg=#504945"
+setw -g window-status-separator ""
+setw -g window-status-activity-style "fg=magenta,bg=#36363a"
+
+# window list tiles:
+setw -g window-status-format "#[fg=#white,bg=#504945] #I #[fg=#787882,bg=#282828] #W "
+
+# Current window tile:
+setw -g window-status-current-format "#[fg=#002831,bg=#b8bb26]#[fg=#282828,bg=#b8bb26] #I #[fg=#282828,bg=#b8bb26]#[fg=#b8bb26,bg=#282828] #{?window_zoomed_flag,#[fg=#c8d0e3] 󰍋 (,}#W#{?window_zoomed_flag,#[fg=#c8d0e3]),} "
+
+set -g status-left "#[fg=white] #P #[fg=#504945]│ "
+set -g status-right "#[fg=white]%m/%d/%Y %H:%M "
+
+
+
+
+
