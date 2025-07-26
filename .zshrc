@@ -144,7 +144,8 @@ esac
 alias ls="eza --icons=always"
 
 # mise tool version manager
-eval "$($HOME/.local/bin/mise activate zsh)"
+MISE_BIN_PATH="$(which mise)"
+eval "$($MISE_BIN_PATH activate zsh)"
 
 # moonbit
 export PATH="$HOME/.moon/bin:$PATH"

@@ -11,5 +11,5 @@ window-colorspace = "display-p3"
 #theme = "peacock"
 #theme = tokyonight-storm
 #theme = Solarized Dark - Patched
-theme = GruvBoxDark
+theme = GruvboxDark
 #background = #25353B
