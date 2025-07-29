@@ -19,8 +19,8 @@ ZVM_INIT_MODE=sourcing
 antidote load
 
 # Set up fzf key bindings and fuzzy completion
-# eval "$(fzf --zsh)"
-source $(brew --prefix)/Cellar/fzf/$(fzf --version | cut -d ' ' -f 1)/shell/key-bindings.zsh
+source <(fzf --zsh)
+# source $(brew --prefix)/Cellar/fzf/$(fzf --version | cut -d ' ' -f 1)/shell/key-bindings.zsh
 
 autoload -Uz promptinit && promptinit && prompt pure
 
@@ -144,8 +144,7 @@ esac
 alias ls="eza --icons=always"
 
 # mise tool version manager
-MISE_BIN_PATH="$(which mise)"
-eval "$($MISE_BIN_PATH activate zsh)"
+eval "$(mise activate zsh)"
 
 # moonbit
 export PATH="$HOME/.moon/bin:$PATH"
