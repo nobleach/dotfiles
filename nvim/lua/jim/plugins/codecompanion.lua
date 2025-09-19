@@ -7,13 +7,15 @@ return {
 	config = function()
 		require("codecompanion").setup({
 			adapters = {
-				anthropic = function()
-					return require("codecompanion.adapters").extend("anthropic", {
-						env = {
-							api_key = "MY_OTHER_ANTHROPIC_KEY",
-						},
-					})
-				end,
+				http = {
+					anthropic = function()
+						return require("codecompanion.adapters").extend("anthropic", {
+							env = {
+								api_key = "MY_OTHER_ANTHROPIC_KEY",
+							},
+						})
+					end,
+				},
 			},
 			strategies = {
 				chat = {
