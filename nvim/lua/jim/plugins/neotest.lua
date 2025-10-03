@@ -8,6 +8,7 @@ return {
 		"nvim-neotest/neotest-jest",
 		"marilari88/neotest-vitest",
 		"jfpedroza/neotest-elixir",
+		"moonbit-community/moonbit.nvim",
 		"rcasia/neotest-java",
 		{ "fredrikaverpil/neotest-golang", version = "*" },
 	},
@@ -31,6 +32,7 @@ return {
 					end,
 				}),
 				require("neotest-elixir"),
+				require("neotest-moonbit"),
 				require("neotest-java"),
 			},
 		})

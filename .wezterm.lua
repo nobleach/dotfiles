@@ -9,8 +9,8 @@ local dimmer = { brightness = 0.1 }
 -- config.font = wezterm.font("FiraMono Nerd Font Mono")
 -- config.font = wezterm.font("Monaspace Argon")
 -- config.font = wezterm.font("Hack Nerd Font Mono")
-config.font = wezterm.font("BitstromWera Nerd Font Mono")
-config.font_size = 18.0
+config.font = wezterm.font("Cousine")
+config.font_size = 16.0
 config.line_height = 1.1
 
 config.window_padding = {
@@ -28,22 +28,22 @@ config.window_padding = {
 config.color_scheme = 'Gruvbox dark, hard (base16)'
 -- config.color_scheme = 'Ayu Mirage (Gogh)'
 -- config.color_scheme = "rose-pine"
-config.background = {
-	{
-		source = {
-			File = "/Users/jim.wharton/Pictures/sunrise-above-water.jpg",
-		},
-		hsb = dimmer,
-	},
-	{
-		source = {
-			Color = "#242833",
-		},
-		width = "100%",
-		height = "100%",
-		opacity = 0.8,
-	},
-}
+-- config.background = {
+-- 	{
+-- 		source = {
+-- 			File = "/Users/jim.wharton/Pictures/sunrise-above-water.jpg",
+-- 		},
+-- 		hsb = dimmer,
+-- 	},
+-- 	{
+-- 		source = {
+-- 			Color = "#242833",
+-- 		},
+-- 		width = "100%",
+-- 		height = "100%",
+-- 		opacity = 0.8,
+-- 	},
+-- }
 
 -- Keys config
 local act = wezterm.action

@@ -2,7 +2,7 @@ auto-update = check
 
 font-family = "Cousine"
 #font-family = "Maple Mono NF"
-font-size = 16.0
+font-size = 14.0
 adjust-cell-height = 10%
 
 window-colorspace = "display-p3"
