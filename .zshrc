@@ -120,6 +120,9 @@ export PATH=$PATH:~/.trivy
 
 [ -f $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh ] && source $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh
 
+# Git Diff Tool
+GIT_EXTERNAL_DIFF='difft --color=always' git diff
+
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
