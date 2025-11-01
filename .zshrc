@@ -40,6 +40,7 @@ alias kgs="kubectl get svc"
 alias kgc="kubectl get configmap"
 alias kdp="kubectl delete pod"
 alias kaf="kubectl apply -f"
+alias gflic="nvim -q <(git conflicts)"
 alias di="docker images"
 alias dstopall='docker stop $(docker ps -a -q)'
 function dclean() {
@@ -119,9 +120,6 @@ fi
 export PATH=$PATH:~/.trivy
 
 [ -f $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh ] && source $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh
-
-# Git Diff Tool
-GIT_EXTERNAL_DIFF='difft --color=always' git diff
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
