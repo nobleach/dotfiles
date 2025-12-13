@@ -44,7 +44,7 @@ return {
 			sources = { "path", "cmdline" },
 		},
 		sources = {
-			default = { "snippets", "lsp", "path", "dadbod", "buffer", "codecompanion" },
+			default = { "snippets", "lsp", "path", "dadbod", "buffer" },
 
 			-- Add custom providers
 			providers = {

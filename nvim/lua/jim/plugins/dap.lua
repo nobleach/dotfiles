@@ -125,7 +125,7 @@ return {
 
 		keymap.set(
 			"n",
-			"<leader>dh",
+			"<leader>dp",
 			"<cmd>lua require'dap'.toggle_breakpoint()<CR>",
 			{ silent = true, noremap = true }
 		)

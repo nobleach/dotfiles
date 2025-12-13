@@ -576,16 +576,16 @@ else
 endif
 
 " }}}
-" Syntastic: {{{
+" Errors/Warnings: {{{
 
 call s:HL('SyntasticError', 'none', 'none', 'undercurl', 'red')
 call s:HL('SyntasticWarning', 'none', 'none', 'undercurl', 'yellow')
 
 if g:gruvbox_invert_signs == 0
-	call s:HL('SyntasticErrorSign', 'red', g:gruvbox_sign_column)
+	call s:HL('DiagnosticSignError', 'red', g:gruvbox_sign_column)
 	call s:HL('SyntasticWarningSign', 'yellow', g:gruvbox_sign_column)
 else
-	call s:HL('SyntasticErrorSign', 'red', g:gruvbox_sign_column, 'inverse')
+	call s:HL('DiagnosticSignError', 'red', g:gruvbox_sign_column, 'inverse')
 	call s:HL('SyntasticWarningSign', 'yellow', g:gruvbox_sign_column, 'inverse')
 endif
 

@@ -81,6 +81,9 @@ return {
 			end,
 		})
 
+		-- Gleam's gotta be its own little special snowflake
+		vim.lsp.enable("gleam")
+
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 		for type, icon in pairs(signs) do
