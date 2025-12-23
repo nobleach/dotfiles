@@ -877,6 +877,11 @@ call s:HL('javaVarArg', 'green')
 
 " }}}
 
+" NeoGit: {{{
+hi NeogitDiffAddHighlight guibg=#b8bb26 guifg=#222222
+hi NeoGitDiffDeleteHighlight guibg=#fb4934 guifg=#ffffff
+" }}}
+
 " Functions -------------------------------------------------------------------
 " Search Highlighting Cursor {{{
 

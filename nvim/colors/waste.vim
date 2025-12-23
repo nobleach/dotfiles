@@ -97,5 +97,6 @@ hi TabLineFill    guifg=#2d3237 guibg=NONE gui=NONE
 "########################################
 "# NeoGit Theme Overrides               #
 "########################################
+
 hi NeogitDiffAddHighlight guibg=#c5d671 guifg=#222222
 hi NeoGitDiffDeleteHighlight guibg=#f7a8a5 guifg=#ffffff
