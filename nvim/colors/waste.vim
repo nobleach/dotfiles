@@ -90,3 +90,12 @@ hi xmlEndTag         guifg=#43bdb2 guibg=NONE gui=NONE
 "# Light Theme Overrides                #
 "########################################
 
+hi TabLine        guifg=#e8eaec guibg=NONE gui=NONE
+hi TabLineSel     guifg=#10100f guibg=#00D2C3 gui=NONE
+hi TabLineFill    guifg=#2d3237 guibg=NONE gui=NONE
+
+"########################################
+"# NeoGit Theme Overrides               #
+"########################################
+hi NeogitDiffAddHighlight guibg=#c5d671 guifg=#222222
+hi NeoGitDiffDeleteHighlight guibg=#f7a8a5 guifg=#ffffff
