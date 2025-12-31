@@ -72,7 +72,7 @@ hi StorageClass   guifg=#bbd4be guibg=NONE gui=NONE
 hi String         guifg=#c5d671 guibg=NONE gui=NONE
 hi Tag            guifg=#43bdb2 guibg=NONE gui=NONE
 hi Title          guifg=#43bdb2 guibg=NONE gui=bold
-hi Todo           guifg=#589390 guibg=NONE gui=inverse,bold
+hi Todo           guifg=#10100f guibg=#589390 gui=bold
 hi Type           guifg=NONE guibg=NONE gui=NONE
 hi Underlined     guifg=NONE guibg=NONE gui=underline
 

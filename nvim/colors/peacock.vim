@@ -118,5 +118,5 @@ hi xmlTag            guifg=#26a6a6 guibg=NONE gui=NONE
 hi xmlTagName        guifg=#26a6a6 guibg=NONE gui=NONE
 hi xmlEndTag         guifg=#26a6a6 guibg=NONE gui=NONE
 
-hi NeogitDiffAddHighlight guifg=#10100f guibg=#bcd42a gui=bold
-hi NeogitDiffDeleteHighlight guifg=#10100f guibg=#ff5d38 gui=bold
+hi NeogitDiffAddHighlight guifg=#10100f guibg=#bcd42a
+hi NeogitDiffDeleteHighlight guifg=#ede0ce guibg=#ff5d38

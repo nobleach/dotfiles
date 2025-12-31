@@ -86,6 +86,8 @@ fi
 alias ezsh="$EDITOR ~/.zshrc"
 alias szsh="source ~/.zshrc"
 alias cod="cd ~/Code"
+bindkey -s '^Xg1' 'git commit -m "initial commit"'
+bindkey -s '^Xgc' 'git commit -m ""\C-b'
 
 # for Ruby
 GEM_HOME=$HOME/gems
