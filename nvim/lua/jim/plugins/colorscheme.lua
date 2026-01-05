@@ -1,66 +1,53 @@
+local colors_augroup = vim.api.nvim_create_augroup("MyColors", { clear = true })
+
 return {
-	-- {
-	-- 	"rebelot/kanagawa.nvim",
-	-- 	config = function()
-	-- 		vim.cmd("colorscheme kanagawa-wave")
-	-- 	end,
-	-- },
-	-- {
-	-- 	"ellisonleao/gruvbox.nvim",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("gruvbox").setup({
-	-- 			undercurl = true,
-	-- 			underline = true,
-	-- 			bold = true,
-	-- 			italic = {
-	-- 				emphasis = true,
-	-- 				strings = true,
-	-- 				comments = true,
-	-- 				operators = false,
-	-- 				folds = true,
-	-- 			},
-	-- 			strikethrough = true,
-	-- 		})
-	--
-	-- 		vim.cmd("colorscheme gruvbox")
-	-- 	end,
-	-- },
+	{
+		"mistweaverco/vhs-era-theme.nvim",
+	},
+	{
+		"masisz/wisteria.nvim",
+		name = "wisteria",
+		opts = {
+			transparent = true,
+		},
+	},
 
-	-- {
-	-- 	"marko-cerovac/material.nvim",
-	-- 	config = function()
-	-- 		vim.cmd("colorscheme material")
-	-- 		vim.g.material_style = "oceanic"
-	-- 		vim.cmd("hi NonText guifg=bg")
-	-- 		vim.api.nvim_set_hl(0, "TabLineEdge", { fg = "#2E3440" })
-	-- 		vim.api.nvim_set_hl(0, "TabLineSelEdge", { fg = "#2E3440", bg = "#10AF98" })
-	-- 		vim.api.nvim_set_hl(0, "SnacksPickerDir", { fg = "#4C5669" })
-	-- 		vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { fg = "#4C5669" })
-	-- 	end,
-	-- },
-
-	-- {
-	-- 	"AlexvZyl/nordic.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("nordic").load()
-	-- 		vim.api.nvim_set_hl(0, "Comment", { fg = "#4C5669", italic = true })
-	-- 		vim.api.nvim_set_hl(0, "Visual", { bg = "#62573F" })
-	-- 		vim.api.nvim_set_hl(0, "Winbar", { bg = "#303340" })
-	-- 		vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#000000", bg = "#94BFCE" })
-	-- 		-- vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#000000", bg = "#D79784" })
-	-- 	end,
-	-- },
+	{
+		"marko-cerovac/material.nvim",
+		config = function()
+			vim.g.material_style = "oceanic"
+			vim.cmd("hi NonText guifg=bg")
+			vim.api.nvim_set_hl(0, "TabLineEdge", { fg = "#2E3440" })
+			vim.api.nvim_set_hl(0, "TabLineSelEdge", { fg = "#2E3440", bg = "#10AF98" })
+			vim.api.nvim_set_hl(0, "SnacksPickerDir", { fg = "#4C5669" })
+			vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { fg = "#4C5669" })
+		end,
+	},
+	{
+		"antonio-hickey/citrus-mist",
+		config = function()
+			vim.api.nvim_create_autocmd("ColorScheme", {
+				group = colors_augroup,
+				pattern = "citrus-mist", -- Applies to any colorscheme change
+				callback = function()
+					vim.api.nvim_set_hl(0, "TabLineEdge", { fg = "#0F2228" })
+					vim.api.nvim_set_hl(0, "TabLineSelEdge", { fg = "#0F2228", bg = "#C3E1EE" })
+					vim.api.nvim_set_hl(0, "TabLine", { fg = "#C3E1EE", bg = "#0F2228" })
+					vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#0F2228", bg = "#C3E1EE" })
+					vim.api.nvim_set_hl(0, "TabLineFill", { bg = "#0F2228", fg = "#C3E1EE" })
+					vim.api.nvim_set_hl(0, "WinBar", { fg = "#C3E1EE", bg = "#0F2228" })
+				end,
+			})
+		end,
+	},
 	-- Pretty and readable but fairly Cattpuccinish
-	-- {
-	-- 	"fynnfluegge/monet.nvim",
-	-- 	name = "monet",
-	-- 	config = function()
-	-- 		vim.cmd.colorscheme("monet")
-	-- 	end,
-	-- },
+	{
+		"fynnfluegge/monet.nvim",
+		name = "monet",
+		config = function()
+			-- vim.cmd.colorscheme("monet")
+		end,
+	},
 	-- {
 	-- 	"everviolet/nvim",
 	-- 	name = "evergarden",
@@ -86,21 +73,20 @@ return {
 	-- 		vim.cmd.colorscheme("evergarden")
 	-- 	end,
 	-- },
-	-- {
-	-- 	"nyngwang/nvimgelion",
-	-- 	config = function()
-	-- 		-- do whatever you want for further customization~
-	-- 		vim.cmd([[colorscheme nvimgelion]])
-	-- 	end,
-	-- },
-	-- {
-	-- 	"ramojus/mellifluous.nvim",
-	-- 	-- version = "v0.*", -- uncomment for stable config (some features might be missed if/when v1 comes out)
-	-- 	config = function()
-	-- 		require("mellifluous").setup({}) -- optional, see configuration section.
-	-- 		vim.cmd("colorscheme mellifluous")
-	-- 	end,
-	-- },
+	{
+		"nyngwang/nvimgelion",
+		config = function()
+			-- do whatever you want for further customization~
+		end,
+	},
+	{
+		"ramojus/mellifluous.nvim",
+		-- version = "v0.*", -- uncomment for stable config (some features might be missed if/when v1 comes out)
+		config = function()
+			require("mellifluous").setup({}) -- optional, see configuration section.
+			-- vim.cmd("colorscheme mellifluous")
+		end,
+	},
 	-- {
 	-- 	"fenetikm/falcon",
 	-- 	lazy = false,
@@ -190,13 +176,6 @@ return {
 	-- 	end,
 	-- },
 	-- {
-	-- 	"antonio-hickey/citrus-mist",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		vim.cmd("colorscheme citrus-mist")
-	-- 	end,
-	-- },
-	-- {
 	-- 	"folke/tokyonight.nvim",
 	-- 	priority = 1000, -- make sure to load this before all the other start plugins
 	-- 	config = function()
@@ -211,48 +190,15 @@ return {
 	-- 		vim.cmd([[colorscheme everforest]])
 	-- 	end,
 	-- },
-	-- {
-	-- 	"sainnhe/gruvbox-material",
-	-- 	priority = 1000, -- make sure to load this before all the other start plugins
-	-- 	config = function()
-	-- 		vim.cmd([[let g:gruvbox_material_background = 'soft']])
-	-- 		vim.cmd([[let g:gruvbox_material_better_performance = 1]])
-	-- 		vim.cmd([[let g:gruvbox_material_enable_bold = 1]])
-	-- 		vim.cmd([[let g:gruvbox_material_enable_italic = 1]])
-	-- 		vim.cmd([[]])
-	-- 		vim.cmd([[colorscheme gruvbox-material]])
-	-- 	end,
-	-- },
-	-- {
-	-- 	"olivercederborg/poimandres.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("poimandres").setup({
-	-- 			dim_nc_background = true,
-	-- 			disable_italics = false,
-	-- 		})
-	-- 	end,
-	--
-	-- 	-- optionally set the colorscheme within lazy config
-	-- 	init = function()
-	-- 		vim.cmd("colorscheme poimandres")
-	-- 		vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#a6998f" })
-	-- 		vim.api.nvim_set_hl(0, "NormalFloat", { fg = "#a6998f", bg = "#282828" })
-	-- 		vim.api.nvim_set_hl(0, "Comment", { fg = "#a6998f", italic = true })
-	-- 		vim.api.nvim_set_hl(0, "Winbar", { bg = "#303340" })
-	-- 	end,
-	-- },
-	-- {
-	-- 	"kyazdani42/blue-moon",
-	-- 	config = function()
-	-- 		vim.opt.termguicolors = true
-	-- 		vim.cmd("colorscheme blue-moon")
-	-- 	end,
-	-- },
-	-- {
-	-- 	"kvrohit/substrata.nvim",
-	-- },
+	{
+		"kyazdani42/blue-moon",
+		config = function()
+			vim.opt.termguicolors = true
+		end,
+	},
+	{
+		"kvrohit/substrata.nvim",
+	},
 	-- { "savq/melange-nvim" },
 	-- { "tanvirtin/monokai.nvim" },
 	-- {
