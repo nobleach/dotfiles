@@ -11,7 +11,14 @@ return {
 			transparent = true,
 		},
 	},
-
+	{
+		"elitracy/blackbag.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("blackbag").setup()
+		end,
+	},
 	{
 		"marko-cerovac/material.nvim",
 		config = function()
@@ -35,6 +42,8 @@ return {
 					vim.api.nvim_set_hl(0, "TabLine", { fg = "#C3E1EE", bg = "#0F2228" })
 					vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#0F2228", bg = "#C3E1EE" })
 					vim.api.nvim_set_hl(0, "TabLineFill", { bg = "#0F2228", fg = "#C3E1EE" })
+					vim.api.nvim_set_hl(0, "TabLineIconModified", { fg = "#C3E1EE", bg = "#0F2228" })
+					vim.api.nvim_set_hl(0, "TabLineIconModifiedSel", { fg = "#0F2228", bg = "#C3E1EE" })
 					vim.api.nvim_set_hl(0, "WinBar", { fg = "#C3E1EE", bg = "#0F2228" })
 				end,
 			})
