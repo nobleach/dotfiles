@@ -26,7 +26,7 @@ set -g mode-style "fg=#dfdfe5,bg=#C3E1EE"
 set -g status-bg "#253A44" 
 
 # window status indicators (with the number in it)
-setw -g window-status-style "fg=#23201C,bg=#E1EAEF"
+setw -g window-status-style "fg=#C3E1EE,bg=#002831"
 setw -g window-status-separator ""
 setw -g window-status-activity-style "fg=magenta,bg=#36363a"
 
