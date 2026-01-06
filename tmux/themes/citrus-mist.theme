@@ -26,15 +26,15 @@ set -g mode-style "fg=#dfdfe5,bg=#C3E1EE"
 set -g status-bg "#253A44" 
 
 # window status indicators (with the number in it)
-setw -g window-status-style "fg=#b4b4b9,bg=#57575e"
+setw -g window-status-style "fg=#23201C,bg=#E1EAEF"
 setw -g window-status-separator ""
 setw -g window-status-activity-style "fg=magenta,bg=#36363a"
 
 # window list tiles:
-setw -g window-status-format "#[fg=#white,bg=#57575e] #I #[fg=#787882,bg=#253A44] #W "
+setw -g window-status-format "#[fg=#white,bg=#77A1B6] #I #[fg=#E1EAEF,bg=#253A44] #W "
 
 # Current window tile:
-setw -g window-status-current-format "#[fg=#002831,bg=#C3E1EE]#[fg=#253A44,bg=#C3E1EE] #I #[fg=#253A44,bg=#C3E1EE]#[fg=#C3E1EE,bg=#253A44] #{?window_zoomed_flag,#[fg=#c8d0e3] 󰍋 (,}#W#{?window_zoomed_flag,#[fg=#c8d0e3]),} "
+setw -g window-status-current-format "#[fg=#002831,bg=#C3E1EE]#[fg=#131F25,bg=#C3E1EE] #I #[fg=#131F25,bg=#C3E1EE]#[fg=#C3E1EE,bg=#131F25] #{?window_zoomed_flag,#[fg=#c8d0e3] 󰍋 (,}#W#{?window_zoomed_flag,#[fg=#c8d0e3]),} "
 
 set -g status-left "#[fg=white] #P #[fg=#57575e]│ "
 set -g status-right "#[fg=white]%m/%d/%Y %H:%M "
