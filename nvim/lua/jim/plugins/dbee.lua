@@ -24,6 +24,6 @@ return {
 		-- Set keymaps
 		local keymap = vim.keymap
 
-		keymap.set("n", ",1", '<cmd>lua require("dbee").toggle()<CR>', { noremap = true })
+		keymap.set("n", ",d", '<cmd>lua require("dbee").toggle()<CR>', { noremap = true })
 	end,
 }

@@ -17,6 +17,6 @@ return {
 		-- Set keymaps
 		local keymap = vim.keymap
 
-		keymap.set("n", ",d", "<cmd>DBUIToggle<CR>", { noremap = true })
+		keymap.set("n", ",1", "<cmd>DBUIToggle<CR>", { noremap = true })
 	end,
 }
