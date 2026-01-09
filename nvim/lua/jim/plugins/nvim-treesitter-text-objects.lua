@@ -1,8 +1,13 @@
 return {
 	"nvim-treesitter/nvim-treesitter-textobjects",
+	branch = "main",
+	dependencies = "nvim-treesitter/nvim-treesitter",
 	lazy = true,
+	init = function()
+		vim.g.no_plugin_maps = true
+	end,
 	config = function()
-		require("nvim-treesitter.configs").setup({
+		require("vim-treesitter-textobjects").setup({
 			textobjects = {
 				select = {
 					enable = true,
