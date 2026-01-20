@@ -21,6 +21,10 @@ return {
 	---@module 'blink.cmp'
 	---@type blink.cmp.Config
 	opts = {
+		enabled = function()
+			local disabled_filetypes = { "NvimTree", "DressingInput" }
+			return not vim.tbl_contains(disabled_filetypes, vim.bo.filetype)
+		end,
 		-- Use LuaSnip as the snippet engine
 		snippets = { preset = "luasnip" },
 		-- 'default' for mappings similar to built-in completion
