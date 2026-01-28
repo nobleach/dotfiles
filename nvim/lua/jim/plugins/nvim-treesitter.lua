@@ -2,11 +2,12 @@
 ---@type LazySpec
 return {
 	"nvim-treesitter/nvim-treesitter",
-	lazy = false,
 	branch = "main",
+	lazy = false,
+	-- Optional: keep this to allow manual :TSUpdate for updating installed parsers
 	build = ":TSUpdate",
 	config = function()
-		-- Custom registrations
+		-- Your custom filetype registrations
 		vim.filetype.add({
 			extension = {
 				csproj = "xml",
@@ -18,43 +19,35 @@ return {
 			},
 		})
 
-		-- Treesitter directory
-		local treesitter_dir = vim.fn.stdpath("data") .. "/lazy/nvim-treesitter/"
+		local ts = require("nvim-treesitter")
 
-		-- Collect all available parsers
-		local parsers = {}
-		for name, type in vim.fs.dir(treesitter_dir .. "runtime/queries") do
-			if type == "directory" then
-				table.insert(parsers, name)
+		-- Collect all supported filetypes from the installed/available parsers
+		local ft_set = {}
+		for _, lang in ipairs(ts.get_available()) do
+			local filetypes = vim.treesitter.language.get_filetypes(lang)
+			for _, ft in ipairs(filetypes) do
+				ft_set[ft] = true
 			end
 		end
+		local supported_filetypes = vim.tbl_keys(ft_set)
 
-		-- Install file type parsers
-		require("nvim-treesitter").install(parsers)
-
-		-- Register known file types
-		dofile(treesitter_dir .. "plugin/filetypes.lua")
-
-		-- Get file types
-		local file_types = vim.iter(parsers)
-			:map(function(parser)
-				return vim.treesitter.language.get_filetypes(parser)
-			end)
-			:flatten()
-			:totable()
-
-		-- Auto-run
+		-- Auto-enable Treesitter features on matching FileType
 		vim.api.nvim_create_autocmd("FileType", {
-			pattern = file_types,
+			pattern = supported_filetypes,
 			callback = function(args)
-				-- Highlights
+				local ft = vim.bo[args.buf].filetype
+				local lang = vim.treesitter.language.get_lang(ft)
+				if lang and vim.tbl_contains(ts.get_available(), lang) then
+					ts.install(lang) -- async install if missing
+				end
+				-- Enable highlighting
 				vim.treesitter.start()
 
-				-- Folds
-				vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
-				vim.wo[0][0].foldmethod = "expr"
+				-- Enable folds (if desired; can remove if not wanted)
+				vim.wo.foldmethod = "expr"
+				vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
-				-- Indentation
+				-- Enable indentation (experimental; can remove if not wanted)
 				vim.bo[args.buf].indentexpr = 'v:lua.require"nvim-treesitter".indentexpr()'
 			end,
 		})
