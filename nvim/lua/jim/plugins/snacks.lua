@@ -132,6 +132,13 @@ return {
 			end,
 			desc = "Colorschemes",
 		},
+		{
+			"<leader>3",
+			function()
+				Snacks.picker.highlights()
+			end,
+			desc = "Colorschemes",
+		},
 	},
 	init = function()
 		require("snacks")
