@@ -87,7 +87,9 @@ return {
 		local keymap = vim.keymap
 
 		keymap.set("n", "<leader>nd", "<CMD>Glance definitions<CR>")
+		keymap.set("n", ",e", "<CMD>Glance definitions<CR>")
 		keymap.set("n", "<leader>nr", "<CMD>Glance references<CR>")
+		keymap.set("n", ",r", "<CMD>Glance references<CR>")
 		keymap.set("n", "<leader>nt", "<CMD>Glance type_definitions<CR>")
 		keymap.set("n", "<leader>ni", "<CMD>Glance implementations<CR>")
 	end,
