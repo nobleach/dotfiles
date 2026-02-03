@@ -40,14 +40,14 @@ return {
 		vim.api.nvim_set_keymap(
 			"n",
 			"<leader>tr",
-			"<cmd>lua require('neotest').run.run({ vitestCommand = 'vitest' })<cr>",
+			"<cmd>lua require('neotest').run.run()<cr>",
 			{ desc = "Run Closest" }
 		)
 
 		vim.api.nvim_set_keymap(
 			"n",
 			"\\t",
-			"<cmd>lua require('neotest').run.run({ vitestCommand = 'vitest' })<cr>",
+			"<cmd>lua require('neotest').run.run()<cr>",
 			{ desc = "Run Closest" }
 		)
 
@@ -97,7 +97,7 @@ return {
 			"n",
 			"<leader>twr",
 			"<cmd>lua require('neotest').run.run({ vitestCommand = 'vitest --watch' })<cr>",
-			{ desc = "Run Watch" }
+			{ desc = "Run Watch (Vitest only)" }
 		)
 	end,
 }
