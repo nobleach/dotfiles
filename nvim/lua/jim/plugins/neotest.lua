@@ -16,7 +16,11 @@ return {
 		local neotest = require("neotest")
 		neotest.setup({
 			adapters = {
-				require("neotest-golang"),
+				require("neotest-golang")({
+					opts = {
+						testify_enabled = true,
+					},
+				}),
 				require("neotest-jest")({
 					jestCommand = "npm test",
 					-- jestConfigFile = "custom.jest.config.ts",
@@ -44,12 +48,7 @@ return {
 			{ desc = "Run Closest" }
 		)
 
-		vim.api.nvim_set_keymap(
-			"n",
-			"\\t",
-			"<cmd>lua require('neotest').run.run()<cr>",
-			{ desc = "Run Closest" }
-		)
+		vim.api.nvim_set_keymap("n", "\\t", "<cmd>lua require('neotest').run.run()<cr>", { desc = "Run Closest" })
 
 		vim.api.nvim_set_keymap(
 			"n",
