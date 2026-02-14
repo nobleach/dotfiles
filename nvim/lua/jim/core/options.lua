@@ -49,7 +49,7 @@ vim.o.undofile = true
 vim.o.incsearch = true
 -- vim.g.user_emmet_leader_key = "<c-e>"
 vim.o.colorcolumn = "72"
-vim.opt.spell = true
+vim.opt.spell = false
 vim.opt.spelllang = { "en_us" }
 vim.opt.guicursor = {
 	"n-v:block-Cursor/lCursor",

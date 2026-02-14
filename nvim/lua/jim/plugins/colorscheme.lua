@@ -45,6 +45,7 @@ return {
 					vim.api.nvim_set_hl(0, "TabLineIconModified", { fg = "#C3E1EE", bg = "#0F2228" })
 					vim.api.nvim_set_hl(0, "TabLineIconModifiedSel", { fg = "#0F2228", bg = "#C3E1EE" })
 					vim.api.nvim_set_hl(0, "WinBar", { fg = "#C3E1EE", bg = "#0F2228" })
+					vim.api.nvim_set_hl(0, "@comment", { fg = "#4C5669", italic = true })
 				end,
 			})
 		end,
