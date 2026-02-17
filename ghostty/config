@@ -2,7 +2,7 @@ auto-update = check
 
 #font-family = "Cousine"
 font-family = "CaskaydiaCove NFM"
-#font-family = "Borg Sans Mono"
+#font-family = "JuliaMono"
 #font-family = "BitstromWera Nerd Font Mono"
 font-size = 14.0
 adjust-cell-height = 10%
