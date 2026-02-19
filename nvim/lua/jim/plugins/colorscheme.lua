@@ -46,7 +46,7 @@ return {
 					vim.api.nvim_set_hl(0, "TabLineIconModifiedSel", { fg = "#0F2228", bg = "#C3E1EE" })
 					vim.api.nvim_set_hl(0, "WinBar", { fg = "#C3E1EE", bg = "#0F2228" })
 					vim.api.nvim_set_hl(0, "@comment", { fg = "#4C5669", italic = true })
-					vim.api.nvim_set_hl(0, "NeogitDiffAddHighlight", { bg = "#0B2705" })
+					vim.api.nvim_set_hl(0, "NeogitDiffAddHighlight", { bg = "#103506" })
 					vim.api.nvim_set_hl(0, "NeogitDiffDeleteHighlight", { bg = "#390503" })
 				end,
 			})
