@@ -9,6 +9,7 @@
 input {
     keyboard {
         xkb {
+          options "ctrl:nocaps"
             // You can set rules, model, layout, variant and options.
             // For more information, see xkeyboard-config(7).
 
@@ -17,7 +18,7 @@ input {
             // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
 
             // If this section is empty, niri will fetch xkb settings
-            // from org.freedesktop.locale1. You can control these using
+            // from org.freedesktop.locoptions "ctrl:nocaps"ale1. You can control these using
             // localectl set-x11-keymap.
         }
 
@@ -40,6 +41,8 @@ input {
         // accel-profile "flat"
         scroll-method "two-finger"
         // disabled-on-external-mouse
+         tap-button-map "left-middle-right"
+         click-method "clickfinger"
     }
 
     mouse {
