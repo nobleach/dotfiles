@@ -1,13 +1,16 @@
 auto-update = check
 
 #font-family = "Cousine"
-font-family = "Cascadia Mono NF"
+font-family = "CaskaydiaCove Nerd Font Mono"
 #font-family = "JuliaMono"
 #font-family = "BitstromWera Nerd Font Mono"
+font-feature = "calt"
+font-feature = "liga"
 font-size = 14.0
 adjust-cell-height = 10%
 
 window-colorspace = "display-p3"
+background-opacity = 0.85
 
 #theme = "Monokai Classic"
 #theme = "peacock"
