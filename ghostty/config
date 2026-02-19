@@ -1,7 +1,7 @@
 auto-update = check
 
 #font-family = "Cousine"
-font-family = "CaskaydiaCove NFM"
+font-family = "Cascadia Mono NF"
 #font-family = "JuliaMono"
 #font-family = "BitstromWera Nerd Font Mono"
 font-size = 14.0
