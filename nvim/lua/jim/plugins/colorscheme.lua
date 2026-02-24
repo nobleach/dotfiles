@@ -47,7 +47,9 @@ return {
 					vim.api.nvim_set_hl(0, "WinBar", { fg = "#C3E1EE", bg = "#0F2228" })
 					vim.api.nvim_set_hl(0, "@comment", { fg = "#4C5669", italic = true })
 					vim.api.nvim_set_hl(0, "NeogitDiffAddHighlight", { bg = "#103506" })
-					vim.api.nvim_set_hl(0, "NeogitDiffDeleteHighlight", { bg = "#390503" })
+					vim.api.nvim_set_hl(0, "DiffDeleteHighlight", { bg = "#390503" })
+					vim.api.nvim_set_hl(0, "DiffAdd", { bg = "#103506" })
+					vim.api.nvim_set_hl(0, "DiffDelete", { bg = "#390503" })
 				end,
 			})
 		end,
