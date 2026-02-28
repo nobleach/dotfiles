@@ -2,7 +2,7 @@
 # set -o vi
 
 # Initial $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.docker/bin:"$HOME/.dotnet/tools"$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.docker/bin:"$HOME/.dotnet/tools":$PATH
 
 # dotnet config
 # install easy-dotnet with: dotnet tool install -g EasyDotnet
