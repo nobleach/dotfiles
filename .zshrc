@@ -2,7 +2,7 @@
 # set -o vi
 
 # Initial $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:/opt/homebrew/bin:$HOME/.docker/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.docker/bin:$PATH
 
 # Ignore duplicate entries in history
 setopt HIST_IGNORE_ALL_DUPS
@@ -89,10 +89,6 @@ alias cod="cd ~/Code"
 bindkey -s '^Xg1' 'git commit -m "initial commit"'
 bindkey -s '^Xgc' 'git commit -m ""\C-b'
 
-# for Ruby
-GEM_HOME=$HOME/gems
-export PATH=$PATH:$HOME/gems/bin:$HOME/workstation/trigger/trigger-oidc-curl/bin:$HOME/workstation/trigger/tcli/bin:$HOME/workstation/trigger/triggerctl/bin:$HOME/workstation/trigger/kubectl/bin
-
 listening() {
     if [ $# -eq 0 ]; then
         sudo lsof -iTCP -sTCP:LISTEN -n -P
@@ -103,54 +99,20 @@ listening() {
     fi
   }
 
-# tcli source trigger aliases
-if [ -f $HOME/.tcli/trigger_aliases  ]; then
-  . $HOME/.tcli/trigger_aliases
-fi
-
-# bun completions
-[ -s "/opt/homebrew/share/zsh/site-functions/_bun" ] && source "/opt/homebrew/share/zsh/site-functions/_bun"
-
-# bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
 # ensure that docker builds for the right architecture
 # export DOCKER_BUILDKIT=1
 # export DOCKER_DEFAULT_PLATFORM=linux/amd64
-
-# Add trivy
-export PATH=$PATH:~/.trivy
-
-[ -f $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh ] && source $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 
 #for Go
 # export GO_PATH=~/go
 # export PATH=$PATH:/$GO_PATH/bin
 alias air='$(go env GOPATH)/bin/air'
 
-# for Postgres local psql
-export PATH=/opt/homebrew/Cellar/postgresql@16/16.4/bin:$PATH
-
-# pnpm
-export PNPM_HOME="$HOME/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
 # replace ls with eza
 alias ls="eza --icons=always"
 
 # mise tool version manager
 eval "$(mise activate zsh)"
-
-# moonbit
-export PATH="$HOME/.moon/bin:$PATH"
 
 # opam configuration
 [[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
