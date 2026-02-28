@@ -2,8 +2,12 @@
 # set -o vi
 
 # Initial $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.docker/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.docker/bin:"$HOME/.dotnet/tools"$PATH
 
+# dotnet config
+# install easy-dotnet with: dotnet tool install -g EasyDotnet
+# added to path above
+#
 # Ignore duplicate entries in history
 setopt HIST_IGNORE_ALL_DUPS
 setopt inc_append_history
@@ -117,3 +121,4 @@ eval "$(mise activate zsh)"
 # opam configuration
 [[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 eval $(opam env)
+
