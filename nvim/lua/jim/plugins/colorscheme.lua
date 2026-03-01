@@ -5,6 +5,16 @@ return {
 		"mistweaverco/vhs-era-theme.nvim",
 	},
 	{
+		"jpwol/thorn.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+	{
+		"samharju/serene.nvim",
+	},
+	{ "cryptomilk/nightcity.nvim", version = false },
+	{
 		"masisz/wisteria.nvim",
 		name = "wisteria",
 		opts = {
@@ -12,11 +22,34 @@ return {
 		},
 	},
 	{
+		"uloco/bluloco.nvim",
+		lazy = false,
+		priority = 1000,
+		dependencies = { "rktjmp/lush.nvim" },
+		config = function()
+			-- your optional config goes here, see below.
+		end,
+	},
+	{
 		"elitracy/blackbag.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
 			require("blackbag").setup()
+		end,
+	},
+	{
+		"serhez/teide.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+	{
+		"oskarnurm/koda.nvim",
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		priority = 1000, -- make sure to load this before all the other start plugins
+		config = function()
+			require("koda").setup({ transparent = true })
 		end,
 	},
 	{
@@ -212,6 +245,20 @@ return {
 	},
 	{
 		"kvrohit/substrata.nvim",
+	},
+	{
+		"maxmx03/fluoromachine.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			local fm = require("fluoromachine")
+
+			fm.setup({
+				glow = true,
+				theme = "fluoromachine",
+				transparent = true,
+			})
+		end,
 	},
 	-- { "savq/melange-nvim" },
 	-- { "tanvirtin/monokai.nvim" },
