@@ -83,6 +83,8 @@ return {
 					vim.api.nvim_set_hl(0, "DiffDeleteHighlight", { bg = "#390503" })
 					vim.api.nvim_set_hl(0, "DiffAdd", { bg = "#103506" })
 					vim.api.nvim_set_hl(0, "DiffDelete", { bg = "#390503" })
+					vim.api.nvim_set_hl(0, "DapBreakpointIcon", { fg = "#FDD11F" })
+					vim.api.nvim_set_hl(0, "DapStoppedIcon", { fg = "#e06c75" })
 				end,
 			})
 		end,

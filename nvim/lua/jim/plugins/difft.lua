@@ -2,7 +2,7 @@ return {
 	"ahkohd/difft.nvim",
 	keys = {
 		{
-			"<leader>d",
+			"<leader>gd",
 			function()
 				if Difft.is_visible() then
 					Difft.hide()

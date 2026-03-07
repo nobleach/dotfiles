@@ -4,12 +4,14 @@ return {
 		"rcarriga/nvim-dap-ui",
 		"nvim-neotest/nvim-nio",
 		"nvim-telescope/telescope-dap.nvim",
+		"leoluz/nvim-dap-go",
 	},
 	opts = {},
 	event = "VeryLazy",
 	config = function()
 		local dap = require("dap")
 		local dapui = require("dapui")
+		local dapgo = require("dap-go").setup()
 		local js_filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" }
 		local current_file = vim.fn.expand("%:t")
 		local home = os.getenv("HOME")
@@ -115,20 +117,15 @@ return {
 		dap.configurations.c = dap.configurations.cpp
 		dap.configurations.rust = dap.configurations.cpp
 
-		vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "", linehl = "", numhl = "" })
-		vim.fn.sign_define("DapStopped", { text = "", texthl = "", linehl = "", numhl = "" })
+		vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpointIcon", linehl = "", numhl = "" })
+		vim.fn.sign_define("DapStopped", { text = "", texthl = "DapStoppedIcon", linehl = "", numhl = "" })
 
 		dapui.setup()
 
 		-- keymaps
 		local keymap = vim.keymap
 
-		keymap.set(
-			"n",
-			"<leader>dp",
-			"<cmd>lua require'dap'.toggle_breakpoint()<CR>",
-			{ silent = true, noremap = true }
-		)
+		keymap.set("n", "\\b", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { silent = true, noremap = true })
 		keymap.set("n", ",b", "<cmd>lua require('dapui').toggle()<CR>", { silent = true, noremap = true })
 		keymap.set(
 			"n",
