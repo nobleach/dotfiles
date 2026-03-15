@@ -8,9 +8,14 @@ export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.docker/bin:"$HOME/.
 # install easy-dotnet with: dotnet tool install -g EasyDotnet
 # added to path above
 #
-# Ignore duplicate entries in history
-setopt HIST_IGNORE_ALL_DUPS
-setopt inc_append_history
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=100000
+SAVEHIST=100000
+setopt SHARE_HISTORY         # Share history between all sessions
+setopt INC_APPEND_HISTORY    # Write to the history file immediately, not just when the shell exits
+setopt EXTENDED_HISTORY      # Write the history file in the ":start:elapsed;command" format
+setopt HIST_IGNORE_DUPS      # Don't record an entry that was just recorded again
+setopt HIST_SAVE_NO_DUPS     # Don't write duplicate entries in the history file
 
 # source antidote
 source "$HOME/.antidote/antidote.zsh"
