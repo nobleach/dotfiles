@@ -11,6 +11,13 @@ return {
 			win = "TabLine",
 			tail = "TabLine",
 		}
+		-- local theme = {
+		-- 	fill = { bg = "#13161d", fg = "#13161d" },
+		-- 	head = { bg = "#272d38", fg = "#dfe1e9" },
+		-- 	current_tab = { bg = "#212733", fg = "#dfe1e9" },
+		-- 	tab = { bg = "#5c6772", fg = "#13161d" },
+		-- 	tail = { bg = "#212733", fg = "#dfe1e9" },
+		-- }
 
 		local api = require("tabby.module.api")
 		local devicons = require("nvim-web-devicons")
