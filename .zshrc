@@ -26,9 +26,6 @@ ZVM_INIT_MODE=sourcing
 
 # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
 antidote load
-
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
 # source $(brew --prefix)/Cellar/fzf/$(fzf --version | cut -d ' ' -f 1)/shell/key-bindings.zsh
 
 autoload -Uz promptinit && promptinit && prompt pure
@@ -124,4 +121,7 @@ eval "$(mise activate zsh)"
 # opam configuration
 [[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 eval $(opam env)
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
