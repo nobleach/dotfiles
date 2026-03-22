@@ -1,24 +1,20 @@
-[url "https://"]
-	insteadOf = git://
 [user]
-	nam = =
 	name = Jim Wharton
-	email = jwharton@tzero.com
+	email = jamesawharton@gmail.com
 [github]
 	user = nobleach
 [core]
-        whitespace = trailing-space,space-before-tab
-        editor = vim
-	excludesfile = /Users/jimwharton/.gitignore_global
+  whitespace = trailing-space,space-before-tab
+  editor = nvim
 [color]
-        ui = auto
+  ui = auto
 [diff]
-        compactionHeuristic = true
+  compactionHeuristic = true
 [commit]
-      template = ~/.gitmessage
+  template = ~/.gitmessage
 [merge]
-        stat = true
-        tool = opendiff
+  stat = true
+  tool = opendiff
 	conflictstyle = diff3
 [alias]
         aliases = config --get-regexp alias
@@ -42,5 +38,3 @@
 [mergetool "vimdiff"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-[credential]
-	helper = osxkeychain

@@ -125,3 +125,6 @@ eval $(opam env)
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
+
+# opencode
+export PATH=/home/jim/.opencode/bin:$PATH
