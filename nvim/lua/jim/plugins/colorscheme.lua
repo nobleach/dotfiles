@@ -41,14 +41,6 @@ return {
 		end,
 	},
 	{
-		"elitracy/blackbag.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("blackbag").setup()
-		end,
-	},
-	{
 		"serhez/teide.nvim",
 		lazy = false,
 		priority = 1000,

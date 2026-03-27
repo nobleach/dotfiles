@@ -1,7 +1,9 @@
 auto-update = check
 
 #font-family = "Cousine"
-font-family = "CaskaydiaCove Nerd Font Propo"
+#font-family = "CaskaydiaCove Nerd Font Propo"
+#font-family = "Monaspace Argon NF"
+font-family = "Twilio Sans Mono"
 #font-family = "JuliaMono"
 #font-family = "BitstromWera Nerd Font Mono"
 font-feature = "calt"
