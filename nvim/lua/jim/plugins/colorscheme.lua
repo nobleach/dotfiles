@@ -41,12 +41,10 @@ return {
 		end,
 	},
 	{
-		"elitracy/blackbag.nvim",
+		"kungfusheep/mfd.nvim",
 		lazy = false,
 		priority = 1000,
-		config = function()
-			require("blackbag").setup()
-		end,
+		config = function() end,
 	},
 	{
 		"serhez/teide.nvim",
