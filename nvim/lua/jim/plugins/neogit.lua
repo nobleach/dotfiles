@@ -25,7 +25,7 @@ return {
 				codediff = true,
 				snacks = true,
 			},
-			diff_viewer = "snacks",
+			diff_viewer = "codediff",
 		})
 
 		-- set keymaps

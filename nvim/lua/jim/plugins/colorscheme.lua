@@ -22,6 +22,13 @@ return {
 		},
 	},
 	{
+		"masisz/wisteria.nvim",
+		name = "wisteria",
+		opts = {
+			transparent = true,
+		},
+	},
+	{
 		"yonatan-perel/lake-dweller.nvim",
 		lazy = false,
 		priority = 1000,
@@ -39,6 +46,12 @@ return {
 		config = function()
 			-- your optional config goes here, see below.
 		end,
+	},
+	{
+		"kungfusheep/mfd.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function() end,
 	},
 	{
 		"serhez/teide.nvim",
