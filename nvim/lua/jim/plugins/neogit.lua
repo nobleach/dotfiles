@@ -1,7 +1,7 @@
 return {
 	"TimUntersberger/neogit",
 	branch = "master",
-	dependencies = { "nvim-lua/plenary.nvim", "sindrets/diffview.nvim", "nvim-telescope/telescope.nvim" },
+	dependencies = { "nvim-lua/plenary.nvim", "esmuellert/codediff.nvim", "folke/snacks.nvim" },
 	config = function()
 		local neogit = require("neogit")
 
@@ -9,14 +9,23 @@ return {
 			console_timeout = 2000,
 			-- Automatically show console if a command takes more than console_timeout milliseconds
 			auto_show_console = true,
-			-- Change the default way of opening the commit popup
-			-- commit_popup = {
-			-- 	kind = "split",
-			-- },
-			-- Change the default way of opening popups
-			-- popup = {
-			-- 	kind = "split",
-			-- },
+			commit_editor = {
+				kind = "floating",
+				show_staged_diff = true,
+				-- Accepted values:
+				-- "split" to show the staged diff below the commit editor
+				-- "vsplit" to show it to the right
+				-- "split_above" Like :top split
+				-- "vsplit_left" like :vsplit, but open to the left
+				-- "auto" "vsplit" if window would have 80 cols, otherwise "split"
+				staged_diff_split_kind = "split",
+				spell_check = true,
+			},
+			integrations = {
+				codediff = true,
+				snacks = true,
+			},
+			diff_viewer = "snacks",
 		})
 
 		-- set keymaps
