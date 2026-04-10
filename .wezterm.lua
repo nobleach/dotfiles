@@ -9,9 +9,9 @@ local dimmer = { brightness = 0.1 }
 -- config.font = wezterm.font("FiraMono Nerd Font Mono")
 -- config.font = wezterm.font("Monaspace Argon")
 -- config.font = wezterm.font("Hack Nerd Font Mono")
-config.font = wezterm.font("CaskaydiaCove Nerd Font Mono")
+config.font = wezterm.font("BitstromWera Nerd Font Mono")
 config.font_size = 16.0
-config.line_height = 1.1
+config.line_height = 1.2
 
 config.window_padding = {
 	left = 2,
@@ -25,7 +25,7 @@ config.window_padding = {
 -- config.color_scheme = 'Poimandres'
 -- config.color_scheme = 'nord'
 -- config.color_scheme = 'Railscasts (dark) (terminal.sexy)'
-config.color_scheme = 'Gruvbox dark, hard (base16)'
+config.color_scheme = "Gruvbox dark, hard (base16)"
 -- config.color_scheme = 'Ayu Mirage (Gogh)'
 -- config.color_scheme = "rose-pine"
 -- config.background = {

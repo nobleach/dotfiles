@@ -2,7 +2,7 @@ auto-update = check
 
 font-family = "BitstromWera Nerd Font Mono"
 #font-family = "IoskeleyMono Nerd Font"
-font-size = 14.0
+font-size = 16
 adjust-cell-height = +20%
 
 window-colorspace = "display-p3"
