@@ -89,6 +89,14 @@ local config = {
 						name = "JavaSE-24",
 						path = home .. "/.local/share/mise/installs/java/temurin-24",
 					},
+					{
+						name = "JavaSE-25",
+						path = home .. "/.local/share/mise/installs/java/temurin-25",
+					},
+					{
+						name = "JavaSE-26",
+						path = home .. "/.local/share/mise/installs/java/temurin-26",
+					},
 				},
 			},
 			maven = {

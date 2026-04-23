@@ -85,6 +85,9 @@ return {
 				group = colors_augroup,
 				pattern = "citrus-mist", -- Applies to any colorscheme change
 				callback = function()
+					vim.api.nvim_set_hl(0, "IncSearch", { fg = "#0F2228", bg = "#C3E1EE" })
+					vim.api.nvim_set_hl(0, "CurSearch", { bg = "#e06c75" })
+					vim.api.nvim_set_hl(0, "Search", { fg = "#0F2228", bg = "#C3E1EE" })
 					vim.api.nvim_set_hl(0, "TabLineEdge", { fg = "#0F2228" })
 					vim.api.nvim_set_hl(0, "TabLineSelEdge", { fg = "#0F2228", bg = "#C3E1EE" })
 					vim.api.nvim_set_hl(0, "TabLine", { fg = "#C3E1EE", bg = "#0F2228" })
@@ -277,34 +280,38 @@ return {
 			})
 		end,
 	},
-	-- { "savq/melange-nvim" },
-	-- { "tanvirtin/monokai.nvim" },
-	-- {
-	-- 	"rose-pine/neovim",
-	-- 	name = "rose-pine",
-	-- 	config = function()
-	-- 		require("rose-pine").setup({
-	-- 			dark_variant = "moon", -- main, moon, or dawn
-	-- 			dim_inactive_windows = false,
-	-- 			extend_background_behind_borders = true,
-	-- 		})
-	-- 		vim.opt.termguicolors = true
-	-- 		-- vim.cmd("colorscheme rose-pine")
-	-- 		vim.cmd("hi CursorLine guibg=#394549")
-	-- 		vim.cmd("hi TabLineSel guibg=#394549")
-	-- 		vim.cmd("hi Visual guifg=Black guibg=#F6C177 gui=none")
-	-- 	end,
-	-- },
-	-- {
-	-- 	"sainnhe/sonokai",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		-- Optionally configure and load the colorscheme
-	-- 		-- directly inside the plugin declaration.
-	-- 		vim.g.sonokai_enable_italic = true
-	-- 		vim.g.sonokai_style = "espresso"
-	-- 		vim.cmd.colorscheme("sonokai")
-	-- 	end,
-	-- },
+	{
+		"ishan9299/nvim-solarized-lua",
+	},
+	{
+		"svrana/neosolarized.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("neosolarized").setup({
+				comment_italics = true,
+				background_set = false,
+			})
+			-- vim.cmd.colorscheme("neosolarized")
+		end,
+		dependencies = {
+			"tjdevries/colorbuddy.nvim",
+		},
+	},
+	{
+		"omacom-io/lumon.nvim",
+	},
+	{
+		"IroncladDev/osmium",
+	},
+	{ "aymenhafeez/doric-themes.nvim", priority = 1000 },
+	{
+		"barrettruth/midnight.nvim",
+	},
+	{
+		"bjarneo/firesky.nvim",
+	},
+	{
+		"lightnolimit/cosmic-latte-nvim",
+	},
 }
