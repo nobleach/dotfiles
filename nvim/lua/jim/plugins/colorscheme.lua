@@ -22,13 +22,6 @@ return {
 		},
 	},
 	{
-		"masisz/wisteria.nvim",
-		name = "wisteria",
-		opts = {
-			transparent = true,
-		},
-	},
-	{
 		"yonatan-perel/lake-dweller.nvim",
 		lazy = false,
 		priority = 1000,
@@ -83,8 +76,11 @@ return {
 		config = function()
 			vim.api.nvim_create_autocmd("ColorScheme", {
 				group = colors_augroup,
-				pattern = "citrus-mist", -- Applies to any colorscheme change
+				pattern = "*",
 				callback = function()
+					if vim.g.colors_name ~= "citrus-mist" then
+						return
+					end
 					vim.api.nvim_set_hl(0, "IncSearch", { fg = "#0F2228", bg = "#C3E1EE" })
 					vim.api.nvim_set_hl(0, "CurSearch", { bg = "#e06c75" })
 					vim.api.nvim_set_hl(0, "Search", { fg = "#0F2228", bg = "#C3E1EE" })
@@ -96,6 +92,7 @@ return {
 					vim.api.nvim_set_hl(0, "TabLineIconModified", { fg = "#C3E1EE", bg = "#0F2228" })
 					vim.api.nvim_set_hl(0, "TabLineIconModifiedSel", { fg = "#0F2228", bg = "#C3E1EE" })
 					vim.api.nvim_set_hl(0, "WinBar", { fg = "#C3E1EE", bg = "#0F2228" })
+					vim.api.nvim_set_hl(0, "WinBarNC", { fg = "#C3E1EE", bg = "#0F2228" })
 					vim.api.nvim_set_hl(0, "@comment", { fg = "#4C5669", italic = true })
 					vim.api.nvim_set_hl(0, "NeogitDiffAddHighlight", { bg = "#103506" })
 					vim.api.nvim_set_hl(0, "DiffDeleteHighlight", { bg = "#390503" })
