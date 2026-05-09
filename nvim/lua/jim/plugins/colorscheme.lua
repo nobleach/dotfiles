@@ -311,4 +311,16 @@ return {
 	{
 		"lightnolimit/cosmic-latte-nvim",
 	},
+	{
+		"metalelf0/kintsugi-nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("kintsugi").setup({
+				variant = "dark", -- "dark" | "flared"
+				bold_keywords = true,
+				italic_comments = true,
+			})
+		end,
+	},
 }

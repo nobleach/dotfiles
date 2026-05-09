@@ -126,6 +126,8 @@ eval $(opam env)
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
-
 # opencode
 export PATH=/home/jim/.opencode/bin:$PATH
+
+# bun completions
+[ -s "/Users/jim.wharton/.bun/_bun" ] && source "/Users/jim.wharton/.bun/_bun"
