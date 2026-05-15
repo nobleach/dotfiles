@@ -49,11 +49,13 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 			},
-			format_on_save = {
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 1000,
-			},
+			format_on_save = function(bufnr)
+				local ignore_ft = { http = true }
+				if ignore_ft[vim.bo[bufnr].filetype] then
+					return
+				end
+				return { lsp_fallback = true, async = false, timeout_ms = 1000 }
+			end,
 		})
 
 		vim.keymap.set({ "n", "v" }, "<leader>xf", function()

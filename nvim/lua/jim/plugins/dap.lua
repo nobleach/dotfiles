@@ -126,7 +126,7 @@ return {
 		local keymap = vim.keymap
 
 		keymap.set("n", "\\b", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { silent = true, noremap = true })
-		keymap.set("n", ",b", "<cmd>lua require('dapui').toggle()<CR>", { silent = true, noremap = true })
+		keymap.set("n", "X", "<cmd>lua require('dapui').toggle()<CR>", { silent = true, noremap = true })
 		keymap.set(
 			"n",
 			"<leader>db",

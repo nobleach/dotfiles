@@ -77,7 +77,7 @@ return {
 			desc = "LSP Symbols",
 		},
 		{
-			",sy",
+			",S",
 			function()
 				Snacks.picker.lsp_symbols()
 			end,
