@@ -18,5 +18,10 @@
     "prefix": "ago",
     "body": ["go func() {", "$0", "}()"],
     "description": "Anonymous Go Routine"
+  },
+  "Go Test": {
+    "prefix": "test",
+    "body": ["func Test$1(t *testing.T) {", "$0", "}"],
+    "description": "Go Test"
   }
 }
