@@ -23,5 +23,20 @@
     "prefix": "test",
     "body": ["func Test$1(t *testing.T) {", "$0", "}"],
     "description": "Go Test"
+  },
+  "Koanf Struct Tag": {
+    "prefix": "ktag",
+    "body": ["`koanf:\"$1\"`"],
+    "description": "Koanf Struct Tag"
+  },
+  "JSON Struct Tag": {
+    "prefix": "jtag",
+    "body": ["`json:\"$1\"`"],
+    "description": "JSON Struct Tag"
+  },
+  "Query Struct Tag": {
+    "prefix": "qtag",
+    "body": ["`query:\"$1\"`"],
+    "description": "Query Struct Tag"
   }
 }
