@@ -91,6 +91,7 @@ alias ezsh="$EDITOR ~/.zshrc"
 alias szsh="source ~/.zshrc"
 alias cod="cd ~/Code"
 alias buu="brew update && brew upgrade"
+alias gsm="git switch main"
 bindkey -s '^Xg1' 'git commit -m "initial commit"'
 bindkey -s '^Xgc' 'git commit -m ""\C-b'
 
