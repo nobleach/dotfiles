@@ -191,6 +191,10 @@ call s:hi("healthSuccess", s:nord14_gui, s:nord1_gui, s:nord14_term, s:nord1_ter
 call s:hi("healthWarning", s:nord13_gui, s:nord1_gui, s:nord13_term, s:nord1_term, "", "")
 call s:hi("TermCursorNC", "", s:nord1_gui, "", s:nord1_term, "", "")
 
+"+-- WinBar Support --+
+call s:hi("WinBar", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
+" vim.api.nvim_set_hl(0, "WinBarNC", { fg = "#C3E1EE", bg = "#0F2228" })
+
 "+- Vim 8 Terminal Colors -+
 if has('terminal')
   let g:terminal_ansi_colors = [s:nord1_gui, s:nord11_gui, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:nord15_gui, s:nord8_gui, s:nord5_gui, s:nord3_gui, s:nord11_gui, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:nord15_gui, s:nord7_gui, s:nord6_gui]
