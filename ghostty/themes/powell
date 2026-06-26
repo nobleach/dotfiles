@@ -1,0 +1,24 @@
+# powell -- warm, near-monochrome sage/olive theme
+# Matches nvim/colors/powell.vim
+palette = 0=#32302f
+palette = 1=#c47a70
+palette = 2=#a9b665
+palette = 3=#c2a87c
+palette = 4=#8ba0a2
+palette = 5=#a89aa1
+palette = 6=#95aa8d
+palette = 7=#c5c8b8
+palette = 8=#565049
+palette = 9=#d08b80
+palette = 10=#b3b57d
+palette = 11=#c6bd83
+palette = 12=#9fb3b5
+palette = 13=#b8857b
+palette = 14=#a7baa0
+palette = 15=#d4d7c8
+background = #282828
+foreground = #c5c8b8
+cursor-color = #c6bd83
+cursor-text = #282828
+selection-background = #45403d
+selection-foreground = #c5c8b8

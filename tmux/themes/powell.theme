@@ -1,0 +1,45 @@
+# powell.theme -- warm, near-monochrome sage/olive
+# Matches nvim/colors/powell.vim. The window list mirrors the neovim
+# tab bar (tabby.nvim): a dim fill, angled ◢◣ tile separators, the
+# current window lifted onto green with dark text.
+#
+# Palette (from powell.vim):
+#   bg0 #282828  bg_dim #232323  bg1 #32302f  bg2 #3c3836  bg3 #45403d
+#   fg  #c5c8b8  grey0 #565049   grey1 #767c6f
+#   green #a9b665 khaki #c6bd83  rose #b8857b
+
+# status -- the bar's fill is bg_dim, like TabLineFill
+set -g status "on"
+set -g status-bg "#232323"
+set -g status-style "bg=#232323"
+set -g status-justify left
+
+# messages
+set -g message-style "fg=#c5c8b8,bg=#3c3836"
+set -g message-command-style "fg=#c5c8b8,bg=#3c3836"
+
+# panes -- inactive border bg2, active green (mirrors WinSeparator / accent)
+set -g pane-border-style "fg=#3c3836"
+set -g pane-active-border-style "fg=#a9b665"
+
+# copy-mode selection -- bg3, like Visual
+set -g mode-style "fg=#c5c8b8,bg=#45403d"
+
+# window status base + activity
+setw -g window-status-style "fg=#767c6f,bg=#32302f"
+setw -g window-status-separator " "
+setw -g window-status-activity-style "fg=#c6bd83,bg=#32302f"
+
+# inactive tile -- bg1 / grey1, capped with angled separators on the fill
+setw -g window-status-format "#[fg=#32302f,bg=#232323]◢#[fg=#767c6f,bg=#32302f] #I #W #[fg=#32302f,bg=#232323]◣"
+
+# current tile -- lifted onto green with dark text, like TabLineSel
+setw -g window-status-current-format "#[fg=#a9b665,bg=#232323]◢#[fg=#282828,bg=#a9b665] #I #W#{?window_zoomed_flag, 󰍋,} #[fg=#a9b665,bg=#232323]◣"
+
+# head -- a small block on bg1 with the session name, like tabby's head
+set -g status-left "#[fg=#767c6f,bg=#32302f] 󰆍 #S #[fg=#32302f,bg=#232323] "
+set -g status-left-length 40
+
+# tail -- date/time on a bg1 block, slanted in like tabby's tail
+set -g status-right "#[fg=#32302f,bg=#232323]◥#[fg=#767c6f,bg=#32302f] 󰃭 %m/%d  %H:%M #[default]"
+set -g status-right-length 60
