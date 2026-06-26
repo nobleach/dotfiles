@@ -34,6 +34,7 @@ return {
 				"astro",
 				"bashls",
 				"biome",
+				"clojure_lsp",
 				-- "crystalline",
 				"cssls",
 				"dockerls",
