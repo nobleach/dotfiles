@@ -47,6 +47,7 @@ let s:rose     = ['#b8857b', '138']   " UI accent only (substitute, prompts)
 let s:teal     = ['#95aa8d', '108']   " operators, specials -- gray-green
 let s:blue     = ['#8ba0a2', '109']   " links, info -- desaturated steel
 let s:mauve    = ['#a89aa1', '145']   " preproc -- faint cool gray
+let s:hght     = ['#b4b59c', '144']
 
 " Signal colours: a touch more saturated than syntax so they stand out.
 let s:sig_red  = ['#c47a70', '167']
@@ -121,7 +122,7 @@ call s:hl('TabLine',         s:grey1, s:bg1,    '')
 call s:hl('TabLineFill',     '',      s:bg_dim, '')
 call s:hl('TabLineSel',      s:bg0,   s:green,  '')
 call s:hl('Title',           s:green, '',       'bold')
-call s:hl('Visual',          '',      s:bg3,    '')
+call s:hl('Visual',          s:bg0,      s:hght,    '')
 call s:hl('VisualNOS',       '',      s:bg3,    '')
 call s:hl('WarningMsg',      s:sig_gold, '',    'bold')
 call s:hl('Whitespace',      s:bg2,   '',       '')
