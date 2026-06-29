@@ -22,6 +22,10 @@ set -g message-command-style "fg=#c5c8b8,bg=#3c3836"
 set -g pane-border-style "fg=#3c3836"
 set -g pane-active-border-style "fg=#a9b665"
 
+# dim inactive panes (text stays readable)
+set -g window-style "fg=#767c6f,bg=#232323"          # inactive: grey1 on bg_dim
+set -g window-active-style "fg=#c5c8b8,bg=#282828"    # active: full fg on bg0
+
 # copy-mode selection -- bg3, like Visual
 set -g mode-style "fg=#c5c8b8,bg=#45403d"
 
