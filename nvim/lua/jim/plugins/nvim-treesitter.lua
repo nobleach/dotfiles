@@ -9,7 +9,7 @@ return {
 		require("nvim-treesitter").install({ "go", "rust", "python", "typescript" })
 
 		vim.api.nvim_create_autocmd("FileType", {
-			pattern = { "rust", "python", "typescript" },
+			pattern = { "go", "rust", "python", "typescript" },
 			callback = function()
 				vim.treesitter.start() -- highlighting
 				vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- folds
