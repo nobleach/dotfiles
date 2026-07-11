@@ -84,6 +84,9 @@ return {
 		-- Gleam's gotta be its own little special snowflake
 		vim.lsp.enable("gleam")
 
+		-- racket-langserver (installed via raco, not mason)
+		vim.lsp.enable("racket_langserver")
+
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 		for type, icon in pairs(signs) do
