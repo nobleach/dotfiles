@@ -1,7 +1,7 @@
 return {
 	{
 		"Olical/conjure",
-		ft = { "clojure", "fennel", "python", "rust" }, -- etc
+		ft = { "clojure", "fennel", "python", "racket", "rust", "scheme" }, -- etc
 		lazy = true,
 		init = function()
 			-- Set configuration options here
