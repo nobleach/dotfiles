@@ -42,13 +42,6 @@ return {
 	},
 	keys = {
 		{
-			"<c-e>",
-			function()
-				Snacks.explorer.open()
-			end,
-			desc = "File Explorer",
-		},
-		{
 			"<leader>f",
 			function()
 				Snacks.picker.grep()

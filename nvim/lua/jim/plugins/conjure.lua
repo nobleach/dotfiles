@@ -11,7 +11,7 @@ return {
 			local keymap = vim.keymap -- for conciseness
 			keymap.set("n", "<leader>ceb", "<cmd>ConjureEvalBuf<CR>", { noremap = true, silent = true })
 			keymap.set("n", "<leader>cef", "<cmd>ConjureEvalFile<CR>", { noremap = true, silent = true })
-			keymap.set({ "n", "v" }, "<leader>cev", "<cmd>ConjureEval<CR>", { noremap = true, silent = true })
+			keymap.set({ "n", "v" }, "\\e", "<cmd>ConjureEval<CR>", { noremap = true, silent = true })
 		end,
 	},
 	{
