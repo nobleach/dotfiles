@@ -12,7 +12,7 @@ return {
 			hl = "SnacksIndent",
 		},
 		explorer = {
-			enabled = true,
+			enabled = false,
 		},
 		input = {},
 		---@type snacks.picker.Config
