@@ -8,6 +8,12 @@ return {
 			-- Uncomment this to get verbose logging to help diagnose internal Conjure issues
 			-- This is VERY helpful when reporting an issue with the project
 			-- vim.g["conjure#debug"] = true
+
+			-- Chez Scheme for *.scm (instead of default MIT Scheme)
+			vim.g["conjure#client#scheme#stdio#command"] = "petite"
+			vim.g["conjure#client#scheme#stdio#prompt_pattern"] = "> $"
+			vim.g["conjure#client#scheme#stdio#value_prefix_pattern"] = false
+
 			local keymap = vim.keymap -- for conciseness
 			keymap.set("n", "<leader>ceb", "<cmd>ConjureEvalBuf<CR>", { noremap = true, silent = true })
 			keymap.set("n", "<leader>cef", "<cmd>ConjureEvalFile<CR>", { noremap = true, silent = true })

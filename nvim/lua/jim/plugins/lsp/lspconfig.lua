@@ -85,7 +85,47 @@ return {
 		vim.lsp.enable("gleam")
 
 		-- racket-langserver (installed via raco, not mason)
+		-- Default filetypes include "scheme"; keep it on Racket only so *.scm
+		-- isn't forced to use #lang headers (Chez/Conjure doesn't need them).
+		vim.lsp.config("racket_langserver", {
+			filetypes = { "racket" },
+		})
 		vim.lsp.enable("racket_langserver")
+
+		-- scheme-langserver for *.scm (Chez / R6RS); binary in ~/.local/bin
+		-- (not available via mason). nvim-lspconfig's default cmd still uses
+		-- old positional args; current releases want -l/-m/-t flags.
+		--
+		-- The server crashes on initialize if rootUri is null
+		-- (error: "~s is not a string" null), so always provide a root —
+		-- prefer Akku/git, else the file's directory.
+		vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+			pattern = { "*.sls", "*.sps", "*.sld", "*.ss" },
+			command = "setfiletype scheme",
+		})
+		vim.lsp.config("scheme_langserver", {
+			cmd = {
+				"scheme-langserver",
+				"-l",
+				vim.fn.expand("~/.scheme-langserver.log"),
+				"-m",
+				"enable", -- multi-thread
+				"-t",
+				"disable", -- type inference still early
+			},
+			root_dir = function(bufnr, on_dir)
+				local fname = vim.api.nvim_buf_get_name(bufnr)
+				-- Conjure's eval log is also filetype scheme (conjure-log-<pid>.scm).
+				-- scheme-langserver crashes on its didChange notifications, so skip it.
+				if fname == "" or fname:match("conjure%-log%-") then
+					return
+				end
+				local root = vim.fs.root(bufnr, { "Akku.manifest", ".git" })
+					or vim.fs.dirname(fname)
+				on_dir(root)
+			end,
+		})
+		vim.lsp.enable("scheme_langserver")
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
