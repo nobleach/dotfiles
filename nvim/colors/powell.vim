@@ -290,6 +290,7 @@ call s:hl('TelescopeSelection',     s:fg,   s:bg1,    '')
 call s:hl('TelescopeSelectionCaret',s:rose, s:bg1,    '')
 call s:hl('TelescopeMatching',      s:khaki, '',      'bold')
 call s:hl('TelescopePromptPrefix',  s:rose, '',       '')
+call s:hl('SnacksPickerDir',        s:blue, '',       '')
 hi link TelescopeTitle Title
 
 " ----------------------------------------------------------------------------
