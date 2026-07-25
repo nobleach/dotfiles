@@ -109,6 +109,10 @@ listening() {
 # export DOCKER_BUILDKIT=1
 # export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
+# For Chez Scheme
+export CHEZSCHEMELIBDIRS=.:/usr/local/lib:"$HOME/Code/chezlibs"
+export LD_LIBRARY_PATH=/usr/local/lib:"$HOME/Code/chezlibs"
+
 #for Go
 # export GO_PATH=~/go
 # export PATH=$PATH:/$GO_PATH/bin
@@ -132,6 +136,7 @@ export PATH=/home/jim/.opencode/bin:$PATH
 
 # bun completions
 [ -s "/Users/jim.wharton/.bun/_bun" ] && source "/Users/jim.wharton/.bun/_bun"
+
 
 # >>> grok installer >>>
 export PATH="$HOME/.grok/bin:$PATH"
