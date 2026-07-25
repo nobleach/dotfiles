@@ -92,17 +92,22 @@ return {
 		})
 		vim.lsp.enable("racket_langserver")
 
-		-- scheme-langserver for *.scm (Chez / R6RS); binary in ~/.local/bin
-		-- (not available via mason). nvim-lspconfig's default cmd still uses
-		-- old positional args; current releases want -l/-m/-t flags.
+		-- Scheme LSPs are dialect-aware (see jim.scheme_dialect):
+		--   Chez  → scheme-langserver  (~/.local/bin, not in mason)
+		--   Guile → guile-lsp-server   (rgherdt/scheme-lsp-server; guile_ls)
 		--
-		-- The server crashes on initialize if rootUri is null
-		-- (error: "~s is not a string" null), so always provide a root —
-		-- prefer Akku/git, else the file's directory.
+		-- Both attach on filetype scheme; root_dir returns nil for the wrong
+		-- dialect so only one server attaches per buffer.
+		local scheme_dialect = require("jim.scheme_dialect")
+
 		vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 			pattern = { "*.sls", "*.sps", "*.sld", "*.ss" },
 			command = "setfiletype scheme",
 		})
+
+		-- scheme-langserver (Chez / R6RS). Default nvim-lspconfig cmd still uses
+		-- old positional args; current releases want -l/-m/-t flags.
+		-- Crashes on initialize if rootUri is null, so always provide a root.
 		vim.lsp.config("scheme_langserver", {
 			cmd = {
 				"scheme-langserver",
@@ -114,18 +119,44 @@ return {
 				"disable", -- type inference still early
 			},
 			root_dir = function(bufnr, on_dir)
-				local fname = vim.api.nvim_buf_get_name(bufnr)
-				-- Conjure's eval log is also filetype scheme (conjure-log-<pid>.scm).
-				-- scheme-langserver crashes on its didChange notifications, so skip it.
-				if fname == "" or fname:match("conjure%-log%-") then
+				if not scheme_dialect.is_scheme_buffer(bufnr) then
 					return
 				end
+				if scheme_dialect.for_buf(bufnr) ~= "chez" then
+					return
+				end
+				local fname = vim.api.nvim_buf_get_name(bufnr)
 				local root = vim.fs.root(bufnr, { "Akku.manifest", ".git" })
 					or vim.fs.dirname(fname)
 				on_dir(root)
 			end,
 		})
 		vim.lsp.enable("scheme_langserver")
+
+		-- guile-lsp-server (https://codeberg.org/rgherdt/scheme-lsp-server).
+		-- Installed under ~/.local (binary + Guile site modules). The wrapper
+		-- sets GUILE_LOAD_* so Neovim does not need those vars in its env.
+		-- nvim-lspconfig defaults to filetype scheme.guile only; we use scheme
+		-- and gate on dialect so Guile projects don't need a special filetype.
+		if vim.fn.executable("guile-lsp-server") == 1 then
+			vim.lsp.config("guile_ls", {
+				cmd = { "guile-lsp-server" },
+				filetypes = { "scheme" },
+				root_dir = function(bufnr, on_dir)
+					if not scheme_dialect.is_scheme_buffer(bufnr) then
+						return
+					end
+					if scheme_dialect.for_buf(bufnr) ~= "guile" then
+						return
+					end
+					local fname = vim.api.nvim_buf_get_name(bufnr)
+					local root = vim.fs.root(bufnr, { "guix.scm", "hall.scm", ".scheme-dialect", ".git" })
+						or vim.fs.dirname(fname)
+					on_dir(root)
+				end,
+			})
+			vim.lsp.enable("guile_ls")
+		end
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
