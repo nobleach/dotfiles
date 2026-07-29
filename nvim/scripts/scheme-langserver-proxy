@@ -1,0 +1,147 @@
+#!/usr/bin/env python3
+"""Stdio proxy for scheme-langserver.
+
+scheme-langserver sometimes answers notifications (e.g. textDocument/didChange)
+with an error response whose id is JSON false:
+
+  {"jsonrpc":"2.0","id":false,"error":{"code":-32001,"message":"textDocument/didChange"}}
+
+That is not valid JSON-RPC/LSP. Neovim treats it as INVALID_SERVER_MESSAGE,
+prints a press-enter error, and terminates the client transport — so one bad
+didChange (typically a buffer that is not yet on disk) takes down the server
+for the whole workspace.
+
+This proxy drops those frames. It does not fix the underlying VFS miss; the
+Neovim config gates attach until the file exists and notifies didCreateFiles
+after write so the server can index new files.
+"""
+
+from __future__ import annotations
+
+import json
+import os
+import subprocess
+import sys
+import threading
+from typing import BinaryIO, Optional
+
+
+def read_message(stream: BinaryIO) -> Optional[bytes]:
+    headers: dict[str, str] = {}
+    while True:
+        line = stream.readline()
+        if not line:
+            return None
+        if line in (b"\r\n", b"\n"):
+            break
+        try:
+            text = line.decode("utf-8", errors="replace").rstrip("\r\n")
+        except Exception:
+            return None
+        if ":" not in text:
+            continue
+        key, value = text.split(":", 1)
+        headers[key.strip().lower()] = value.strip()
+
+    try:
+        length = int(headers.get("content-length", "0"))
+    except ValueError:
+        return None
+    if length <= 0:
+        return None
+
+    body = stream.read(length)
+    if not body or len(body) < length:
+        return None
+    return body
+
+
+def write_message(stream: BinaryIO, body: bytes) -> None:
+    header = f"Content-Length: {len(body)}\r\n\r\n".encode("ascii")
+    stream.write(header + body)
+    stream.flush()
+
+
+def should_drop(body: bytes) -> bool:
+    """Drop invalid error responses that scheme-langserver emits for notifications."""
+    try:
+        msg = json.loads(body)
+    except Exception:
+        return False
+    if not isinstance(msg, dict):
+        return False
+    # Notification error replies: id is false/null, error present, no method.
+    if "error" in msg and "method" not in msg:
+        msg_id = msg.get("id", object())
+        if msg_id is False or msg_id is None:
+            return True
+    return False
+
+
+def pipe_client_to_server(client_in: BinaryIO, server_in: BinaryIO) -> None:
+    try:
+        while True:
+            body = read_message(client_in)
+            if body is None:
+                break
+            write_message(server_in, body)
+    finally:
+        try:
+            server_in.close()
+        except Exception:
+            pass
+
+
+def pipe_server_to_client(server_out: BinaryIO, client_out: BinaryIO) -> None:
+    try:
+        while True:
+            body = read_message(server_out)
+            if body is None:
+                break
+            if should_drop(body):
+                continue
+            write_message(client_out, body)
+    finally:
+        try:
+            client_out.close()
+        except Exception:
+            pass
+
+
+def main() -> int:
+    # Prefer PATH binary; fall back to the usual install location.
+    binary = os.environ.get("SCHEME_LANGSERVER", "scheme-langserver")
+    cmd = [binary, *sys.argv[1:]]
+
+    proc = subprocess.Popen(
+        cmd,
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+        stderr=sys.stderr.fileno(),
+    )
+    assert proc.stdin is not None and proc.stdout is not None
+
+    t_in = threading.Thread(
+        target=pipe_client_to_server,
+        args=(sys.stdin.buffer, proc.stdin),
+        daemon=True,
+    )
+    t_out = threading.Thread(
+        target=pipe_server_to_client,
+        args=(proc.stdout, sys.stdout.buffer),
+        daemon=True,
+    )
+    t_in.start()
+    t_out.start()
+    t_in.join()
+    # Client closed stdin (Neovim stopped the client). Stop the server.
+    try:
+        proc.terminate()
+    except Exception:
+        pass
+    t_out.join(timeout=2)
+    return proc.wait()
+
+
+if __name__ == "__main__":
+    sys.exit(main() or 0)

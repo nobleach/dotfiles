@@ -111,6 +111,7 @@ listening() {
 
 # For Chez Scheme
 export CHEZSCHEMELIBDIRS=.:/usr/local/lib:"$HOME/Code/chezlibs"
+export CHEZSCHEMELIBEXTS=.chezscheme.sls::.chezscheme.so:.ss::.so:.sls::.so:.scm::.so:.sch::.so:.sc::.so
 export LD_LIBRARY_PATH=/usr/local/lib:"$HOME/Code/chezlibs"
 
 #for Go

@@ -108,9 +108,37 @@ return {
 		-- scheme-langserver (Chez / R6RS). Default nvim-lspconfig cmd still uses
 		-- old positional args; current releases want -l/-m/-t flags.
 		-- Crashes on initialize if rootUri is null, so always provide a root.
+		--
+		-- Known server bug (ufo5260987423/scheme-langserver#62): didChange on a
+		-- buffer that is not yet in the server VFS (almost always: unsaved new
+		-- file) crashes with "() is not of type file-node" and replies with an
+		-- invalid JSON-RPC error (`id: false`). Neovim then raises
+		-- INVALID_SERVER_MESSAGE, shows a press-enter prompt in insert mode,
+		-- and terminates the client. Mitigations:
+		--   1. stdio proxy drops the invalid frames
+		--   2. only attach once the file exists on disk
+		--   3. after write, re-trigger attach + workspace/didCreateFiles so the
+		--      new path is indexed without a full LspRestart
+		local scheme_ls_proxy = vim.fn.stdpath("config") .. "/scripts/scheme-langserver-proxy"
+		local scheme_ls_cmd = vim.fn.executable(scheme_ls_proxy) == 1 and scheme_ls_proxy or "scheme-langserver"
+
+		local function scheme_ls_should_attach(bufnr)
+			if not scheme_dialect.is_scheme_buffer(bufnr) then
+				return false
+			end
+			if scheme_dialect.for_buf(bufnr) ~= "chez" then
+				return false
+			end
+			local fname = vim.api.nvim_buf_get_name(bufnr)
+			if fname == "" or not vim.uv.fs_stat(fname) then
+				return false
+			end
+			return true
+		end
+
 		vim.lsp.config("scheme_langserver", {
 			cmd = {
-				"scheme-langserver",
+				scheme_ls_cmd,
 				"-l",
 				vim.fn.expand("~/.scheme-langserver.log"),
 				"-m",
@@ -119,19 +147,59 @@ return {
 				"disable", -- type inference still early
 			},
 			root_dir = function(bufnr, on_dir)
-				if not scheme_dialect.is_scheme_buffer(bufnr) then
-					return
-				end
-				if scheme_dialect.for_buf(bufnr) ~= "chez" then
+				if not scheme_ls_should_attach(bufnr) then
 					return
 				end
 				local fname = vim.api.nvim_buf_get_name(bufnr)
-				local root = vim.fs.root(bufnr, { "Akku.manifest", ".git" })
+				-- Prefer scheme-specific project markers only.
+				-- Do NOT climb to a bare .git root: monorepos (e.g. ~/Code with
+				-- many language trees) make scheme-langserver index everything
+				-- and crash on initialize (RPC "initialize" / "unexpected dot").
+				-- Pin a project with Akku.manifest or .scheme-dialect (also used
+				-- by jim.scheme_dialect); otherwise use the file's directory.
+				local root = vim.fs.root(bufnr, { "Akku.manifest", ".scheme-dialect" })
 					or vim.fs.dirname(fname)
 				on_dir(root)
 			end,
 		})
 		vim.lsp.enable("scheme_langserver")
+
+		-- New Scheme files: no attach until first write (see above). After
+		-- write, attach if needed and tell a running server about the path.
+		vim.api.nvim_create_autocmd("BufWritePost", {
+			group = vim.api.nvim_create_augroup("SchemeLangserverOnSave", { clear = true }),
+			pattern = { "*.scm", "*.ss", "*.sls", "*.sps", "*.sld" },
+			callback = function(ev)
+				if vim.bo[ev.buf].filetype ~= "scheme" then
+					return
+				end
+				if not scheme_ls_should_attach(ev.buf) then
+					return
+				end
+
+				local attached = vim.lsp.get_clients({
+					bufnr = ev.buf,
+					name = "scheme_langserver",
+				})
+				if #attached == 0 then
+					-- FileType re-runs vim.lsp.enable's start logic for this buf.
+					vim.api.nvim_exec_autocmds("FileType", {
+						buffer = ev.buf,
+						modeline = false,
+					})
+					return
+				end
+
+				local uri = vim.uri_from_bufnr(ev.buf)
+				for _, client in ipairs(attached) do
+					if not client:is_stopped() then
+						client:notify("workspace/didCreateFiles", {
+							files = { { uri = uri } },
+						})
+					end
+				end
+			end,
+		})
 
 		-- guile-lsp-server (https://codeberg.org/rgherdt/scheme-lsp-server).
 		-- Installed under ~/.local (binary + Guile site modules). The wrapper
