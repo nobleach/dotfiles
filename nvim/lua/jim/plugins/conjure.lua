@@ -33,7 +33,7 @@ return {
 			-- Defaults: Chez (petite). Neither Chez nor Guile uses MIT's ";Value: " prefix.
 			dialect.apply("chez")
 			vim.g["conjure#client#scheme#stdio#value_prefix_pattern"] = false
-			vim.g["conjure#filetype_suffixes#scheme"] = { "scm", "ss", "sls", "sps", "sld" }
+			vim.g["conjure#filetype_suffixes#scheme"] = { "scm", "sc", "ss", "sls", "sps", "sld" }
 
 			-- Common Lisp / Swank -------------------------------------------------
 			-- Conjure connects to an external Swank server (default 127.0.0.1:4005).

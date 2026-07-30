@@ -101,7 +101,7 @@ return {
 		local scheme_dialect = require("jim.scheme_dialect")
 
 		vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-			pattern = { "*.sls", "*.sps", "*.sld", "*.ss" },
+			pattern = { "*.sls", "*.sps", "*.sld", "*.ss", "*.sc" },
 			command = "setfiletype scheme",
 		})
 
@@ -168,7 +168,7 @@ return {
 		-- write, attach if needed and tell a running server about the path.
 		vim.api.nvim_create_autocmd("BufWritePost", {
 			group = vim.api.nvim_create_augroup("SchemeLangserverOnSave", { clear = true }),
-			pattern = { "*.scm", "*.ss", "*.sls", "*.sps", "*.sld" },
+			pattern = { "*.scm", "*.sc", "*.ss", "*.sls", "*.sps", "*.sld" },
 			callback = function(ev)
 				if vim.bo[ev.buf].filetype ~= "scheme" then
 					return
