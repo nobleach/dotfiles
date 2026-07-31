@@ -323,4 +323,24 @@ return {
 			})
 		end,
 	},
+	{
+		"dysax/turbonerd.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("turbonerd").setup({ style = "focus" })
+		end,
+	},
+	{
+		"oldjobobo/retro-82.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			transparent = false,
+			terminal_colors = true,
+		},
+		config = function(_, opts)
+			require("retro82").setup(opts)
+		end,
+	},
 }
