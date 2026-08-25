@@ -5,6 +5,16 @@ return {
 		-- or leave it empty to use the default settings
 		-- refer to the configuration section below
 	},
+	keys = {
+		{
+			"<leader>p",
+			function()
+				Snacks.picker.yanky()
+			end,
+			mode = { "n", "x" },
+			desc = "Open Yank History",
+		},
+	},
 	config = function(_, opts)
 		require("yanky").setup(opts)
 
