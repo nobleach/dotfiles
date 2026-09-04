@@ -343,4 +343,5 @@ return {
 			require("retro82").setup(opts)
 		end,
 	},
+	{ "zitrocode/carvion.nvim", lazy = false, priority = 1000, opts = {} },
 }
