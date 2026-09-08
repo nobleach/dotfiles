@@ -8,6 +8,6 @@ output "LG Electronics LG ULTRAWIDE 0x000BA027" {
 
 output "BOE 0x0C9F 0x0000006A" {
     mode "2880x1800@60.000"
-    scale 1.3
+    scale 1.4
     position x=4450 y=-37
 }
