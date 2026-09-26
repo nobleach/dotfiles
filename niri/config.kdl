@@ -299,6 +299,20 @@ window-rule {
     open-floating true
 }
 
+// Open Audacious as floating. Winamp mode is fixed-size; GTK reports
+// "Audacious" and Qt reports "audacious".
+window-rule {
+    match app-id=r#"^Audacious$"#
+    match app-id=r#"^audacious$"#
+    open-floating true
+}
+
+// xubamp is the same fixed-size Winamp window, native Wayland, app-id "xubamp".
+window-rule {
+    match app-id=r#"^xubamp$"#
+    open-floating true
+}
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
