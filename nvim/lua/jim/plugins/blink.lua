@@ -64,12 +64,10 @@ return {
 			sources = { "path", "cmdline" },
 		},
 		sources = {
-			default = { "snippets", "lsp", "path", "dadbod", "buffer" },
+			default = { "snippets", "lsp", "path", "buffer" },
 
 			-- Add custom providers
-			providers = {
-				dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
-			},
+			providers = {},
 		},
 
 		completion = {
