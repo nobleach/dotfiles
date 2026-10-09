@@ -239,8 +239,9 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-// This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "qs" "-c" "noctalia-shell"
+// Noctalia 5. The previous Quickshell shell is the commented line below.
+spawn-at-startup "noctalia"
+// spawn-at-startup "qs" "-c" "noctalia-shell"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -313,6 +314,14 @@ window-rule {
     open-floating true
 }
 
+// Noctalia 5 settings window.
+window-rule {
+    match app-id=r#"^dev\.noctalia\.Noctalia$"#
+    open-floating true
+    default-column-width { fixed 1080; }
+    default-window-height { fixed 920; }
+}
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
@@ -352,7 +361,7 @@ binds {
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+Space hotkey-overlay-title="Run an Application: anyrun" { spawn "anyrun"; }
     Mod+e hotkey-overlay-title="Run an Application: Nautilus" { spawn "nautilus"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "noctalia" "msg" "session" "lock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -611,7 +620,7 @@ binds {
 }
 
 switch-events {
-  lid-close { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+  lid-close { spawn "noctalia" "msg" "session" "lock"; }
 }
 
 // Monique monitor configuration
