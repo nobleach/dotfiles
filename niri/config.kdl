@@ -282,7 +282,7 @@ animations {
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 window-rule {
   // Rounded corners for a modern look.
-  geometry-corner-radius 20
+  geometry-corner-radius 14
 
   // Clips window contents to the rounded corner boundaries.
   clip-to-geometry true
