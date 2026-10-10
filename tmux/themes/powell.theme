@@ -31,6 +31,8 @@ set -g mode-style "fg=#c5c8b8,bg=#45403d"
 
 # window status base + activity
 setw -g window-status-style "fg=#767c6f,bg=#32302f"
+# tmux 3.8 defaults the current window to underscore; the format supplies colors
+setw -g window-status-current-style none
 setw -g window-status-separator " "
 setw -g window-status-activity-style "fg=#c6bd83,bg=#32302f"
 
