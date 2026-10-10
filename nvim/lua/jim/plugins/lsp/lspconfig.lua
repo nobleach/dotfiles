@@ -4,7 +4,8 @@ return {
 	dependencies = {
 		"pmizio/typescript-tools.nvim",
 		"nvim-lua/plenary.nvim",
-		{ "antosha417/nvim-lsp-file-operations", config = true },
+		-- pinned: f590e8c (2026-10-05) leaks an fd every 30s via its log-truncate timer
+		{ "antosha417/nvim-lsp-file-operations", commit = "5e7dbe8", config = true },
 	},
 	config = function()
 		vim.api.nvim_create_autocmd("LspAttach", {
