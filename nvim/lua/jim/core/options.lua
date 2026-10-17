@@ -13,6 +13,8 @@ autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. B
 vim.opt.clipboard = { "unnamed", "unnamedplus" }
 vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank()]])
 vim.o.completeopt = "menuone,noinsert"
+-- don't parse "vi:/vim:/ex:" text in files as modelines (avoids E518 on stray matches)
+vim.o.modeline = false
 vim.o.expandtab = true
 vim.o.foldenable = false
 vim.o.showcmd = true
