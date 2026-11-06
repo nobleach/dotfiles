@@ -33,5 +33,8 @@ return {
 
 		keymap.set("n", "<leader>gg", "<cmd>Neogit kind=split<CR>", { silent = true, noremap = true })
 		keymap.set("n", ",g", "<cmd>Neogit kind=split<CR>", { silent = true, noremap = true })
+		keymap.set("n", ",b", function()
+			neogit.open({ "branch" })
+		end, { silent = true, desc = "Neogit branch popup" })
 	end,
 }

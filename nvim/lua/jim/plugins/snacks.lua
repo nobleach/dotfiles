@@ -112,7 +112,7 @@ return {
 			desc = "Marks",
 		},
 		{
-			",bl",
+			"<leader>bp",
 			function()
 				Snacks.git.blame_line(opts)
 			end,
