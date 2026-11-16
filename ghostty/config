@@ -1,9 +1,10 @@
 auto-update = check
 
 font-family = "BitstromWera Nerd Font Mono"
+# font-family = "Nordwand Mono"
 #font-family = "GeistMono Nerd Font Mono"
 font-size = 14
-adjust-cell-height = +20%
+adjust-cell-height = +10%
 
 window-colorspace = "display-p3"
 #background-opacity = 0.85
