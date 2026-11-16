@@ -37,6 +37,7 @@ alias fourwords="sort -R /usr/share/dict/words | head -n 4| sed 's/.\*/&/;$!s/$/
 alias s3stg-cfg="tcli idb show cmsnonprod/aws_s3_configs/stg/us-east-1.aws"
 alias dcu="docker compose up"
 alias dcd="docker compose down"
+alias dpa="docker system prune -a --volumes"
 alias k="kubectl"
 alias kga="kubectl get all"
 alias kgp="kubectl get pods"
